@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LS 2.04 — Fachliche Zusammenfassung mit Lehrpersonen-Ebene</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#52606d; --line:#d9e2ec; --bg:#fbfcfd; --card:#ffffff;
+    --blue:#1d4e89; --blue-soft:#e8f0fa; --green:#2f6f4e; --green-soft:#e6f3ec;
+    --amber:#8a5a00; --amber-soft:#fff4dc; --red:#8b2c2c; --red-soft:#fbe9e9; --grey-soft:#f1f4f8;
+  }
+  *{box-sizing:border-box}
+  html{font-size:16px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55}
+  main{max-width:960px;margin:0 auto;padding:32px 22px 80px}
+  h1{font-size:1.9rem;line-height:1.2;margin:0 0 6px;color:var(--blue)}
+  h2{font-size:1.45rem;margin:48px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--blue);color:var(--blue)}
+  h3{font-size:1.15rem;margin:30px 0 8px;color:var(--ink)}
+  h4{font-size:1rem;margin:20px 0 6px}
+  p{margin:0 0 12px}
+  .kopf{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-top:14px}
+  .kopf dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 18px;margin:8px 0 0}
+  .kopf dt{color:var(--muted);font-weight:600}
+  .kopf dd{margin:0}
+  .beleg{display:inline-block;font-size:.82rem;color:var(--muted);background:var(--grey-soft);border-radius:4px;padding:1px 7px;margin-left:4px;white-space:nowrap}
+  .box{border-left:5px solid var(--blue);background:var(--blue-soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+  .box.def{border-color:var(--green);background:var(--green-soft)}
+  .box.warn{border-color:var(--amber);background:var(--amber-soft)}
+  .box.law{border-color:var(--muted);background:var(--grey-soft);font-style:italic}
+  .box.law .t{font-style:normal;font-weight:700;display:block;margin-bottom:4px}
+  .box.merk{border-color:var(--red);background:var(--red-soft)}
+  .box p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:middle}
+  .tag.de{background:var(--amber-soft);color:var(--amber);border:1px solid #e6c98a}
+  .tag.ch{background:var(--green-soft);color:var(--green);border:1px solid #a9d3bb}
+  .tag.k{background:var(--blue-soft);color:var(--blue);border:1px solid #b9cde8}
+  .tag.n{background:var(--grey-soft);color:var(--muted);border:1px solid var(--line)}
+  .tag.fr{background:var(--red-soft);color:var(--red);border:1px solid #e3b4b4}
+  .tabwrap{overflow-x:auto;margin:12px 0 18px}
+  table{border-collapse:collapse;width:100%;background:var(--card);font-size:.95rem}
+  th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+  th{background:var(--blue-soft);color:var(--blue)}
+  tbody tr:nth-child(even){background:#f7f9fc}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+  .two>div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .two h4{margin-top:0;color:var(--blue)}
+  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:12px 0}
+  .three>div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .three h4{margin-top:0;color:var(--blue)}
+  @media (max-width:700px){.two,.three{grid-template-columns:1fr}.kopf dl{grid-template-columns:1fr}}
+  ol.kette{counter-reset:k;list-style:none;padding:0;margin:12px 0}
+  ol.kette li{counter-increment:k;position:relative;padding:8px 12px 8px 50px;margin:0 0 8px;background:var(--card);border:1px solid var(--line);border-radius:8px}
+  ol.kette li::before{content:counter(k);position:absolute;left:12px;top:8px;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;text-align:center;line-height:26px;font-size:.9rem}
+  ul.merk{list-style:none;padding:0;margin:10px 0}
+  ul.merk li{padding:6px 0 6px 30px;position:relative}
+  ul.merk li::before{content:"✔";position:absolute;left:4px;color:var(--green);font-weight:700}
+  ul.stop li::before{content:"✖";color:var(--red)}
+  figure{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+  figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+  svg text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 20px;margin:18px 0}
+  .toc ol{margin:6px 0 0;padding-left:22px;columns:2;column-gap:30px}
+  .toc li{break-inside:avoid;margin:2px 0}
+  .toc a{color:var(--blue);text-decoration:none}
+  .small{font-size:.9rem;color:var(--muted)}
+  code{background:var(--grey-soft);padding:1px 5px;border-radius:4px;font-size:.9em}
+  footer{margin-top:40px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+/* ===== Lernende und Lehrperson im Fachtext ===== */
+:root{--kind:#eaf2ff;--mmb:#f3ecff;--soft:var(--grey-soft);--acc:var(--blue);--lern:#fbefe9;--lernline:#d39a82;--lernink:#8a4a33;--lp:#eaf5ef;--lpline:#6fa88a;--lpink:#2f6a4b}
+.schalter{position:sticky;top:0;z-index:20;background:rgba(251,251,252,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:0 -22px 10px;padding:8px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.schalter .lbl{font-size:.88rem;color:var(--muted)}
+.seg{display:inline-flex;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{appearance:none;border:0;background:transparent;font:inherit;font-size:.92rem;padding:7px 16px;border-radius:999px;cursor:pointer;color:var(--ink);min-height:38px;-webkit-tap-highlight-color:transparent}
+.seg button[aria-pressed="true"]{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:600;color:var(--acc)}
+.seg button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.ebenen{margin:22px 0 8px;padding:14px 0 0;border-top:1px dashed var(--line)}
+body.ohne-ebenen .ebenen{display:none}
+.ebenen-titel{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;color:var(--muted);margin:0 0 10px}
+.ebenen-raster{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:700px){.ebenen-raster{grid-template-columns:1fr}}
+.spalte{min-width:0}
+.fr-kopf{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:0 0 8px}
+.spalte.kind .fr-kopf{background:var(--kind)}
+.spalte.mmb .fr-kopf{background:var(--mmb)}
+.ansicht-box{border-radius:12px;padding:12px 16px 14px;margin:0 0 12px}
+.ansicht-box.lern{background:var(--lern);border:1px solid var(--lernline)}
+.ansicht-box.lp{background:var(--lp);border:1px solid var(--lpline)}
+.ansicht-box .ebene{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin:0 0 .5em}
+.ansicht-box.lern .ebene{color:var(--lernink)}
+.ansicht-box.lp .ebene{color:var(--lpink)}
+.ansicht-box h4{text-transform:none;letter-spacing:0;font-size:1rem;color:var(--ink);margin:.9em 0 .2em}
+.ansicht-box .beleg{display:inline;margin:0 0 0 .25em;font-size:.78rem}
+.stimme{font-size:1.1rem;line-height:1.45;font-style:italic;color:var(--lernink);margin:.2em 0 .7em;padding-left:12px;border-left:4px solid var(--lernline)}
+.aviva{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:#fff;color:var(--lpink);border:1px solid var(--lpline);border-radius:999px;padding:1px 8px;margin-right:6px;vertical-align:2px}
+@media print{.schalter{display:none}.ansicht-box{break-inside:avoid}}
+.ansicht-box .beleg{white-space:normal}
+.ansicht-box p{margin:0 0 12px}
+.ansicht-box p:last-child{margin-bottom:0}
+.schalter{background:rgba(251,252,253,.96)}
+</style>
+</head>
+<body>
+<main>
+<div class="schalter"><span class="lbl">Lernende und Lehrperson:</span><div class="seg" role="group" aria-label="Lernende und Lehrperson"><button type="button" data-an="1" aria-pressed="true">Einblenden</button><button type="button" data-an="0" aria-pressed="false">Ausblenden</button></div></div>
+
+<!-- ===================================================== 1 KOPF -->
+<p class="small">Berufsfachschule Basel · BKU 1 · Fachliche Zusammenfassung zur Lernsituation</p>
+<h1>LS 2.04 — Menschenrechte in der Betreuung verstehen und gesellschaftliche Haltungen reflektieren</h1>
+<div class="kopf">
+  <dl>
+    <dt>Titel Fachrichtung Kind</dt><dd>Menschenrechte in der Betreuung verstehen und gesellschaftliche Haltungen reflektieren</dd>
+    <dt>Titel Fachrichtung Menschen mit Beeinträchtigung</dt><dd>Menschenrechte in der Betreuung verstehen und gesellschaftliche Haltungen reflektieren</dd>
+    <dt>Handlungskompetenz</dt><dd>a1 — Der eigenen Berufsrolle entsprechend handeln</dd>
+    <dt>Lektionen</dt><dd>8 (Kind) · 8 (MmB)</dd>
+    <dt>Lehrjahr</dt><dd>2. Lehrjahr, verkürzte Grundbildung (vG)</dd>
+    <dt>Unterrichtsthemen</dt><dd>1. Berufsrelevante Menschenrechte der UN-Konvention · 2. Konzept der Menschenwürde · 3. Menschenbilder im Wandel der Zeit · 4. Humanistisches Menschenbild · 5. Aktuelle gesellschaftliche Haltungen in Bezug auf die betreuten Personen</dd>
+    <dt>Fachrichtungen</dt><dd>Beide Schullehrpläne führen für LS 2.04 denselben Titel, dieselbe Handlungskompetenz, dieselben fünf Unterrichtsthemen und dieselben fünf Lernziele. Diese Zusammenfassung gilt deshalb ungeteilt für beide Fachrichtungen. Wo eine Quelle nur in der Soll-Literatur einer Fachrichtung steht, ist das am Beleg vermerkt. <span class="beleg">[SLP vG Kind, S. 58; SLP vG MmB, S. 59]</span></dd>
+  </dl>
+</div>
+
+<div class="toc">
+  <strong>Inhalt</strong>
+  <ol>
+    <li><a href="#worum">Worum es geht</a></li>
+    <li><a href="#a">Berufsrelevante Menschenrechte der UN-Konvention</a></li>
+    <li><a href="#b">Konzept der Menschenwürde</a></li>
+    <li><a href="#c">Menschenbilder im Wandel der Zeit</a></li>
+    <li><a href="#d">Humanistisches Menschenbild</a></li>
+    <li><a href="#e">Aktuelle gesellschaftliche Haltungen</a></li>
+    <li><a href="#glossar">Begriffe auf einen Blick</a></li>
+    <li><a href="#lz">Lernziele und wo sie stehen</a></li>
+    <li><a href="#quellen">Quellenverzeichnis</a></li>
+    <li><a href="#offen">Was nicht belegt ist</a></li>
+  </ol>
+</div>
+
+<div class="box warn">
+  <p><span class="tag de">DE</span><strong>Hinweis zu den Quellen.</strong> Die Bücher «Kinderpflege», «Erzieherinnen und Erzieher» (EuE) und «Heilerziehungspflege» (HEP) sind deutsche Lehrmittel. Wo sie deutsches Recht oder deutsche Institutionen beschreiben (Grundgesetz, Kinder- und Jugendhilfegesetz, SGB IX, Bundesteilhabegesetz, National Coalition, DQR), ist das in dieser Zusammenfassung mit <span class="tag de">DE</span> markiert. Die Schweizer Sicht liefern die Careum-Bände; sie sind mit <span class="tag ch">CH</span> markiert, wo es auf den Unterschied ankommt.</p>
+</div>
+
+<!-- ===================================================== 2 WORUM ES GEHT -->
+<h2 id="worum">Worum es geht</h2>
+<p>Als Fachperson Betreuung begleiten Sie Menschen, die auf andere angewiesen sind: Kinder, Menschen mit Beeinträchtigung, Menschen im Alter. Diese Lernsituation klärt, welche Rechte diese Menschen haben und woher diese Rechte kommen — von der Allgemeinen Erklärung der Menschenrechte über die UN-Kinderrechtskonvention bis zur UN-Behindertenrechtskonvention. Sie lernen das Konzept der Menschenwürde kennen, das hinter all diesen Rechten steht, und Sie sehen, wie sich das Bild vom Menschen im Lauf der Geschichte verändert hat und welches Menschenbild heute Ihre Arbeit leiten soll: das humanistische. Am Ende geht es um Haltungen — die Haltungen, die in unserer Gesellschaft gegenüber betreuten Personen bestehen, und um Ihre eigene Haltung, die Sie <strong>reflektieren</strong> und weiterentwickeln sollen. <span class="beleg">[SLP vG Kind, S. 58; SLP vG MmB, S. 59; Careum HKB A, S. 45–49]</span></p>
+
+<div class="ebenen" data-sid="worum"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 2. Lehrjahr</p>
+<p class="stimme">«Menschenrechte, Würde, Menschenbilder, Haltungen: Ich sehe fünf Wörter, aber noch nicht, wie sie zu dem passen, was ich im Hort jeden Nachmittag erlebe.»</p>
+<h4>Was mich packt</h4>
+<p>Gestern im Hort wollten zwei Kinder dasselbe Tischfussballspiel. Meine Kollegin sagte, sie sollen das unter sich ausmachen, ich hätte eingegriffen. Hinterher dachte ich: Wir haben beide gerade gezeigt, was wir von Kindern halten, ohne es zu merken. Genau darum geht es hier, denn ich soll gesellschaftliche Haltungen gegenüber betreuten Personen kennenlernen und meine eigene Haltung reflektieren und weiterentwickeln. <span class="beleg">[Careum HKB A, S. 49]</span> Das reizt mich, weil ich im Hort ständig eine Haltung habe, ob ich will oder nicht.</p>
+<h4>Wo ich aussteige</h4>
+<p>Die Lernsituation hat fünf Unterrichtsthemen: Menschenrechte der UN-Konvention, Menschenwürde, Menschenbilder im Wandel der Zeit, humanistisches Menschenbild und aktuelle Haltungen. <span class="beleg">[SLP vG Kind, S. 58; SLP vG MmB, S. 59]</span> «Menschenbilder im Wandel der Zeit» klingt für mich nach Geschichtsstunde, «humanistisch» nach Philosophie. Ich habe Angst, dass ich fünf Kapitel Begriffe lerne und sie nach der Lernkontrolle wieder los bin. Und bei «Haltung» wird mir mulmig: Ich möchte nicht vor der Klasse sagen müssen, wie ich über Kinder denke, wenn ich es selbst noch nicht genau weiss.</p>
+<h4>Meine Frage</h4>
+<p>Was verbindet diese fünf Themen, und warum kommen sie in genau dieser Reihenfolge? Und muss ich am Schluss etwas Persönliches preisgeben?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An einer einzigen Situation aus dem Hort, die wir am Anfang anschauen und am Schluss nochmals, damit ich selbst sehe, was ich dazugelernt habe. Und zuerst in meinen eigenen Worten, die Fachbegriffe dürfen später kommen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du fragst nach dem Faden und fürchtest, dass dir die Haltung zum Verhör wird. Der Faden ist die Haltung: Für sie sind unter anderem die Menschenwürde und das humanistische Menschenbild wichtig. <span class="beleg">[Careum HKB A, S. 45]</span> Niemand muss hier etwas Privates erzählen. Du reflektierst eine Situation, nicht deine Person.</p>
+<h4>Ablauf und Reihenfolge</h4>
+<p>Wir gehen die Abschnitte in der Reihenfolge der Seite: 1 Menschenrechte, 2 Menschenwürde, 3 Menschenbilder, 4 humanistisches Menschenbild, 5 Haltungen. 1 und 2 arbeiten beide mit der AEMR: Art. 1 nennt Würde und Rechte zusammen. <span class="beleg">[Careum HKB A, S. 36, 49]</span> 3 und 4 bauen das Menschenbild auf, aus dem sich die Haltung in deiner Berufsrolle ableitet. <span class="beleg">[Careum HKB A, S. 46]</span> 5 ist das einzige Ziel, das nur auf K5 steht, und es braucht alles davor: Die Leitfragen in 5.5 fragen nach den Normen, Werten und Prinzipien hinter deinem Verhalten. <span class="beleg">[Careum HKB A, S. 48]</span> Mein Vorschlag, nicht verbindlich: zwei Blöcke zu vier Lektionen, Block 1 mit den Abschnitten 1 und 2, Block 2 mit 3 bis 5.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich hänge den Hort-Fall aus 5.3 an die Wand: Die eine Fachperson lässt die Kinder ihre Angelegenheiten selbst regeln, der andere ermahnt, wird laut und droht. <span class="beleg">[Careum HKB A, S. 48]</span> Ihr beantwortet still meine Leitfrage, ohne Fachbegriffe.</p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Ich lege die fünf Abschnitte als Weg an die Wand, der Fall hängt daneben. Zu jedem Abschnitt gibt es eine Karte mit einer Frage an den Fall, die ihr am Ende des Abschnitts selbst ausfüllt.</p>
+<h4>Stolperstelle</h4>
+<p>Ihr speichert die fünf Themen vermutlich als fünf Kapitel ab. Der Fall soll sie zusammenhalten. Eine Lücke sage ich offen: Careums Kapitel zum humanistischen Menschenbild liegen nicht vor, Abschnitt 4 stützt sich auf deutsche Lehrmittel. <span class="beleg">[Careum HKB A, S. 45–46]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Eine Frage begleitet dich durch die ganze Lernsituation: Zwei Fachpersonen im Hort, die eine lässt die Kinder ihre Angelegenheiten selbst regeln, der andere ermahnt, wird laut und droht. <span class="beleg">[Careum HKB A, S. 48]</span> Welche Rechte der Kinder sind berührt, was heisst hier Würde, welches Bild vom Kind steckt dahinter, und welche eigene Haltung bemerkst du bei dir? Schreib am Anfang spontan einige Sätze. Am Ende beantwortest du dieselbe Frage nochmals mit Fachbegriffen und reflektierst im Vergleich: Was ist neu, was geblieben?</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 2. Lehrjahr</p>
+<p class="stimme">«Wenn mir jemand sagt, Haltung sei das Wichtigste, will ich wissen, was ich am Montag in der Wohngruppe damit anfange.»</p>
+<h4>Was mich packt</h4>
+<p>Gestern wollte ein Bewohner seinen Einkaufszettel selbst schreiben. Eine Kollegin sagte freundlich: «Lass, das mache ich schnell.» Er hat nichts gesagt, und ich auch nicht. Dass es in dieser Lernsituation darum geht, gesellschaftliche Haltungen gegenüber betreuten Personen zu reflektieren und die eigene Haltung weiterzuentwickeln, trifft genau diese Stelle. <span class="beleg">[Careum HKB A, S. 49]</span> Ich merke, dass ich nicht weiss, was ich in dem Moment hätte sagen sollen, und ich möchte es wissen.</p>
+<h4>Wo ich aussteige</h4>
+<p>Es sind fünf Unterrichtsthemen hintereinander: Menschenrechte der UN-Konvention, Menschenwürde, Menschenbilder im Wandel der Zeit, humanistisches Menschenbild, aktuelle Haltungen. <span class="beleg">[SLP vG Kind, S. 58; SLP vG MmB, S. 59]</span> Menschenwürde ist für mich ein grosses Wort, das man im Alltag nicht anfassen kann. Bei den Menschenbildern denke ich an Geschichte und frage mich, wozu. Meine Kollegin meint es ausserdem gut, und ich will nicht plötzlich die sein, die ihr etwas vorwirft.</p>
+<h4>Meine Frage</h4>
+<p>Hängen diese fünf Themen an einem Faden, oder sind es fünf Themen in einer Reihe? Und warum kommt die Haltung zuletzt, wenn ich genau sie in der Wohngruppe brauche?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte eine Situation wie die mit dem Einkaufszettel in den Mittelpunkt stellen und sie durch die fünf Themen ziehen. Am Schluss will ich mit meinen eigenen Worten sagen können, was dahintersteckt und was ich anders machen würde.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du willst etwas, das am Montag trägt, und du willst die Kollegin nicht anklagen, die es gut meint. Der Faden ist die Haltung: Für sie sind unter anderem die Menschenwürde und das humanistische Menschenbild wichtig. <span class="beleg">[Careum HKB A, S. 45]</span> Wir schauen auf die Situation, nicht auf eine Kollegin, und niemand muss etwas Persönliches erzählen.</p>
+<h4>Ablauf und Reihenfolge</h4>
+<p>Die Reihenfolge ist die der Seite: 1 Menschenrechte, 2 Menschenwürde, 3 Menschenbilder, 4 humanistisches Menschenbild, 5 Haltungen. 1 und 2 arbeiten beide mit der AEMR: Die BRK übernimmt deren Grundrechte für Menschen mit Beeinträchtigung. <span class="beleg">[Careum HKB A, S. 52]</span> 3 und 4 bauen das Menschenbild auf, aus dem sich die Haltung in deiner Berufsrolle ableitet. <span class="beleg">[Careum HKB A, S. 46]</span> 5 ist das einzige Ziel, das nur auf K5 steht, und es braucht alles davor: Die Leitfragen in 5.5 fragen nach den Normen, Werten und Prinzipien hinter deinem Verhalten. <span class="beleg">[Careum HKB A, S. 48]</span> Mein Vorschlag, nicht verbindlich: zwei Blöcke zu vier Lektionen, Block 1 mit den Abschnitten 1 und 2, Block 2 mit 3 bis 5.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich schreibe «Das kannst du nicht» an die Wand. Ihr stellt euch auf einer Linie auf, von «im Betrieb schon gehört» bis «noch nie». Wer will, nennt eine Szene ohne Namen. Danach beantwortet ihr still meine Leitfrage, ohne Fachbegriffe.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Wir ziehen den Fall aus 5.3 durch die fünf Abschnitte: «Sonderwelten» und der Satz «Das kannst du nicht». <span class="beleg">[HEP 2, S. 374–375]</span> Pro Abschnitt gibt es eine Karte mit einer Frage an den Fall.</p>
+<h4>Stolperstelle</h4>
+<p>«Sonderwelten» steht in einem deutschen Lehrmittel. Wie weit das auf eure Betriebe passt, sagen die Quellen nicht. <span class="beleg">[HEP 2, S. 374–375]</span> In Abschnitt 5 steht auch die heikle Frage, was ein «lebenswertes» Leben sei. Menschenrechtlich ist sie eindeutig beantwortet: Jeder Mensch hat das unveräusserliche Recht auf Leben. <span class="beleg">[Careum HKB A, S. 47–48]</span> Wie du persönlich dazu stehst, musst du niemandem sagen.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Eine Frage begleitet dich durch die ganze Lernsituation: Das Leben vieler Menschen mit Behinderung findet noch in «Sonderwelten» statt, und wer immer hört «Das kannst du nicht», glaubt irgendwann selbst nicht mehr an sich. <span class="beleg">[HEP 2, S. 374–375]</span> Welche Rechte sind berührt, was heisst hier Würde, welches Menschenbild steckt hinter diesem Satz, und welche eigene Haltung bemerkst du bei dir? Schreib am Anfang spontan einige Sätze. Am Ende beantwortest du dieselbe Frage nochmals mit Fachbegriffen und reflektierst im Vergleich: Was ist neu, was geblieben?</p>
+</section></div></div></div>
+
+<!-- ===================================================== 3 ABSCHNITT 1 -->
+<h2 id="a">1 · Berufsrelevante Menschenrechte der UN-Konvention</h2>
+
+<h3 id="a1">1.1 Wie die Menschenrechte entstanden sind</h3>
+<p>Bis zum Zweiten Weltkrieg waren Menschenrechte und ihr Schutz fast ausschliesslich Sache der nationalen Verfassungen der einzelnen Staaten; nur ganz wenige Fragen wurden international geregelt. Die Schrecken des Zweiten Weltkriegs und des Nationalsozialismus führten zu einer Wende: Man wollte Bedingungen schaffen, unter denen alle Menschen in Frieden und frei von Furcht und Mangel leben können. 1945 wurden die <strong>Vereinten Nationen</strong> (UNO) als Staatengemeinschaft gegründet. Ihre Charta gibt allen Mitgliedstaaten den Auftrag, die Achtung und Verwirklichung der Menschen- und Grundrechte für jedermann zu fördern. <span class="beleg">[Careum HKB A, S. 49]</span></p>
+<p>Im Dezember 1948 verabschiedete die Generalversammlung der UNO die <strong>Allgemeine Erklärung der Menschenrechte (AEMR)</strong> — der Durchbruch der Idee der Menschenrechte. Vorausgegangen war ein zweijähriger Diskussionsprozess in der neu gegründeten UNO-Menschenrechtskommission, in der Vertreterinnen und Vertreter von 18 Staaten unter dem Vorsitz der US-Amerikanerin Eleanor Roosevelt tagten. 48 Staaten stimmten für die Erklärung, 8 enthielten sich der Stimme. Die AEMR ist das bekannteste Menschenrechtsdokument und die Grundlage des internationalen Menschenrechtsschutzes. <span class="beleg">[Careum HKB A, S. 49]</span></p>
+<p>Für Kinder verlief die Geschichte anders: Rechte für Kinder gab es jahrhundertelang gar nicht — Kinder galten als Eigentum der Eltern und waren deren Verfügungsgewalt unterstellt. Erstmals wurden Kinderrechte als Schutzrechte gefordert, als im Zeitalter der europäischen Industrialisierung massenhaft Kinder in Fabriken arbeiteten. Eine erste internationale Erklärung, die Genfer Erklärung des Völkerbundes von 1924, befasste sich mit der Versorgung und dem Schutz von Kindern nach dem Ersten Weltkrieg. <span class="beleg">[EuE 1, S. 324]</span></p>
+
+<h3 id="a2">1.2 Die Allgemeine Erklärung der Menschenrechte (AEMR)</h3>
+<p>Die AEMR gründet auf bürgerlichen, politischen und sozialen Rechten, die den Menschen um ihrer Würde willen zukommen sollen. In <strong>30 Artikeln</strong> garantiert sie vier Gruppen von Rechten: <span class="beleg">[Careum HKB A, S. 49]</span></p>
+<div class="two">
+  <div><h4>Schutz der menschlichen Person</h4><p>Recht auf Leben, Verbot der Sklaverei, Verbot der Folter, Verbot willkürlicher Festnahme und Haft usw.</p></div>
+  <div><h4>Verfahrensrechte</h4><p>Anspruch auf wirksame Rechtsbehelfe usw.</p></div>
+  <div><h4>Klassische Freiheitsrechte</h4><p>Meinungsfreiheit, Religionsfreiheit, Eigentumsgarantie, Ehefreiheit</p></div>
+  <div><h4>Wirtschaftliche, soziale und kulturelle Rechte</h4><p>Recht auf soziale Sicherheit, Recht auf Arbeit, Recht auf Nahrung und Gesundheit, Recht auf Bildung usw.</p></div>
+</div>
+<p class="small">Die vier Rechtegruppen nach Careum HKB A, S. 49.</p>
+<div class="box law">
+  <span class="t">Die zwei Grundartikel</span>
+  Alle Menschen sind frei und an Würde und Rechten gleich geboren (AEMR Art. 1). Die Rechte gelten für alle Menschen ungeachtet ihrer Rasse, ihres Geschlechts oder ihrer Nationalität (AEMR Art. 2). <span class="beleg">[Careum HKB A, S. 49]</span>
+</div>
+<p>Juristisch ist die AEMR nicht verbindlich. Moralisch und politisch hat sie dennoch weltweit ein grosses Gewicht. <span class="beleg">[Careum HKB A, S. 49]</span></p>
+
+<h3 id="a3">1.3 Rechte von Kindern: die UN-Kinderrechtskonvention</h3>
+<p>1989 wurde die <strong>UN-Kinderrechtskonvention (UN-KRK)</strong> verabschiedet, um für alle Kinder der Welt eine Basis für gleiche Rechte zu schaffen. Sie umfasst <strong>54 Artikel</strong> zu Überleben und Entwicklung sowie zum Kindesschutz und beruht auf drei Prinzipien: Nichtdiskriminierung, Kindeswohl und Anhörung von Kindern. Als völkerrechtliches Übereinkommen verpflichtet sie die Staaten, gesetzliche Massnahmen zum Schutz der Kinderrechte zu treffen. <span class="beleg">[Careum HKB A, S. 49–50]</span></p>
+<p>Die Konvention hat die Sicht auf Kinder weltweit verändert: Erstmals wurde Kindheit als geschützter Lebensabschnitt definiert. Kinder gelten seither als eigenständige Individuen, die eine eigene Meinung haben und sie äussern dürfen. So haben Kinder ein altersangemessenes Anhörungs- und Mitspracherecht bei Entscheidungen, die ihre Zukunft betreffen — etwa bei einer Scheidung der Eltern oder einem Heimeintritt. Bei allen Massnahmen, die Kinder betreffen, ist das Wohl des Kindes vorrangig zu berücksichtigen. Das gilt auch für Fachpersonen Betreuung, die mit Kindern arbeiten. <span class="beleg">[Careum HKB A, S. 50]</span></p>
+<p>Das deutsche Lehrmittel beschreibt denselben Perspektivwechsel: Die Konvention bündelt alle sozialen, politischen, kulturellen und wirtschaftlichen Aspekte des Kindeswohls und erhebt sie in den Rang dringlicher staatlicher Aufgaben. Wer professionell mit Kindern arbeitet, übernimmt damit eine Anwaltsfunktion für deren Wohl. <span class="beleg">[EuE 1, S. 324]</span></p>
+<div class="box law">
+  <span class="t">Art. 3 UN-Kinderrechtskonvention (Auszug)</span>
+  Bei allen Massnahmen, die Kinder betreffen — ob von öffentlichen oder privaten Einrichtungen der sozialen Fürsorge, Gerichten, Verwaltungsbehörden oder Gesetzgebungsorganen — ist das Wohl des Kindes ein Gesichtspunkt, der vorrangig zu berücksichtigen ist. <span class="beleg">[EuE 1, S. 324]</span>
+</div>
+
+<h4>Drei Bereiche, vier besonders wichtige Rechte</h4>
+<p>Die UN-KRK betrifft drei Bereiche: das Recht auf Schutz, das Recht auf Förderung und das Recht auf Mitwirkung. Vier einzelne Rechte haben besondere Bedeutung: <span class="beleg">[Careum HKB A, S. 50]</span></p>
+<ol class="kette">
+  <li><strong>Diskriminierungsverbot</strong> (Artikel 2)</li>
+  <li><strong>Vorrang des Kindeswohls</strong> (Artikel 3)</li>
+  <li><strong>Recht auf Leben, Überleben und persönliche Entwicklung</strong> (Artikel 6)</li>
+  <li><strong>Recht auf Mitwirkung</strong> (Artikel 12)</li>
+</ol>
+
+<h4>Die für die Betreuungsarbeit wichtigsten Artikel</h4>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Gruppe</th><th>Artikel UNO-KRK</th><th>Inhalt (Kurzfassung)</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="5">Allgemeine Kinderrechte</td><td>Art. 2 Diskriminierungsverbot</td><td>Alle Rechte werden ausnahmslos jedem Kind gewährt; der Staat schützt das Kind gegen alle Formen der Diskriminierung.</td></tr>
+    <tr><td>Art. 3 Höheres Interesse des Kindes</td><td>Bei jeder Entscheidung, die das Kind betrifft, steht sein höheres Interesse im Vordergrund; der Staat sichert Schutz und Fürsorge, falls Eltern oder andere Verantwortliche ihren Pflichten nicht nachkommen.</td></tr>
+    <tr><td>Art. 5 Führung des Kindes</td><td>Der Staat achtet die Rechte und die Verantwortung der Eltern und des weiteren Familienkreises, das Kind gemäss der Entwicklung seiner Fähigkeiten zu leiten.</td></tr>
+    <tr><td>Art. 6 Überleben</td><td>Angeborenes Recht auf Leben; der Staat sichert Überleben und Entwicklung des Kindes.</td></tr>
+    <tr><td>Art. 12 Meinungsäusserung</td><td>Das Kind darf seine Meinung zu allen Fragen und Verfahren äussern, die seine Person betreffen, und kann sicher sein, dass sie mitberücksichtigt wird.</td></tr>
+    <tr><td rowspan="7">Schutz und Förderung</td><td>Art. 7 Name und Staatsangehörigkeit</td><td>Recht auf einen Namen und eine Staatsangehörigkeit.</td></tr>
+    <tr><td>Art. 16 Schutz des Privatlebens</td><td>Keine Einmischung ins Privatleben, in Familie, Wohnung oder Briefwechsel; Schutz vor widerrechtlichen Angriffen auf die Ehre.</td></tr>
+    <tr><td>Art. 22 Flüchtlingskinder</td><td>Besonderer Schutz für Kinder, die als Flüchtling anerkannt sind oder um den Status nachsuchen.</td></tr>
+    <tr><td>Art. 23 Kinder mit einer Behinderung</td><td>Recht auf besondere Pflege sowie eine angemessene Erziehung und Schulung, die Selbstständigkeit und aktive Teilnahme am Gemeinschaftsleben fördern.</td></tr>
+    <tr><td>Art. 28 Bildung</td><td>Recht auf Bildung; der Staat bietet mindestens die Grundschule obligatorisch und unentgeltlich an. Die Disziplin in der Schule muss der Menschenwürde des Kindes entsprechen.</td></tr>
+    <tr><td>Art. 31 Freizeit, Spiel, Kultur</td><td>Recht auf Freizeit, Spiel und Beteiligung am kulturellen und künstlerischen Leben.</td></tr>
+    <tr><td>Art. 32–37 Schutz vor Ausbeutung</td><td>Der Staat schützt jedes Kind vor Gewalt, Drogen und jeder Form der Ausbeutung (sexuelle Ausbeutung, Kinderarbeit, Kinderhandel, Ausbeutung im virtuellen Raum).</td></tr>
+    <tr><td>Stärkung der Familie</td><td>Art. 8–10</td><td>Recht, bei den Eltern zu leben (ausser sie handeln gegen die Interessen des Kindes), auf Familienzusammenführung und auf regelmässigen persönlichen Kontakt zu beiden Elternteilen, auch wenn sie getrennt oder in einem anderen Land leben.</td></tr>
+    <tr><td>Schutz vor Fremdplatzierung</td><td>Art. 20 Schutz ausserhalb des Familienkreises</td><td>Der Staat gewährt dem Kind, das nicht in seiner Familie lebt, besonderen Schutz — auch in einer Pflegefamilie oder einer geeigneten Institution, unter Rücksicht auf seine kulturelle Herkunft.</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small">Nach Tab. 7, Careum HKB A, S. 50–51.</p>
+
+<h4>Die zehn Grundrechte nach UNICEF</h4>
+<p>Das Kinderhilfswerk der Vereinten Nationen, UNICEF, hat die Bestimmungen der Konvention in zehn Grundrechten zusammengefasst. Beide deutschen Lehrmittel führen dieselbe Liste: <span class="beleg">[EuE 1, S. 323; Kinderpflege, S. 48]</span></p>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Nr.</th><th>Grundrecht</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Recht auf Gleichbehandlung und Schutz vor Diskriminierung, unabhängig von Religion, Herkunft und Geschlecht</td></tr>
+    <tr><td>2</td><td>Recht auf einen Namen und eine Staatszugehörigkeit</td></tr>
+    <tr><td>3</td><td>Recht auf Gesundheit</td></tr>
+    <tr><td>4</td><td>Recht auf Bildung und Ausbildung</td></tr>
+    <tr><td>5</td><td>Recht auf Freizeit, Spiel und Erholung</td></tr>
+    <tr><td>6</td><td>Recht, sich zu informieren, sich mitzuteilen, gehört zu werden und sich zu versammeln</td></tr>
+    <tr><td>7</td><td>Recht auf eine Privatsphäre und eine gewaltfreie Erziehung im Sinne der Gleichberechtigung und des Friedens</td></tr>
+    <tr><td>8</td><td>Recht auf sofortige Hilfe in Katastrophen und Notlagen und auf Schutz vor Grausamkeit, Vernachlässigung, Ausnutzung und Verfolgung</td></tr>
+    <tr><td>9</td><td>Recht auf eine Familie, elterliche Fürsorge und ein sicheres Zuhause</td></tr>
+    <tr><td>10</td><td>Recht auf Betreuung bei Behinderung</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small">Nach EuE 1, S. 323, und Kinderpflege, S. 48.</p>
+
+<h4>Umsetzung und Kontrolle</h4>
+<p>Weltweit gibt es Erfolge bei der Umsetzung, doch in vielen Staaten sind Versorgung, Förderung und Schutz von Kindern noch unzureichend. Die Sanktionsmöglichkeiten sind begrenzt: Erst seit 2012 sind Individualbeschwerden bei Verstössen möglich, und erst wenn alle innerstaatlichen Rechtswege ausgeschöpft sind, kann sich ein Kind an das zuständige UN-Gremium wenden. Als Druckmittel wirkt, dass die Unterzeichnerstaaten alle fünf Jahre dem UN-Ausschuss für die Rechte des Kindes über die Umsetzung berichten müssen (<strong>Monitoring</strong>). Zusatzprotokolle richten sich gegen die Beteiligung von Kindern an bewaffneten Konflikten, den Verkauf von Kindern und ihre sexuelle Ausbeutung. <span class="beleg">[EuE 1, S. 323–324]</span></p>
+<div class="box warn">
+  <p><strong>Die Quellen widersprechen sich beim Ratifizierungsstand.</strong> Careum schreibt, alle UNO-Mitgliedsstaaten mit Ausnahme der USA hätten die Konvention ratifiziert <span class="beleg">[Careum HKB A, S. 50]</span>. Das deutsche Lehrmittel nennt Somalia, den Südsudan und die USA als Staaten ohne Ratifizierung <span class="beleg">[EuE 1, S. 323]</span>. Welcher Stand heute gilt, lässt sich aus den Quellen nicht entscheiden.</p>
+</div>
+<p><span class="tag de">DE</span>Das deutsche Lehrmittel beschreibt zudem die National Coalition Deutschland, die Handlungsfelder für Kinderrechte benannt hat und sich für die Aufnahme von Kinderrechten in das deutsche Grundgesetz einsetzt; die Kinderpflege hält fest, die Konvention sei auch von der Bundesrepublik Deutschland ratifiziert worden. Diese Stellen bilden deutsches Recht ab. <span class="beleg">[EuE 1, S. 325; Kinderpflege, S. 48]</span></p>
+
+<h3 id="a4">1.4 Rechte von Menschen mit Beeinträchtigung: die UN-Behindertenrechtskonvention</h3>
+<p>Am 13. Dezember 2006 verabschiedete die UNO-Generalversammlung in New York das Übereinkommen über die Rechte von Menschen mit Beeinträchtigungen, die <strong>Behindertenrechtskonvention (BRK)</strong>. Sie trat am 3. Mai 2008 in Kraft und zählt 175 Vertragsstaaten. Die BRK gilt als das erste internationale Spezialübereinkommen, das die Rechte von Menschen mit Beeinträchtigung festhält. <span class="beleg">[Careum HKB A, S. 52]</span></p>
+<p><span class="tag ch">CH</span>Am 15. April 2014 ratifizierte die Schweiz die BRK; am 15. Mai 2014 trat sie für die Schweiz in Kraft. Damit verpflichtet sich die Schweiz, Hindernisse zu beheben, mit denen Menschen mit Beeinträchtigung konfrontiert sind, sie gegen Diskriminierung zu schützen und ihre Integration und Gleichstellung in der Gesellschaft zu fördern. <span class="beleg">[Careum HKB A, S. 52]</span></p>
+<div class="box def">
+  <p><strong>Definition.</strong> «Die Konvention anerkennt die Behinderung als Teil der menschlichen Vielfalt und distanziert sich von einem auf dem Begriff des Makels beruhenden Konzepts von Behinderung» (Schweizerische Eidgenossenschaft, EDI). <span class="beleg">[Careum HKB A, S. 52]</span></p>
+</div>
+<p>Die BRK schafft keine Sonderrechte. Sie übernimmt die Grundrechte der AEMR und überträgt sie auf die besondere Situation von Menschen mit Beeinträchtigung. Ziel ist, dass Menschen mit Beeinträchtigung ihre Rechte genauso selbstverständlich ausüben können wie Menschen ohne Beeinträchtigung; deshalb enthält sie Bürgerrechte sowie politische, wirtschaftliche, gesellschaftliche und kulturelle Rechte. In der Betreuungsarbeit dient die BRK als <strong>Orientierungsrahmen</strong>: Sie zeigt, welche Aspekte im Umgang mit den betreuten Personen gewährleistet sein müssen, um Gewalt und Diskriminierung vorzubeugen. Für die Fachperson Betreuung ist vor allem die Umsetzung auf der institutionellen und der individuellen Ebene bedeutsam. <span class="beleg">[Careum HKB A, S. 52]</span></p>
+<p>Das deutsche Lehrmittel nennt den Kern der Konvention einen <strong>Paradigmenwechsel</strong>: Im Mittelpunkt steht nicht länger eine bevormundende, oft ausgrenzende Fürsorge, sondern die gleichberechtigte Teilhabe. Die BRK konkretisiert die Menschenrechte für die Lebenssituation von Menschen mit Behinderung, um ihnen gleichberechtigte Teilhabe und inklusive Bildung zu ermöglichen. <span class="beleg">[EuE 1, S. 448]</span></p>
+
+<h4>Die Grundsätze der Konvention (Artikel 3)</h4>
+<ul class="merk">
+  <li>Achtung der dem Menschen innewohnenden Würde, seiner individuellen Autonomie — einschliesslich der Freiheit, eigene Entscheidungen zu treffen — und seiner Unabhängigkeit</li>
+  <li>Nichtdiskriminierung</li>
+  <li>volle und wirksame Teilhabe an der Gesellschaft und Einbeziehung in die Gesellschaft</li>
+  <li>Achtung vor der Unterschiedlichkeit von Menschen mit Behinderung und Akzeptanz dieser Menschen als Teil der menschlichen Vielfalt</li>
+  <li>Chancengleichheit</li>
+  <li>Zugänglichkeit</li>
+  <li>Gleichberechtigung von Mann und Frau</li>
+  <li>Achtung vor den sich entwickelnden Fähigkeiten von Kindern mit Beeinträchtigung und ihres Rechts auf Wahrung ihrer Identität</li>
+</ul>
+<p class="small">Nach EuE 1, S. 448.</p>
+
+<h4>Artikel, die für die Betreuungsarbeit relevant sind</h4>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Artikel BRK</th><th>Inhalt (Kurzfassung)</th></tr></thead>
+  <tbody>
+    <tr><td>Art. 5 Gleichberechtigung und Nichtdiskriminierung</td><td>Alle Menschen sind vor dem Gesetz gleich; jede Diskriminierung aufgrund von Beeinträchtigung ist verboten, die Vertragsstaaten garantieren wirksamen rechtlichen Schutz.</td></tr>
+    <tr><td>Art. 6 Frauen mit Behinderungen</td><td>Frauen und Mädchen mit Beeinträchtigung sind mehrfacher Diskriminierung ausgesetzt; Massnahmen sichern ihre volle Entfaltung, Förderung und Autonomie.</td></tr>
+    <tr><td>Art. 7 Kinder mit Behinderungen</td><td>Gleichberechtigter Genuss aller Menschenrechte; Recht, die eigene Meinung in allen sie betreffenden Angelegenheiten frei zu äussern.</td></tr>
+    <tr><td>Art. 9 Zugänglichkeit (Barrierefreiheit)</td><td>Gleichberechtigter Zugang zur physischen Umwelt, zu Transportmitteln, Information und Kommunikation einschliesslich Informations- und Kommunikationstechnologien.</td></tr>
+    <tr><td>Art. 10 Recht auf Leben</td><td>Jeder Mensch hat ein angeborenes Recht auf Leben; es wird auch Menschen mit Beeinträchtigung gleichberechtigt gewährleistet.</td></tr>
+    <tr><td>Art. 12 Gleiche Anerkennung vor dem Recht</td><td>Menschen mit Beeinträchtigung sind in allen Lebensbereichen als gleichberechtigt anzuerkennen, auch in Bezug auf ihre Rechts- und Handlungsfähigkeit.</td></tr>
+    <tr><td>Art. 21 Meinungsäusserung, Meinungsfreiheit, Zugang zu Informationen</td><td>Gleichberechtigtes Recht auf freie Meinungsäusserung und Meinungsfreiheit.</td></tr>
+    <tr><td>Art. 24 Bildung</td><td>Recht auf Bildung; ein integratives Bildungssystem wird gewährleistet.</td></tr>
+    <tr><td>Art. 27 Arbeit und Beschäftigung</td><td>Gleiches Recht auf Arbeit wie andere, einschliesslich der Möglichkeit, den Lebensunterhalt durch Arbeit zu verdienen.</td></tr>
+    <tr><td>Art. 29 Teilhabe am politischen und öffentlichen Leben</td><td>Gleiche politische Rechte, gleichberechtigt auszuüben.</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small">Nach Tab. 8, Careum HKB A, S. 53.</p>
+<p>Niemand kann alle relevanten Artikel auswendig wissen. Es lohnt sich aber, einmal mit offenen Augen für Hindernisse, Treppen und Unzugänglichkeiten — also unter dem Aspekt der <strong>Barrierefreiheit</strong> — durch die eigene Institution zu gehen und zu fragen, ob sie für alle betreuten Personen verwirklicht ist, und wenn nicht, woran das liegt. Menschenrechtlich denken und handeln orientiert sich für Fachpersonen Betreuung immer am konkreten Fall und an der konkreten Situation. <span class="beleg">[Careum HKB A, S. 54]</span></p>
+<p>Aus Sicht der Heilerziehungspflege manifestieren sich in der BRK beispielhaft drei ethische Normen und Werte: die Achtung der Verschiedenheit und der Würde jedes Menschen, die Geltung der allgemeinen Menschenrechte — für Menschen mit Behinderung besonders ausgestaltet als Schutz vor Diskriminierung, Benachteiligung und Ausbeutung — und die Gerechtigkeit als Grundlage. Die Konvention verlangt, dass die Staaten darauf hinwirken, dass Menschen mit Behinderung in gleicher Weise Anerkennung finden, und dass sie das Bewusstsein für deren Beitrag zur Gesellschaft schärfen. <span class="beleg">[HEP 1, S. 103–104]</span> <span class="tag n">Soll-Literatur MmB</span></p>
+<div class="box warn">
+  <p><span class="tag de">DE</span><strong>Deutsche Rechtsstellen und ein Widerspruch.</strong> Das deutsche Lehrmittel schreibt, die BRK sei «von 18 Staaten und der EU» abgeschlossen worden, sie gelte in Deutschland seit 2009 und habe zum Bundesteilhabegesetz und zur Änderung der Schulgesetze der Länder geführt <span class="beleg">[EuE 1, S. 448]</span>. HEP 2 beschreibt die deutsche Rechtsentwicklung: Benachteiligungsverbot im Grundgesetz (1994, Art. 3 Abs. 3 Satz 2), SGB IX «Rehabilitation und Teilhabe behinderter Menschen» (2002), Ratifizierung 2009, erste Staatenberichtsprüfung durch den UN-Fachausschuss 2015 mit dem Ergebnis, dass Deutschland von einer Umsetzung noch weit entfernt sei <span class="beleg">[HEP 2, S. 374]</span>. Die Zahl «18 Staaten» widerspricht den 175 Vertragsstaaten bei Careum <span class="beleg">[Careum HKB A, S. 52]</span>; für die Schweiz gilt die Careum-Darstellung.</p>
+</div>
+
+<h3 id="a5">1.5 Rechte von Menschen im Alter</h3>
+<p>Den Menschenrechten im Alter wurde bisher wenig Beachtung geschenkt. Altersdiskriminierung ist häufig mit weiteren Diskriminierungsmotiven verbunden — Geschlecht, gesellschaftlicher Status, Rasse oder Gesundheitszustand. Weil heute sehr viele Menschen ein hohes Alter erreichen, gewinnt die Frage nach der besonderen Schutzbedürftigkeit im Alter an Bedeutung. Im 20. Jahrhundert wurden Schutzmassnahmen eingeführt: die staatliche finanzielle Vorsorge (Altersrente), die gesetzliche Festlegung des Austritts aus dem Erwerbsleben (Pensionierung) und weitere Versicherungsformen. Neuere Herausforderungen betreffen die Pflege und die Frage, wie Menschen im Alter ein selbstbestimmtes Leben führen können; für ein Leben in Würde müssen sie vor Gewalt, Missbrauch und Vereinsamung geschützt werden. <span class="beleg">[Careum HKB A, S. 54]</span></p>
+<p>Klassische Schutzmassnahmen können auch diskriminierend wirken. Das Lehrmittel nennt als Beispiel das Pensionsalter von 65 Jahren bei Männern und «aktuell» 64 Jahren bei Frauen (Stand des Lehrmittels 2021): Es kann sich hinderlich auf noch berufstätige Menschen auswirken, etwa wenn Menschen ab 50 von Weiterbildungen ausgeschlossen oder bei Beförderungen übergangen werden. Bei Entscheiden über Schutzmassnahmen ist deshalb immer zu bedenken, welche diskriminierenden Folgen sie haben können. <span class="beleg">[Careum HKB A, S. 55]</span></p>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Menschenrecht</th><th>Inhalt (Kurzfassung)</th></tr></thead>
+  <tbody>
+    <tr><td>Recht auf angemessene Unterkunft</td><td>Menschenwürdige Unterkunft, Schutz vor Kälte oder Feuchtigkeit, Zugang zu Energie, Trinkwasser und sanitären Einrichtungen.</td></tr>
+    <tr><td>Recht auf soziale Sicherheit</td><td>Angemessener Lebensstandard im Bedarfsfall; dafür braucht es Sozialversicherungen und Sozialhilfe.</td></tr>
+    <tr><td>Recht auf Nichtdiskriminierung</td><td>Gleichbehandlung vor staatlichen Organen; eine Ungleichbehandlung liegt vor, wenn eine Person wegen ihrer Zugehörigkeit zu einer Gruppe oder Ethnie benachteiligt oder herabgesetzt wird.</td></tr>
+    <tr><td>Recht auf einen möglichst hohen Gesundheitsstandard</td><td>Erreichbares Höchstmass an körperlicher und psychischer Gesundheit, einschliesslich Zugang zu Gesundheitseinrichtungen.</td></tr>
+    <tr><td>Recht auf Schutz vor Vernachlässigung und Missbrauch</td><td>Schutz vor Folter, unmenschlicher und erniedrigender Behandlung oder Bestrafung.</td></tr>
+    <tr><td>Recht auf volle und aktive Partizipation</td><td>Teilnahme am kulturellen Leben; Kunstfreiheit.</td></tr>
+    <tr><td>Recht auf volle und effektive Selbstbestimmung</td><td>Schutz der Privatsphäre: keine staatliche Überwachung im Privaten, Achtung zwischenmenschlicher Beziehungen, physische und psychische Integrität, Recht über den eigenen Körper, Datenschutz, Schutz der persönlichen Identität (Name, Kleidung, Haarschnitt), Recht, die eigene Herkunft zu kennen, Schutz des sozialen Ansehens, Schutz vor schädlichen Umwelteinflüssen.</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small">Nach Tab. 9, Careum HKB A, S. 55–56.</p>
+
+<div class="ebenen" data-sid="a"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 2. Lehrjahr</p>
+<p class="stimme">«Wenn ich für ein Kind eine Art Anwältin sein soll, muss ich zuerst wissen, was ihm überhaupt zusteht.»</p>
+<h4>Was mich packt</h4>
+<p>Dass Kinder jahrhundertelang als Eigentum der Eltern galten, hätte ich nicht gedacht. Schutzrechte wurden erst gefordert, als Kinder massenhaft in Fabriken arbeiteten. <span class="beleg">[EuE 1, S. 324]</span> Seit der Konvention gelten Kinder als eigenständige Individuen mit eigener Meinung, und ihr Wohl ist bei allen Massnahmen vorrangig zu berücksichtigen, auch für uns Fachpersonen. <span class="beleg">[Careum HKB A, S. 50]</span> Gestern im Hort wollte ein Mädchen nach der Schule nicht an den Hausaufgabentisch, sondern einfach spielen. Ich habe reflexartig gesagt: «Zuerst die Aufgaben.» Bei den zehn Grundrechten von UNICEF steht aber auch das Recht auf Freizeit, Spiel und Erholung. <span class="beleg">[EuE 1, S. 323; Kinderpflege, S. 48]</span> Seither frage ich mich, wer da gerade recht hatte.</p>
+<h4>Wo ich aussteige</h4>
+<p>Die Liste wird immer länger: drei Prinzipien, drei Bereiche, vier besonders wichtige Rechte, 54 Artikel. <span class="beleg">[Careum HKB A, S. 49–50]</span> Ich weiss nicht, was davon ich können muss. Dazu widersprechen sich die Bücher: Careum schreibt, alle UNO-Mitgliedsstaaten ausser den USA hätten ratifiziert <span class="beleg">[Careum HKB A, S. 50]</span>, das deutsche Lehrmittel nennt Somalia, den Südsudan und die USA <span class="beleg">[EuE 1, S. 323]</span>. Und Individualbeschwerden gibt es erst seit 2012, nachdem alle innerstaatlichen Rechtswege ausgeschöpft sind. <span class="beleg">[EuE 1, S. 323–324]</span> Ein Kind im Hort geht doch nicht vor ein UN-Gremium. Dann sind es für mich Rechte auf Papier.</p>
+<h4>Meine Frage</h4>
+<p>Was heisst es konkret, im Hort die Anwältin eines Kindes zu sein, wenn Hausaufgaben und Spielen beide zu seinem Wohl gehören? Und welche Angabe zu den Staaten soll ich mir merken?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An Szenen aus Hort und Kita, die ich einem Recht zuordnen darf, bevor ich Nummern lerne. Am Ende möchte ich einer Kollegin in wenigen Sätzen erklären können, wie es überhaupt zu den Kinderrechten kam.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du steigst bei der Länge der Liste aus und fragst, wer im Hort recht hatte. Das Lehrmittel gibt dir dafür keine Formel, sondern eine Haltung: Wer professionell mit Kindern arbeitet, übernimmt eine Anwaltsfunktion für deren Wohl <span class="beleg">[EuE 1, S. 324]</span>, und das Wohl des Kindes ist bei allen Massnahmen vorrangig zu berücksichtigen <span class="beleg">[Careum HKB A, S. 50]</span>. Ob in deiner Szene Aufgaben oder Spiel dem Kind besser dienen, entscheide ich nicht für dich.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich lege die zehn UNICEF-Grundrechte in Kurzform als Karten auf die Tische <span class="beleg">[EuE 1, S. 323; Kinderpflege, S. 48]</span>. Ihr schreibt auf gelbe Zettel je eine kurze Szene aus eurem Betrieb, ohne Namen, und legt sie zu der Karte, die euch passt. Noch keine Artikelnummern.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Danach legen wir die Entstehung als Zeitleiste auf den Boden: Genfer Erklärung 1924 <span class="beleg">[EuE 1, S. 324]</span>, AEMR 1948 <span class="beleg">[Careum HKB A, S. 49]</span>, UN-KRK 1989 <span class="beleg">[Careum HKB A, S. 49–50]</span>, Individualbeschwerde ab 2012 <span class="beleg">[EuE 1, S. 323–324]</span>. Zu zweit schreibt ihr zu jeder Jahreszahl einen Satz, was sich für Kinder änderte. Dann sortiert ihr eure Zettel in die drei Bereiche Schutz, Förderung und Mitwirkung <span class="beleg">[Careum HKB A, S. 50]</span>. Die Szene mit Hausaufgaben und Spiel spielen wir zu zweit als Rollenspiel: Eine ist das Kind, eine die Fachperson, die dessen Anhörungs- und Mitspracherecht ernst nimmt <span class="beleg">[Careum HKB A, S. 50]</span>.</p>
+<h4>Stolperstelle</h4>
+<p>Zwei Dinge sage ich offen. Beim Ratifizierungsstand widersprechen sich die Bücher, und welche Angabe heute gilt, lässt sich aus den Quellen nicht entscheiden. Ich ergänze sie nicht aus dem Gedächtnis. Zweitens: Die National Coalition, die Kinderrechte im Grundgesetz und die Ratifizierung durch die Bundesrepublik sind deutsches Recht, nicht Schweizer Regel. <span class="beleg">[EuE 1, S. 325; Kinderpflege, S. 48]</span> Eine Schweizer Entsprechung nennen die Quellen nicht. Den Volltext der AEMR und der BRK haben wir ebenfalls nicht.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «mithilfe der UN-Menschenrechtserklärung und der UN-Behindertenrechtskonvention die berufsrelevanten Menschenrechte identifizieren und die Entstehungsgeschichte der Menschenrechte in Bezug auf meinen Beruf überblickend erläutern» (K2). Deine Aufgabe: Wähle zwei Szenen aus deinem Alltag und benenne das Recht, um das es geht. Erläutere dann in drei, vier Sätzen, wie die Menschenrechte entstanden sind und weshalb der Weg für Kinder ein eigener war.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 2. Lehrjahr</p>
+<p class="stimme">«Rechte aufsagen kann ich bald, aber ich will sehen, wo sie bei uns in der Wohngruppe fehlen.»</p>
+<h4>Was mich packt</h4>
+<p>Dass die BRK keine Sonderrechte schafft, sondern die Grundrechte der AEMR auf die Situation von Menschen mit Beeinträchtigung überträgt, finde ich einleuchtend. <span class="beleg">[Careum HKB A, S. 52]</span> Das deutsche Lehrmittel nennt den Kern einen Paradigmenwechsel: weg von bevormundender, oft ausgrenzender Fürsorge, hin zu gleichberechtigter Teilhabe. <span class="beleg">[EuE 1, S. 448]</span> Bei uns höre ich manchmal: «Ich mache das schnell für ihn, sonst sind wir zu spät.» Gestern wollte ein Bewohner den Tisch selbst decken, es dauerte lange, und ich habe ihm die Teller aus der Hand genommen. Unter den Grundsätzen steht die Freiheit, eigene Entscheidungen zu treffen. <span class="beleg">[EuE 1, S. 448]</span> Da habe ich mich ertappt gefühlt.</p>
+<h4>Wo ich aussteige</h4>
+<p>Allein Artikel 3 hat acht Grundsätze, dazu kommt eine ganze Tabelle mit Artikeln, und das Lehrmittel sagt selbst, niemand könne alle relevanten Artikel auswendig wissen. <span class="beleg">[Careum HKB A, S. 54]</span> Was soll ich dann können? Bei den Zahlen verliere ich das Vertrauen: Careum nennt 175 Vertragsstaaten <span class="beleg">[Careum HKB A, S. 52]</span>, das deutsche Lehrmittel schreibt, die Konvention sei von 18 Staaten und der EU abgeschlossen worden <span class="beleg">[EuE 1, S. 448]</span>. Und ehrlich: Selbstbestimmung klingt gut, aber wenn ein Bewohner etwas will, das ihn gefährden könnte, bin ich verantwortlich. Wie passt das zusammen?</p>
+<h4>Meine Frage</h4>
+<p>Was darf ich als Fachperson im Alltag tun, wenn Selbstbestimmung und meine Verantwortung gegeneinanderstehen? Und welche Zahl zur BRK stimmt?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte zuerst durch ein Haus gehen, mit offenen Augen für Hindernisse, Treppen und Unzugänglichkeiten, wie es das Lehrmittel vorschlägt <span class="beleg">[Careum HKB A, S. 54]</span>, und erst danach die Artikel dazu bekommen. Ob ich über Mängel in meinem eigenen Betrieb vor der Klasse reden will, weiss ich allerdings noch nicht.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du nennst eine echte Spannung: Selbstbestimmung gegen Verantwortung. Im Fachtext steht dazu keine Regel, die sie auflöst, nur der Hinweis, dass menschenrechtliches Denken und Handeln sich immer am konkreten Fall und an der konkreten Situation orientiert <span class="beleg">[Careum HKB A, S. 54]</span>. Ich gebe zu, dass ich dir hier keine Vorgabe machen kann. Wir üben es an Fällen.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Standortlinie im Raum: «In meinem Betrieb können alle betreuten Personen nutzen, was sie nutzen möchten.» Ihr stellt euch zwischen «stimmt» und «stimmt nicht» und sagt in einem Satz, woran ihr das festmacht. Niemand muss einen Betrieb oder eine Person nennen, und wer nichts sagen mag, bleibt einfach stehen. Den Rundgang mit offenen Augen machen wir zuerst im Schulhaus, damit niemand etwas über den eigenen Betrieb preisgeben muss.</p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Auf acht Karten stehen die Grundsätze aus Artikel 3 <span class="beleg">[EuE 1, S. 448]</span>. Ihr ordnet die Beobachtungen vom Rundgang den Karten zu, eine Treppe etwa dem Grundsatz Zugänglichkeit. Dazu legen wir die Zeitleiste: AEMR 1948 <span class="beleg">[Careum HKB A, S. 49]</span>, BRK verabschiedet am 13. Dezember 2006 und in Kraft seit dem 3. Mai 2008 <span class="beleg">[Careum HKB A, S. 52]</span>, Ratifizierung der Schweiz 2014 <span class="beleg">[Careum HKB A, S. 52]</span>. In Zweiergesprächen lest ihr aus HEP 1 die drei ethischen Normen: Achtung der Verschiedenheit und Würde, allgemeine Menschenrechte, Gerechtigkeit <span class="beleg">[HEP 1, S. 103–104]</span>.</p>
+<h4>Stolperstelle</h4>
+<p>Bei den Vertragsstaaten widersprechen sich die Bücher, 175 bei Careum <span class="beleg">[Careum HKB A, S. 52]</span> und 18 Staaten und die EU im deutschen Lehrmittel <span class="beleg">[EuE 1, S. 448]</span>. Welche Angabe heute stimmt, lässt sich aus den Quellen nicht klären. Für die Schweiz gilt die Careum-Darstellung. Grundgesetz, SGB IX und die Ratifizierung 2009 sind deutsches Recht, nicht Schweizer Regel <span class="beleg">[HEP 2, S. 374]</span>. Den Volltext der BRK haben wir ausserdem nicht, nur die Auswahl von zehn Artikeln und die Grundsätze aus Artikel 3.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «mithilfe der UN-Menschenrechtserklärung und der UN-Behindertenrechtskonvention die berufsrelevanten Menschenrechte identifizieren und die Entstehungsgeschichte der Menschenrechte in Bezug auf meinen Beruf überblickend erläutern» (K2). Deine Aufgabe: Wähle zwei Beobachtungen vom Rundgang und ordne sie je einem Grundsatz oder Artikel der BRK zu. Erläutere dann in drei, vier Sätzen, wie es von der AEMR zur BRK kam und weshalb die BRK keine Sonderrechte schafft.</p>
+</section></div></div></div>
+
+<!-- ===================================================== 4 ABSCHNITT 2 -->
+<h2 id="b">2 · Konzept der Menschenwürde</h2>
+
+<h3 id="b1">2.1 Was Menschenwürde bedeutet</h3>
+<p>Die Achtung vor der <strong>Menschenwürde</strong> ist nicht nur ein moralisches Gebot, sondern auch eine rechtliche Forderung. Eine eindeutige, klare Definition gibt es nicht; es existieren verschiedene Deutungen. Zwei Bedeutungsinhalte gelten aber als unbestritten: <span class="beleg">[Careum HKB A, S. 36]</span></p>
+<div class="box def">
+  <p><strong>1.</strong> Ein Mensch darf nicht für die Ziele anderer missbraucht oder geopfert werden.<br>
+  <strong>2.</strong> Alle Menschen sind gleichwertig — unabhängig von ihren Fähigkeiten, Eigenschaften und Verdiensten. <span class="beleg">[Careum HKB A, S. 36]</span></p>
+</div>
+<div class="two">
+  <div>
+    <h4>Innewohnende (inhärente) Würde</h4>
+    <p>Jeder Mensch besitzt gemäss dem Prinzip der Menschenwürde eine wesensmässige Würde, die nicht errungen werden muss. Sie wohnt jedem Menschen inne. <span class="beleg">[Careum HKB A, S. 36]</span></p>
+  </div>
+  <div>
+    <h4>Abhängige (kontingente) Würde</h4>
+    <p>Diese Würde muss erworben werden und hängt von bestimmten Merkmalen und Eigenschaften ab: Stellung in der Gesellschaft, Prestige, Ansehen. Man kann sie verlieren — etwa wenn man den Arbeitsplatz und damit die gesellschaftliche Stellung verliert. <span class="beleg">[Careum HKB A, S. 36]</span></p>
+  </div>
+</div>
+<p>In der Betreuungsarbeit sind Fachpersonen Betreuung gefordert, die <strong>inhärente</strong> Würde der Menschen zu achten und zu wahren. So wird dem Würde- und Autonomieanspruch jedes Menschen Rechnung getragen. Auch die AEMR verankert diese Würde: Alle Menschen sind frei und an Würde und Rechten gleich geboren (Art. 1). <span class="beleg">[Careum HKB A, S. 36, 49]</span></p>
+
+<h3 id="b2">2.2 Würde des Menschen in der Gesellschaft: fünf Grundsätze</h3>
+<p>Das Handeln von Fachpersonen Betreuung gründet auf der Achtung der Würde, die jedem Menschen innewohnt; die Rechte der betreuten Personen, die sich daraus ableiten, werden in der Arbeit beachtet und umgesetzt. Fachpersonen Betreuung gestehen jedem Menschen — ungeachtet von Geschlecht, Rasse, Status und individuellen Besonderheiten — den gleichen Wert zu und respektieren die Grundwerte Gerechtigkeit, Gleichheit und Freiheit. Sie fordern bei den Verantwortlichen eine politische Ordnung, die alle Menschen als Gleiche berücksichtigt, und die bedingungslose Einlösung der Menschen- und Sozialrechte. Aus diesen Rechten leiten sich fünf Grundsätze ab: <span class="beleg">[Careum HKB A, S. 43]</span></p>
+<ol class="kette">
+  <li><strong>Gleichbehandlung</strong> — Alle Menschen haben Anspruch auf die Menschenrechte, unabhängig von Kultur, Glauben, Leistung, Verdienst, moralischem Verhalten oder davon, ob sie den Ansprüchen der Gesellschaft gerecht werden. <span class="beleg">[Careum HKB A, S. 43]</span></li>
+  <li><strong>Selbstbestimmung</strong> — Alle Menschen haben das Recht, im Hinblick auf ihr Wohlbefinden die eigene Wahl oder Entscheidung zu treffen, sofern sie sich selbst oder andere dabei nicht gefährden. Selbstbestimmung heisst, den eigenen Willen zu haben und selbst zu bestimmen, was man möchte. <span class="beleg">[Careum HKB A, S. 43]</span></li>
+  <li><strong>Partizipation</strong> — Alle Menschen haben das Recht, am gesellschaftlichen Leben teilzuhaben; das gilt im besonderen Masse für Menschen mit Beeinträchtigung, Kinder und Jugendliche sowie Menschen im Alter. Hilfeprozesse sind so zu gestalten, dass betreute Personen ihre Ziele und Wünsche durch Hilfe zur Selbsthilfe erreichen. <span class="beleg">[Careum HKB A, S. 43]</span></li>
+  <li><strong>Integration</strong> — Die physischen, psychischen, spirituellen, sozialen und kulturellen Bedürfnisse sollen integrativ berücksichtigt werden. Integration ist eine Form der Anerkennung: Neben der Liebe im privaten Umfeld und der rechtlichen Anerkennung im Staat erfahren die Betroffenen Wertschätzung und Solidarität in der Gesellschaft. Immer wieder sind Menschen mit Beeinträchtigung, Menschen im Alter sowie Kinder und Jugendliche im Alltag nur unzureichend integriert. <span class="beleg">[Careum HKB A, S. 43]</span></li>
+  <li><strong>Ermächtigung (Empowerment)</strong> — Alle Menschen, unabhängig vom Alter, sollen ermutigt und unterstützt werden, ihre Stärken zu entwickeln, damit sie zur Wahrung ihrer Rechte bemächtigt werden. <span class="beleg">[Careum HKB A, S. 44]</span></li>
+</ol>
+<p><strong>Empowerment</strong> bedeutet Selbstbefähigung und Selbstermächtigung. Die Fachperson Betreuung leistet Hilfe in Form von (päd)agogischem Begleiten; der Fokus liegt auf dem selbstbestimmten Handeln der betreuten Person, die ihr Ziel und den Weg dahin über weite Strecken selbst bestimmt. Aufgabe der Fachperson ist es, die betreuten Personen zu befähigen, Dinge selbst zu tun, Entscheidungen selbst zu treffen, eigene Bedürfnisse zu erkennen, auszudrücken und dafür einzustehen. Empowerment ist keine Methode, sondern ein Grundwert der Betreuung, mit vier ethischen Zielvorstellungen: <strong>Selbstbestimmung</strong> (Bedürfnisse und Wünsche erkennen und beachten), <strong>Partizipation</strong> (Betreuungsprozesse als Hilfe zur Selbsthilfe gestalten), <strong>Wohlbefinden</strong> (Nahrung, körperliche und emotionale Wärme, sinnvolle Beschäftigung, Zuwendung, Erfahrungen machen können, würdevoller Umgang) und <strong>Normalisierung</strong> (Anrecht auf möglichst normalisierte Lebensverhältnisse). <span class="beleg">[Careum HKB A, S. 44]</span></p>
+
+<h3 id="b3">2.3 Würde und Lebensrecht: die Sicht der Heilerziehungspflege</h3>
+<p>In der Heilerziehungspflege wird menschliches Leben in seiner Vielgestaltigkeit und in jeder Phase als wertvoll angesehen. Die Zugehörigkeit zur Spezies Mensch und die Entwicklungsmöglichkeiten als Mensch definieren die Schutzwürdigkeit menschlichen Lebens — es braucht keine zusätzlichen Kriterien. Zwischen Menschen mit und ohne Behinderung gibt es keinen qualitativen, nur einen graduellen Unterschied: Alle Menschen sind unfertig und verletzlich. Daraus folgt, dass das Lebensrecht nicht in Frage zu stellen ist; die Kategorie «lebenswert» ist keine, die eine Aussage über einen anderen ermöglicht. Die Autonomie aller Menschen ist in gleicher Weise zu achten, auch wenn sie sie nicht in gleicher Weise ausüben können. <span class="beleg">[HEP 1, S. 103]</span> <span class="tag n">Soll-Literatur MmB, fachrichtungsneutral</span></p>
+<p>Dass dieses Prinzip umkämpft ist, zeigt die Auseinandersetzung mit dem australischen Philosophen Peter Singer Ende der 1980er-Jahre: Er knüpfte das Lebensrecht daran, dass ein Mensch eigene Interessen und ein Bewusstsein von sich selbst hat, und postulierte Leben, das «nicht wert sei, gelebt zu werden», etwa bei schwerstbehinderten Neugeborenen oder Komapatienten. Seine Vortragsreise 1989 in Deutschland löste starken Protest aus, an dem die «Krüppelbewegung» — eine Initiative von Menschen mit Körperbehinderung gegen Entmündigung und Ausgrenzung — stark beteiligt war. <span class="beleg">[HEP 1, S. 102]</span> <span class="tag de">DE</span></p>
+<p>Careum greift dieselbe Frage auf: Rein menschenrechtlich scheint eindeutig, ob Menschen, die «anscheinend von keinem Nutzen für die Gesellschaft sind», leben dürfen — <strong>jeder Mensch hat das unveräusserliche Recht auf Leben</strong>. Dennoch entstand im Lauf der Geschichte eine Diskussion darüber, was oder wer lebenswert oder lebensunwert sei. <span class="beleg">[Careum HKB A, S. 47]</span> Auch die BRK hält in Artikel 10 fest, dass jeder Mensch ein angeborenes Recht auf Leben hat. <span class="beleg">[Careum HKB A, S. 53]</span></p>
+<div class="box merk">
+  <p><strong>Für die Praxis.</strong> Menschenwürde achten heisst konkret: die inhärente Würde jedes Menschen wahren <span class="beleg">[Careum HKB A, S. 36]</span>, die fünf Grundsätze im Alltag umsetzen <span class="beleg">[Careum HKB A, S. 43–44]</span> und in Grenzsituationen des Lebens das Recht auf Leben, die Achtung der Würde und den Respekt vor dem anderen ins Zentrum stellen <span class="beleg">[HEP 1, S. 104]</span>.</p>
+</div>
+
+<div class="ebenen" data-sid="b"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 2. Lehrjahr</p>
+<p class="stimme">«Ein Kind muss sich seine Würde nicht verdienen, aber bei uns wird manchmal so getan, als müsste es das.»</p>
+<h4>Was mich packt</h4>
+<p>Im Hort gibt es einen Jungen, den alle als den Schwierigen kennen. Beim Spielen wird er als Letzter gewählt, und wenn etwas kaputtgeht, heisst es sofort «typisch». Der Satz, dass die Würde jedem Menschen innewohnt und nicht errungen werden muss, hat mich getroffen. <span class="beleg">[Careum HKB A, S. 36]</span> Daneben gibt es eine Würde, die an Stellung und Ansehen hängt und die man verlieren kann. <span class="beleg">[Careum HKB A, S. 36]</span> Bei uns bekommt Ansehen vor allem, wer brav ist und gut mitkommt. Das ist mir vorher nie aufgefallen.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den fünf Grundsätzen: Gleichbehandlung, Selbstbestimmung, Partizipation, Integration, Empowerment. <span class="beleg">[Careum HKB A, S. 43–44]</span> Die Wörter laufen bei mir ineinander. Und bei der Gleichbehandlung steht, der Anspruch gelte unabhängig vom moralischen Verhalten. <span class="beleg">[Careum HKB A, S. 43]</span> Der Junge hat gestern ein anderes Kind geschlagen. Hat er jetzt denselben Anspruch wie das Kind, das er geschlagen hat? Das fühlt sich für mich falsch an, und gleichzeitig will ich nicht die sein, die ihm die Würde abspricht.</p>
+<h4>Meine Frage</h4>
+<p>Woran erkenne ich in einer ganz normalen Hortsituation, welcher Grundsatz gerade gemeint ist? Und was heisst Gleichbehandlung für den Jungen und für das Kind, das er geschlagen hat?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An kleinen Szenen aus Kita und Hort, die ich den Grundsätzen zuordne und begründe. Danach möchte ich eine eigene Szene so aufzeichnen, dass ich sie einer Kollegin erklären kann.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du stellst zwei Fragen: Wie halte ich die fünf Grundsätze im Alltag auseinander, und was gilt für den Jungen, der ein anderes Kind geschlagen hat? Der Fachtext sagt, alle Menschen hätten Anspruch auf die Menschenrechte, auch unabhängig von moralischem Verhalten. <span class="beleg">[Careum HKB A, S. 43]</span> Was daraus in deiner Hortsituation für das Verhalten folgt, beantwortet er an dieser Stelle nicht. Das erfinde ich nicht, wir suchen es an euren Beispielen. Wenn eine Szene zu nah an dir dran ist, wähl eine andere: Niemand muss von sich erzählen.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich schreibe zwei Sätze an die Tafel: «Sie leitet die Gruppe und ist im Quartier bekannt» und «Er ist ein Mensch». Bei welchem Satz kann man etwas verlieren? Dann hängt ihr Zettel auf: Wo hat diese Woche ein Kind Ansehen bekommen oder verloren? Erst jetzt benenne ich die beiden Arten von Würde, innewohnend und abhängig. <span class="beleg">[Careum HKB A, S. 36]</span></p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ich verteile Szenenkarten aus Kita und Hort, etwa: Ein Kind wählt beim Znüni selbst, wie viel es isst. Ihr ordnet jede Karte einem der fünf Grundsätze zu und begründet mit dem Kurztext auf dem Plakat. <span class="beleg">[Careum HKB A, S. 43–44]</span> Für Selbstbestimmung und Partizipation, die du verwechselst, gebe ich zwei Fragen mit: Wer entscheidet über das eigene Wohlbefinden? Wer kann am Leben der Gruppe teilhaben? <span class="beleg">[Careum HKB A, S. 43]</span></p>
+<h4>Stolperstelle</h4>
+<p>Ihr sucht vermutlich die eine Definition. Der Fachtext kennt keine eindeutige, nur zwei unbestrittene Bedeutungsinhalte: Niemand darf für fremde Ziele missbraucht werden, und alle sind gleichwertig. <span class="beleg">[Careum HKB A, S. 36]</span> Offen ist ausserdem, ob das Kapitel auf S. 37 weitergeht, denn dieser Auszug fehlt uns. <span class="beleg">[Careum HKB A, S. 36, 43]</span> Zur Würde gehört auch das unveräusserliche Recht auf Leben. <span class="beleg">[Careum HKB A, S. 47]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «mithilfe der Allgemeinen Erklärung der Menschenrechte (AEMR) das Konzept der Menschenwürde erklären und durch eigene Praxissituationen modellhaft darstellen» (K2). Deine Aufgabe: Wähle eine Szene aus deinem Betrieb, ohne Namen. Zeichne sie als Modell, das Kind in der Mitte, rundherum die fünf Grundsätze mit je einem Stichwort. Erkläre in drei Sätzen mit Art. 1 der AEMR, warum das Kind seine Würde nicht verdienen muss. <span class="beleg">[Careum HKB A, S. 36, 49]</span></p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 2. Lehrjahr</p>
+<p class="stimme">«Über Würde rede ich gern. Beim Lebensrecht merke ich, dass ich unsicher bin, und ich weiss nicht, ob ich das sagen darf.»</p>
+<h4>Was mich packt</h4>
+<p>In unserer Werkstatt arbeitet ein Mann, der langsamer ist als die anderen und kaum noch Aufträge bekommt. Niemand ist unfreundlich zu ihm, aber gefragt wird er auch nicht mehr. Ich habe gelesen, dass die eine Würde nicht errungen werden muss, während die andere an Stellung, Prestige und Ansehen hängt und verloren gehen kann. <span class="beleg">[Careum HKB A, S. 36]</span> Seither sehe ich, wie leise man jemandem die zweite Sorte zuteilt. Dass die Autonomie aller Menschen in gleicher Weise zu achten ist, auch wenn sie sie nicht in gleicher Weise ausüben können, beruhigt mich. <span class="beleg">[HEP 1, S. 103]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Dann kommt Peter Singer, und ich ertappe mich. Er spricht von Leben, das «nicht wert sei, gelebt zu werden». <span class="beleg">[HEP 1, S. 102]</span> Ich finde das schlimm. Und trotzdem hatte ich in der Wohngruppe schon einen Moment, in dem ich eine Bewohnerin sah, der es sichtlich schlecht ging, und dachte: Ist das noch ein gutes Leben? Danach habe ich mich geschämt. Ich habe Angst, dass ich vor der Klasse als jemand dastehe, der so denkt wie Singer.</p>
+<h4>Meine Frage</h4>
+<p>Darf ich dieses Unbehagen haben? Und worauf kann ich mich in meinem Beruf stützen, wenn ich selbst unsicher bin?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ohne dass ich von mir erzählen muss. Lieber an einem Text und an einer erfundenen Situation als an meiner eigenen Geschichte, und mit genug Zeit, nicht zwischen Tür und Angel. Ich möchte etwas in der Hand haben, das ich nachlesen kann, wenn mich das Thema wieder einholt.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du sagst etwas Ehrliches, ich nehme es ernst. Unbehagen ist bei dieser Frage kein Fehler. Niemand muss hier von sich erzählen, auch du nicht. Ich gebe zu, dass ich bei diesen Fragen selbst nicht immer ruhig bin. Eine eigene Meinung gebe ich nicht als Vorgabe, ich stütze mich auf unsere Quellen: Jeder Mensch hat das unveräusserliche Recht auf Leben, <span class="beleg">[Careum HKB A, S. 47]</span> und die BRK hält in Artikel 10 fest, dass jeder Mensch ein angeborenes Recht auf Leben hat. <span class="beleg">[Careum HKB A, S. 53]</span></p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich beginne bei der Würde, nicht bei Singer. Auf Karten stehen Sätze wie «Er ist Gruppenleiter», «Sie arbeitet schnell» und «Er ist ein Mensch». Ihr ordnet sie der innewohnenden oder der abhängigen Würde zu. <span class="beleg">[Careum HKB A, S. 36]</span></p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Abschnitt 2.3 lest ihr in Stillarbeit. Die Heilerziehungspflege sieht menschliches Leben als wertvoll, und «lebenswert» ist keine Kategorie, die eine Aussage über einen anderen ermöglicht. <span class="beleg">[HEP 1, S. 103]</span> Singer knüpfte das Lebensrecht an eigene Interessen und Selbstbewusstsein, seine Vortragsreise 1989 löste in Deutschland Protest aus. <span class="beleg">[HEP 1, S. 102]</span> Zur Schweiz sagen unsere Quellen nichts. Danach folgt ein freiwilliges Zweiergespräch: Was kann ich nachvollziehen, was nicht? Den AEMR-Volltext haben wir nicht, wir arbeiten mit Art. 1 aus der Zusammenfassung. <span class="beleg">[Careum HKB A, S. 36, 49]</span></p>
+<h4>Stolperstelle</h4>
+<p>Hier kann man sich zur Position gezwungen fühlen. Ich sage vorher: Es gibt kein falsches Gefühl, und wer eine Pause braucht, nimmt sie. Der Text sagt, dass in Grenzsituationen des Lebens das Recht auf Leben, die Achtung der Würde und der Respekt vor dem anderen ins Zentrum gehören. <span class="beleg">[HEP 1, S. 104]</span> Wie man Überforderung durch schweres Leid aushält, beantwortet er nicht, und dazu erfinde ich nichts.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «mithilfe der Allgemeinen Erklärung der Menschenrechte (AEMR) das Konzept der Menschenwürde erklären und durch eigene Praxissituationen modellhaft darstellen» (K2). Deine Aufgabe: Wähle eine Situation aus Wohngruppe oder Werkstatt, ohne Namen. Stelle sie als Modell dar, die Person in der Mitte, rundherum die fünf Grundsätze mit je einem Stichwort. Erkläre in drei Sätzen mit Art. 1 der AEMR, was innewohnende Würde bei ihr heisst. <span class="beleg">[Careum HKB A, S. 36, 49]</span> Was du selbst zum Lebensrecht denkst, musst du nicht aufschreiben.</p>
+</section></div></div></div>
+
+<!-- ===================================================== 5 ABSCHNITT 3 -->
+<h2 id="c">3 · Menschenbilder im Wandel der Zeit</h2>
+
+<h3 id="c1">3.1 Was ein Menschenbild ist</h3>
+<div class="box def">
+  <p><strong>Menschenbilder</strong> sind bestimmte Vorstellungen über den Menschen. Sie bestehen aus Annahmen und/oder Erkenntnissen darüber, was einen Menschen ausmacht. <span class="beleg">[Careum ABK K, S. K12]</span></p>
+</div>
+<p>Seit jeher versuchen die Menschen, sich ein Bild davon zu machen, was das Wesen und die Bestimmung des Menschen ausmacht: Was ist der Mensch? Woher kommt er? Wozu lebt er? Wohin geht er? Die Antworten fielen in jeder Zeitepoche unterschiedlich aus und sind in Kunst, Architektur, Philosophie und religiöser Literatur überliefert. Das Handeln der Menschen wurde und wird von diesen Antworten bestimmt — die Betreuungsarbeit ist keine Ausnahme. <span class="beleg">[Careum ABK K, S. K12]</span> Weil das eigene Menschenbild das erzieherische Handeln prägt, ist es wichtig, es zu <strong>reflektieren</strong> und anhand wissenschaftlicher Erkenntnisse zu korrigieren. <span class="beleg">[EuE 1, S. 151]</span></p>
+
+<h3 id="c2">3.2 Der Wandel der Menschenbilder</h3>
+<ol class="kette">
+  <li><strong>Antike</strong> (1100 v. Chr. bis 400–600 n. Chr.) — Besonders das Griechentum betonte die <strong>Fähigkeit zu denken</strong> und durch Denken zu Erkenntnissen zu kommen. <span class="beleg">[Careum ABK K, S. K12]</span></li>
+  <li><strong>Christentum</strong> — Gestützt auf die Schöpfungsberichte der Bibel gilt der Mensch als <strong>Krone der Schöpfung</strong>. <span class="beleg">[Careum ABK K, S. K12]</span> In der Heilerziehungspflege war die Gottesebenbildlichkeit jedes Menschen entscheidend: Auch der kranke, schwache oder behinderte Mensch galt als Gottes Ebenbild, und aus Nächstenliebe und Barmherzigkeit folgte tätige Fürsorge. <span class="beleg">[HEP 1, S. 102–103]</span></li>
+  <li><strong>19. Jahrhundert</strong> — Mit Naturwissenschaft und Technik veränderte sich die Sicht grundlegend. Charles Darwin wandte sich mit seiner <strong>Abstammungslehre</strong> radikal vom christlichen Menschenbild ab: Der Mensch sei nicht von einem Schöpfergott auf die Erde gesetzt, sondern habe sich im Verlauf der erdgeschichtlichen Entwicklung herausgebildet. Zur selben Zeit entstand das <strong>mechanistische Menschenbild</strong>: der Mensch als Maschine — berechenbar, reparierbar und, wenn defekt, wegzuwerfen. <span class="beleg">[Careum ABK K, S. K12]</span></li>
+  <li><strong>Menschenbilder als «Männerbilder»</strong> — Bis ins 19. Jahrhundert wurde in Wissenschaft und Theologie ernsthaft diskutiert, ob Frauen als Menschen gelten und ob sie «vollwertige» Menschen oder nur eine minderwertige Sonderform seien. Ganz besonders schwer hatten und haben es Menschen mit einer Behinderung, als vollwertige Menschen gesehen zu werden. <span class="beleg">[Careum ABK K, S. K12]</span></li>
+  <li><strong>Frühes 20. Jahrhundert</strong> — Verschiedene Wissenschaften (Medizin, Philosophie, Theologie, Psychologie, Pädagogik, Soziologie) bemühten sich gleichzeitig um die Frage nach dem Wesen des Menschen, jede mit eigenem Blickwinkel: die Medizin auf Körper und Gesundheit, die Theologie auf die unsterbliche Seele, die Soziologie auf den Menschen als Gemeinschaftswesen, die Psychologie auf die innerseelischen Vorgänge. So waren erstmals <strong>verschiedene Menschenbilder gleichzeitig</strong> im Gespräch. Keine Wissenschaft kann ein verbindliches Menschenbild vermitteln; Menschenbilder müssen interdisziplinär diskutiert werden. <span class="beleg">[Careum ABK K, S. K12]</span></li>
+  <li><strong>Heute</strong> — Die Wissenschaft fragt nicht mehr nach dem Wesen des Menschen, weil es nicht bestimmt werden kann. Man spricht von <strong>verschiedenen Dimensionen (Aspekten)</strong>, über die sich ein Mensch definiert. Keiner dieser Aspekte hat Vorrang, sie stehen nicht in Konkurrenz, sondern in Wechselwirkung und bedingen sich gegenseitig: Der Mensch ist eine Ganzheit. Heute sind <strong>ganzheitliche Menschenbilder</strong> aktuell. <span class="beleg">[Careum ABK K, S. K13]</span></li>
+</ol>
+
+<h3 id="c3">3.3 Menschenbilder aus den Bezugswissenschaften heute</h3>
+<p>Verschiedene Wissenschaften begründen, warum der Mensch erziehungsbedürftig, erziehbar und lernfähig ist — das ist Inhalt der pädagogischen <strong>Anthropologie</strong> (griechisch «anthropos»: Mensch, «logie»: Lehre). <span class="beleg">[EuE 1, S. 151]</span></p>
+<div class="three">
+  <div>
+    <h4>Naturwissenschaft</h4>
+    <p>Der Zoologe und Anthropologe Adolf Portmann bezeichnet den Menschen als «physiologische Frühgeburt»: Das Angewiesensein auf Artgenossen dauert länger als bei Tieren, Überlebenskompetenzen entwickeln sich über mehrere Jahre. Dafür braucht der Mensch eine soziale und kulturelle Umgebung — in diesem Kontext findet Erziehung statt. Der Säugling gleicht am ehesten dem «Tragling»: Tragen, Halten und Wiegen vermitteln ihm Sicherheit und Vertrauen. <span class="beleg">[EuE 1, S. 151–152]</span></p>
+  </div>
+  <div>
+    <h4>Sozial- und Geisteswissenschaft</h4>
+    <p>Sie erweitern die Sicht um den Menschen als «geistiges Wesen» mit Bewusstsein, Urteils- und Reflexionsvermögen, Verstand, Erinnerung und Begriffssprache: Er kann abstrakt denken, Werte und Ziele setzen, geplant handeln, die Welt gestalten, Gegebenes infrage stellen, zwischen Vergangenheit, Gegenwart und Zukunft unterscheiden und sich selbst reflektieren. Der Mensch ist ein handlungsoffenes Wesen, das sein Handeln aufgrund seiner Willensentscheidung bestimmt. <span class="beleg">[EuE 1, S. 152]</span></p>
+  </div>
+  <div>
+    <h4>Hirnforschung</h4>
+    <p>Das kindliche Gehirn hat bei der Geburt so viele Gehirnzellen wie das eines Erwachsenen; die Verknüpfungen entstehen in den ersten zwei Lebensjahren rasant, und die Übertragungsgeschwindigkeit nimmt bis zum Jugendalter um das 16-Fache zu. Das Gehirn braucht Reize aus der Umwelt; wenig genutzte Verbindungen werden bis zur Pubertät abgebaut. Der Hirnforscher Gerald Hüther betont das selbstorganisierende Lernen: «Bildung braucht Bindung» — der andere darf nicht «zum Objekt meiner Massnahmen» gemacht werden. <span class="beleg">[EuE 1, S. 153]</span></p>
+  </div>
+</div>
+
+<h3 id="c4">3.4 Wie Menschenbilder entstehen — und was sie bewirken</h3>
+<p>Menschenbilder entstehen aus Erfahrungen, die jeder Mensch mit seinem eigenen Menschsein und mit dem seiner Mitmenschen macht. Diese Erfahrungen sind geprägt durch Erziehung, gesellschaftliche und politische Ereignisse und verschiedene Lebenskontexte. Menschenbilder sind oft unbewusst und unreflektiert; um zu einem bewussten Menschenbild zu gelangen, muss man über diese Erfahrungen nachdenken, sie reflektieren und sich mit anderen darüber austauschen. <span class="beleg">[Careum ABK K, S. K13]</span></p>
+<ol class="kette">
+  <li><strong>Persönliches, privates Menschenbild</strong> — Die Erkenntnisse aus den eigenen Erfahrungen fasst der Einzelne in ein persönliches Bild, das er für sich und andere nachvollziehbar darstellen kann. <span class="beleg">[Careum ABK K, S. K13]</span></li>
+  <li><strong>Allgemeines (theoretisches) Menschenbild</strong> — Werden die privaten Erfahrungen verallgemeinert und auf allgemeinem Niveau formuliert, entsteht ein allgemeines Menschenbild. <span class="beleg">[Careum ABK K, S. K13]</span></li>
+  <li><strong>Öffentliches Menschenbild</strong> — Das allgemeine Menschenbild kann vermittelt werden und wird zum öffentlichen Menschenbild. Es muss öffentlich-rechtlichen Ansprüchen genügen, konkret: frei sein von Diskriminierungen aller Art. <span class="beleg">[Careum ABK K, S. K13]</span></li>
+</ol>
+<p>Die Betreuungsarbeit ist keine private Angelegenheit; sie findet im öffentlichen Rahmen statt. Darum muss sich eine Fachperson Betreuung am <strong>öffentlichen Menschenbild</strong> orientieren. In Leitbildern von Unternehmen mit sozialem Auftrag steht deshalb oft, an welchem Menschenbild sich die Betreuungsarbeit orientiert — etwa «Unsere Institution ist einem ganzheitlichen Menschenbild verpflichtet». Eine ganzheitliche Betreuung ist nur möglich, wenn man auch ein ganzheitliches Bild von einem Menschen hat. <span class="beleg">[Careum ABK K, S. K13]</span></p>
+<p><strong>Menschenbilder stiften Identität.</strong> Wie ein Mensch sich selbst sieht (Selbstbild), was er von sich hält, aber auch, wie die anderen ihn sehen, beeinflusst seine Identität — besonders in den prägenden Kinder- und Jugendjahren. Wird ein Kind mit all seinen Begabungen, Eigenheiten und Fähigkeiten gesehen und anerkannt, wirkt sich das positiv auf seine Identität aus. Hört ein Kind von Eltern oder Lehrern, dass es dumm sei und aus ihm nie etwas Rechtes werde, nimmt es diese negativen Zuschreibungen aller Wahrscheinlichkeit nach in sein Selbstbild auf. <span class="beleg">[Careum ABK K, S. K13]</span></p>
+<p><strong>Menschenbilder wirken sich auf das Zusammenleben und die Betreuungsarbeit aus.</strong> Das Bild, das wir uns von Menschen machen, beeinflusst unsere Einstellung ihnen gegenüber und unseren Umgang mit ihnen. Wir entsprechen nie hundertprozentig dem Bild, das andere sich von uns machen, und wir können uns in anderen Menschen täuschen — wir sehen sie oft nicht so, wie sie wirklich sind, sondern erliegen typischen Wahrnehmungsfehlern. Für die Betreuungsarbeit ist es deshalb wichtig, dass sich eine Fachperson Betreuung über ihr Menschenbild und jenes der Institution im Klaren ist. Sonst läuft man Gefahr, Opfer von Vorurteilen, Ideologien, Rassismus, Diskriminierung oder Modeströmungen zu werden. Das Menschenbild einer Institution sollte deklariert und für alle Mitarbeitenden verpflichtend sein; es bildet die Grundlage des beruflichen Handelns und sollte immer wieder Gegenstand der Auseinandersetzung sein — denn auch eine Institution kann Opfer von Ideologien, Rassismus, Diskriminierung oder Vorurteilen werden. <span class="beleg">[Careum ABK K, S. K14]</span></p>
+
+<h3 id="c5">3.5 Das ganzheitliche Menschenbild: Identitätsmodell nach Petzold</h3>
+<p>Eine Hilfe, Menschen ganzheitlich zu sehen, ist das <strong>Identitätsmodell von H. Petzold</strong>. <span class="beleg">[Careum ABK K, S. K15]</span> Der deutsche Psychologe Hilarion Petzold nennt fünf Bereiche, die die Identität tragen — die <strong>fünf Säulen der Identität</strong>. Das Identitätserleben ist abhängig von Situationen und vollzieht sich in verschiedenen Kontexten. <span class="beleg">[Careum HKB F MmB, S. 45]</span> <span class="tag n">Soll-Literatur MmB</span></p>
+<div class="box def">
+  <p><strong>Identität</strong> definiert eine Person als einmalig und unverwechselbar. Sie ist das Bild und das Gefühl, das ein Mensch von sich selbst hat. Identität hat zwei Komponenten: Sie entsteht aus dem Zusammenwirken von <strong>Identifikation</strong> («ich sehe mich selbst») und <strong>Identifizierung</strong> («ich werde von anderen gesehen»). Diese Prozesse wiederholen sich immer wieder und stehen in einem Zeitkontinuum von Vergangenheit (Biografie), Gegenwart (Hier und Jetzt) und Zukunft (Lebensentwurf). <span class="beleg">[Careum HKB F MmB, S. 44–45]</span></p>
+</div>
+
+<figure>
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="Fünf Säulen der Identität nach Petzold">
+  <polygon points="80,70 380,18 680,70" fill="#1d4e89"/>
+  <text x="380" y="58" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Identität — der ganze Mensch</text>
+  <g font-size="12" fill="#fff" text-anchor="middle">
+    <rect x="90" y="82" width="100" height="150" rx="6" fill="#2f6f4e"/>
+    <text transform="translate(140,157) rotate(-90)">Leiblichkeit</text>
+    <rect x="215" y="82" width="100" height="150" rx="6" fill="#2f6f4e"/>
+    <text transform="translate(265,157) rotate(-90)">soziales Netz</text>
+    <rect x="340" y="82" width="100" height="150" rx="6" fill="#2f6f4e"/>
+    <text transform="translate(390,157) rotate(-90)">Arbeit / Leistung / Freizeit</text>
+    <rect x="465" y="82" width="100" height="150" rx="6" fill="#2f6f4e"/>
+    <text transform="translate(515,157) rotate(-90)">materielle Sicherheit</text>
+    <rect x="590" y="82" width="100" height="150" rx="6" fill="#2f6f4e"/>
+    <text transform="translate(640,157) rotate(-90)">Werte</text>
+  </g>
+  <g font-size="10" fill="#1f2933" text-anchor="middle">
+    <text x="140" y="252">körperliches, geistiges,</text><text x="140" y="266">seelisches Wohlbefinden,</text><text x="140" y="280">Identität als Mann/Frau</text>
+    <text x="265" y="252">Bindung (Geborgenheit,</text><text x="265" y="266">Zugehörigkeit, Heimat)</text><text x="265" y="280">und Autonomie</text>
+    <text x="390" y="252">Selbstwert (Anerkennung,</text><text x="390" y="266">Wertschätzung, Bestätigung)</text><text x="390" y="280">und Berufsidentität</text>
+    <text x="515" y="252">materielle Absicherung</text><text x="515" y="266">(Schutz, Nahrung,</text><text x="515" y="280">Lebensunterhalt)</text>
+    <text x="640" y="252">Sinn und Halt im Leben</text><text x="640" y="266">(Spiritualität, eigene</text><text x="640" y="280">Lebensphilosophie)</text>
+  </g>
+  <rect x="90" y="296" width="290" height="26" rx="5" fill="#8b2c2c"/>
+  <text x="235" y="314" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Lebenszeit (Kontinuum)</text>
+  <rect x="400" y="296" width="290" height="26" rx="5" fill="#8b2c2c"/>
+  <text x="545" y="314" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Lebensumfelder (Kontexte)</text>
+</svg>
+<figcaption>Die fünf Säulen der Identität mit dem Grundbedürfnis jeder Säule; unten die zwei Achsen Lebenszeit und Lebensumfelder. Nachgezeichnet nach Abb. 1 in Careum ABK K, S. K15, und Abb. 5 in Careum HKB F MmB, S. 45–46 (Originale dort einsehen).</figcaption>
+</figure>
+
+<p>Es hilft, den Menschen zu sehen als körperliches, fühlendes und denkendes Wesen (Säule der Leiblichkeit), als handelndes Wesen (Säule von Arbeit, Leistung und Freizeit), als soziales Wesen (Säule des sozialen Netzes) und als kulturelles Wesen (Säulen der materiellen Sicherheit und der Werte). Jede Säule hat ein Grundbedürfnis als Basis. <span class="beleg">[Careum ABK K, S. K15]</span> Der Mensch verändert sich im Lauf seiner Lebensgeschichte (Kontinuum); geprägt haben ihn auch seine Lebensumfelder (Kontexte), auf die er umgekehrt selbst prägend wirkt. Ein ganzheitliches Menschenbild bewahrt vor dem verkürzten Blick — etwa bei einem Menschen mit Behinderung nur die Behinderung zu sehen oder bei einem Kind nur, dass es ein Scheidungskind ist. <span class="beleg">[Careum ABK K, S. K16]</span></p>
+<p>Die Säulen beeinflussen sich gegenseitig; für ein volles Identitätserleben sind alle notwendig. Eine gesunde Identität besteht, wenn die Säulen ausgeprägt und standhaft sind. In eine <strong>Krise</strong> kann die Identität geraten, wenn Säulen ungenügend ausgebildet werden, wegbrechen (etwa bei Veränderung der sozialen Umgebung — Säule des sozialen Netzes) oder nur noch teilweise vorhanden sind (etwa durch Krankheit oder Behinderung — Säule der Leiblichkeit). Solche Krisen können eine Ursache für herausfordernde Verhaltensweisen sein. <span class="beleg">[Careum HKB F MmB, S. 46]</span> In der Bevölkerung bestehen gegenüber Menschen mit Beeinträchtigung häufig Vorurteile und Klischees; ein so geprägtes Fremdbild kann die Identitätsentwicklung negativ beeinflussen. Durch persönliche Kontakte und positive gemeinsame Erlebnisse lassen sich Fremdbilder korrigieren. Fachpersonen Betreuung unterstützen die Identitätsentwicklung, indem sie Möglichkeiten bieten, im sozialen Kontakt zu dem zu werden, was einem möglich ist — durch Ausprobieren, Auswahlmöglichkeiten, gemeinsames Erleben, Wiederholungen und behutsame Begleitung. <span class="beleg">[Careum HKB F MmB, S. 47]</span></p>
+<p><strong>Ganzheitliche Betreuung und Förderung</strong> heisst, abgeleitet vom Identitätsmodell: Die betreuende Person vernachlässigt keine Identitätssäule und berücksichtigt alle Grundbedürfnisse. Sie kümmert sich um das körperliche, geistige und seelische Wohlbefinden, unterstützt die betreute Person im Aufrechterhalten ihres sozialen Netzes, gibt Anerkennung für Geleistetes, behandelt den Besitz sorgfältig und respektiert ihre Werte. <span class="beleg">[Careum ABK K, S. K16]</span></p>
+
+<h3 id="c6">3.6 Das Menschenbild im Konzept einer Einrichtung</h3>
+<p>Das pädagogische Handlungskonzept (die Konzeption) einer Einrichtung trifft Grundaussagen über das Menschenbild bzw. das Bild vom Kind. In der Regel gehen Einrichtungen heute von einem <strong>humanistischen</strong> sowie <strong>konstruktivistischen</strong> Menschenbild aus. Regionale und trägerspezifische Besonderheiten fliessen ein; aktuelle Leitlinien wie Inklusion, vorurteilsbewusste Erziehung, Erziehungspartnerschaft mit den Eltern und sozialraumorientierte Netzwerkarbeit sollten berücksichtigt werden. Konzeptionen für die Arbeit mit Menschen mit Beeinträchtigung sind unter den Vorgaben einer modernen ganzheitlichen Heilpädagogik zu entwickeln. <span class="beleg">[EuE 1, S. 752]</span> <span class="tag de">DE</span> Das Lehrmittel nennt als verbindliche Vorgaben das deutsche Grundgesetz und das Kinder- und Jugendhilfegesetz — deutsches Recht. <span class="beleg">[EuE 1, S. 752]</span></p>
+<p>Das <strong>Bild vom Kind</strong>, das sich in Deutschland in den letzten zwei Jahrzehnten in Fachkreisen durchgesetzt hat, sieht Kinder als «kompetente» Kinder, die gemeinsam mit den Erwachsenen ihre Erziehung und Bildung selbst gestalten; sie sind als Partner zu akzeptieren und zu respektieren und im Rahmen ihrer Möglichkeiten zu beteiligen. Pädagogische Ziele sind, die Autonomie der Kinder zu fördern und sie zu sozialer Mitverantwortung zu erziehen. Zentral ist auch die <strong>Inklusion</strong>: Unterschiede in Geschlecht, sozialer Herkunft, Religion, Lebensweise und individuellen Stärken und Schwächen werden anerkannt, dürfen aber nicht zu Benachteiligung führen. <span class="beleg">[Kinderpflege, S. 48–49]</span> <span class="tag n">Soll-Literatur Kind</span></p>
+
+<div class="ebenen" data-sid="c"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 2. Lehrjahr</p>
+<p class="stimme">«Ich soll sagen, was ein Menschenbild ist, und dabei nicht klingen wie ein Philosophiebuch.»</p>
+<h4>Was mich packt</h4>
+<p>Dass das Bild, das wir uns von Menschen machen, unsere Einstellung und unseren Umgang mit ihnen beeinflusst <span class="beleg">[Careum ABK K, S. K14]</span>, sehe ich in der Kita jeden Tag. Eine Kollegin ruft einen Jungen aus unserer Gruppe jeden Morgen «unser Chaot». Ich habe zum ersten Mal gedacht: Wie kommt das bei ihm an? Im Text steht das Beispiel eines Kindes, das von Eltern oder Lehrern hört, es sei dumm. Es nimmt das aller Wahrscheinlichkeit nach in sein Selbstbild auf. <span class="beleg">[Careum ABK K, S. K13]</span> Gut gefällt mir, dass Kinder heute als «kompetente» Kinder gesehen werden, die im Rahmen ihrer Möglichkeiten beteiligt werden. <span class="beleg">[Kinderpflege, S. 48–49]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Die Übersicht beginnt in der Antike und geht über das Christentum und Darwin weiter <span class="beleg">[Careum ABK K, S. K12]</span> bis zu den ganzheitlichen Menschenbildern von heute <span class="beleg">[Careum ABK K, S. K13]</span>. Ich sehe nicht, was Darwin mit meiner Gruppe zu tun hat. «Aufeinander beziehen» heisst für mich bisher nur, dass ich Stationen auswendig lerne und nicht weiss, wie sie zusammenhängen. Dazu kommt ein Unbehagen: Menschenbilder sind oft unbewusst, und man soll sie reflektieren und sich mit anderen darüber austauschen. <span class="beleg">[Careum ABK K, S. K13]</span> Ich weiss nicht, ob ich mein eigenes Bild vor der Klasse zeigen will, und ob es dann vor allen schlecht dasteht.</p>
+<h4>Meine Frage</h4>
+<p>Wie hängen die Stationen zusammen, und was haben sie mit dem Bild vom Kind in meiner Kita zu tun? Und muss ich dazu etwas über mich erzählen?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte die Stationen als Karten in der Hand haben und sie zu zweit ordnen, bevor jemand etwas vor allen sagt. Und ich möchte ein Beispiel aus meiner Gruppe nehmen, ohne dass ich über mich selbst sprechen muss.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du sagst zwei Dinge: Die Stationen hängen für dich nicht zusammen, und du willst dein Innenleben nicht ausbreiten müssen. Beides nehme ich ernst. Niemand muss hier etwas von sich erzählen. Der Faden ist dieser: Menschenbilder bestehen aus Annahmen und/oder Erkenntnissen darüber, was einen Menschen ausmacht, und sie bestimmen das Handeln, auch in der Betreuungsarbeit. <span class="beleg">[Careum ABK K, S. K12]</span></p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich hänge zwei Satzanfänge auf: «Ein Kind ist …», «Fachpersonen sollen …». Ihr schreibt zu zweit Antworten auf Karten, ohne Namen. Gelesen wird nur, wozu ihr ja sagt. Dann frage ich: Woher habt ihr diese Sätze? Menschenbilder entstehen aus Erfahrungen, geprägt durch Erziehung, gesellschaftliche und politische Ereignisse und Lebenskontexte. <span class="beleg">[Careum ABK K, S. K13]</span></p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ihr bekommt die Stationen als Kartenset: Antike, Christentum, 19. Jahrhundert, frühes 20. Jahrhundert. <span class="beleg">[Careum ABK K, S. K12]</span> Dazu kommen die heutigen ganzheitlichen Menschenbilder <span class="beleg">[Careum ABK K, S. K13]</span> und das Bild vom Kind, das Kinder als Partner sieht, die im Rahmen ihrer Möglichkeiten beteiligt werden <span class="beleg">[Kinderpflege, S. 48–49]</span>. Ihr legt eine Zeitleiste, schreibt auf jede Karte, was das Bild über den Menschen sagt, und begründet im Zweiergespräch, wo die Karte «Bild vom Kind» hingehört.</p>
+<h4>Stolperstelle</h4>
+<p>Eine Zeitleiste verführt dazu, sie als Reihe von falsch zu richtig zu lesen. Im frühen 20. Jahrhundert waren erstmals verschiedene Menschenbilder gleichzeitig im Gespräch. <span class="beleg">[Careum ABK K, S. K12]</span> Zwei Lücken benenne ich offen. Die «Übersicht», auf die sich das Lernziel bezieht, liegt nicht als eigenes Dokument vor. Die einzige Quelle mit dieser Überschrift ist Kap. 2.2.1 im Careum-Band, ob eine andere gemeint ist, sagen die Quellen nicht. <span class="beleg">[SLP vG Kind, S. 58; Careum ABK K, S. K12]</span> Und «Kinderpflege» ist ein deutsches Lehrmittel: Es beschreibt das Bild vom Kind, das sich in Deutschland durchgesetzt hat. <span class="beleg">[Kinderpflege, S. 48–49]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «anhand der Übersicht ‹Menschenbilder im Wandel der Zeit› den Begriff ‹Menschenbild› in eigenen Worten beschreiben und die verschiedenen Menschenbilder zusammenfassen und aufeinander beziehen» (K2 / K5). Deine Aufgabe: Beschreibe in zwei Sätzen, was ein Menschenbild ist. Fasse die Zeitleiste in fünf Stichworten zusammen und beziehe zwei der Bilder aufeinander. Beurteile zum Schluss, ob das Bild vom Kind, das in deiner Kita sichtbar wird, dem öffentlichen Menschenbild genügt, das frei von Diskriminierung sein muss. <span class="beleg">[Careum ABK K, S. K13]</span> Persönliches musst du nicht abgeben.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 2. Lehrjahr</p>
+<p class="stimme">«Wenn ich nur noch die Behinderung sehe, sehe ich den Menschen nicht mehr, und genau davor warnt dieser Abschnitt.»</p>
+<h4>Was mich packt</h4>
+<p>Das Säulenbild finde ich hilfreich, weil ich einen Bewohner damit einmal nicht nach seiner Diagnose anschaue: Leiblichkeit, soziales Netz, Arbeit, Leistung und Freizeit, materielle Sicherheit, Werte. <span class="beleg">[Careum ABK K, S. K15]</span> In unserer Wohngruppe lebt ein Mann, der seit dem Tod seiner Mutter kaum noch rausgeht und unruhig geworden ist. Bei uns hiess es einfach, er sei schwierig. Im Lehrmittel steht, dass Säulen wegbrechen können und solche Krisen eine Ursache für herausfordernde Verhaltensweisen sein können. <span class="beleg">[Careum HKB F MmB, S. 46]</span> Das hat mich erwischt.</p>
+<h4>Wo ich aussteige</h4>
+<p>Beim mechanistischen Menschenbild: der Mensch als Maschine, berechenbar, reparierbar und, wenn defekt, wegzuwerfen. <span class="beleg">[Careum ABK K, S. K12]</span> Ich erkenne Sätze davon bei uns, etwa wenn über jemanden gesagt wird, er «funktioniere» heute nicht. Gleichzeitig steht dort, Menschen mit einer Behinderung hatten und haben es besonders schwer, als vollwertige Menschen gesehen zu werden. <span class="beleg">[Careum ABK K, S. K12]</span> Ich bin unsicher, ob das nur Geschichte ist. Beim christlichen Bild bin ich zwiegespalten: Auch der behinderte Mensch galt als Gottes Ebenbild, und daraus folgte tätige Fürsorge. <span class="beleg">[HEP 1, S. 102–103]</span> Das klingt gut, aber Fürsorge ist bei uns manchmal auch das Wort dafür, dass wir entscheiden.</p>
+<h4>Meine Frage</h4>
+<p>Wie beziehe ich das christliche Bild, das mechanistische Bild und Petzolds Säulen aufeinander, und woran erkenne ich bei uns in der Wohngruppe, welches Bild gerade wirkt?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Zuerst an einem Bewohner aus meinem Betrieb, ohne Namen, mit den Säulen als Raster. Danach möchte ich die drei Bilder dazulegen. Über meine eigene Familie oder meinen Glauben möchte ich nichts sagen müssen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du erkennst das mechanistische Bild in Sätzen bei euch und bist beim Wort Fürsorge zwiegespalten. Das ist keine Schwäche, denn Menschenbilder sind oft unbewusst und werden erst durch Nachdenken und Austausch bewusst. <span class="beleg">[Careum ABK K, S. K13]</span> Niemand muss hier etwas über Familie oder Glauben erzählen, wir arbeiten mit Fällen ohne Namen. Mir geht es beim Wort Fürsorge ähnlich wie dir: Es kann tragen und es kann bevormunden. Die Quelle nennt nur, dass aus Nächstenliebe und Barmherzigkeit tätige Fürsorge folgte. <span class="beleg">[HEP 1, S. 102–103]</span></p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich lege eine Standortlinie durch den Raum, von «trifft bei uns selten zu» bis «trifft oft zu». Ich lese drei Beispielsätze von mir vor: «Er ist halt behindert.» «Wir flicken, was kaputt ist.» «Er ist mehr als seine Diagnose.» Ihr stellt euch hin, ohne zu begründen. Danach schauen wir, welches Bild hinter welchem Satz steckt.</p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Ich hänge die fünf Säulen als Plakat auf. <span class="beleg">[Careum ABK K, S. K15]</span> Identität entsteht aus Identifikation («ich sehe mich selbst») und Identifizierung («ich werde von anderen gesehen»). <span class="beleg">[Careum HKB F MmB, S. 44–45]</span> Ihr legt Karten zu einer Person aus eurem Betrieb: Welche Säule trägt, welche ist weggebrochen? Dann legt ihr das Fremdbild dazu: Vorurteile prägen es, persönliche Kontakte können es korrigieren. <span class="beleg">[Careum HKB F MmB, S. 47]</span></p>
+<h4>Stolperstelle</h4>
+<p>Petzolds Säulen sind eine Hilfe, Menschen ganzheitlich zu sehen. <span class="beleg">[Careum ABK K, S. K15]</span> Offen benennen muss ich zwei Dinge. Die «Übersicht», auf die sich das Lernziel bezieht, liegt nicht als eigenes Dokument vor: Die einzige Quelle mit dieser Überschrift ist Kap. 2.2.1 im Careum-Band. <span class="beleg">[Careum ABK K, S. K12]</span> Und «Heilerziehungspflege» ist ein deutsches Lehrmittel. <span class="beleg">[HEP 1, S. 102–103]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «anhand der Übersicht ‹Menschenbilder im Wandel der Zeit› den Begriff ‹Menschenbild› in eigenen Worten beschreiben und die verschiedenen Menschenbilder zusammenfassen und aufeinander beziehen» (K2 / K5). Deine Aufgabe: Beschreibe in zwei Sätzen, was ein Menschenbild ist. Fasse das christliche und das mechanistische Bild in je einer Zeile zusammen und beziehe sie auf das ganzheitliche Bild. Beurteile dann an deinem Beispiel ohne Namen, welche Säule am stärksten gefährdet ist.</p>
+</section></div></div></div>
+
+<!-- ===================================================== 6 ABSCHNITT 4 -->
+<h2 id="d">4 · Humanistisches Menschenbild</h2>
+<div class="box warn">
+  <p><strong>Quellenlage.</strong> Careum verweist für das humanistische Menschenbild und die Grundhaltungen im personenzentrierten Ansatz auf die eigenen Kapitel 3.6.1 und 3.6.2 <span class="beleg">[Careum HKB A, S. 45–46]</span>. Diese Kapitel liegen nicht im Ordner der Lernenden. Der folgende Abschnitt stützt sich deshalb auf die deutschen Lehrmittel HEP 1 (Soll-Literatur MmB), EuE 1 und Kinderpflege (Soll-Literatur Kind). Der Inhalt — Carl Rogers und die personenzentrierte Haltung — ist fachrichtungsneutral.</p>
+</div>
+
+<h3 id="d1">4.1 Carl Rogers und das positive Menschenbild</h3>
+<div class="box def">
+  <p><strong>Humanistisches Menschenbild:</strong> die Vorstellung, dass jeder Mensch eine eigenständige, in sich wertvolle Persönlichkeit ist. Dazu gehört auch der Respekt vor der Verschiedenartigkeit der Menschen. <span class="beleg">[Kinderpflege, S. 300]</span></p>
+</div>
+<p>Die heutigen wissenschaftlichen Ansätze zur pädagogischen Beziehungsgestaltung gehen auf <strong>Carl Rogers</strong> (1902–1987) zurück, den Begründer der humanistischen Psychologie. Rogers geht davon aus, dass jeder Mensch die Neigung und Fähigkeit besitzt, sich in eine positive Richtung zu entwickeln, seine Probleme zu lösen und sich selbst zu verwirklichen. Voraussetzung dafür sind Beziehungen, in denen es dem Menschen möglich ist, so zu sein, wie er ist. In so gestalteten Beziehungen wird der Mensch seine Ressourcen erkennen und nutzen. <span class="beleg">[EuE 1, S. 176]</span></p>
+<p>Im Zentrum steht ein Menschenbild, das die grundsätzliche Verschiedenartigkeit und Individualität jedes Menschen beschreibt und als wertvoll anerkennt. Jeder Mensch besitzt Lern- und Entwicklungsfähigkeit und verfügt über Potenziale zur konstruktiven, selbstverantwortlichen Auseinandersetzung mit dem Leben. Zur Entfaltung seiner Potenziale benötigt der Mensch ein unverstelltes (kongruentes) <strong>Selbstkonzept</strong>. <span class="beleg">[HEP 1, S. 349]</span></p>
+
+<h3 id="d2">4.2 Das Selbstkonzept</h3>
+<p>Das Selbstkonzept ist das Bild, das eine Person von sich hat, und die Wertung, die sie damit verbindet. Es wird schon in früher Kindheit durch unmittelbare Erfahrungen ausgebildet: Erfährt ein Säugling, dass seine Bedürfnisse nach Nahrung und Zuwendung beachtet werden, fühlt er sich gesehen und geachtet. Darüber hinaus prägen Bewertungen der Gesellschaft das Selbstkonzept («Man macht sich nicht schmutzig, ich kann nichts, andere können alles besser»). Man unterscheidet ein negatives und ein positives Selbstkonzept — beide wirken als Kreislauf: <span class="beleg">[HEP 1, S. 349]</span></p>
+<div class="two">
+  <div>
+    <h4>Negatives Selbstkonzept</h4>
+    <p>«Ich bin kontaktscheu» → Vermeiden von Kontakten → mangelnde Erfahrung und Übung → Misserfolgserlebnis, Kontakthemmung → Bestätigung des Selbstbilds.</p>
+  </div>
+  <div>
+    <h4>Positives Selbstkonzept</h4>
+    <p>«Ich bin kontaktfreudig» → Aufsuchen von Kontakten → Erfahrungen und Übung → Erfolgserlebnis, Kontaktsicherheit → Bestätigung des Selbstbilds.</p>
+  </div>
+</div>
+<p class="small">Nach der Abbildung in HEP 1, S. 349 (dort als zwei Kreisläufe dargestellt).</p>
+<p>Ein Selbstkonzept ist nicht statisch, sondern flexibel und verändert sich mit der Entwicklung des Menschen. Mangelnde Wertschätzung, empfundene Ambivalenz der Eltern und die Erfahrung, dass eigene Bedürfnisse nicht wahrgenommen werden, gefährden das Entwicklungspotenzial: Der Mensch erlebt sich als minderwertig und inkompetent und entwickelt psychische Auffälligkeiten. Als Fachkraft muss man diese Hintergründe kennen und eine Beziehung herstellen, die Nachreifung ermöglicht. Erfährt der Mensch Empathie, Wertschätzung und Kongruenz im Kontakt, kann er seine Symptome, Auffälligkeiten und Blockierungen aufgeben und sich entsprechend seinen Potenzialen entfalten. <span class="beleg">[HEP 1, S. 349]</span></p>
+
+<h3 id="d3">4.3 Die drei Grundhaltungen der personenzentrierten Haltung</h3>
+<p>Rogers beschreibt, basierend auf seinem positiven Menschenbild, drei Grundhaltungen für die personenzentrierte Gesprächstherapie: Kongruenz (Echtheit, Authentizität), Empathie (einfühlendes Verstehen) und bedingungslose positive Zuwendung (Wertschätzung). Diese Grundhaltungen prägen bis heute das Verständnis einer positiven pädagogischen Beziehungsgestaltung. <span class="beleg">[EuE 1, S. 176]</span></p>
+<div class="three">
+  <div>
+    <h4>Empathie</h4>
+    <p>Die Fähigkeit, sich in die Gefühlswelt eines Gegenübers hineinzuversetzen. Jede Person lebt in ihrer eigenen inneren Realität; die emotionale Erlebniswelt ist hochindividuell. Kognitiv bedeutet Empathie, Hintergrund, Motive und Bedeutung des Verhaltens zu verstehen; affektiv, mitzuempfinden und nachzuvollziehen, wie es dem anderen geht. Einfühlen ist nicht Identifikation: Die Situation des anderen bleibt von der eigenen getrennt. Es geht um Verstehen, nicht um Bewertung oder Beeinflussung — und Verstehen ist nicht Passivität oder Verzicht auf einen eigenen Standpunkt. Einfühlendes Verstehen drückt sich in Worten, Handlungen und Massnahmen aus. <span class="beleg">[HEP 1, S. 350]</span></p>
+  </div>
+  <div>
+    <h4>Wertschätzung</h4>
+    <p>Bedingungslose Wertschätzung oder nicht wertendes Akzeptieren heisst, dass die Wertschätzung eines anderen nicht an Bedingungen und Wertungen geknüpft ist. Die andere Person wird mit all ihren Möglichkeiten anerkannt, ohne ihre Schwierigkeiten zu verleugnen. Sie zeigt sich in Geduld, Herzlichkeit, Anteilnahme, Ermutigung, Trost, Vertrauen und Akzeptieren. Die Achtung bezieht sich auf die ganze Person, auch auf ihre negativen Aspekte, die weder verurteilt noch gebilligt werden. Gemeint ist nicht herablassend-gönnerhafte Freundlichkeit, sondern gleichwertiges, gegenseitiges Anerkennen. Lob erzeugt Abhängigkeit; Ermutigung, Verständnis und Zuwendung sind günstiger für die Persönlichkeitsentwicklung. <span class="beleg">[HEP 1, S. 350–351]</span></p>
+  </div>
+  <div>
+    <h4>Kongruenz</h4>
+    <p>Kongruenz oder Echtheit heisst, dass einer Person das eigene Erleben bewusst ist und sie es von dem trennen kann, was sie beim Gegenüber wahrnimmt. Wer authentisch begegnet, gibt sich in seiner ganzen Persönlichkeit zu erkennen. Kongruenz meint nicht, eigene Eindrücke ungefiltert dem anderen zuzumuten, sondern in der professionellen Beziehung Personen, Rahmenbedingungen und Situation mitzudenken und Dinge zurückhalten zu können. Auf die Arbeit mit Menschen mit geistiger Behinderung übertragen heisst die personenzentrierte Haltung: den Menschen als Experten seiner selbst anzuerkennen, nicht zu wissen, was für ihn gut ist, sondern sich gemeinsam in einer Suchhaltung auf den Weg zu machen. <span class="beleg">[HEP 1, S. 351]</span></p>
+  </div>
+</div>
+<p>Beeinflusst von Rogers zeigten die Psychologen Reinhard und Anne-Marie Tausch, dass sich positive emotionale Beziehungen in hoher <strong>Wertschätzung</strong>, <strong>Verstehen</strong> und <strong>Echtheit</strong> zeigen. Wertschätzung ist eine positive gefühlsmässige Haltung mit Wärme, Achtung und Rücksichtnahme; Verstehen das Einfühlen in die innere Welt des zu Erziehenden; Echtheit eine Haltung, bei der der Erzieher er selbst ist und sein Verhalten mit seinen Einstellungen übereinstimmt. Erziehung ist in diesem Verständnis keine Anwendung von Methoden: Der Erzieher ist ein Begleiter, der sich feinfühlig auf die Welt der Kinder einlässt, ihr Verhalten zu verstehen versucht und dabei selbst bleibt, wie er ist. <span class="beleg">[EuE 1, S. 177]</span> Die Verhaltensmerkmale je Grundhaltung sind in Tab. 3.2 «Pädagogische Grundhaltungen nach Tausch und Tausch» aufgeführt (siehe EuE 1, S. 177).</p>
+
+<h3 id="d4">4.4 Reflexion als vierte Komponente</h3>
+<p>Neben den drei Komponenten des personenzentrierten Ansatzes sind die Fähigkeit und die Bereitschaft zur <strong>Reflexion</strong> grundlegend für die professionelle Beziehungsgestaltung. Reflexion ist ein Prozess, in dem ein Ereignis im Nachhinein gedanklich, mit unterschiedlichen Methoden und Kriterien bearbeitet wird; daraus werden Schlussfolgerungen gezogen und neue Planungen angestossen. Eigene Gefühle, Verhaltensweisen und Bewertungen sind stets Gegenstand der Reflexion. Ziel ist, dem eigenen blinden Fleck, Übertragungsphänomenen und erlebten Kränkungen auf der Spur zu bleiben. <span class="beleg">[HEP 1, S. 352]</span></p>
+<p>Eine Reflexionshilfe ist das <strong>JOHARI-Fenster</strong>, das 1955 von Josef Luft und Harry Inham in der amerikanischen Fachliteratur über Gruppendynamik dargestellt wurde. <span class="beleg">[HEP 1, S. 352]</span></p>
+<figure>
+<svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Johari-Fenster">
+  <text x="430" y="22" text-anchor="middle" font-size="12" fill="#52606d">Aktionen und Reaktionen, die von mir ausgehen und die ich selber …</text>
+  <text x="300" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2933">… wahrnehme</text>
+  <text x="560" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2933">… nicht wahrnehme</text>
+  <text transform="translate(28,170) rotate(-90)" text-anchor="middle" font-size="12" fill="#52606d">… die andere …</text>
+  <text transform="translate(52,110) rotate(-90)" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2933">… wahrnehmen</text>
+  <text transform="translate(52,235) rotate(-90)" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2933">… nicht wahrnehmen</text>
+  <rect x="175" y="56" width="250" height="110" rx="8" fill="#e8f0fa" stroke="#1d4e89"/>
+  <text x="300" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4e89">I · öffentlich</text>
+  <text x="300" y="104" text-anchor="middle" font-size="11" fill="#1f2933">gewollte und sichtbare</text>
+  <text x="300" y="120" text-anchor="middle" font-size="11" fill="#1f2933">Verhaltensweisen und Wirkungen</text>
+  <rect x="435" y="56" width="250" height="110" rx="8" fill="#fff4dc" stroke="#8a5a00"/>
+  <text x="560" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#8a5a00">II · «Blinder Fleck»</text>
+  <text x="560" y="104" text-anchor="middle" font-size="11" fill="#1f2933">unbeabsichtigte</text>
+  <text x="560" y="120" text-anchor="middle" font-size="11" fill="#1f2933">Verhaltensweisen und Wirkungen</text>
+  <rect x="175" y="176" width="250" height="110" rx="8" fill="#e6f3ec" stroke="#2f6f4e"/>
+  <text x="300" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6f4e">III · geheim</text>
+  <text x="300" y="224" text-anchor="middle" font-size="11" fill="#1f2933">verdeckte und nicht sichtbare</text>
+  <text x="300" y="240" text-anchor="middle" font-size="11" fill="#1f2933">Verhaltensabsichten</text>
+  <rect x="435" y="176" width="250" height="110" rx="8" fill="#f1f4f8" stroke="#52606d"/>
+  <text x="560" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#52606d">IV · unbewusst</text>
+  <text x="560" y="224" text-anchor="middle" font-size="11" fill="#1f2933">mir nicht bekannte</text>
+  <text x="560" y="240" text-anchor="middle" font-size="11" fill="#1f2933">Beweggründe und Energien</text>
+</svg>
+<figcaption>Das JOHARI-Fenster: vier Bereiche des eigenen Verhaltens, je nachdem, ob ich selbst und ob andere es wahrnehmen. Nach Abb. [1] in HEP 1, S. 352.</figcaption>
+</figure>
+<p>Durch Reflexionsarbeit vergrössert sich der öffentliche Bereich; der «geheime» Bereich und der «Blinde Fleck» werden kleiner, unbewusste Beweggründe werden erhellt. Pädagogische Beziehungen schliessen immer eine Dimension von Macht und Einflussnahme ein; es ist Aufgabe der professionellen Kräfte, die zunächst nicht wahrnehmbaren Bereiche des eigenen Handelns zu «beleuchten». Dazu sind fortlaufende Selbstbeobachtung und Selbstreflexion, regelmässige Teamgespräche, Feedbacktechniken sowie Fort- und Weiterbildung notwendig. So werden Echtheit, Wertschätzung und Empathie aufgebaut und erhalten — sie brauchen ständige Pflege, weil sie sich durch berufliche Belastungen und Routinen «abnutzen». <span class="beleg">[HEP 1, S. 352–353]</span></p>
+
+<h3 id="d5">4.5 Humanistisches Menschenbild in pädagogischen Konzepten</h3>
+<p>Der Italiener Loris Malaguzzi (1920–1994), Begründer der <strong>Reggio-Pädagogik</strong>, vertrat ein humanistisches Menschenbild. Deshalb ist es in der Reggio-Pädagogik wichtig, dass Kindern mit Achtung begegnet wird und sie deutlich als Träger eigener Rechte gesehen werden, etwa mit Mitentscheidungsrechten. Die Fachkräfte orientieren sich an den Stärken der Kinder, nicht an ihren Schwächen; das Kind gilt als selbstständiger, eifriger Forscher, die Fachpersonen sind Wegbegleiter. <span class="beleg">[Kinderpflege, S. 300]</span> Der <strong>Situationsansatz</strong> (Jürgen Zimmer, 1970er-Jahre) stellt das ganzheitliche Menschenbild in den Vordergrund: Jedes Kind wird mit seinen Stärken und Schwächen wahrgenommen und hat nicht nur Pflichten, sondern vor allem Rechte; im Zentrum stehen Autonomie, Solidarität und demokratische Kompetenzen. <span class="beleg">[Kinderpflege, S. 301]</span> <span class="tag n">Soll-Literatur Kind</span></p>
+<p>Wie ein humanistisches Menschenbild in einer Konzeption klingt, zeigt das im Lehrmittel zitierte Beispiel eines Waldhorts: Der Mensch ist eingebunden in die Natur und in soziale Gemeinschaften; wichtig sind Toleranz, Demokratie, Selbstbestimmung, Partizipation und die Achtung von Kinder- und Menschenrechten; das Kind ist «Akteur seiner eigenen Entwicklung», einzigartig und von Natur aus wissbegierig. <span class="beleg">[EuE 1, S. 752]</span></p>
+
+<h3 id="d6">4.6 Bedeutung für Ihr professionelles Handeln</h3>
+<ul class="merk">
+  <li>In ihrer beruflichen Rolle sind Fachpersonen Betreuung zu einer bestimmten Haltung gegenüber den betreuten Personen verpflichtet; sie leitet sich aus dem humanistischen Menschenbild und der personenzentrierten Haltung ab. <span class="beleg">[Careum HKB A, S. 46]</span></li>
+  <li>Die betreute Person ist Expertin oder Experte ihrer selbst; Sie wissen nicht, was für sie gut ist, sondern suchen gemeinsam mit ihr den Weg. <span class="beleg">[HEP 1, S. 351]</span></li>
+  <li>Sie begleiten, statt Methoden anzuwenden: Sie lassen sich feinfühlig auf die Welt der betreuten Person ein, versuchen ihr Verhalten zu verstehen und bleiben dabei selbst, wie Sie sind. <span class="beleg">[EuE 1, S. 177]</span></li>
+  <li>Sie gestalten Beziehungen so, dass die betreute Person so sein kann, wie sie ist — dann erkennt und nutzt sie ihre Ressourcen. <span class="beleg">[EuE 1, S. 176]</span></li>
+  <li>Personenzentriert zu arbeiten heisst auch, wertschätzend, selbstfürsorglich und empathisch mit sich selbst umzugehen: eigene Belastungen anerkennen, Auszeiten nehmen, Aufgaben delegieren. Kollegiale Beratung, Supervision und Weiterbildung sind bewährte Hilfen. <span class="beleg">[HEP 1, S. 353]</span></li>
+</ul>
+
+<div class="ebenen" data-sid="d"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 2. Lehrjahr</p>
+<p class="stimme">«Ich dachte, ein Menschenbild sei etwas für Philosophen, und jetzt soll es erklären, wie ich am Nachmittag im Hort mit einem Kind rede?»</p>
+<h4>Was mich packt</h4>
+<p>Rogers geht davon aus, dass jeder Mensch die Neigung und Fähigkeit hat, sich in eine positive Richtung zu entwickeln und seine Probleme zu lösen, wenn er Beziehungen erlebt, in denen er so sein darf, wie er ist. <span class="beleg">[EuE 1, S. 176]</span> Bei uns im Hort sitzt ein Junge fast jeden Nachmittag allein am Rand, wenn die anderen Fussball spielen. Ich habe ihn bisher als «schwierig» abgelegt. Die Reggio-Pädagogik schaut auf die Stärken der Kinder und nicht auf ihre Schwächen. <span class="beleg">[Kinderpflege, S. 300]</span> Das ist ein anderer Blick, und er gefällt mir, auch wenn ich ihn noch nicht umsetzen kann.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei Rogers heissen die Grundhaltungen Kongruenz, Empathie und Wertschätzung. <span class="beleg">[EuE 1, S. 176]</span> Bei Tausch und Tausch heissen sie Wertschätzung, Verstehen und Echtheit. <span class="beleg">[EuE 1, S. 177]</span> Das klingt für mich nach dreimal demselben mit anderen Wörtern, und ob es dasselbe ist, steht nirgends. Dazu kommen Reggio und der Situationsansatz, und ich weiss nicht, was ich auseinanderhalten muss. Und «bedingungslos» macht mir Mühe: Wenn ein Kind einem anderen den Turm umwirft, soll ich das gutheissen?</p>
+<h4>Meine Frage</h4>
+<p>Was heisst «bedingungslos», wenn ich ein Verhalten nicht in Ordnung finde? Und sind das vier verschiedene Modelle oder einfach ein Menschenbild, das in verschiedenen Kleidern auftritt?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Mit kurzen Szenen aus Kita und Hort auf Karten, die ich zu den Begriffen legen kann. Zuerst der Fall, dann der Begriff. Und bitte sagen, was ich am Ende wirklich beschreiben können muss, damit ich nicht alles auswendig lerne.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du fragst nach der Grenze von «bedingungslos» und nach dem Zusammenhang der Begriffe. Vorab ein offener Punkt: Careum verweist für das humanistische Menschenbild und die Grundhaltungen auf eigene Kapitel, <span class="beleg">[Careum HKB A, S. 45–46]</span> und genau diese Kapitel liegen uns nicht vor. Dieser Abschnitt stützt sich deshalb auf deutsche Lehrmittel, Kinderpflege und EuE 1. Eine Careum-Fassung kann ich dir nicht zeigen.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich lege eine Standortlinie in den Raum, von «stimmt» bis «stimmt nicht». Ich lese zwei Aussagen vor, zum Beispiel «Kinder brauchen vor allem klare Führung» und «Kinder wissen oft selbst, was sie brauchen». Ihr stellt euch hin und begründet mit einem Beispiel aus dem Betrieb. Niemand muss etwas Persönliches erzählen, und Fachbegriffe brauchen wir noch keine.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ich gebe euch Szenenkarten aus Kita und Hort, die ich erfunden habe. Ihr ordnet jede einer Haltung zu: Wertschätzung ist Wärme, Achtung und Rücksichtnahme, Verstehen das Einfühlen in die innere Welt des Kindes, Echtheit heisst, dass das Verhalten zu den Einstellungen passt. <span class="beleg">[EuE 1, S. 177]</span> Danach legt ihr eine Karte zu Reggio, bei der die Stärken im Blick sind, <span class="beleg">[Kinderpflege, S. 300]</span> und eine zum Situationsansatz, bei der es um Rechte, Autonomie und Solidarität geht. <span class="beleg">[Kinderpflege, S. 301]</span> Zu deiner zweiten Frage: Bei Reggio nennt das Lehrmittel das Menschenbild ausdrücklich humanistisch, beim Situationsansatz spricht es von einem ganzheitlichen.</p>
+<h4>Stolperstelle</h4>
+<p>«Bedingungslos» heisst nicht gutheissen. Laut HEP 1 bezieht sich die Achtung auf die ganze Person, auch auf negative Aspekte, die weder verurteilt noch gebilligt werden. <span class="beleg">[HEP 1, S. 350–351]</span> Ich nehme die Stelle, weil der Fachtext diesen Abschnitt als fachrichtungsneutral behandelt. Wie du den Turm-Moment konkret löst, sagen die Quellen nicht, und ich gebe zu, dass ich da selbst unsicher bin. Rogers beschreibt die Haltungen ausserdem für die Gesprächstherapie. <span class="beleg">[EuE 1, S. 176]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «die Bedeutung des humanistischen Menschenbilds für mein professionelles Handeln in Bezug auf meine zu betreuenden Personen beschreiben» (K2). Wähle ein Kind aus deiner Gruppe, ohne Namen. Beschreibe in vier bis fünf Sätzen, was das humanistische Menschenbild für dein Handeln ihm gegenüber bedeutet, und nenne eine der Haltungen mit einer Situation, in der du sie zeigst.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 2. Lehrjahr</p>
+<p class="stimme">«Wenn ich nicht wissen soll, was gut für ihn ist, was ist dann noch meine Arbeit?»</p>
+<h4>Was mich packt</h4>
+<p>Der Satz, einen Menschen als Experten seiner selbst anzuerkennen und sich gemeinsam auf den Weg zu machen, statt zu wissen, was für ihn gut ist, hat mich erwischt. <span class="beleg">[HEP 1, S. 351]</span> In der Wohngruppe lege ich einem Bewohner morgens die Kleider heraus, weil es schneller geht. Gefragt habe ich ihn nie. Das Bild vom Kreislauf kenne ich auch: Aus «Ich bin kontaktscheu» wird Vermeiden, wenig Übung, Misserfolg und am Ende die Bestätigung des Selbstbilds. <span class="beleg">[HEP 1, S. 349]</span> In der Werkstatt kommt ein Mann in der Pause nie in die Runde. Ob es bei ihm so ist, weiss ich nicht.</p>
+<h4>Wo ich aussteige</h4>
+<p>Beim Lob. Ich sage in der Werkstatt den ganzen Tag «super gemacht», und die Leute freuen sich. Jetzt lese ich: Lob erzeugt Abhängigkeit. <span class="beleg">[HEP 1, S. 350–351]</span> Das ärgert mich, ich meine es ja gut. Und beim Johari-Fenster mit dem «blinden Fleck» <span class="beleg">[HEP 1, S. 352]</span> habe ich das Gefühl, ich müsste vor allen zugeben, was ich falsch mache.</p>
+<h4>Meine Frage</h4>
+<p>Wenn Lob nicht gut ist, was darf ich dann sagen, wenn jemand etwas geschafft hat? Und was heisst «Experte seiner selbst», wenn jemand etwas will, das ihm offensichtlich nicht guttut?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte Sätze aus meinem Alltag auf Karten vor mir haben und mit anderen anschauen, was daran Lob ist und was etwas anderes. Eine Regel allein hilft mir nicht. Und ich möchte nicht vor der Klasse erzählen müssen, wo ich mich selbst nicht sehe.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du fragst, was von deiner Arbeit bleibt. Das Lehrmittel sagt: Verstehen ist nicht Passivität oder Verzicht auf einen eigenen Standpunkt. <span class="beleg">[HEP 1, S. 350]</span> Gemeint ist eine Suchhaltung, in der ihr euch gemeinsam auf den Weg macht. <span class="beleg">[HEP 1, S. 351]</span> Zur Quellenlage: Careum verweist für diesen Abschnitt auf eigene Kapitel, <span class="beleg">[Careum HKB A, S. 45–46]</span> die uns nicht vorliegen. Hier stützen wir uns auf HEP 1, ein deutsches Lehrmittel. Dein Ärger über das Lob ist berechtigt, ich lobe selbst viel.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Auf eine Karte schreibt ihr einen Satz, den ihr diese Woche zu einer betreuten Person gesagt habt, als ihr etwas gelungen ist. Ohne Namen und ohne Wertung. Ich hänge die Karten gemischt an die Wand, niemand muss sich als Autorin oder Autor zu erkennen geben.</p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Wir lesen zuerst die Wertschätzung: Sie ist nicht an Bedingungen geknüpft und zeigt sich in Geduld, Herzlichkeit, Anteilnahme, Ermutigung, Trost, Vertrauen und Akzeptieren. <span class="beleg">[HEP 1, S. 350–351]</span> Dann sortiert ihr zu zweit die Karten: Wo steckt Ermutigung, Verständnis oder Zuwendung, wo eher Lob? Danach zeichnen wir den Selbstkonzept-Kreislauf an einer erfundenen Person, nicht an euch. <span class="beleg">[HEP 1, S. 349]</span> Das Johari-Fenster zeige ich als Reflexionshilfe, <span class="beleg">[HEP 1, S. 352]</span> und ich erwähne, dass personenzentriertes Arbeiten auch Selbstfürsorge heisst. <span class="beleg">[HEP 1, S. 353]</span> Persönliches erzählt niemand.</p>
+<h4>Stolperstelle</h4>
+<p>«Lob erzeugt Abhängigkeit» steht so im Lehrmittel, <span class="beleg">[HEP 1, S. 350–351]</span> und es klingt härter, als es im Alltag gemeint sein dürfte. Das Buch nennt Ermutigung, Verständnis und Zuwendung als günstiger. Wo genau die Grenze zwischen Lob und Ermutigung liegt und ob ein einzelnes «super» schon schadet, führt der Fachtext nicht aus. Diese Lücke fülle ich nicht mit meiner Meinung. Was ihr an den Karten findet, bleibt eure Lesart.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet: «die Bedeutung des humanistischen Menschenbilds für mein professionelles Handeln in Bezug auf meine zu betreuenden Personen beschreiben» (K2). Wähle eine Person aus deinem Betrieb, ohne Namen. Beschreibe in vier bis fünf Sätzen, was das humanistische Menschenbild für dein Handeln ihr gegenüber bedeutet, was es heisst, sie als Expertin ihrer selbst anzuerkennen, und nenne ein Beispiel für eine Rückmeldung, die Ermutigung ist.</p>
+</section></div></div></div>
+
+<!-- ===================================================== 7 ABSCHNITT 5 -->
+<h2 id="e">5 · Aktuelle gesellschaftliche Haltungen in Bezug auf die betreuten Personen</h2>
+
+<h3 id="e1">5.1 Was eine Haltung ist — und was der Berufskodex vorgibt</h3>
+<div class="box def">
+  <p><strong>Haltung:</strong> innere Einstellung, die das Denken und Handeln einer Person prägt. <span class="beleg">[Careum HKB A, S. 45]</span></p>
+</div>
+<p>Der <strong>Berufskodex</strong> zeigt auf, mit welcher Haltung Fachpersonen Betreuung anderen Menschen, insbesondere den betreuten Personen, begegnen sollen; er nennt Prinzipien, die als Grundlage für die Verhaltensregeln in der betreuerischen Praxis dienen. Für die eigene Haltung sind die Auseinandersetzung mit den ethischen Prinzipien (Selbstbestimmung, Nicht-schaden, Gutes tun, Gerechtigkeit, Menschenwürde), mit dem humanistischen Menschenbild und mit den Grundhaltungen im personenzentrierten Ansatz wichtig. <span class="beleg">[Careum HKB A, S. 45]</span> Der Berufskodex formuliert: Die Professionellen der Sozialen Arbeit setzen sich ein «für Solidarität und die Wahrung der Menschenrechte, für Gleichberechtigung und Gleichbehandlung aller Menschen und gegen Diskriminierung» (Avenir Social, 2010, S. 13). Fachpersonen Betreuung sollen sich für eine personenzentrierte Haltung gegenüber betreuten Personen einsetzen. <span class="beleg">[Careum HKB A, S. 49]</span> <span class="tag ch">CH</span></p>
+
+<h3 id="e2">5.2 Wie eine Haltung entsteht: drei Einflussfaktoren</h3>
+<p>Im Lauf des Lebens, in der Sozialisation, entwickelt jeder Mensch nach und nach Grundüberzeugungen und Haltungen, die sein Handeln und Denken leiten. Drei Faktoren beeinflussen die Haltung gegenüber betreuten Personen: <span class="beleg">[Careum HKB A, S. 45–46]</span></p>
+<figure>
+<svg viewBox="0 0 760 210" width="100%" role="img" aria-label="Drei Einflussfaktoren auf die Haltung">
+  <g font-size="12" fill="#1f2933">
+    <rect x="20" y="20" width="200" height="72" rx="8" fill="#e8f0fa" stroke="#1d4e89"/>
+    <text x="120" y="45" text-anchor="middle" font-weight="700" fill="#1d4e89">Gesellschaft</text>
+    <text x="120" y="64" text-anchor="middle" font-size="11">Strukturen, Werte und Normen</text>
+    <text x="120" y="80" text-anchor="middle" font-size="11">prägen Personen und Institutionen</text>
+    <rect x="20" y="118" width="200" height="72" rx="8" fill="#e8f0fa" stroke="#1d4e89"/>
+    <text x="120" y="143" text-anchor="middle" font-weight="700" fill="#1d4e89">Sozialisationsinstanzen</text>
+    <text x="120" y="162" text-anchor="middle" font-size="11">Familie, Religion, Schule, Berufswelt,</text>
+    <text x="120" y="178" text-anchor="middle" font-size="11">Freundes- und Bekanntenkreis</text>
+    <rect x="290" y="69" width="200" height="72" rx="8" fill="#e6f3ec" stroke="#2f6f4e"/>
+    <text x="390" y="94" text-anchor="middle" font-weight="700" fill="#2f6f4e">Selbstreflexion</text>
+    <text x="390" y="113" text-anchor="middle" font-size="11">Werte und Normen werden nicht</text>
+    <text x="390" y="129" text-anchor="middle" font-size="11">unreflektiert übernommen</text>
+    <rect x="560" y="69" width="180" height="72" rx="8" fill="#1d4e89"/>
+    <text x="650" y="100" text-anchor="middle" font-weight="700" fill="#fff">Eigene Haltung</text>
+    <text x="650" y="120" text-anchor="middle" font-size="11" fill="#fff">gegenüber betreuten Personen</text>
+    <path d="M220,56 L290,90" stroke="#52606d" stroke-width="2" fill="none"/>
+    <path d="M220,154 L290,120" stroke="#52606d" stroke-width="2" fill="none"/>
+    <path d="M490,105 L552,105" stroke="#52606d" stroke-width="2" fill="none"/>
+    <polygon points="552,100 560,105 552,110" fill="#52606d"/>
+  </g>
+</svg>
+<figcaption>Gesellschaft und Sozialisationsinstanzen prägen; die Selbstreflexion entscheidet, was der Mensch davon übernimmt. Nach Careum HKB A, S. 46.</figcaption>
+</figure>
+<ul class="merk">
+  <li><strong>Gesellschaft</strong> — Ihre Strukturen, Werte und Normen prägen die Persönlichkeit der heranwachsenden Individuen und damit auch die Haltung gegenüber betreuten Personen. Auch der Beruf wird von der Gesellschaft beeinflusst: Sie prägt die (päd)agogischen Institutionen und deren Betreuungsziele. <span class="beleg">[Careum HKB A, S. 46]</span></li>
+  <li><strong>Sozialisationsinstanzen</strong> — Familie, Religion, Schule, Berufswelt sowie Freundes- und Bekanntenkreis geben mit ihren Werten und Normen vor, mit welcher Haltung wir Kindern, Menschen mit Beeinträchtigung und Menschen im Alter begegnen; der Mensch übernimmt und verinnerlicht bestimmte Werte und Normen. <span class="beleg">[Careum HKB A, S. 46]</span></li>
+  <li><strong>Selbstreflexion</strong> — Der Mensch übernimmt aber nicht unreflektiert alle Werte und Normen. Er setzt sich aktiv damit auseinander und sucht nach solchen, die für ihn subjektiv bedeutsam sind. Selbstreflexion hat deshalb eine grosse Bedeutung bei der Entwicklung der eigenen Haltung. <span class="beleg">[Careum HKB A, S. 46]</span></li>
+</ul>
+
+<h3 id="e3">5.3 Unterschiedliche Haltungen in unserer Gesellschaft</h3>
+<p>Nicht alle Menschen haben die gleiche Einstellung gegenüber betreuten Personen. Haltungen sind personen- und kulturabhängig, und sie ändern sich im Lauf der Zeit — etwa durch politische Strömungen oder neue wissenschaftliche Erkenntnisse. Neben der professionell geforderten Haltung bestehen in unserer Gesellschaft auch andere Haltungen. Careum erläutert je Fachrichtung ein Beispiel: <span class="beleg">[Careum HKB A, S. 46–47]</span></p>
+
+<h4><span class="tag fr">Fachrichtung Kind</span> Bild vom Kind</h4>
+<p>Je nach Einstellung gegenüber Kindern bzw. je nach Bild von Kindern unterscheidet sich das Verhalten von Menschen ihnen gegenüber. Werden Kinder als eigenständige und einmalige Individuen verstanden, die über Ressourcen verfügen und selbst wissen, was ihnen guttut, gesteht man ihnen altersgerecht das Recht auf Selbstbestimmung und freie Meinungs- und Willensäusserung zu und bezieht sie in Entscheidungen ein, die ihren Alltag und ihre Zukunft betreffen. Die Betreuungsperson geht dann nicht von den Bedingungen der Institution aus, sondern stellt sich auf die individuellen Bedürfnisse des Kindes ein — sie agiert gewissermassen als <strong>«Anwalt des Kindes»</strong>. <span class="beleg">[Careum HKB A, S. 47]</span> Das Praxisbeispiel im Lehrmittel zeigt zwei Fachpersonen im Hort mit unterschiedlicher Haltung: Die eine lässt die Kinder ihre Angelegenheiten selbst regeln, der andere ermahnt, wird laut und droht — die Kinder spüren den Unterschied. <span class="beleg">[Careum HKB A, S. 48]</span></p>
+<p>Auch gegenüber den Eltern braucht es eine reflektierte, professionelle Haltung, denn eine gelingende Erziehungspartnerschaft baut auf der Begegnung auf gleicher Augenhöhe auf: <strong>respektvoller und wertschätzender Umgang</strong> (Eltern als Erziehungs- und Bildungspartner anerkennen), <strong>vorurteilsfreies Gegenübertreten</strong> (schwierige Erfahrungen mit einer Migrationsfamilie nicht auf alle Familien mit Migrationshintergrund übertragen), <strong>ressourcenorientierte Denkweise</strong> (Interesse der Eltern als Ressource sehen) und <strong>bewusste Gestaltung der Kommunikation</strong>. <span class="beleg">[Kinderpflege, S. 395]</span> <span class="tag n">Soll-Literatur Kind</span></p>
+
+<h4><span class="tag fr">Fachrichtung MmB</span> Bild von Menschen mit Beeinträchtigung</h4>
+<p>Alle werdenden Eltern wünschen sich ein gesundes Kind. Rein menschenrechtlich ist die Frage, ob Menschen, die «anscheinend von keinem Nutzen für die Gesellschaft sind», leben dürfen, eindeutig beantwortet: Jeder Mensch hat das unveräusserliche Recht auf Leben. Dennoch entstand eine Diskussion darüber, was oder wer lebenswert oder lebensunwert sei: Ab wann ist ein Leben lebenswert? Ist es vertretbar, eine Schwangerschaft abzubrechen, wenn beim Fötus eine Trisomie festgestellt wird? Ist es werdenden Eltern zuzumuten, ein Kind mit Beeinträchtigung zur Welt zu bringen? Je nach Haltung gegenüber Menschen mit Beeinträchtigung beantwortet man diese Fragen unterschiedlich. <span class="beleg">[Careum HKB A, S. 47–48]</span></p>
+<p><span class="tag de">DE</span>Das deutsche Lehrmittel beschreibt, wie sich gesellschaftliche Haltung und Realität unterscheiden: Trotz der rechtlichen Fortschritte findet das Leben vieler Menschen mit Behinderung noch in «Sonderwelten» statt — Fahrdienst statt Schulweg mit Freunden, Sonderschule, Arbeit in der Werkstatt für behinderte Menschen, Wohnen bei den Eltern oder in Sonder-Wohnformen, Freizeit nur in der Gruppe. Menschen mit Lernschwierigkeiten wird oft nicht zugetraut, selbst über ihr Leben zu bestimmen; nicht ihre Wünsche und Fähigkeiten zählen, sondern die zugeschriebene Behinderung legt den Lebensweg fest. Wer immer hört «Das kannst du nicht», glaubt irgendwann selbst nicht mehr an sich. Deshalb sind Methoden wichtig, die die Betroffenen stärken, etwa die <strong>persönliche Zukunftsplanung</strong>: Mit Hilfe von Unterstützerkreisen findet die planende Person heraus, was sie erreichen will und wie sie ihren eigenen Weg finden kann. Der Verein «Mensch zuerst» vertritt nach dem Prinzip «Wir vertreten uns selbst!» die Interessen von Menschen mit Lernschwierigkeiten. <span class="beleg">[HEP 2, S. 374–375]</span> <span class="tag n">Soll-Literatur MmB</span></p>
+
+<h4>Bild von Menschen im Alter</h4>
+<p>Das Bild von Menschen im Alter hat sich im Lauf der Geschichte verändert, und mit ihm Betreuung und Pflege. Heute bestehen verschiedene Haltungen nebeneinander: Die einen Altersbilder stellen die positiven Aspekte des Alterns ins Zentrum — Menschen im Alter übernehmen Verantwortung für ihr Leben, handeln selbstbestimmt, setzen sich aktiv mit dem Abschiednehmen auseinander, nutzen ihre Ressourcen; Krankheiten und Grenzsituationen gelten als Entwicklungschancen. Andere betonen die negativen Aspekte: Probleme, körperliche und medizinische Aspekte stehen im Vordergrund; der junge, leistungsfähige Mensch gilt als Standard, Menschen im Alter passen schlecht ins Idealbild und erinnern an die eigene Zukunft, der man sich nicht stellen will. <span class="beleg">[Careum HKB A, S. 47]</span></p>
+
+<h3 id="e4">5.4 Die professionelle Haltung</h3>
+<p>Jeder Mensch nimmt eine Haltung gegenüber anderen Menschen und gegenüber der Welt ein. Diese Haltung entsteht aus biografischen Bezügen und Erfahrungen und wird massgeblich durch die Zugehörigkeit zu sozialen Gruppen geprägt. In sozialpädagogischen Arbeitsfeldern ist eine <strong>professionelle Haltung</strong> gegenüber den betreuten Personen und ihren Bezugspersonen sowie im Team unabdingbar — und ebenso gegenüber sich selbst, der eigenen beruflichen Rolle und den eigenen Grenzen. Die professionelle Haltung bestimmt die Qualität der Beziehungs- und Bildungsarbeit; sie ist Kernelement des beruflichen Selbstverständnisses. <span class="beleg">[EuE 1, S. 32–33]</span> <span class="tag de">DE</span> Das Lehrmittel ordnet die professionelle Haltung dem Deutschen Qualifikationsrahmen (DQR) und einem Beschluss der deutschen Kultusministerkonferenz zu — ein deutsches System, das in der Schweiz nicht gilt. <span class="beleg">[EuE 1, S. 32]</span></p>
+<p>Die professionelle Haltung ist grundsätzlich <strong>dialogisch</strong> und entfaltet sich in mehreren Dimensionen: Respekt, Empathie, Achtsamkeit, Authentizität, Kongruenz, Wertschätzung, Ressourcenorientierung und professionelle Distanz. Vielfalt und Individualität werden als Bereicherung und Normalität respektiert. Man bringt dem Gegenüber Interesse an seinen Gedanken, Bedürfnissen, Wünschen und Gefühlen entgegen und akzeptiert es mit seinen Werten und Normen, auch wenn diese sich von den eigenen unterscheiden. Ziel ist, die Gefühle und Denkprozesse des Gegenübers nachzuvollziehen und ein gemeinsames Verständnis herzustellen — die Voraussetzung für eine tragfähige Beziehung. <span class="beleg">[EuE 1, S. 33]</span></p>
+<p><strong>Professionelle Distanz</strong> heisst, jederzeit zu reflektieren, dass die Lebenssituation der betreuten Personen nicht vor dem Hintergrund der eigenen Lebenssituation betrachtet werden darf. Die Fachkraft trägt Verantwortung für die ihr übertragenen Aufgaben, nicht für die Lebenssituationen der Betreuten; Berufs- und Privatleben sind klar zu trennen. Achtsamkeit gegenüber der eigenen Person ist Teil von Selbstsorge und Gesundheit. Zur professionellen Haltung gehört auch, die Grenzen des eigenen Handelns zu erkennen und andere Unterstützungssysteme einzubeziehen. <span class="beleg">[EuE 1, S. 34]</span> Gesellschaftlichen Wandel mitzuvollziehen ist eine weitere Herausforderung; aktuelles Beispiel ist die Aufgabe, ausgehend von der UN-Behindertenrechtskonvention ein inklusives Verständnis zu entwickeln und im Beruf umzusetzen. <span class="beleg">[EuE 1, S. 35]</span></p>
+<p>Eine Haltung entwickelt sich aus Erfahrung und aus der bewussten Reflexion der eigenen Person und des eigenen Handelns — durch Offenheit, Neugier, die Bereitschaft auszuprobieren, und durch die Bereitschaft, Anregung und Feedback anzunehmen. Am Lernort Praxis finden Auszubildende Vorbilder; Reflexionsgespräche mit Praxisanleitenden, Teamreflexionen, kollegiale Fallberatungen und Supervision helfen, die dialogische Haltung in einem Prozess lebenslangen Lernens weiterzuentwickeln. <span class="beleg">[EuE 1, S. 34]</span></p>
+
+<h3 id="e5">5.5 Die eigene Haltung reflektieren</h3>
+<p>Sie werden immer wieder verschiedenen gesellschaftlichen Haltungen gegenüber betreuten Personen begegnen und müssen diese reflektieren, um so Ihre eigene Haltung weiterzuentwickeln. <span class="beleg">[Careum HKB A, S. 49]</span> Gesellschaftliche Haltungen wirken bis in die Institution hinein; darum sollte das Menschenbild einer Institution immer wieder Gegenstand der Auseinandersetzung sein. <span class="beleg">[Careum ABK K, S. K14]</span></p>
+<div class="box merk">
+  <p><strong>Leitfragen aus den Quellen</strong></p>
+  <ul class="merk">
+    <li>Wer hat meine Haltung gegenüber betreuten Personen von aussen beeinflusst — und in welcher Form? <span class="beleg">[Careum HKB A, S. 45]</span></li>
+    <li>Welche Normen, Werte und ethischen Prinzipien stehen hinter meinem Verhalten in einer konkreten Situation? <span class="beleg">[Careum HKB A, S. 48]</span></li>
+    <li>Welche Haltung gegenüber Menschen mit Beeinträchtigung steht hinter meinen Antworten auf die Fragen nach dem «lebenswerten» Leben? <span class="beleg">[Careum HKB A, S. 48]</span></li>
+    <li>Welches Bild habe ich von Menschen im Alter — und welche Gefahr entstünde, wenn eine Institution die negativen Aspekte des Alterns ins Zentrum rückte? <span class="beleg">[Careum HKB A, S. 48]</span></li>
+    <li>Was hat mich in meiner eigenen Erziehung geprägt? Inwieweit prägen schwierige Erfahrungen aus meiner Kindheit mein Verhalten als Betreuungsperson? <span class="beleg">[EuE 1, S. 176]</span></li>
+  </ul>
+</div>
+
+<div class="ebenen" data-sid="e"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 2. Lehrjahr</p>
+<p class="stimme">«Ich dachte, ich hätte gar keine Haltung zu Kindern, ich mache einfach meine Arbeit im Hort. Jetzt merke ich, dass ich längst eine habe.»</p>
+<h4>Was mich packt</h4>
+<p>Haltung ist eine innere Einstellung, die mein Denken und Handeln prägt. <span class="beleg">[Careum HKB A, S. 45]</span> Das Hortbeispiel mit den zwei Fachpersonen kenne ich aus meinem Alltag: Die eine lässt die Kinder ihre Angelegenheiten selbst regeln, der andere ermahnt, wird laut und droht, und die Kinder spüren den Unterschied. <span class="beleg">[Careum HKB A, S. 48]</span> Letzte Woche haben zwei Kinder um das letzte Stück Karton gestritten, und ich habe «Jetzt reicht's» gerufen, bevor ich zugehört hatte. Ich wollte genau diese Fachperson nicht sein.</p>
+<h4>Wo ich aussteige</h4>
+<p>Beim «Anwalt des Kindes». Wer Kinder als eigenständige Individuen sieht, die selbst wissen, was ihnen guttut, geht nicht von den Bedingungen der Institution aus, sondern von den Bedürfnissen des Kindes. <span class="beleg">[Careum HKB A, S. 47]</span> Bei uns beginnt die Aufgabenzeit um vier, ob ein Kind Lust hat oder nicht. Und bei den Eltern soll ich schwierige Erfahrungen mit einer Migrationsfamilie nicht auf alle Familien übertragen. <span class="beleg">[Kinderpflege, S. 395]</span> Nach einem harten Gespräch mache ich beim nächsten mit einer anderen Familie aus demselben Land schon innerlich zu. Am meisten sträubt sich in mir die Frage nach meiner eigenen Erziehung. <span class="beleg">[EuE 1, S. 176]</span> Das ist mir zu nah, ich will es nicht vor der Klasse erzählen.</p>
+<h4>Meine Frage</h4>
+<p>Wenn meine Haltung aus meiner Familie, meiner Schule und meinen Freunden kommt, bin ich dann einfach so, oder kann ich sie verändern? Und wo darf ich im Hort gegen das entscheiden, was ein Kind will?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An Szenen aus dem Hort, die ich anschauen kann, ohne selbst die Hauptperson zu sein. Und ich möchte für mich nachdenken dürfen, ohne laut sagen zu müssen, was in meiner Kindheit war.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Ich höre eine fachliche und eine persönliche Frage. Zur persönlichen: Niemand muss hier etwas aus der eigenen Kindheit erzählen. Die Frage nach deiner Erziehung beantwortest du für dich auf einem Blatt, das bei dir bleibt. <span class="beleg">[EuE 1, S. 176]</span> Zur fachlichen: Drei Einflussfaktoren prägen die Haltung, Gesellschaft, Sozialisationsinstanzen und Selbstreflexion, und der Mensch übernimmt nicht unreflektiert alle Werte und Normen. <span class="beleg">[Careum HKB A, S. 46]</span> Deine Haltung ist also nicht einfach gegeben, du sollst sie reflektieren und weiterentwickeln. <span class="beleg">[Careum HKB A, S. 49]</span></p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Standortlinie: Ich spanne ein Seil durch den Raum, links «stimmt», rechts «stimmt nicht». Ich lese Sätze vor, zum Beispiel: Ein Kind weiss selbst, was ihm guttut. <span class="beleg">[Careum HKB A, S. 47]</span> Ihr stellt euch hin. Begründen muss niemand, wer mag, sagt einen Satz.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Wir spielen die Hortszene mit dem Streit um den Karton in zwei Fassungen: Die Fachperson lässt die Kinder selbst regeln, oder sie ermahnt, wird laut und droht. <span class="beleg">[Careum HKB A, S. 48]</span> Eine dritte Person spielt das Kind und sagt, was sie gespürt hat (Perspektivenwechsel). Dann legt ihr beide Fachpersonen auf das Raster der drei Einflussfaktoren. <span class="beleg">[Careum HKB A, S. 46]</span> Die Figuren sind erfunden, niemand legt sich selbst darauf. Zuletzt ordnet ihr Beispielsätze den vier Merkmalen der Haltung gegenüber Eltern zu. <span class="beleg">[Kinderpflege, S. 395]</span></p>
+<h4>Stolperstelle</h4>
+<p>Ihr werdet «Anwalt des Kindes» schnell als «das Kind entscheidet alles» lesen. Die Quelle sagt: altersgerecht. <span class="beleg">[Careum HKB A, S. 47]</span> Haltungen sind personen- und kulturabhängig, <span class="beleg">[Careum HKB A, S. 46–47]</span> ein Rezept zum Abschreiben gibt es nicht. Wie viel Spielraum ihr im Hortablauf habt, wenn er einem Kind widerspricht, sagt der Text nicht. Ich erfinde dazu keine Antwort.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet «aktuelle gesellschaftliche Haltungen in Bezug auf die betreuten Personen (z. B. Autonomie, interkulturelle Unterschiede, individuelle Bedürfnisse, unveräusserliches Recht auf Leben) reflektieren sowie meine eigene Haltung dazu erläutern und kritisch reflektieren» (K5). Schreib dazu eine halbe Seite zu einer Hortszene. Beschreibe zwei Haltungen gegenüber dem Kind, erläutere deine eigene und beurteile mit dem Raster der drei Einflussfaktoren, was sie geprägt hat. Abgeben musst du deine Begründung, nicht deine Geschichte. Du beantwortest auch die Leitfrage vom Anfang der Lernsituation ein zweites Mal und vergleichst sie mit deiner ersten Antwort.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 2. Lehrjahr</p>
+<p class="stimme">«Bei der Frage nach dem lebenswerten Leben weiss ich nicht, was ich denke, und ich glaube, das ist nicht einfach Unwissen.»</p>
+<h4>Was mich packt</h4>
+<p>Der Satz «Das kannst du nicht» hat mich getroffen. Wer ihn immer wieder hört, glaubt irgendwann selbst nicht mehr an sich, so steht es in einem deutschen Lehrmittel. <span class="beleg">[HEP 2, S. 374–375]</span> In unserer Werkstatt hat letzte Woche jemand im Team genau das über einen Mitarbeiter gesagt, der allein mit dem Tram zur Arbeit fahren möchte. Ich habe geschwiegen und mich danach geärgert. Die persönliche Zukunftsplanung finde ich gut: Die Person findet mit einem Unterstützerkreis selbst heraus, was sie erreichen will. <span class="beleg">[HEP 2, S. 374–375]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den Fragen nach dem «lebenswerten» Leben. Es geht darum, ab wann ein Leben als lebenswert gilt, ob es vertretbar ist, eine Schwangerschaft bei Trisomie abzubrechen, und ob man werdenden Eltern ein Kind mit Beeinträchtigung zumuten kann. <span class="beleg">[Careum HKB A, S. 47–48]</span> Ich arbeite gern mit Menschen mit Trisomie 21, und trotzdem weiss ich bei der zweiten Frage nicht sofort, was ich finde. Ich denke zwei Dinge gleichzeitig, und das gibt mir ein schlechtes Gewissen. Auch bei den «Sonderwelten» bin ich unsicher. Bei uns holt der Fahrdienst die Leute ab, und die Werkstatt ist ihr Arbeitsort. Der Text zählt genau das als Sonderwelt auf, <span class="beleg">[HEP 2, S. 374–375]</span> und ich weiss nicht, ob er damit auch uns meint.</p>
+<h4>Meine Frage</h4>
+<p>Muss ich dazu eine feste Meinung haben, um eine gute Fachperson zu sein? Und muss ich in der Klasse sagen, was ich denke, oder darf ich es für mich behalten?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Zuerst allein schreiben, dann nur mit einer Person reden, der ich vertraue, und erst danach in der Klasse. Und ich möchte wissen, was in den Quellen steht und was nicht, damit ich nicht denke, es gebe eine richtige Antwort, die ich nur nicht kenne.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du denkst bei der Trisomie-Frage zwei Dinge gleichzeitig. Das ist erlaubt, ich finde die Frage auch nicht leicht. Eine Meinung gebe ich dir nicht vor, und niemand muss hier etwas von sich oder der Familie erzählen. Menschenrechtlich hat jeder Mensch das unveräusserliche Recht auf Leben, die Fragen zu Trisomie und Schwangerschaft beantwortet man aber je nach Haltung unterschiedlich. <span class="beleg">[Careum HKB A, S. 47–48]</span> Der Berufskodex verlangt den Einsatz für Gleichbehandlung aller Menschen und gegen Diskriminierung. <span class="beleg">[Careum HKB A, S. 49]</span> Wie das Recht auf Leben bei einer Schwangerschaft anzuwenden ist, sagen die Quellen nicht, diese Lücke fülle ich nicht.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich stelle die Schwangerschaftsfrage nicht zur Abstimmung. Ihr schreibt zwei Minuten allein auf, was euch durch den Kopf geht, das Blatt bleibt bei euch. Wer mag, redet danach zu zweit. Auf die Standortlinie kommt eine andere Aussage: Menschen mit Lernschwierigkeiten wird oft nicht zugetraut, selbst über ihr Leben zu bestimmen. <span class="beleg">[HEP 2, S. 374–375]</span></p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Auf Karten stehen die «Sonderwelten» aus dem deutschen Lehrmittel: Fahrdienst, Sonderschule, Werkstatt, Wohnen bei den Eltern, Freizeit nur in der Gruppe. <span class="beleg">[HEP 2, S. 374–375]</span> Ob das auf Schweizer Betriebe passt, sagen die Quellen nicht. Ihr ordnet die Karten: kenne ich aus meinem Betrieb, kenne ich nicht, kann ich nicht beurteilen. Dann folgt ein Perspektivenwechsel: Zu dritt spielt ihr «Das kannst du nicht» und dreht die Szene zur persönlichen Zukunftsplanung um. <span class="beleg">[HEP 2, S. 374–375]</span> Zuletzt legt ihr das Raster der drei Einflussfaktoren auf den Satz. <span class="beleg">[Careum HKB A, S. 46]</span></p>
+<h4>Stolperstelle</h4>
+<p>Ihr werdet aus dem Recht auf Leben sofort eine Antwort auf die Schwangerschaftsfrage ableiten wollen, oder aus meiner Offenheit schliessen, alles gelte gleich viel. Die Quelle nennt das Recht auf Leben und sagt zugleich, dass die Antworten je nach Haltung ausfallen. <span class="beleg">[Careum HKB A, S. 47–48]</span> Klarer ist die Autonomie: Sie ist bei allen Menschen gleich zu achten, auch wenn sie sie nicht gleich ausüben können. <span class="beleg">[HEP 1, S. 103]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Das Lernziel lautet «aktuelle gesellschaftliche Haltungen in Bezug auf die betreuten Personen (z. B. Autonomie, interkulturelle Unterschiede, individuelle Bedürfnisse, unveräusserliches Recht auf Leben) reflektieren sowie meine eigene Haltung dazu erläutern und kritisch reflektieren» (K5). Wähle eine Szene aus Werkstatt oder Wohngruppe, ohne Namen, oder die Frage nach dem «lebenswerten» Leben. Beschreibe die sichtbaren Haltungen, erläutere deine eigene und beurteile mit dem Raster der drei Einflussfaktoren, was sie geprägt hat. Eine begründete Unsicherheit ist eine gültige Reflexion. Du beantwortest auch die Leitfrage vom Anfang der Lernsituation ein zweites Mal und vergleichst sie mit deiner ersten Antwort.</p>
+</section></div></div></div>
+
+<!-- ===================================================== 8 GLOSSAR -->
+<h2 id="glossar">Begriffe auf einen Blick</h2>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Begriff</th><th>Erklärung</th><th>Quelle</th></tr></thead>
+  <tbody>
+    <tr><td>AEMR</td><td>Allgemeine Erklärung der Menschenrechte, 1948 von der UNO-Generalversammlung verabschiedet; 30 Artikel; juristisch nicht verbindlich, moralisch und politisch von grossem Gewicht.</td><td>Careum HKB A, S. 49</td></tr>
+    <tr><td>Anthropologie</td><td>Wissenschaft vom Menschen und seiner Entwicklung (griechisch «anthropos»: Mensch, «logie»: Lehre).</td><td>EuE 1, S. 151</td></tr>
+    <tr><td>Barrierefreiheit (Zugänglichkeit)</td><td>Gleichberechtigter Zugang zur physischen Umwelt, zu Transportmitteln, Information und Kommunikation (BRK Art. 9).</td><td>Careum HKB A, S. 53</td></tr>
+    <tr><td>Berufskodex</td><td>Zeigt, mit welcher Haltung Fachpersonen Betreuung anderen Menschen begegnen sollen; nennt Prinzipien als Grundlage der Verhaltensregeln in der Praxis (Avenir Social, 2010).</td><td>Careum HKB A, S. 45, 49</td></tr>
+    <tr><td>BRK (UN-Behindertenrechtskonvention)</td><td>Übereinkommen über die Rechte von Menschen mit Beeinträchtigungen, 2006 verabschiedet, 2008 in Kraft; Schweiz seit 2014; erstes internationales Spezialübereinkommen für diese Rechte.</td><td>Careum HKB A, S. 52</td></tr>
+    <tr><td>Empathie</td><td>Einfühlendes Verstehen: die Fähigkeit, sich in die Gefühlswelt eines Gegenübers hineinzuversetzen, ohne sich mit ihm zu identifizieren.</td><td>HEP 1, S. 350</td></tr>
+    <tr><td>Empowerment</td><td>Selbstbefähigung und Selbstermächtigung; Grundwert der Betreuung: betreute Personen befähigen, Dinge selbst zu tun und Entscheidungen selbst zu treffen.</td><td>Careum HKB A, S. 44</td></tr>
+    <tr><td>Haltung</td><td>Innere Einstellung, die das Denken und Handeln einer Person prägt.</td><td>Careum HKB A, S. 45</td></tr>
+    <tr><td>Humanistisches Menschenbild</td><td>Vorstellung, dass jeder Mensch eine eigenständige, in sich wertvolle Persönlichkeit ist; schliesst den Respekt vor der Verschiedenartigkeit der Menschen ein.</td><td>Kinderpflege, S. 300</td></tr>
+    <tr><td>Identität</td><td>Definiert eine Person als einmalig und unverwechselbar; das Bild und das Gefühl, das ein Mensch von sich selbst hat. Entsteht aus Identifikation und Identifizierung.</td><td>Careum HKB F MmB, S. 44</td></tr>
+    <tr><td>Ideologie</td><td>Die von einer Gesellschaft oder Kultur vertretenen Grundeinstellungen und Werthaltungen, mit denen bestimmte Ziele erreicht werden sollen (Beispiel: Nationalsozialismus).</td><td>Careum ABK K, S. K14</td></tr>
+    <tr><td>Inhärente Würde</td><td>Wesensmässige, innewohnende Würde, die nicht errungen werden muss und jedem Menschen zukommt.</td><td>Careum HKB A, S. 36</td></tr>
+    <tr><td>Kongruenz (Echtheit)</td><td>Das eigene Erleben ist einem bewusst, und man kann es von dem trennen, was man beim Gegenüber wahrnimmt; authentische Begegnung.</td><td>HEP 1, S. 351</td></tr>
+    <tr><td>Kontingente Würde</td><td>Abhängige Würde, die erworben wird und von Merkmalen wie Stellung, Prestige und Ansehen abhängt; sie kann verloren gehen.</td><td>Careum HKB A, S. 36</td></tr>
+    <tr><td>Menschenbild</td><td>Bestimmte Vorstellung über den Menschen; besteht aus Annahmen und/oder Erkenntnissen darüber, was einen Menschen ausmacht.</td><td>Careum ABK K, S. K12</td></tr>
+    <tr><td>Monitoring</td><td>Systematische Protokollierung, Beobachtung oder Überwachung eines Vorgangs; bei der UN-KRK die Berichtspflicht der Staaten alle fünf Jahre.</td><td>EuE 1, S. 324</td></tr>
+    <tr><td>Personenzentrierte Haltung</td><td>Respekt und bedingungslose Akzeptanz des anderen in seiner Gesamtpersönlichkeit; drei Komponenten Empathie, Wertschätzung, Kongruenz, ergänzt um Reflexion.</td><td>HEP 1, S. 349–352</td></tr>
+    <tr><td>Ratifizieren</td><td>Einen völkerrechtlichen Vertrag in Kraft setzen.</td><td>Careum HKB A, S. 50</td></tr>
+    <tr><td>Selbstkonzept</td><td>Das Bild, das eine Person von sich hat, und die Wertung, die sich damit verbindet; negativ oder positiv, nicht statisch.</td><td>HEP 1, S. 349</td></tr>
+    <tr><td>UN-KRK (UN-Kinderrechtskonvention)</td><td>Übereinkommen über die Rechte des Kindes, 1989 verabschiedet; 54 Artikel; Prinzipien Nichtdiskriminierung, Kindeswohl, Anhörung von Kindern.</td><td>Careum HKB A, S. 49</td></tr>
+    <tr><td>Wertschätzung (bedingungslose)</td><td>Nicht wertendes Akzeptieren: Die Achtung der Person ist nicht an Bedingungen und Wertungen geknüpft und bezieht sich auf die ganze Person.</td><td>HEP 1, S. 350</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===================================================== 9 LERNZIELE -->
+<h2 id="lz">Lernziele und wo sie stehen</h2>
+<p class="small">Wortlaut nach Schullehrplan vG, Kind S. 58, MmB S. 59; die fünf Lernziele sind in beiden Fachrichtungen wortgleich. Der Schullehrplan gibt die K-Stufe für die BFS-Leistungsziele an (a1.6.2 K2, a1.6.4 K5), nicht für die einzelnen «Ich kann»-Lernziele; die Spalte zeigt die Stufe des zugehörigen Leistungsziels. <span class="beleg">[SLP vG Kind, S. 58; SLP vG MmB, S. 59]</span></p>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Lernziel («Ich kann …»)</th><th>Fachrichtung</th><th>K-Stufe</th><th>Abschnitt</th><th>Quelle</th></tr></thead>
+  <tbody>
+    <tr><td>… mithilfe der UN-Menschenrechtserklärung und der UN-Behindertenrechtskonvention die berufsrelevanten Menschenrechte <strong>identifizieren</strong> und die Entstehungsgeschichte der Menschenrechte in Bezug auf meinen Beruf überblickend <strong>erläutern</strong>.</td><td>Kind</td><td><span class="tag k">K2</span> (a1.6.2)</td><td>1.1–1.5</td><td>Careum HKB A, S. 49–56; EuE 1, S. 323–325, 448; Kinderpflege, S. 48</td></tr>
+    <tr><td>… anhand der Übersicht «Menschenbilder im Wandel der Zeit» den Begriff «Menschenbild» in eigenen Worten <strong>beschreiben</strong> und die verschiedenen Menschenbilder <strong>zusammenfassen</strong> und <strong>aufeinander beziehen</strong>.</td><td>Kind</td><td><span class="tag k">K2</span> (a1.6.2) / <span class="tag k">K5</span> (a1.6.4)</td><td>3.1–3.6</td><td>Careum ABK K, S. K12–K16; EuE 1, S. 151–153, 752; Careum HKB F MmB, S. 44–47</td></tr>
+    <tr><td>… die Bedeutung des humanistischen Menschenbilds für mein professionelles Handeln in Bezug auf meine zu betreuenden Personen <strong>beschreiben</strong>.</td><td>Kind</td><td><span class="tag k">K2</span> (a1.6.2)</td><td>4.1–4.6</td><td>EuE 1, S. 176–177; Kinderpflege, S. 300–301; HEP 1, S. 349–353 (fachrichtungsneutral); Careum HKB A, S. 46</td></tr>
+    <tr><td>… mithilfe der Allgemeinen Erklärung der Menschenrechte (AEMR) das Konzept der Menschenwürde <strong>erklären</strong> und durch eigene Praxissituationen modellhaft <strong>darstellen</strong>.</td><td>Kind</td><td><span class="tag k">K2</span> (a1.6.2)</td><td>1.2, 2.1–2.3</td><td>Careum HKB A, S. 36, 43–44, 49</td></tr>
+    <tr><td>… aktuelle gesellschaftliche Haltungen in Bezug auf die betreuten Personen (z. B. Autonomie, interkulturelle Unterschiede, individuelle Bedürfnisse, unveräusserliches Recht auf Leben) <strong>reflektieren</strong> sowie meine eigene Haltung dazu <strong>erläutern</strong> und kritisch <strong>reflektieren</strong>.</td><td>Kind</td><td><span class="tag k">K5</span> (a1.6.4)</td><td>5.1–5.5, 3.4</td><td>Careum HKB A, S. 45–49; EuE 1, S. 32–35; Kinderpflege, S. 395; Careum ABK K, S. K14</td></tr>
+    <tr><td>… mithilfe der UN-Menschenrechtserklärung und der UN-Behindertenrechtskonvention die berufsrelevanten Menschenrechte <strong>identifizieren</strong> und die Entstehungsgeschichte der Menschenrechte in Bezug auf meinen Beruf überblickend <strong>erläutern</strong>.</td><td>MmB</td><td><span class="tag k">K2</span> (a1.6.2)</td><td>1.1–1.5</td><td>Careum HKB A, S. 49–56; EuE 1, S. 448; HEP 2, S. 374–375; HEP 1, S. 103–104</td></tr>
+    <tr><td>… anhand der Übersicht «Menschenbilder im Wandel der Zeit» den Begriff «Menschenbild» in eigenen Worten <strong>beschreiben</strong> und die verschiedenen Menschenbilder <strong>zusammenfassen</strong> und <strong>aufeinander beziehen</strong>.</td><td>MmB</td><td><span class="tag k">K2</span> (a1.6.2) / <span class="tag k">K5</span> (a1.6.4)</td><td>3.1–3.6</td><td>Careum ABK K, S. K12–K16; Careum HKB F MmB, S. 44–47; HEP 1, S. 102–103; EuE 1, S. 151–153</td></tr>
+    <tr><td>… die Bedeutung des humanistischen Menschenbilds für mein professionelles Handeln in Bezug auf meine zu betreuenden Personen <strong>beschreiben</strong>.</td><td>MmB</td><td><span class="tag k">K2</span> (a1.6.2)</td><td>4.1–4.6</td><td>HEP 1, S. 349–353; EuE 1, S. 176–177 (fachrichtungsneutral); Careum HKB A, S. 46</td></tr>
+    <tr><td>… mithilfe der Allgemeinen Erklärung der Menschenrechte (AEMR) das Konzept der Menschenwürde <strong>erklären</strong> und durch eigene Praxissituationen modellhaft <strong>darstellen</strong>.</td><td>MmB</td><td><span class="tag k">K2</span> (a1.6.2)</td><td>1.2, 2.1–2.3</td><td>Careum HKB A, S. 36, 43–44, 49; HEP 1, S. 102–104</td></tr>
+    <tr><td>… aktuelle gesellschaftliche Haltungen in Bezug auf die betreuten Personen (z. B. Autonomie, interkulturelle Unterschiede, individuelle Bedürfnisse, unveräusserliches Recht auf Leben) <strong>reflektieren</strong> sowie meine eigene Haltung dazu <strong>erläutern</strong> und kritisch <strong>reflektieren</strong>.</td><td>MmB</td><td><span class="tag k">K5</span> (a1.6.4)</td><td>5.1–5.5, 3.4</td><td>Careum HKB A, S. 45–49; HEP 1, S. 102, 349–353; HEP 2, S. 374–375; Careum ABK K, S. K14</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>BFS-Leistungsziel (Bildungsplan)</th><th>Fachrichtung</th><th>K-Stufe</th><th>Abschnitt</th></tr></thead>
+  <tbody>
+    <tr><td>a1.6.2 — erläutert die Bedeutung der grundlegenden Menschenrechte, welche die Situation von betreuten Personen betreffen.</td><td>Kind, MmB</td><td><span class="tag k">K2</span></td><td>1, 2</td></tr>
+    <tr><td>a1.6.4 — reflektiert verschiedene gesellschaftliche Haltungen in Bezug auf die betreuten Personen.</td><td>Kind, MmB</td><td><span class="tag k">K5</span></td><td>3, 4, 5</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===================================================== 10 QUELLEN -->
+<h2 id="quellen">Quellenverzeichnis</h2>
+<p class="small">Alle Dateien im Ordner <code>Careum/LS 2.04 …/</code>. Gedruckte Seiten sind am Seitenbild abgelesen. Kurzform in den Belegen in Klammern.</p>
+<div class="tabwrap">
+<table>
+  <thead><tr><th>Datei</th><th>Gedruckte Seiten</th><th>Kurzform</th><th>Soll-Literatur</th></tr></thead>
+  <tbody>
+    <tr><td>LS 2.04_Careum HKB A (2021)_Kap. 1.5 Menschenwürde, Berufskodex, Menschenrechte_S.36 und 43-56.pdf</td><td>36, 43–56 (die 17. PDF-Seite ist ein beschnittener Wiederabdruck der S. 56)</td><td>Careum HKB A</td><td>Kind, MmB</td></tr>
+    <tr><td>LS 2.04_Careum ABK K Berufsbild und Ethik (2016)_Kap. 2.2 Menschenbilder_S.K12-K16.pdf</td><td>K12–K16</td><td>Careum ABK K</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_Careum ABK K_Kap. 2.2.5 Identitätsmodell nach H. Petzold, Grafik_S.K15.pdf</td><td>K15 (Dublette: dieselbe Seite liegt in der vorigen Datei)</td><td>Careum ABK K</td><td>MmB (Ergänzung)</td></tr>
+    <tr><td>LS 2.04_Careum HKB F MmB (2021)_Kap. 1.5 Identität, Fünf-Säulen-Modell nach Petzold_S.44-47.pdf</td><td>44–47</td><td>Careum HKB F MmB</td><td>MmB</td></tr>
+    <tr><td>LS 2.04_Erzieherinnen und Erzieher Band 1 (2020)_Professionelle Haltung_S.32-35.pdf</td><td>32–35</td><td>EuE 1</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_Erzieherinnen und Erzieher Band 1 (2020)_Menschenbilder aus unterschiedlichen Bezugswissenschaften_S.151-153.pdf</td><td>151–153</td><td>EuE 1</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_Erzieherinnen und Erzieher Band 1 (2020)_Kap. 3.1.1 Grundhaltungen für eine positive Beziehungsgestaltung_S.176-177.pdf</td><td>176–177</td><td>EuE 1</td><td>Kind (Ergänzung 10.09.2026)</td></tr>
+    <tr><td>LS 2.04_Erzieherinnen und Erzieher Band 1 (2020)_Kinderrechte_S.323-325.pdf</td><td>323–325</td><td>EuE 1</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_Erzieherinnen und Erzieher Band 1 (2020)_UN-Behindertenrechtskonvention_S.448.pdf</td><td>448</td><td>EuE 1</td><td>MmB</td></tr>
+    <tr><td>LS 2.04_Erzieherinnen und Erzieher Band 1 (2020)_Pädagogische Handlungskonzepte und Menschenbild_S.752.pdf</td><td>752</td><td>EuE 1</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_Kinderpflege (2015)_Pädagogische Grundlagen_S.48-49.pdf</td><td>48–49</td><td>Kinderpflege</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_Kinderpflege (2015)_Kap. 5.3.4 Reggio-Pädagogik und humanistisches Menschenbild_S.300-301.pdf</td><td>300–301</td><td>Kinderpflege</td><td>Kind (Ergänzung 10.09.2026)</td></tr>
+    <tr><td>LS 2.04_Kinderpflege (2015)_Haltung der pädagogischen Fachkraft_S.395.pdf</td><td>395</td><td>Kinderpflege</td><td>Kind</td></tr>
+    <tr><td>LS 2.04_HEP Band 1 (2022)_Ethik in der Heilerziehungspflege, historische Aspekte_S.102-104.pdf</td><td>102–104</td><td>HEP 1</td><td>MmB</td></tr>
+    <tr><td>LS 2.04_HEP Band 1 (2022)_Die Haltung der professionellen Fachkraft_S.349-353.pdf</td><td>349–353</td><td>HEP 1</td><td>MmB</td></tr>
+    <tr><td>LS 2.04_HEP Band 2 (2022)_Rechte von Menschen mit Behinderung_S.374-375.pdf</td><td>374–375</td><td>HEP 2</td><td>MmB</td></tr>
+    <tr><td>Schullehrplan BKU1 FaBe vG, Kind und MmB (über die Skills slp-bku1-kind / slp-bku1-beh)</td><td>Kind S. 58, MmB S. 59</td><td>SLP vG Kind / SLP vG MmB</td><td>Gliederung</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===================================================== 11 OFFEN -->
+<h2 id="offen">Was nicht belegt ist</h2>
+<ul class="stop merk">
+  <li><strong>Careum HKB A, gedruckte S. 37 und 42 fehlen.</strong> Die Soll-Literatur beider Fachrichtungen nennt «Prinzip Menschenwürde (S. 36–37 bzw. 36–38)» und «Berufskodex (S. 42–45)». Der Auszug enthält nur S. 36 und S. 43–56. Ob das Kapitel Menschenwürde auf S. 37 weitergeht und was Teil A des Berufskodex-Kapitels auf S. 42 enthält, ist nicht prüfbar; der Berufskodex ist hier nur über S. 45 und das Fazit S. 49 belegt. <span class="beleg">[_Soll-Literatur.md; Careum HKB A, S. 36, 43]</span></li>
+  <li><strong>Careum Kap. 3.6.1 «humanistisches Menschenbild» und 3.6.2 «Grundhaltungen im personenzentrierten Ansatz»</strong> liegen nicht im Ordner. Careum verweist auf S. 45–46 zweimal darauf. Abschnitt 4 ist deshalb ausschliesslich aus den deutschen Lehrmitteln belegt; eine Careum-eigene, für beide Fachrichtungen gültige Quelle zum humanistischen Menschenbild fehlt. <span class="beleg">[Careum HKB A, S. 45–46; _Soll-Literatur.md]</span></li>
+  <li><strong>Die «Übersicht Menschenbilder im Wandel der Zeit»</strong>, auf die sich das zweite Lernziel bezieht, liegt nicht als eigenes Dokument vor. Die einzige Quelle mit dieser Überschrift ist Kap. 2.2.1 «Menschenbilder im Wandel» in Careum ABK K, S. K12–K13; Abschnitt 3.2 fasst sie zusammen. Ob im Unterricht eine andere Übersicht gemeint ist, ist aus den Quellen nicht ersichtlich. <span class="beleg">[SLP vG Kind, S. 58; Careum ABK K, S. K12]</span></li>
+  <li><strong>Wortlaut der AEMR und der UN-BRK.</strong> Das erste und das vierte Lernziel verlangen die Arbeit «mithilfe» der AEMR bzw. der BRK. Im Ordner liegt kein Volltext dieser Konventionen — nur die Zusammenfassung der AEMR (Careum HKB A, S. 49), die Auswahl von zehn BRK-Artikeln (Tab. 8, S. 53) und die Grundsätze aus BRK Art. 3 (EuE 1, S. 448). Die Weblinks der Soll-Literatur Kind (humanrights.ch, jugendnetz.de) wurden nicht ausgewertet, da keine Websuche zulässig ist. <span class="beleg">[_Soll-Literatur.md]</span></li>
+  <li><strong>Widersprüche zwischen den Quellen.</strong> Ratifizierungsstand der UN-KRK: «alle ausser USA» (Careum HKB A, S. 50) gegen «Somalia, Südsudan, USA» (EuE 1, S. 323). Vertragsstaaten der BRK: 175 (Careum HKB A, S. 52) gegen «18 Staaten und die EU» (EuE 1, S. 448). Welche Angabe heute stimmt, lässt sich aus den Quellen nicht klären.</li>
+  <li><strong>Pensionsalter.</strong> Careum nennt «aktuell 64 Jahre bei Frauen» mit Stand des Lehrmittels 2021 (Careum HKB A, S. 55). Ob dieser Wert heute noch gilt, ist aus den Quellen nicht belegbar.</li>
+  <li><strong>Deutsche Rechtsstellen ohne Schweizer Entsprechung in den Quellen:</strong> Grundgesetz und Kinder- und Jugendhilfegesetz (EuE 1, S. 752), National Coalition Deutschland und Kinderrechte im Grundgesetz (EuE 1, S. 325), DQR und Kultusministerkonferenz (EuE 1, S. 32), Grundgesetz Art. 3, SGB IX, Bundesteilhabegesetz (HEP 2, S. 374; EuE 1, S. 448). Die Schweizer Rechtslage zu diesen Punkten steht in keiner Quelle dieser Lernsituation; belegt ist nur die Ratifizierung der BRK durch die Schweiz 2014 (Careum HKB A, S. 52).</li>
+</ul>
+
+<footer>
+  LS 2.04 — Fachliche Zusammenfassung · Berufsfachschule Basel, BKU 1 FaBe vG · Erstellt aus den Fachtexten im Ordner der Lernsituation, Stand 11.09.2026. Alle Zahlen und Artikelnummern am Seitenbild geprüft.
+</footer>
+
+</main>
+<script>(function(){var bs=document.querySelectorAll(".schalter button");function setze(an){document.body.classList.toggle("ohne-ebenen",!an);bs.forEach(function(b){b.setAttribute("aria-pressed",(b.getAttribute("data-an")==="1")===an?"true":"false");});}bs.forEach(function(b){b.addEventListener("click",function(){var an=b.getAttribute("data-an")==="1";var h=document.querySelector(".schalter").getBoundingClientRect().height;var anker=null,abst=0,kids=document.querySelector("main").children;for(var i=0;i<kids.length;i++){var k=kids[i];if(k.classList.contains("schalter")||k.classList.contains("ebenen"))continue;var r=k.getBoundingClientRect();if(r.bottom>h+1){anker=k;abst=r.top;break;}}setze(an);if(anker){window.scrollBy(0,anker.getBoundingClientRect().top-abst);}});});})();</script>
+</body>
+</html>
