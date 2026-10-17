@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LS 1.04 — Fachliche Zusammenfassung mit Lehrpersonen-Ebene</title>
+<style>
+:root{--ink:#1f2a33;--muted:#5b6770;--line:#d9dee3;--soft:#f4f6f8;--acc:#1f6f8b;--acc2:#e9f3f7;--warn:#fff4e0;--warnline:#e0b060;--ok:#e8f5ec;--kind:#eaf2ff;--mmb:#f3ecff;}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:#fbfbfc}
+main{max-width:960px;margin:0 auto;padding:28px 22px 80px}
+h1{font-size:1.9rem;line-height:1.2;margin:.2em 0 .3em;color:var(--acc)}
+h2{font-size:1.45rem;margin:2.2em 0 .6em;padding-bottom:.25em;border-bottom:2px solid var(--acc);color:var(--acc)}
+h3{font-size:1.15rem;margin:1.6em 0 .4em}
+h4{font-size:1rem;margin:1.2em 0 .3em;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+p{margin:.55em 0}
+.kopf{background:var(--acc2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:12px 0 24px}
+.kopf table{margin:0}
+.kopf td{padding:3px 10px 3px 0;vertical-align:top}
+.kopf td:first-child{color:var(--muted);white-space:nowrap}
+.beleg{display:block;font-size:.85rem;color:var(--muted);margin-top:.15em}
+.tabwrap{overflow-x:auto;margin:10px 0 16px}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--soft)}
+caption{caption-side:bottom;text-align:left;font-size:.85rem;color:var(--muted);padding:6px 2px}
+.def{border-left:5px solid var(--acc);background:var(--acc2);padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0}
+.def b:first-child{color:var(--acc)}
+.merk{background:var(--ok);border:1px solid #b9dcc4;border-radius:8px;padding:10px 16px;margin:14px 0}
+.merk::before{content:"✔ ";color:#2c7a45;font-weight:bold}
+.de{background:var(--warn);border:1px solid var(--warnline);border-radius:8px;padding:9px 14px;margin:12px 0;font-size:.93rem}
+.de::before{content:"⚖ Deutsches Recht: ";font-weight:bold}
+.hinweis{background:#f1f1f1;border:1px dashed #aaa;border-radius:8px;padding:9px 14px;margin:12px 0;font-size:.93rem}
+.hinweis::before{content:"ⓘ ";font-weight:bold}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+@media(max-width:700px){.fr{grid-template-columns:1fr}}
+.fr>div{border-radius:8px;padding:10px 14px;border:1px solid var(--line)}
+.fr .kind{background:var(--kind)}
+.fr .mmb{background:var(--mmb)}
+.fr h5{margin:0 0 .4em;font-size:.95rem;text-transform:uppercase;letter-spacing:.04em}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+@media(max-width:700px){.zwei{grid-template-columns:1fr}}
+.zwei>div{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.kette{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;padding:0;list-style:none;counter-reset:k}
+.kette li{flex:1 1 150px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px 8px 12px;position:relative;font-size:.93rem}
+.kette li::before{counter-increment:k;content:counter(k);display:inline-block;background:var(--acc);color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-size:.8rem;margin-right:6px}
+svg{max-width:100%;height:auto;display:block;margin:10px auto}
+figure{margin:14px 0}
+figcaption{font-size:.85rem;color:var(--muted)}
+ul{margin:.4em 0 .6em;padding-left:1.3em}
+li{margin:.15em 0}
+.tag{display:inline-block;font-size:.75rem;padding:1px 7px;border-radius:10px;border:1px solid var(--line);background:#fff;margin-left:4px;vertical-align:middle}
+.k{background:var(--kind)}.m{background:var(--mmb)}
+.kl{font-size:.9rem;color:var(--muted)}
+nav.toc{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:18px 0 8px;font-size:.93rem}
+nav.toc ol{margin:.3em 0;padding-left:1.4em}
+a{color:var(--acc)}
+
+/* ===== Lernende und Lehrperson im Fachtext ===== */
+:root{--lern:#fbefe9;--lernline:#d39a82;--lernink:#8a4a33;--lp:#eaf5ef;--lpline:#6fa88a;--lpink:#2f6a4b}
+.schalter{position:sticky;top:0;z-index:20;background:rgba(251,251,252,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:0 -22px 10px;padding:8px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.schalter .lbl{font-size:.88rem;color:var(--muted)}
+.seg{display:inline-flex;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{appearance:none;border:0;background:transparent;font:inherit;font-size:.92rem;padding:7px 16px;border-radius:999px;cursor:pointer;color:var(--ink);min-height:38px;-webkit-tap-highlight-color:transparent}
+.seg button[aria-pressed="true"]{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:600;color:var(--acc)}
+.seg button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.ebenen{margin:22px 0 8px;padding:14px 0 0;border-top:1px dashed var(--line)}
+body.ohne-ebenen .ebenen{display:none}
+.ebenen-titel{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;color:var(--muted);margin:0 0 10px}
+.ebenen-raster{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:700px){.ebenen-raster{grid-template-columns:1fr}}
+.spalte{min-width:0}
+.fr-kopf{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:0 0 8px}
+.spalte.kind .fr-kopf{background:var(--kind)}
+.spalte.mmb .fr-kopf{background:var(--mmb)}
+.ansicht-box{border-radius:12px;padding:12px 16px 14px;margin:0 0 12px}
+.ansicht-box.lern{background:var(--lern);border:1px solid var(--lernline)}
+.ansicht-box.lp{background:var(--lp);border:1px solid var(--lpline)}
+.ansicht-box .ebene{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin:0 0 .5em}
+.ansicht-box.lern .ebene{color:var(--lernink)}
+.ansicht-box.lp .ebene{color:var(--lpink)}
+.ansicht-box h4{text-transform:none;letter-spacing:0;font-size:1rem;color:var(--ink);margin:.9em 0 .2em}
+.ansicht-box .beleg{display:inline;margin:0 0 0 .25em;font-size:.78rem}
+.stimme{font-size:1.1rem;line-height:1.45;font-style:italic;color:var(--lernink);margin:.2em 0 .7em;padding-left:12px;border-left:4px solid var(--lernline)}
+.aviva{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:#fff;color:var(--lpink);border:1px solid var(--lpline);border-radius:999px;padding:1px 8px;margin-right:6px;vertical-align:2px}
+@media print{.schalter{display:none}.ansicht-box{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<div class="schalter"><span class="lbl">Lernende und Lehrperson:</span><div class="seg" role="group" aria-label="Lernende und Lehrperson"><button type="button" data-an="1" aria-pressed="true">Einblenden</button><button type="button" data-an="0" aria-pressed="false">Ausblenden</button></div></div>
+
+<h1>LS 1.04 — Partizipation am sozialen und kulturellen Leben ermöglichen und begleiten</h1>
+<p class="kl">Fachliche Zusammenfassung für Lernende Fachfrau / Fachmann Betreuung EFZ · BKU1, Berufsfachschule Basel · beide Fachrichtungen</p>
+
+<div class="kopf">
+<table>
+<tr><td>Lernsituation</td><td><b>1.04</b></td></tr>
+<tr><td>Titel Fachrichtung Kind</td><td>Partizipation am sozialen und kulturellen Leben ermöglichen und begleiten</td></tr>
+<tr><td>Titel Fachrichtung Menschen mit Beeinträchtigung</td><td>Partizipation am sozialen und kulturellen Leben ermöglichen und begleiten</td></tr>
+<tr><td>Handlungskompetenz</td><td><b>c1</b> — Die Teilnahme am sozialen und kulturellen Leben ermöglichen und begleiten</td></tr>
+<tr><td>Lektionen</td><td>Kind 18 · MmB 18</td></tr>
+<tr><td>Lehrjahr</td><td>1. Lehrjahr (BKU1)</td></tr>
+<tr><td>Abweichung zwischen den Fachrichtungen</td><td>MmB hat zusätzlich das BFS-Leistungsziel <b>c1.3.1</b> (Bedeutung des Sozialraums und darin vorhandene Ressourcen) und entsprechend zwei zusätzliche Unterrichtsthemen und drei zusätzliche Lernziele. Kernstoff und Quellen sind sonst gleich.</td></tr>
+</table>
+</div>
+
+<nav class="toc">
+<b>Inhalt</b>
+<ol>
+<li><a href="#worum">Worum es geht</a></li>
+<li><a href="#t1">Definition Partizipation</a></li>
+<li><a href="#t2">Stufen der Partizipation</a></li>
+<li><a href="#t3">Definition Migration</a></li>
+<li><a href="#t4">Migration: Gründe, Formen, Folgen und Migrationsprozess</a></li>
+<li><a href="#t5">Umgang mit kultureller Vielfalt und Vorurteilen — transkulturelle Kompetenz</a></li>
+<li><a href="#t6">Definition Sozialraum und Sozialraumorientierung</a></li>
+<li><a href="#t7">Bedeutung des Sozialraums und seine Ressourcen (mit Vertiefung Bronfenbrenner)</a></li>
+<li><a href="#t8">Sozialraum zugänglich machen: Handlungsprinzipien, Handlungsfelder, Methoden</a></li>
+<li><a href="#t9">Umsetzung von Partizipation im Betreuungsalltag</a></li>
+<li><a href="#glossar">Begriffe auf einen Blick</a></li>
+<li><a href="#lernziele">Lernziele und wo sie stehen</a></li>
+<li><a href="#quellen">Quellenverzeichnis</a></li>
+<li><a href="#offen">Was nicht belegt ist</a></li>
+</ol>
+</nav>
+
+<h2 id="worum">Worum es geht</h2>
+<p>Die Fachperson Betreuung nutzt den Sozialraum für die betreuten Personen, informiert sich über Angebote im Gemeinwesen, macht diese zugänglich und stärkt die betreuten Personen darin, eigene Fähigkeiten und Ideen einzubringen. Das ist der Auftrag der Handlungskompetenz C1, wie ihn das Lehrmittel beschreibt. <span class="beleg">[Careum HKB C, S. 8]</span></p>
+<p>Diese Lernsituation spannt dafür einen Bogen in drei Schritten: Zuerst klären Sie, was <b>Partizipation</b> ist und in welchen <b>Stufen</b> sie im Betreuungsalltag vorkommt. Dann geht es um <b>Migration</b> und <b>kulturelle Vielfalt</b> — also um die Frage, wie Sie Menschen mit anderer kultureller Identität respektvoll begleiten. Zum Schluss lernen Sie den <b>Sozialraum</b> kennen: seine Ressourcen, die Prinzipien der Sozialraumorientierung und konkrete Methoden, mit denen Sie betreuten Personen den Zugang zu ihrem Umfeld erschliessen. <span class="beleg">[Gliederung nach Schullehrplan BKU1 vG Kind und MmB, S. 10]</span></p>
+
+<div class="ebenen" data-sid="worum"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Ich will am Ende nicht nur Begriffe können, sondern wissen, was ich morgen in der Kita anders mache.»</p>
+<h4>Was mich packt</h4>
+<p>Der Auftrag von C1 klingt gross, aber er beschreibt, was ich bei uns schon sehe: Man nutzt den Sozialraum für die betreuten Personen, informiert sich über Angebote im Gemeinwesen, macht sie zugänglich und stärkt die betreuten Personen darin, eigene Fähigkeiten und Ideen einzubringen. <span class="beleg">[Careum HKB C, S. 8]</span> Bei mir sind das die Kinder in der Gruppe. Wenn eines von ihnen plötzlich selbst vorschlägt, wie wir den Znüni-Tisch stellen, merke ich, dass da etwas ankommt.</p>
+<h4>Wo ich aussteige</h4>
+<p>Der Bogen hat drei Schritte: zuerst Partizipation mit ihren Stufen, dann Migration und kulturelle Vielfalt, zum Schluss der Sozialraum. <span class="beleg">[Gliederung nach Schullehrplan BKU1 vG Kind und MmB, S. 10]</span> Ich sehe den Faden nicht. Migration neben der Mitbestimmung der Kinder in der Kita? Und Sozialraum klingt für mich nach Stadtplanung, nicht nach meinem Alltag im Hort oder in der Kita. Ich habe Angst, dass ich drei getrennte Wortlisten lerne und sie nach der ersten Lernkontrolle wieder los bin.</p>
+<h4>Meine Frage</h4>
+<p>Wie hängen diese drei Schritte zusammen? Was hat die Familie, die neu in unser Quartier gezogen ist, mit der Mitbestimmung der Kinder in meiner Gruppe zu tun?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Mit einem Fall aus der Kita, den wir in jedem der drei Schritte wieder hervornehmen. Und bitte zuerst sagen, wo ich das alles schon sehe, bevor die Begriffe kommen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du fragst nach dem Faden, und genau diese Frage muss ich am Anfang der Lernsituation beantworten. Dein Auftrag steht in C1: den Sozialraum für die betreuten Personen nutzen, Angebote zugänglich machen und sie darin stärken, Eigenes einzubringen. <span class="beleg">[Careum HKB C, S. 8]</span> Bei dir sind das die Kinder. Die drei Schritte sind drei Blickrichtungen auf diesen einen Auftrag, und so eröffne ich sie auch.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich zeichne einen Kreis an die Tafel, in die Mitte schreibe ich «unsere Kita oder unser Hort». Ihr hängt Zettel dazu: Wer kommt zu uns? Wer wohnt in der Nähe? Wo wird bei uns schon mitentschieden? Danach schreibe ich die drei Schritte als drei Fragen neben den Kreis, damit ihr sie sofort an eurem Betrieb festmachen könnt.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Jede von euch wählt ein Kind aus ihrer Gruppe, ohne Namen, und dieses eine Kind begleitet uns durch alle drei Schritte. Zuerst fragen wir, wo es mitreden darf, dann, welche Geschichte seine Familie mitbringt, zuletzt, welche Orte um die Kita es nutzen könnte. <span class="beleg">[Gliederung nach Schullehrplan BKU1 vG Kind und MmB, S. 10]</span> So wird aus drei Kapiteln ein Fall.</p>
+<h4>Stolperstelle</h4>
+<p>Ihr speichert die drei Schritte vermutlich als drei getrennte Kapitel ab. Ich sage es deshalb früh: Die Begriffe sind Werkzeuge, am Ende steht das Kind und nicht das Kapitel. Und ich gebe zu, dass der Zusammenhang am Anfang nur angedeutet ist. Sichtbar wird er erst, wenn wir euer Kind durch alle drei Schritte geführt haben.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Nimm das Kind, das du gewählt hast, und schreib je einen Satz: Wo kann es bei euch mitbestimmen? Was bringt seine Familie mit? Welchen Ort ausserhalb der Kita könnte es nutzen? Welcher der drei Sätze fiel dir am schwersten, und woran lag das?</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Ich will am Ende wissen, was ich am Montag in der Wohngruppe anders mache, nicht nur, wie die Begriffe heissen.»</p>
+<h4>Was mich packt</h4>
+<p>Der Auftrag steht gleich am Anfang und klingt nach meinem Alltag: den Sozialraum für die betreuten Personen nutzen, sich über Angebote informieren, sie zugänglich machen und die Leute stärken, ihre eigenen Ideen einzubringen <span class="beleg">[Careum HKB C, S. 8]</span>. Bei uns bleibt am Wochenende fast immer jemand im Zimmer, weil im Quartier niemand weiss, was läuft. Das ist genau die Lücke, die ich sehe. Und dass es um Migration geht, finde ich richtig, weil bei uns Menschen mit ganz unterschiedlicher Herkunft arbeiten und wohnen.</p>
+<h4>Wo ich aussteige</h4>
+<p>Es sind drei Schritte hintereinander: Partizipation, Migration und kulturelle Vielfalt, Sozialraum <span class="beleg">[Gliederung nach Schullehrplan BKU1 vG Kind und MmB, S. 10]</span>. Beim zweiten Schritt befürchte ich, dass ich den Faden verliere. Warum kommt Migration zwischen Partizipation und Sozialraum? Wenn ich das nicht sehe, lerne ich drei Themen einzeln auswendig und vergesse sie nach der Prüfung. Bei den Stufen denke ich ausserdem sofort an Tabellen, die man einfach abschreibt.</p>
+<h4>Meine Frage</h4>
+<p>Wie hängen diese drei Schritte zusammen? Und wo in meinem Betrieb merke ich das konkret, zum Beispiel bei der Frage, wer am Wochenende wohin mitkommt?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte jeden der drei Schritte zuerst an einer Situation aus meiner Institution anschauen und erst dann den Fachbegriff dazu bekommen. Am Ende sollte ich unser Beispiel mit dem Zimmer am Wochenende in einem Satz mit allen drei Begriffen erklären können. Dann hätte ich eine Klammer für alles, was danach kommt.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Ich höre zwei Dinge. Du willst etwas, das am Montag in der Wohngruppe trägt, und du befürchtest, dass drei Themen nebeneinander stehen bleiben. Beides nehme ich ernst. Die Klammer liefert der Auftrag der Handlungskompetenz C1 selbst: den Sozialraum nutzen, Angebote zugänglich machen, Menschen darin stärken, ihre Fähigkeiten und Ideen einzubringen <span class="beleg">[Careum HKB C, S. 8]</span>. An diesem Auftrag hänge ich die ganze Lernsituation auf.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich beginne ohne Begriff. Ich bitte euch, aus eurem Betrieb eine Situation mitzubringen oder aufzuschreiben, in der jemand etwas im Quartier oder im Haus nicht nutzen konnte, obwohl er wollte. Wir hängen die Karten an die Wand. Dein Beispiel mit dem Zimmer am Wochenende hängt dann dort neben denen der anderen, und wir sehen, wie viele solche Situationen es gibt.</p>
+<h4><span class="aviva">Informieren</span> Begreifbar machen</h4>
+<p>Ich zeichne den Bogen als Weg auf die Wandtafel: Partizipation, Migration und kulturelle Vielfalt, Sozialraum <span class="beleg">[Gliederung nach Schullehrplan BKU1 vG Kind und MmB, S. 10]</span>. Zu jeder Station hänge ich zwei, drei Karten aus eurer Sammlung. So seht ihr, dass wir den Weg an euren eigenen Fällen gehen und nicht an einer Liste von Begriffen.</p>
+<h4>Stolperstelle</h4>
+<p>Migration wirkt wie ein Seitenpfad. Ich sage offen, dass dieser Schritt die Frage stellt, wie ihr Menschen mit anderer kultureller Identität respektvoll begleitet <span class="beleg">[Gliederung nach Schullehrplan BKU1 vG Kind und MmB, S. 10]</span>, und dass wir die Verbindung zu den anderen beiden Schritten gemeinsam suchen, statt sie vorzugeben. Bei den Stufen sage ich vorher, dass es um Beispiele geht und nicht ums Abschreiben.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Am Ende der Lernsituation steht das Lernziel «Sozialräume in meiner Umgebung für die betreuten Personen ausfindig machen und ihnen den Zugang dazu erschliessen» (K3). Zum Start fragen wir kleiner: Welchen der drei Schritte brauchst du am dringendsten für deine Situation mit dem Zimmer am Wochenende, und warum?</p>
+</section></div></div></div>
+
+<h2 id="t1">1 · Definition Partizipation</h2>
+<p>Der Begriff <b>Partizipation</b> stammt aus dem Englischen (to participate) und hat verschiedene Bedeutungen: Beteiligung, Teilnahme, Mitwirkung, Mitarbeit, Mitbestimmung oder auch Mitverantwortlichkeit. Das Recht auf Partizipation ist ein Menschenrecht; die UN-Kinderrechtskonvention und Artikel 3 der UN-Behindertenrechtskonvention weisen darauf hin. Kinder sollen ihre Meinung frei äussern dürfen, und ihre Bedürfnisse und Gefühle sollen respektiert werden, auch wenn sie diese noch nicht selbst äussern können. Die UN-Behindertenrechtskonvention umschreibt Partizipation als Achtung der Würde, Autonomie, Freiheit und Unabhängigkeit eines Menschen, einschliesslich der Möglichkeit, eigene Entscheidungen zu treffen. <span class="beleg">[Careum HKB C, S. 11]</span></p>
+
+<div class="def"><b>Definition</b> — Partizipation ist ein Oberbegriff für ganz verschiedene Formen des <b>«Einbezogenseins in eine Lebenssituation»</b>. Sie setzt sich zusammen aus dem Recht auf <b>Zugang</b> (access), <b>Mitwirkung</b> (take part in) und <b>Zugehörigkeit</b> (membership). Partizipation ist damit sowohl Teilnahme, Teilhabe als auch Teilgabe. Alle drei Formen setzen Kontakt zu anderen Menschen voraus — Partizipation funktioniert nur im sozialen Austausch. <span class="beleg">[Careum HKB C, S. 11]</span></div>
+
+<h3>Die drei Formen des Einbezogenseins: Teilnahme, Teilhabe, Teilgabe</h3>
+<div class="tabwrap">
+<table>
+<tr><th>Form</th><th>Was gemeint ist</th><th>Gegenteil / Voraussetzung</th></tr>
+<tr><td><b>Teilnahme</b> (Zugang)</td><td>Ein Mensch nimmt an gesellschaftlichen Dingen teil: an einem Fest, einer Wahlveranstaltung, aber auch an ganz alltäglichen Beschäftigungen wie Essen kochen, Freunde treffen oder arbeiten gehen.</td><td>Das Gegenteil ist Nichtteilnahme: Rückzug aus sozialen Kontakten und Aktivitäten führt zu Isolation, Einsamkeit und Passivität.</td></tr>
+<tr><td><b>Teilhabe</b> (Mitwirkung)</td><td>Nicht nur Dabeisein und Mitmachen, sondern die Möglichkeit, das eigene Leben selbst in die Hand zu nehmen und das Umfeld aktiv mitzugestalten, mitzuprägen und mitzubestimmen.</td><td>Funktioniert nur, wenn die Gesellschaft Zugangs-, Mitbestimmungs- und Mitgestaltungsfreiräume gibt und die Person diese auch nutzt. Menschen mit Beeinträchtigung und Kinder haben meist deutlich kleinere Spielräume und brauchen zusätzliche Unterstützung.</td></tr>
+<tr><td><b>Teilgabe</b> (Zugehörigkeit)</td><td>Die Möglichkeit, sich und seine Fähigkeiten tatsächlich in das gesellschaftliche Leben einzubringen.</td><td>Setzt voraus, dass Angebote so angepasst werden, dass auch Menschen mit anderen Bedürfnissen sie nutzen können (gesellschaftliche Ebene), und dass die Person bereit ist, ihre Fähigkeiten einzubringen (individuelle Ebene).</td></tr>
+</table>
+<caption>Quelle: Careum HKB C Web-PDF «Formen des Einbezogenseins», S. 1–2, Tab. 1</caption>
+</div>
+<p>Die drei Formen sind eng miteinander verwoben: Die Chance, Teil eines sozialen Miteinanders zu sein (Teilhabe) und sich einzubringen (Teilgabe), setzt voraus, dass die Person vorhandene Angebote und Ressourcen aktiv nutzen kann (Teilnahme). Wer partizipieren kann, fühlt sich wahrgenommen, wertgeschätzt und ernst genommen; Partizipation reduziert Ausgrenzung. <span class="beleg">[Careum HKB C Web-PDF, S. 4–5]</span></p>
+<p>Das Web-PDF zeigt die drei Formen an je einem Beispiel pro Fachrichtung: In der Kita Regenbogen setzen sich die Kinder um ein Modell des Aussengeländes (Teilnahme), werden nach ihren Wünschen gefragt (Teilhabe) und gestalten ihr Aussengelände mit Bastelmaterial und später mit Schubkarre und Pinsel selbst (Teilgabe). In der Stiftung Horizont nehmen Bewohnerinnen und Bewohner an Besprechungen teil (Teilnahme), äussern Wünsche zum Essen (Teilhabe) und möchten die Sitzung auch einmal selbst leiten (Teilgabe). <span class="beleg">[Careum HKB C Web-PDF, S. 3–4, Tab. 2]</span></p>
+
+<div class="hinweis">Achtung, ein Wort mit zwei Bedeutungen: «Teilhabe» meint im Web-PDF die <i>mittlere</i> Form des Einbezogenseins (aktive Mitwirkung). In der Stufentabelle nach Schröder (Abschnitt 2) heisst dagegen die <i>Stufe 4</i> «Teilhabe» und steht dort für eine <i>niedrige</i> Form der Teil-Partizipation. Beide Texte sind Pflichtlektüre — lesen Sie den Begriff je nach Text. <span class="beleg">[Careum HKB C Web-PDF, S. 1; Careum HKB C, S. 12, Tab. 1]</span></div>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — Ergänzung</h5>
+<p>Das Erzieherinnen-Lehrmittel definiert Partizipation als Beteiligung, Mitwirkung, Mitbestimmung und Einbeziehung auf zwei Ebenen: auf der strukturellen Ebene (Raumgestaltung, Material- und Geräteangebot, Verfügbarkeit der Fachkräfte, Teilnahme an Entscheidungen auf politisch-administrativer Ebene) und im pädagogischen Prozess (Entscheidungen für sich und die Gruppe eigenverantwortlich und gemeinschaftlich treffen). Partizipation fördern heisst, Rahmenbedingungen zu schaffen und junge Menschen zu befähigen, ihre Interessen zu vertreten und mit der Gruppe tragfähige Lösungen zu finden. Damit wird die Förderung von Partizipation zur Querschnittsaufgabe. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 242]</span></p>
+<p>Die Idee der Mitbestimmung ist reformpädagogisch verwurzelt: Janusz Korczak (1878–1942) gestaltete zu Beginn des letzten Jahrhunderts eine Beteiligungspädagogik. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 240]</span></p>
+<div class="de">Kinderpflege S. 438 und Erzieherinnen und Erzieher S. 240 begründen die Beteiligung von Kindern mit § 8 SGB VIII (Kinder- und Jugendhilfegesetz) — das ist deutsches Recht. Die Schweizer Entsprechung nennen die vorliegenden Quellen nicht. <span class="beleg">[Kinderpflege, S. 438; Erzieherinnen und Erzieher Bd. 1, S. 240]</span></div>
+</div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung — Ergänzung</h5>
+<p>Auch Menschen mit höherem Unterstützungsbedarf dürfen bei Entscheidungen nicht ausgeschlossen und fremdbestimmt werden. Selbstbestimmtes Leben bedeutet, dass ich Entscheidungen treffe, auch wenn ich manche Sachen ohne Unterstützung nicht ausführen kann. Oft müssen Menschen mit Behinderung erst Fähigkeiten nachweisen (z. B. Lesen, Schreiben), bevor sie entscheiden dürfen — damit wird ihnen ihr Wunsch- und Wahlrecht abgesprochen. Durch eigene Entscheidungen passieren Fehler, aber aus Fehlern kann man lernen. <span class="beleg">[HEP Band 2, S. 378]</span></p>
+<p>Das Lehrmittel bringt den Unterschied auf einen Satz: «gut meinen» ist nicht immer «gut tun» — alle wissen, Obst ist gesund; doch was ist, wenn man kein Obst mag und es trotzdem essen soll? <span class="beleg">[HEP Band 2, S. 378]</span></p>
+</div>
+</div>
+
+<div class="ebenen" data-sid="t1"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Dabeisein ist noch nicht Mitbestimmen, und genau das verwechsle ich jedes Mal.»</p>
+<h4>Was mich packt</h4>
+<p>Dass Partizipation ein Menschenrecht ist, hätte ich nicht gedacht. Kinder sollen ihre Meinung frei äussern dürfen, und ihre Bedürfnisse und Gefühle sollen respektiert werden, auch wenn sie diese noch nicht selbst äussern können. <span class="beleg">[Careum HKB C, S. 11]</span> Bei uns in der Kita gibt es Kinder, die kaum sprechen. Dann muss ich also genau hinschauen, was sie mir zeigen. Das Beispiel der Kita Regenbogen gefällt mir: Die Kinder setzen sich um ein Modell des Aussengeländes und werden nach ihren Wünschen gefragt. <span class="beleg">[Careum HKB C Web-PDF, S. 3–4, Tab. 2]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Teilnahme, Teilhabe, Teilgabe: drei Wörter, die für mich gleich klingen. Dann steht im Hinweis auch noch, dass «Teilhabe» im nächsten Abschnitt eine ganz andere Stufe meint. <span class="beleg">[Careum HKB C Web-PDF, S. 1; Careum HKB C, S. 12, Tab. 1]</span> Da lese ich zweimal und weiss nicht, was gilt. Im Kita-Buch wird Beteiligung ausserdem mit § 8 SGB VIII begründet. Das ist deutsches Recht, und ich arbeite in der Schweiz. <span class="beleg">[Kinderpflege, S. 438; Erzieherinnen und Erzieher Bd. 1, S. 240]</span></p>
+<h4>Meine Frage</h4>
+<p>Wenn bei uns die Kinder um ein Modell vom Aussengelände sitzen und wir fragen, was sie sich wünschen: Ab wann ist das mehr als Teilnahme? Und was ist, wenn wir danach doch nichts davon umsetzen?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Am Regenbogen-Beispiel, Szene für Szene. Danach will ich es selbst an einem Beispiel aus meiner Gruppe versuchen, bevor ich die Tabelle auswendig lerne.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du steigst bei den drei Wörtern aus und fragst nach der Grenze zwischen Dabeisein und Mitgestalten. Das ist genau der Kern von Lernziel 1: «Partizipation anhand der Definition erläutern» (K2). Erläutern heisst, es in eigenen Worten an einem Fall zu zeigen.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich bitte euch, an den heutigen Morgen im Betrieb zu denken. Auf drei Karten in drei Farben schreibt ihr: Wo war ein Kind einfach dabei? Wo durfte eines etwas mitbestimmen? Wo hat eines selbst etwas beigetragen? Ich hänge die Karten auf, noch ohne Fachbegriffe.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ich gebe das Regenbogen-Beispiel als drei durcheinandergewürfelte Szenen: um das Modell sitzen, nach Wünschen gefragt werden, mit Bastelmaterial und später mit Schubkarre und Pinsel selbst gestalten. <span class="beleg">[Careum HKB C Web-PDF, S. 3–4, Tab. 2]</span> Ihr ordnet sie den drei Formen zu und begründet mit der Definition: Zugang, Mitwirkung, Zugehörigkeit. <span class="beleg">[Careum HKB C, S. 11]</span> Zu deiner Frage: Teilhabe funktioniert nur, wenn die Gesellschaft Freiräume zur Mitbestimmung und Mitgestaltung gibt und die Person sie nutzt. Kinder haben meist kleinere Spielräume und brauchen zusätzliche Unterstützung. <span class="beleg">[Careum HKB C Web-PDF, S. 1–2, Tab. 1]</span> Nur fragen genügt also nicht.</p>
+<h4>Stolperstelle</h4>
+<p>«Teilhabe» hat zwei Bedeutungen: Im Web-PDF ist es die mittlere Form, die aktive Mitwirkung, in der Stufentabelle nach Schröder die Stufe 4, eine niedrige Form der Teil-Partizipation. <span class="beleg">[Careum HKB C Web-PDF, S. 1; Careum HKB C, S. 12, Tab. 1]</span> Ich schreibe das Wort gross an die Tafel, mit zwei Pfeilen. Zu § 8 SGB VIII: Das ist deutsches Recht, und die vorliegenden Quellen nennen keine Schweizer Entsprechung. <span class="beleg">[Kinderpflege, S. 438; Erzieherinnen und Erzieher Bd. 1, S. 240]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Nimm eine Situation aus deiner Gruppe und schreib drei Sätze: Wo nimmt ein Kind teil? Wo hat es Teilhabe, also echte Mitwirkung? Wo bringt es selbst etwas ein, ist also bei der Teilgabe? Und was müsste ich als Fachperson dafür bereitstellen?</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Wenn ich für jemanden entscheide, weil ich es gut meine, nehme ich ihm dann nicht genau das weg, worum es hier geht?»</p>
+<h4>Was mich packt</h4>
+<p>Der Satz aus dem Lehrmittel hat mich erwischt: ‹gut meinen› ist nicht immer ‹gut tun›, und wer kein Obst mag, will es auch nicht essen müssen <span class="beleg">[HEP Band 2, S. 378]</span>. Bei uns bekommt ein Bewohner jeden Morgen einen Apfel hingestellt, weil Äpfel gesund sind. Gefragt hat ihn nie jemand. Ich habe auch gelesen, dass Menschen mit höherem Unterstützungsbedarf nicht von Entscheidungen ausgeschlossen werden dürfen und dass Fehler dazugehören, weil man daraus lernen kann <span class="beleg">[HEP Band 2, S. 378]</span>.</p>
+<h4>Wo ich aussteige</h4>
+<p>Teilnahme, Teilhabe, Teilgabe: Das sind drei Wörter, die für mich fast gleich klingen. Ich verwechsle sie sofort. Dann kommt noch der Hinweis, dass «Teilhabe» in einem Text die mittlere Form meint und im anderen eine niedrige Stufe <span class="beleg">[Careum HKB C Web-PDF, S. 1; Careum HKB C, S. 12, Tab. 1]</span>. Da denke ich: Wenn schon die Fachleute zwei Bedeutungen haben, wie soll ich es dann sauber lernen?</p>
+<h4>Meine Frage</h4>
+<p>Eine Frau in unserer Werkstatt ist jeden Tag dabei und macht mit. Ist das schon Partizipation, oder fehlt dann noch etwas? Und woran erkenne ich, was fehlt?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte die drei Formen an einer Person aus meinem Betrieb durchspielen, zum Beispiel an einem ganz normalen Tag in der Wohngruppe. Für mich muss klar sein, was Zugang, Mitwirkung und Zugehörigkeit bedeuten <span class="beleg">[Careum HKB C, S. 11]</span>. Ich möchte es einer Kollegin an meinem Beispiel erklären können, mit meinen Worten. Das wäre für mich «erläutern».</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du hast einen Satz gefunden, der den Kern trifft, und du hast zwei echte Fragen: Reicht Dabeisein, und wie halte ich drei ähnliche Wörter auseinander? Beides gehört zusammen. Die Definition gibt das Gerüst: Partizipation setzt sich zusammen aus dem Recht auf Zugang, Mitwirkung und Zugehörigkeit <span class="beleg">[Careum HKB C, S. 11]</span>. Deine Frage nach der Frau in der Werkstatt ist die Frage nach dem Unterschied zwischen Zugang und Mitwirkung.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich stelle eine Schale Äpfel aufs Pult und gebe jedem von euch einen, ohne zu fragen. Wer keinen will, darf nichts sagen. Danach fragen wir, wie sich das angefühlt hat. Erst dann lese ich den Satz aus dem Lehrmittel vor: ‹gut meinen› ist nicht immer ‹gut tun› <span class="beleg">[HEP Band 2, S. 378]</span>.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ich gebe euch drei Karten mit Teilnahme (Zugang), Teilhabe (Mitwirkung) und Teilgabe (Zugehörigkeit) <span class="beleg">[Careum HKB C, S. 11]</span>. Ihr wählt eine Person aus eurem Betrieb und legt zu jeder Karte eine Situation aus ihrem Tag. Fürs Beispiel zur Teilnahme nenne ich Essen kochen, Freunde treffen oder arbeiten gehen <span class="beleg">[Careum HKB C Web-PDF, S. 1–2, Tab. 1]</span>. Bei Teilhabe sucht ihr die Stelle, an der die Person das Umfeld mitgestaltet oder mitbestimmt.</p>
+<h4>Stolperstelle</h4>
+<p>Das Wort «Teilhabe» hat zwei Bedeutungen. Im Web-PDF ist es die mittlere Form, in der Stufentabelle nach Schröder die Stufe 4 und dort eine niedrige Form <span class="beleg">[Careum HKB C Web-PDF, S. 1; Careum HKB C, S. 12, Tab. 1]</span>. Ich schreibe beide Fälle in zwei Kästchen an die Tafel und sage laut dazu, aus welchem Text das Wort gerade kommt. Dieses Problem weise ich aus, bevor wir zu den Stufen kommen.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Lernziel 1 lautet: «Partizipation anhand der Definition erläutern» (K2). Eure Aufgabe: Erkläre an der Person aus deinem Betrieb in drei Sätzen, was Teilnahme, Teilhabe und Teilgabe bei ihr heissen würden, und sag, woran du bei der Teilhabe erkennst, dass sie mitbestimmt und nicht nur dabei ist.</p>
+</section></div></div></div>
+
+<h2 id="t2">2 · Stufen der Partizipation</h2>
+<p>Partizipation betrifft alle Menschen. Die Partizipationsmöglichkeiten betreuter Personen sind aber unterschiedlich ausgeprägt; nicht immer können sie alles allein entscheiden. In Betreuungssituationen besteht ein Machtgefälle zwischen Hilfeleistenden und Hilfebedürftigen: Die Menschen, die Hilfe benötigen, können nur partizipieren, wenn die Hilfeleistenden ihnen dies zugestehen und einen Teil ihrer Entscheidungsmacht abgeben. Je geringer das Machtgefälle, desto höher die Partizipationsstufe. <span class="beleg">[Careum HKB C, S. 11–12]</span></p>
+
+<h3>2.1 Stufenmodell nach Martin Kühn (Schullehrplan)</h3>
+<p>Der Schullehrplan verlangt die Stufen nach M. Kühn: Nicht-Information/Manipulation, Information, Mitsprache, Mitbestimmung, Selbstbestimmung. Das Careum-Lehrmittel nennt dieses Modell in einem Satz und verweist für Näheres auf eine Internetrecherche. Grundlage ist deshalb der Fachtext, den Sie im Dossier haben. <span class="beleg">[Careum HKB C, S. 13; Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span></p>
+
+<figure>
+<svg viewBox="0 0 760 250" role="img" aria-label="Stufenmodell der Partizipation nach Kühn als Treppe mit fünf Stufen">
+<defs><style>.st{font-family:Helvetica,Arial,sans-serif;font-size:13px;fill:#1f2a33}.sb{font-weight:bold}</style></defs>
+<rect x="20" y="180" width="140" height="58" rx="5" fill="#f0d5d5" stroke="#b55"/>
+<text x="90" y="197" text-anchor="middle" class="st sb">Stufe 0</text><text x="90" y="214" text-anchor="middle" class="st">Nicht-Information,</text><text x="90" y="230" text-anchor="middle" class="st">Manipulation</text>
+<rect x="165" y="150" width="140" height="44" rx="5" fill="#fbe3c8" stroke="#c98a3c"/>
+<text x="235" y="168" text-anchor="middle" class="st sb">Stufe 1</text><text x="235" y="185" text-anchor="middle" class="st">Information</text>
+<rect x="310" y="110" width="140" height="44" rx="5" fill="#fdf5c4" stroke="#b8a53a"/>
+<text x="380" y="128" text-anchor="middle" class="st sb">Stufe 2</text><text x="380" y="145" text-anchor="middle" class="st">Mitsprache</text>
+<rect x="455" y="70" width="140" height="44" rx="5" fill="#dcefd2" stroke="#6e9e55"/>
+<text x="525" y="88" text-anchor="middle" class="st sb">Stufe 3</text><text x="525" y="105" text-anchor="middle" class="st">Mitbestimmung</text>
+<rect x="600" y="30" width="140" height="44" rx="5" fill="#bfe0bf" stroke="#2f7d3a"/>
+<text x="670" y="48" text-anchor="middle" class="st sb">Stufe 4</text><text x="670" y="65" text-anchor="middle" class="st">Selbstbestimmung</text>
+<line x1="20" y1="245" x2="740" y2="245" stroke="#999"/>
+<text x="20" y="20" class="st">Fremdbestimmung — keine Partizipation</text>
+<text x="740" y="20" text-anchor="end" class="st">höchste Stufe der Partizipation</text>
+</svg>
+<figcaption>Eigene Darstellung nach dem Fachtext «Stufenmodell der Partizipation nach M. Kühn» (Quelle dort: Kühn 2023). Die Vorstufe 0 ist laut Fachtext keine Partizipation, sondern Fremdbestimmung und Manipulation.</figcaption>
+</figure>
+
+<div class="tabwrap">
+<table>
+<tr><th>Stufe</th><th>Kennzeichen</th><th>Beispiel aus dem Fachtext (Kita)</th></tr>
+<tr><td><b>0 — Nicht-Information, Manipulation</b></td><td>Fremdbestimmung. Dem Kind sind Prozesse und Massnahmen unklar; es kennt die Ziele nicht und erlebt sich den Entscheidungen der Erwachsenen ausgeliefert. Die Fachperson beeinflusst das Kind, um ein Ziel zu erreichen; schlimmstenfalls wird es instrumentalisiert.</td><td>«Deine Wutausbrüche werden wir Erwachsenen in der Teamsitzung besprechen. Danach werden wir dir die Konsequenzen mitteilen!» — oder: «Lass doch das andere Kind mit deinem Spielzeug spielen! Du willst doch sicher auch, dass die anderen dich mögen, oder?!»</td></tr>
+<tr><td><b>1 — Information</b></td><td>Das Kind wird über Dinge informiert, die es und seine Umwelt betreffen, versteht, worum es geht, und lernt, Prozesse einzuschätzen. Ängste und Sorgen lassen sich an reale Vorgänge koppeln.</td><td>Die Kitaleitung informiert die Kinder, dass der Garten neu gestaltet wird. Die Wünsche werden angehört, doch die Erwachsenen entscheiden.</td></tr>
+<tr><td><b>2 — Mitsprache</b></td><td>Die Kinder werden nach Meinung und Sichtweise gefragt; diese werden ernst genommen. Mitsprache ist ein Angebot, kein Zwang. Wiederkehrende positive Erfahrungen zeigen: «Meine Meinung zählt.»</td><td>Die Kinder bringen Ideen für den Garten ein; sie werden in der Projektphase berücksichtigt. Den endgültigen Entscheid trifft die Kitaleitung.</td></tr>
+<tr><td><b>3 — Mitbestimmung</b></td><td>Das Kind hat ein Beteiligungsrecht, ist gleichberechtigt und wird aktiv am Entscheidungsprozess beteiligt — nach dem dialogischen Prinzip, mit Kontroll- und Wahlmöglichkeiten.</td><td>Die Kinder stimmen ab, welche Spielangebote angeschafft werden; jedes Kind hat zwei Stimmen, die drei Angebote mit den meisten Stimmen werden bestellt.</td></tr>
+<tr><td><b>4 — Selbstbestimmung</b></td><td>Höchste Stufe. Die Fachpersonen fördern die Eigeninitiative; die Entscheidungen treffen die Kinder selbst, Erwachsene werden allenfalls beteiligt und tragen die Entscheidungen mit — alters- und entwicklungsabhängig. Das Kind erlebt Selbstständigkeit und Eigenverantwortung.</td><td>Die Kinder initiieren selbst den Bau einer Hütte im Garten, organisieren das Material und bauen gemeinsam.</td></tr>
+</table>
+<caption>Quelle: Fachtext «Stufenmodell der Partizipation nach M. Kühn» (Dossier der Lernenden; dort zitiert als Kühn, M. (2023). Traumapädagogik. Beltz Juventa)</caption>
+</div>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind</h5><p>Die Beispiele des Fachtexts stammen alle aus der Kita (Gartenumgestaltung, Spielgeräte, Hüttenbau) und können direkt übernommen werden. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span></p></div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung</h5><p>Der Fachtext ist durchgehend auf Kinder formuliert. Das Modell gilt fachlich auch für Sie, doch <b>beschreiben</b> Sie die Stufen mit eigenen Beispielen aus Wohngruppe, Werkstatt oder Tagesstruktur. Anhaltspunkte dafür bietet die Careum-Tabelle nach Schröder, die Beispiele aus Institutionen für Menschen mit Beeinträchtigung nennt (Abschnitt 2.2), und der Abschnitt zur Mitbestimmung in Verbänden und im Wohnen (Abschnitt 9). <span class="beleg">[Careum HKB C, S. 11–12; HEP Band 2, S. 378–380]</span></p></div>
+</div>
+
+<h3>2.2 Stufenmodell nach Schröder (Careum-Lehrmittel)</h3>
+<p>Schröder hat aus verschiedenen Partizipationsmodellen ein Stufenmodell für die Partizipation von Kindern und Jugendlichen in der Schule abgeleitet. Weil auch in Betreuungssituationen ein Machtgefälle besteht, sind diese Stufen auf die Arbeit als Fachperson Betreuung übertragbar. <span class="beleg">[Careum HKB C, S. 11–12]</span></p>
+<div class="tabwrap">
+<table>
+<tr><th>Form</th><th>Stufe</th><th>Kennzeichen</th></tr>
+<tr><td rowspan="1"><b>volle Autonomie</b> — geht über Partizipation hinaus</td><td>9 Selbstverwaltung (Selbstorganisation)</td><td>Volle Entscheidungsfreiheit und Verantwortung; Entscheidungen werden der Betreuungsperson nur noch mitgeteilt.</td></tr>
+<tr><td rowspan="2"><b>Partizipation</b> — echte Partizipation</td><td>8 Selbstbestimmung</td><td>Die Idee kommt von den betreuten Personen; sie entscheiden und handeln überwiegend selbstständig und werden lediglich unterstützt.</td></tr>
+<tr><td>7 Mitbestimmung (Mitentscheidung)</td><td>Betreute Personen werden einbezogen, gehören dazu, haben Mitverantwortung; Entscheidungen fallen demokratisch. Die Idee kommt von den Betreuungspersonen, die Umsetzung erfolgt «auf Augenhöhe». Beteiligungsrecht.</td></tr>
+<tr><td rowspan="3"><b>Teil-Partizipation</b></td><td>6 Mitwirkung (Mit-Tun)</td><td>Betreute Personen verstehen, worum es geht, können Kritik und Vorstellungen einbringen, sind aber bei der definitiven Entscheidung nicht direkt beteiligt.</td></tr>
+<tr><td>5 Zugewiesen, aber informiert (Einbeziehung/Mitsprache/Konsultation)</td><td>Vor der Entscheidung informiert, aber ohne wirklichen Einfluss.</td></tr>
+<tr><td>4 Teilhabe (Miterleben/Mitwissen/Anhörung)</td><td>Über Entscheidungen informiert, punktuell nach Interessen befragt.</td></tr>
+<tr><td rowspan="3"><b>Nichtpartizipation</b> — keine Partizipation</td><td>3 Alibi-Teilhabe (Alibi-Beteiligung)</td><td>Beteiligung an Gremien möglich, die Meinung hat aber kein Gewicht — nur scheinbar mitentscheiden.</td></tr>
+<tr><td>2 Dekoration (Anweisung)</td><td>Scheinbar entscheiden oder mitwirken, ohne die nötigen Informationen zu haben.</td></tr>
+<tr><td>1 Fremdbestimmung (Manipulation)</td><td>Alles wird von der Betreuungsperson vorgegeben; keine Entscheidungsmacht.</td></tr>
+</table>
+<caption>Quelle: Careum HKB C, S. 12, Tab. 1 «Stufen der Partizipation» (Stufenzahlen am Seitenbild geprüft)</caption>
+</div>
+<p>Auf den Stufen 4 und 5 können sich die betreuten Personen nur teilweise einbringen; Stufe 6 beinhaltet die gezielte Anhörung und das gemeinsame Aushandeln. Echte Partizipation mit überwiegender Entscheidungskompetenz haben die betreuten Personen erst ab «Mitbestimmung» und «Selbstbestimmung». <span class="beleg">[Careum HKB C, S. 13]</span></p>
+<div class="hinweis">Kühn und Schröder haben unterschiedlich viele Stufen (5 bzw. 9). Eine Zuordnung der Kühn-Stufen zu Schröders Stufen steht in keiner Quelle — wenn Sie im Unterricht beide vergleichen, ist das eine eigene Lesart, kein Beleg.</div>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — drittes Modell: Leiter der Partizipation nach Hart</h5>
+<p>Das Erzieherinnen-Lehrmittel arbeitet mit der achtstufigen «Leiter der Partizipation» nach Roger Hart (1992): Stufen 1–3 sind Nicht-Partizipation (Fremdbestimmung, Dekoration, Alibi-Teilhabe), Stufen 4–8 Partizipation (zugewiesen, aber informiert · Mitwirkung, informiert sein · von Erwachsenen initiiert, Entscheidungen gemeinsam mit Kindern · von Kindern initiiert und durchgeführt · von Kindern initiiert, Entscheidungen gemeinsam mit Erwachsenen). <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 241, Abb. 6.2]</span></p>
+<p class="kl">Hinweis: Der Fliesstext auf S. 241 nennt den Autor «Josef R. Hart», die Bildlegende «Roger Hart» — die Quelle ist an dieser Stelle uneinheitlich.</p>
+</div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung — Beteiligung nach Ebenen statt Stufen</h5>
+<p>Die HEP-Bände beschreiben Beteiligung nicht als Stufen zunehmender Entscheidungsmacht, sondern nach Ebenen des Empowerment-Prozesses (Individuum, Gruppe, Institution, Politik) und nach Orten der Mitbestimmung (Politik, Verbände, Wohnen). Siehe Abschnitt 9. <span class="beleg">[Heilerziehungspflege HT Bd. 1, S. 341; HEP Band 2, S. 378–380]</span></p>
+</div>
+</div>
+
+<div class="ebenen" data-sid="t2"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Bei uns heisst es oft, die Kinder dürfen mitreden, aber entschieden ist dann längst.»</p>
+<h4>Was mich packt</h4>
+<p>Die Kita-Beispiele im Fachtext kann ich fast eins zu eins in meinen Alltag legen. Bei der Gartenumgestaltung sagt die Kitaleitung den Kindern zuerst nur, dass der Garten neu gestaltet wird. Eine Stufe weiter bringen die Kinder Ideen ein, entscheiden tut aber weiterhin die Leitung. Beim Hüttenbau geht der Bau von den Kindern selbst aus. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Dass Mitsprache ein Angebot ist und kein Zwang, finde ich wichtig. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Und der Satz zum Machtgefälle sitzt: Wer Hilfe braucht, kann nur partizipieren, wenn wir als Fachpersonen einen Teil unserer Entscheidungsmacht abgeben. <span class="beleg">[Careum HKB C, S. 11–12]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Die Stufe 0 tut mir fast weh. «Du willst doch sicher auch, dass die anderen dich mögen, oder?!» Diesen Satz habe ich in ähnlicher Form schon im Betrieb gehört, und er klang im Moment ganz freundlich. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Danach kommen noch Schröder mit neun Stufen und Hart mit acht, und ich verliere den Überblick. Begriffe wie Alibi-Teilhabe oder Dekoration sagen mir ohne Beispiel nichts. <span class="beleg">[Careum HKB C, S. 12, Tab. 1; Erzieherinnen und Erzieher Bd. 1, S. 241, Abb. 6.2]</span></p>
+<h4>Meine Frage</h4>
+<p>Wo liegt die Grenze zwischen Mitsprache und Mitbestimmung? Bei beiden werden die Kinder gefragt, und bei uns stimmen sie manchmal ab, welches Lied wir singen. Ausserdem habe ich die Modelle nebeneinandergelegt und für mich gedacht, Kühns Mitsprache sei ungefähr Schröders Mitwirkung. Das ist nur meine Lesart, im Buch steht keine Zuordnung. Darf ich so vergleichen?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Zuerst nur Kühn, mit Karten aus meinem Kita-Alltag, die ich selbst den Stufen zuordne. Schröder und Hart erst danach, wenn Kühn sitzt. Und ich möchte hören, wo es bei uns nicht klappt, ohne dass es nach Vorwurf klingt. Sonst mache ich zu.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Die Kita-Beispiele kannst du sofort brauchen, sie lassen sich direkt übernehmen. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Bei Stufe 0 höre ich mehr als Unbehagen: Du erkennst Sätze aus deinem Betrieb wieder. Das nehme ich ernst, ohne jemanden vorzuführen. Drei Modelle sind zu viel, da hast du recht. Dein Lernziel (K2) verlangt nur Kühn: «Die Stufen der Partizipation (Nicht-Information/Manipulation, Information, Mitsprache, Mitbestimmung, Selbstbestimmung, n. M. Kühn) erläutern und mit berufsrelevanten Beispielen beschreiben.»</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Mit deinem Einverständnis hänge ich deinen Satz ohne Namen auf. Die Klasse sammelt auf Zetteln Situationen aus ihren Betrieben, in denen Kinder gefragt wurden, noch ohne Fachbegriffe und ohne Wertung.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ich gebe vier Karten mit den Kita-Beispielen für die Stufen 1 bis 4 aus, ohne Stufennamen. Die Lernenden legen sie als Treppe und begründen, wer jeweils entscheidet. Die Stufe 0 liegt vor der Treppe, denn laut Fachtext ist sie Fremdbestimmung und Manipulation, keine Partizipation. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Dann ordnen alle ihre Zettel ein. Erst danach kommt die Schröder-Tabelle neben die Treppe. Wer eine Verbindung sieht, schreibt «meine Lesart» daneben. <span class="beleg">[Careum HKB C, S. 12, Tab. 1]</span> Hart zeige ich nur als Leiter, Nicht-Partizipation auf den Stufen 1 bis 3, Partizipation auf 4 bis 8. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 241, Abb. 6.2]</span></p>
+<h4>Stolperstelle</h4>
+<p>Mitsprache und Mitbestimmung verwechselt man leicht. Entscheidend ist, wer entscheidet: Bei der Mitsprache die Kitaleitung, bei der Mitbestimmung haben die Kinder ein Beteiligungsrecht und sind gleichberechtigt. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Dein Lied-Beispiel prüfen wir daran. Eine Zuordnung von Kühn zu Schröder steht in keiner Quelle. Du darfst vergleichen, es bleibt aber deine Lesart und ist kein Beleg.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Ordne eine Situation aus deiner Gruppe, etwa die Liedwahl im Morgenkreis, einer Kühn-Stufe zu. Begründe mit einem Kennzeichen aus der Tabelle, wer entscheidet. Was müsste sich ändern, damit die Situation eine Stufe höher läge?</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Bei uns weiss ich genau, wer am Tisch bestimmt, was es zum Znacht gibt, und ich bin es nicht, aber die Bewohner sind es auch nicht.»</p>
+<h4>Was mich packt</h4>
+<p>Am meisten packt mich, dass es eine Stufe 0 gibt, die gar keine Partizipation ist, sondern Fremdbestimmung und Manipulation. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Und dass es ein Machtgefälle gibt: Wer Hilfe braucht, kann nur partizipieren, wenn wir einen Teil der Entscheidungsmacht abgeben. <span class="beleg">[Careum HKB C, S. 11–12]</span> Bei uns in der Wohngruppe entscheiden die Fachleute fast alles rund um die Ausflüge, und das habe ich nie als Macht angeschaut.</p>
+<h4>Wo ich aussteige</h4>
+<p>Alle Beispiele im Fachtext stammen aus der Kita: Garten, Spielgeräte, Hüttenbau. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Ich arbeite nicht mit Kindern. Ich muss jede Stufe selber übersetzen. Bei Schröder sind es dann neun Stufen statt fünf, und ich verliere die Nummern. <span class="beleg">[Careum HKB C, S. 12, Tab. 1 «Stufen der Partizipation»]</span></p>
+<h4>Meine Frage</h4>
+<p>Wir sagen der Wohngruppe, dass das Wohnzimmer neu gestrichen wird, und fragen, welche Farbe ihnen gefällt. Entschieden wird im Team. Ist das Information oder schon Mitsprache? Im Fachtext scheint es daran zu hängen, ob die Wünsche nur angehört oder ernst genommen werden. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Ich habe Information für mich neben Schröders Stufen 4 und 5 gelegt, aber das ist nur mein Gefühl, keine Aussage aus dem Buch.</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte Szenen aus meinem Betrieb den Stufen zuordnen, zu zweit und am liebsten mit jemandem aus einem anderen Betrieb, damit wir uns streiten können. Das Lernziel heisst «Die Stufen der Partizipation (n. M. Kühn) systematisch erläutern und mit berufsrelevanten Beispielen beschreiben» (K2). Die Beispiele will ich selber erfinden dürfen, statt Kita-Szenen abzuschreiben.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du merkst, dass das Machtgefälle bei dir im Alltag beginnt, bei den Ausflügen und beim Znacht, und dass Fachpersonen einen Teil davon abgeben müssen. <span class="beleg">[Careum HKB C, S. 11–12]</span> Dir fehlen Beispiele, und das ist berechtigt: Der Fachtext zu Kühn hat nur Kita-Beispiele. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> MmB-Beispiele zu Kühn stehen in keiner Quelle, die wir verwenden. Die Szenen kommen also von dir.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Auf eine Karte schreibst du eine Szene aus deinem Betrieb, in der etwas entschieden wurde, das eine betreute Person betrifft. Wer hat bestimmt, wer wusste davon, wer wurde gefragt? Keine Stufe, keine Namen.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Zuerst nehmen wir die Kita-Beispiele des Fachtexts als Anker: Die Kitaleitung informiert über den neuen Garten und entscheidet selbst (Stufe 1), die Kinder bringen Ideen ein, die Leitung entscheidet am Ende (Stufe 2), die Kinder stimmen über Spielangebote ab (Stufe 3), die Kinder bauen selbst eine Hütte (Stufe 4). <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Danach legt ihr eure Karten auf eine Papiertreppe am Boden und sagt, woran ihr die Stufe erkennt.</p>
+<h4>Stolperstelle</h4>
+<p>Bei Schröder gibt es neun Stufen, bei Kühn fünf. <span class="beleg">[Careum HKB C, S. 12, Tab. 1 «Stufen der Partizipation»; Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Eine Zuordnung der Kühn-Stufen zu Schröders Stufen steht in keiner Quelle. Legst du die beiden nebeneinander, ist das deine eigene Lesart, und du sagst es auch so. Belegt ist nur, was jedes Modell für sich sagt: Stufe 0 ist bei Kühn keine Partizipation. <span class="beleg">[Fachtext «Stufenmodell der Partizipation nach M. Kühn»]</span> Bei Schröder haben betreute Personen erst ab «Mitbestimmung» und «Selbstbestimmung» echte Partizipation. <span class="beleg">[Careum HKB C, S. 13]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Schreib eine Szene aus deinem Betrieb auf, ordne sie einer Kühn-Stufe zu und begründe die Zuordnung mit einem Kennzeichen aus der Tabelle. Erkläre dann in eigenen Worten, worin sich diese Stufe von der nächstniedrigeren unterscheidet. Das ist Lernziel 2 (K2).</p>
+</section></div></div></div>
+
+<h2 id="t3">3 · Definition Migration</h2>
+<p>Der Begriff «Migration» ist aus dem lateinischen Wort «migrare» abgeleitet, was «wandern» oder «auswandern» bedeutet. Die Migrationsforschung unterscheidet <b>Emigration</b> (Auswanderung), <b>Immigration</b> (Einwanderung) und <b>Remigration</b> (Rückwanderung oder Rückkehr). Migration findet meistens über die Grenzen von Regionen und Staaten statt; spielen sich die Wanderbewegungen innerhalb desselben Landes ab, spricht man von <b>Binnenmigration</b>. <span class="beleg">[Careum HKB A, S. 144]</span></p>
+<div class="def"><b>Definition</b> — Migration heisst die «längerfristige, räumliche Verlagerung des Lebensschwerpunktes über eine grössere Distanz, die ein Verlassen des sozialen Aktionsraumes zur Folge hat» (Wenning, 1996, S. 13). <span class="beleg">[Careum HKB A, S. 144]</span></div>
+<p>Migration ist kein neues Phänomen, sondern so alt wie die Menschheit. Bis vor etwa hundert Jahren war die Schweiz ein Auswanderungsland: Zwischen 1816 und 1913 fand die letzte grosse Auswanderungswelle statt, bei der fast eine halbe Million Schweizerinnen und Schweizer auswanderten — meist wegen Armut, Hunger und Arbeitslosigkeit. Dass die Schweiz heute eher ein Einwanderungsland ist, ist also ein neues Phänomen. <span class="beleg">[Careum HKB A, S. 143]</span></p>
+<p>Weil Migration bedeutet, die gewohnte, vertraute Umgebung zu verlassen und an einen fremden Ort zu ziehen, ist sie eine sehr prägende Erfahrung, die Denken und Handeln der Betroffenen stark beeinflusst. Alle Migrantinnen und Migranten müssen sich mit den Menschen, den kulturellen Gegebenheiten, Bräuchen, Normen, Werten und sozialen Verhältnissen am neuen Ort auseinandersetzen — ob sie freiwillig oder unfreiwillig gekommen sind. <span class="beleg">[Careum HKB A, S. 144]</span></p>
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — Definition im Kinderpflege-Lehrmittel</h5><p>Von Migration spricht man, wenn eine Person ihren Lebensmittelpunkt räumlich verlegt; von internationaler Migration, wenn dies über Staatsgrenzen hinweg geschieht (Bundesamt für Migration und Flüchtlinge, 2006). Als Asylbewerber werden Personen bezeichnet, die in einem fremden Staat Schutz und Aufnahme vor Verfolgung erbitten. <span class="beleg">[Kinderpflege, S. 360–361]</span></p>
+<div class="de">Die Definition von «Menschen mit Migrationshintergrund» auf S. 361 (Mikrozensus, Statistisches Bundesamt 2013) und das Asylverfahren nach dem deutschen Asylverfahrensgesetz beziehen sich auf Deutschland. <span class="beleg">[Kinderpflege, S. 361]</span></div></div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung</h5><p>Gemeinsamer Text; keine zusätzliche Quelle. Das Beispiel im Lehrmittel spielt in einer Wohngruppe: Ein aus dem Irak geflüchteter Arzt arbeitet als Hilfskraft, weil sein Abschluss in der Schweiz nicht anerkannt wurde. <span class="beleg">[Careum HKB A, S. 145, Auftrag A2-69]</span></p></div>
+</div>
+
+<div class="ebenen" data-sid="t3"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Ein langes Wort für etwas, das bei uns in der Kita jeden Tag mitläuft, ohne dass es jemand so nennt.»</p>
+<h4>Was mich packt</h4>
+<p>Dass die Schweiz einmal ein Auswanderungsland war, wusste ich nicht. Zwischen 1816 und 1913 sind fast eine halbe Million Schweizerinnen und Schweizer ausgewandert, meist wegen Armut, Hunger und Arbeitslosigkeit. <span class="beleg">[Careum HKB A, S. 143]</span> Das nehme ich gern mit, wenn bei uns wieder jemand redet, als sei Migration immer die Sache der anderen. Und der Absatz über die gewohnte, vertraute Umgebung geht mir nah: Alle müssen sich am neuen Ort mit Menschen, Bräuchen, Normen und Werten auseinandersetzen, ob sie freiwillig gekommen sind oder nicht. <span class="beleg">[Careum HKB A, S. 144]</span> Bei uns ist gerade eine Familie neu im Quartier, und ich frage mich, wie das für die Eltern ist.</p>
+<h4>Wo ich aussteige</h4>
+<p>Die Definition ist ein Satzungeheuer: «längerfristige, räumliche Verlagerung des Lebensschwerpunktes über eine grössere Distanz, die ein Verlassen des sozialen Aktionsraumes zur Folge hat». <span class="beleg">[Careum HKB A, S. 144]</span> Beim «sozialen Aktionsraum» gebe ich auf. Dazu kommen Emigration, Immigration, Remigration und Binnenmigration, das ist eine Wortliste, die ich nur auswendig lernen könnte. Und im Kinderpflege-Buch steht eine zweite Definition mit «Lebensmittelpunkt» statt «Lebensschwerpunkt». <span class="beleg">[Kinderpflege, S. 360–361]</span> Welche soll ich nehmen?</p>
+<h4>Meine Frage</h4>
+<p>Ist ein Umzug innerhalb der Schweiz, zum Beispiel von Basel nach Zürich, auch Migration? In der Definition steht «grössere Distanz», aber ich sehe nirgends, ab wann etwas gross ist.</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte die Definition in Stücke schneiden und jedes Stück an einem Beispiel ausprobieren. Die vier Begriffe will ich nicht als Liste, sondern an einer Familie durchspielen, wie sie bei uns in die Kita kommen könnte. Und ich möchte die Definition am Schluss in meinen eigenen Worten sagen können.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du lässt dich vom Inhalt packen und stolperst über die Sprache. Das ist eine gute Reihenfolge, damit können wir arbeiten. Die Definition ist tatsächlich dicht, und zwei Fassungen in zwei Lehrmitteln machen es nicht leichter. Dein Lernziel (K2) heisst: «Die Definition von Migration erklären.» Erklären heisst hier, dass du die Definition in eigenen Worten sagst und an einem Beispiel zeigst, nicht dass du sie auswendig aufsagst.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich frage in die Klasse: Wann war die Schweiz zuletzt ein Land, aus dem viele weggezogen sind? Alle schätzen, bevor ich etwas zeige. Dann lese ich vor, dass die Schweiz bis vor etwa hundert Jahren ein Auswanderungsland war und dass die letzte grosse Welle zwischen 1816 und 1913 stattfand. <span class="beleg">[Careum HKB A, S. 143]</span> So wird dein Hinweis, dass Migration nicht immer die Sache der anderen ist, zum Einstieg für alle.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Wir schneiden die Definition in ihre Teile: längerfristig, räumliche Verlagerung, Lebensschwerpunkt, grössere Distanz, Verlassen des sozialen Aktionsraumes. <span class="beleg">[Careum HKB A, S. 144]</span> Zu jedem Teil bekommt ihr ein Beispiel und entscheidet, ob es passt, etwa einen Familienurlaub. Den Begriff «sozialer Aktionsraum» erkläre ich nicht aus dem Kopf. Im nächsten Absatz beschreibt der Text, was Migration für die Betroffenen bedeutet: die gewohnte, vertraute Umgebung verlassen und an einen fremden Ort ziehen. <span class="beleg">[Careum HKB A, S. 144]</span> Ob das dasselbe meint wie der «soziale Aktionsraum», sagt der Text nicht, das bleibt offen. Dann spielen wir mit einer erfundenen Familie in der Kita Auswanderung, Einwanderung, Rückkehr und Wanderung innerhalb desselben Landes durch. <span class="beleg">[Careum HKB A, S. 144]</span> Zum Schluss vergleicht ihr die Fassung mit «Lebensschwerpunkt» und jene mit «Lebensmittelpunkt» und schreibt eine eigene. <span class="beleg">[Kinderpflege, S. 360–361]</span></p>
+<h4>Stolperstelle</h4>
+<p>Deine Frage zu Basel und Zürich kann ich nur teilweise beantworten. Bewegungen innerhalb desselben Landes heissen Binnenmigration. <span class="beleg">[Careum HKB A, S. 144]</span> Ab welcher Distanz etwas «grösser» ist, steht im Text nicht. Das lasse ich offen und prüfe mit euch die übrigen Merkmale der Definition. Eine zweite Falle steht im Kinderpflege-Buch: Die Definition von «Menschen mit Migrationshintergrund» und das Asylverfahren beziehen sich auf Deutschland. Wir übernehmen sie nicht für die Schweiz. <span class="beleg">[Kinderpflege, S. 361]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Eine Familie zieht für länger in ein anderes Land und lässt ihr vertrautes Umfeld zurück. Erkläre in drei Sätzen, warum das Migration ist, und nenne dabei mindestens zwei Teile der Definition. Sag dann, welches der Wörter Emigration, Immigration oder Remigration auf den Wegzug passt und welches auf eine spätere Rückkehr.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Ich dachte immer, Migration heisst: Jemand kommt aus einem anderen Land, aber die Definition ist viel weiter und viel sperriger.»</p>
+<h4>Was mich packt</h4>
+<p>Dass die Schweiz bis vor etwa hundert Jahren ein Auswanderungsland war, wusste ich nicht. Fast eine halbe Million Menschen sind zwischen 1816 und 1913 ausgewandert, meist wegen Armut, Hunger und Arbeitslosigkeit. <span class="beleg">[Careum HKB A, S. 143]</span> Das verändert, wie ich über die Leute bei uns denke, die von weit her gekommen sind. Und im Lehrmittel steht ein Fall aus einer Wohngruppe: ein aus dem Irak geflüchteter Arzt, der als Hilfskraft arbeitet, weil sein Abschluss in der Schweiz nicht anerkannt wurde. <span class="beleg">[Careum HKB A, S. 145, Auftrag A2-69]</span> Der geht mir nach.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei diesem Satz: «längerfristige, räumliche Verlagerung des Lebensschwerpunktes über eine grössere Distanz, die ein Verlassen des sozialen Aktionsraumes zur Folge hat». <span class="beleg">[Careum HKB A, S. 144]</span> Ich muss jedes Wort einzeln übersetzen. Emigration, Immigration und Remigration verwechsle ich dauernd. <span class="beleg">[Careum HKB A, S. 144]</span> Und ehrlich: Was hat das mit Partizipation im Betrieb zu tun?</p>
+<h4>Meine Frage</h4>
+<p>Was ist ein «sozialer Aktionsraum»? Im Text steht, dass man ihn verlässt, aber nicht, was er ist. Und gilt auch ein Umzug in eine andere Stadt als Migration? Dort steht, dass Wanderbewegungen innerhalb desselben Landes Binnenmigration heissen. <span class="beleg">[Careum HKB A, S. 144]</span> Ich weiss nicht, ab wann ein Umzug so heisst.</p>
+<h4>So möchte ich es lernen</h4>
+<p>Am Fall, nicht an der Definition allein. Ich möchte den Arzt aus dem Lehrmittel und die Auswanderer von früher nehmen und selber sagen dürfen, welches Wort zu welchem Fall passt. Das Lernziel heisst «Die Definition von Migration erklären» (K2). Erklären kann ich nur, was ich mit eigenen Worten sagen kann, also will ich die Definition zuerst in Stücke zerlegen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Die Definition ist ein Wortungetüm, die drei Wörter gehen durcheinander, und du fragst, was das mit Partizipation zu tun hat. Die letzte Frage lasse ich nicht liegen, wir kommen in der Auswertung darauf zurück. Die Verwechslung ist normal: Der Text unterscheidet Emigration als Auswanderung, Immigration als Einwanderung und Remigration als Rückwanderung oder Rückkehr. <span class="beleg">[Careum HKB A, S. 144]</span> Den «sozialen Aktionsraum» erklärt der Abschnittstext nicht, und eine Erklärung ohne Beleg gebe ich dir nicht.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Alle schreiben in einem Satz auf, was für sie Migration ist, ohne nachzuschlagen. Dann legen wir die Definition daneben und schauen, was in euren Sätzen vorkommt und was fehlt.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Wir zerlegen die Definition in Karten: längerfristig, räumlich, Lebensschwerpunkt, grössere Distanz, Verlassen des sozialen Aktionsraumes. <span class="beleg">[Careum HKB A, S. 144]</span> Jede Karte übersetzt ihr in eigene Worte. Danach nehmt ihr die Auswandernden zwischen 1816 und 1913 <span class="beleg">[Careum HKB A, S. 143]</span> und den Arzt aus dem Irak <span class="beleg">[Careum HKB A, S. 145, Auftrag A2-69]</span>, und legt zu jedem das passende Wort. <span class="beleg">[Careum HKB A, S. 144]</span></p>
+<h4>Stolperstelle</h4>
+<p>Das Wort «Aktionsraum» bleibt offen. Ich notiere es sichtbar als offene Frage, und wir sammeln, was die Klasse darunter versteht. Ich markiere klar, was Vermutung ist und was im Text steht. Ob ein Umzug Binnenmigration ist, prüfen wir an der Definition.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Erkläre deiner Sitznachbarin in eigenen Worten, was Migration heisst, und nenne für die Auswandernden von früher und für den Arzt jeweils das passende Wort. Begründe, ob der Arzt-Fall zur Definition passt, mit Wörtern aus der Definition (Lernziel 3, K2). Dann sag mir, wo du in der Wohngruppe aus dem Fall etwas für Partizipation mitnimmst.</p>
+</section></div></div></div>
+
+<h2 id="t4">4 · Migration: Gründe, Formen, Folgen und Migrationsprozess</h2>
+<h3>4.1 Push- und Pull-Faktoren</h3>
+<p>Die Gründe, weshalb ein Mensch, eine Familie oder ganze Bevölkerungsgruppen die Heimat verlassen, sind vielfältig. Sie können in der Situation im Herkunftsland liegen, die jemand als nicht mehr tragbar empfindet, oder im Zielland, von dem sich jemand bessere Chancen verspricht. Die Migrationsforschung unterscheidet deshalb <b>Push-Faktoren</b> (abstossende Kräfte im Herkunftsland) und <b>Pull-Faktoren</b> (anziehende Kräfte im Zielland). <span class="beleg">[Careum HKB A, S. 145]</span></p>
+<div class="zwei">
+<div><b>Push-Faktoren (Herkunftsland stösst ab)</b><ul><li>schlechte Situation auf dem Arbeitsmarkt, hohe Arbeitslosigkeit</li><li>fehlende Bildungsmöglichkeiten und berufliche Perspektiven</li><li>niedriger Lebensstandard, Perspektiv- und Hoffnungslosigkeit</li><li>hohes Bevölkerungswachstum und Verstädterung</li><li>Kriege und ethnische Konflikte</li><li>mangelnder Schutz grundlegender Rechte (Meinungs-, Religionsfreiheit)</li><li>Unterdrückung, Diskriminierung, Verfolgung</li><li>Umweltzerstörung und -katastrophen (Dürre, Überschwemmungen, Erdbeben)</li></ul></div>
+<div><b>Pull-Faktoren (Zielland zieht an)</b><ul><li>geringe Arbeitslosigkeit, Arbeitskräftemangel</li><li>Sicherung der Grundbedürfnisse (Nahrung, Kleidung, Bildung, Gesundheit)</li><li>hoher Lebensstandard, hohes Einkommen</li><li>soziale Absicherung</li><li>politische, kulturelle und religiöse Freiheiten</li><li>Informationen über Medien</li><li>Aussicht auf ökonomischen und sozialen Aufstieg</li><li>Möglichkeit, eine positive Perspektive zu entwickeln</li><li>Sicherheit vor Gewalt und Verbrechen</li></ul></div>
+</div>
+<p class="kl">Quelle: Careum HKB A, S. 146, Tab. 26 «Gründe für Migration» (nach Nigg 1999)</p>
+<p>Die Unterscheidung ist in der Praxis meist nicht eindeutig. Eine Migration ist ein einschneidender, häufig unumkehrbarer Entscheid; eine Person entschliesst sich erst dazu, wenn sich Push-Faktoren stark angestaut haben und die Unzufriedenheit grösser ist als der Verlust aller sozialen Beziehungen und der vertrauten Umgebung. Wichtiger als objektive Faktoren ist, wie diese individuell wahrgenommen werden. <span class="beleg">[Careum HKB A, S. 146]</span></p>
+
+<h3>4.2 Migrationstypen</h3>
+<div class="tabwrap">
+<table>
+<tr><th>Typ</th><th>Beschreibung</th><th>Beispiel</th></tr>
+<tr><td><b>Arbeitsmigration</b></td><td>Auswandern in der Hoffnung auf eine Arbeitsstelle oder besser bezahlte Arbeit; oft migrieren einzelne Familienmitglieder und schicken Lohn nach Hause. Firmen werben aktiv Arbeitskräfte an; im Herkunftsland entsteht ein «Brain-Drain», das Zielland profitiert vom «Brain-Gain».</td><td>Pflegerinnen aus Osteuropa in der Schweiz; in den 1960er-Jahren warb die Schweizer Industrie Tausende Arbeitskräfte aus Italien an.</td></tr>
+<tr><td><b>Heiratsmigration</b></td><td>Bei binationalen Ehen verlässt mindestens ein Ehepartner die Heimat.</td><td>Eine Schweizerin zieht mit ihrem schwedischen Mann nach Stockholm.</td></tr>
+<tr><td><b>Familienmigration</b> (Familiennachzug)</td><td>Recht für Arbeitsmigrantinnen und -migranten in allen europäischen Staaten, Ehepartner und Kinder nachkommen zu lassen.</td><td>Ein Franzose in der Schweiz zieht Ehefrau und Kind nach.</td></tr>
+<tr><td><b>Fluchtmigration</b></td><td>Erzwungene Form: Menschen migrieren, weil Freiheit oder Leben in der Heimat gefährdet sind. Die internationale Flüchtlingskonvention garantiert verfolgten Menschen Schutz, mindestens solange die Bedrohung besteht.</td><td>Eine Familie flüchtet ins Nachbarland, weil sie von der politischen Macht zu Feinden erklärt wurde.</td></tr>
+<tr><td><b>Rentnerinnenmigration</b></td><td>Ältere Menschen aus Hochlohnländern migrieren nach der Pensionierung in Niedriglohnländer im Süden.</td><td>Ein Ehepaar zieht in eine Seniorenresidenz in Thailand.</td></tr>
+</table>
+<caption>Quelle: Careum HKB A, S. 147, Tab. 27 «Migrationstypen». Die Liste ist laut Lehrmittel nicht vollständig, und die Typen sagen nichts über die Ursachen aus (S. 146).</caption>
+</div>
+
+<h3>4.3 Mögliche Folgen von Migration</h3>
+<p>Migration hat Folgen auf verschiedenen Ebenen. <b>Für den Arbeitsmarkt:</b> Im Auswanderungsland entlastet die Emigration den Arbeitsmarkt, gleichzeitig gehen gut qualifizierte Kräfte verloren («Braindrain»). Im Einwanderungsland sind Migrantinnen und Migranten als billige und als qualifizierte Arbeitskräfte willkommen. <b>Für die Bevölkerungszusammensetzung:</b> In den Auswanderungsländern bleiben ältere Menschen in ländlichen Gegenden allein zurück; in Westeuropa entschärft die Zuwanderung junger Leute die Überalterung, was sich positiv auf die Altersvorsorge (AHV-Rente) auswirkt. Wenn sich Gruppen in bestimmten Quartieren zusammenfinden, kann das zu ungünstiger Gettobildung führen. <b>Für die Volkswirtschaften der Auswanderungsländer:</b> Geldsendungen an die Familien sind ein bedeutender Devisenzufluss. <b>Für die öffentliche Meinung:</b> «Das Fremde» zieht an und trägt zur Vielfalt bei; es macht aber auch Angst. Stereotype und vorurteilsbehaftete Aussagen sowie Schlagworte in den Medien wecken Überfremdungsängste, die bis zu Fremdenfeindlichkeit und Fremdenhass führen können. <span class="beleg">[Careum HKB A, S. 148]</span></p>
+
+<h3>4.4 Der Migrationsprozess und die Integration</h3>
+<p>Migration bedeutet den Wechsel von einer vertrauten Kultur in eine fremde Umgebung, verbunden mit Gefühlen wie Entwurzelung, Einsamkeit, Hoffnungslosigkeit oder Trauer. Die gewohnte Identität kann nicht unverändert aufrechterhalten werden; oft verändert sich der soziale Status. Der Prozess des Einlebens verläuft in mehreren Phasen: <span class="beleg">[Careum HKB A, S. 149]</span></p>
+<ol class="kette">
+<li><b>Vorfreude auf die neue Kultur</b> — das Neue wird als interessant und aufregend wahrgenommen; man sieht vor allem Ähnlichkeiten zum Bekannten (Beispiel Tiago, 10, aus Portugal, der im Hort am Fenster die Autos beobachtet).</li>
+<li><b>Unsicherheiten</b> — Missverständnisse, Angst, Verärgerung; das Herkunftsland wird plötzlich als viel besser angesehen, alte Gewohnheiten werden betont (Beispiel Frau Berisha, die im Gemeinschaftszentrum nur noch mit Frauen aus Albanien spricht).</li>
+<li><b>Bereitschaft, sich mit der neuen kulturellen Umgebung auseinanderzusetzen</b> — mit besseren Sprachkenntnissen werden die Gepflogenheiten nicht nur akzeptiert, sondern geschätzt (Beispiel Herr Mazzoni, 82, der als junger Arbeiter aus Italien kam und heute froh ist, hier zu sein).</li>
+</ol>
+<p class="kl">Quelle: Careum HKB A, S. 149–150</p>
+<p><b>Integration</b> wird in der Migrationsforschung als vielschichtiger Prozess verstanden. Es geht nicht darum, dass Menschen ihre kulturelle Identität aufgeben; die Gesellschaft ist ohnehin pluralistisch, und eine einheitliche nationale Identität existiert nicht. Integration ist ein Prozess, den Migrantinnen und Migranten <i>und</i> die Aufnahmegesellschaft anstreben — beide sind dafür verantwortlich. Ziel muss sein, dass kulturelle und gesellschaftliche Teilhabe für alle möglich wird und alle gleiche Chancen etwa im Bildungsbereich erhalten. <span class="beleg">[Careum HKB A, S. 150]</span></p>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — Kinder mit Migrationshintergrund und Fluchterfahrung</h5>
+<p>Asylbewerberkinder und Kinder von Flüchtlingen leben in einer besonderen Situation, der oft traumatische Erlebnisse vorausgegangen sind. Davon zu unterscheiden sind Familien, die wegen Fachkräftemangels zum Arbeiten kommen — meist gut ausgebildet und vorbereitet. Gewalterfahrungen, Flucht und das Leben in Notunterkünften auf engstem Raum belasten Kinder. <span class="beleg">[Kinderpflege, S. 359]</span></p>
+<p>Mögliche Probleme eines Kindes mit Migrationshintergrund: Sprachschwierigkeiten führen zu Auseinandersetzungen; die Kommunikation mit den Eltern ist durch Sprachbarrieren erschwert; Konflikte zwischen der Kultur zu Hause und der in der Kita (z. B. bei Nahrungsmitteln); fremde Werte und Normen; Verlust von Freunden, Einsamkeit; fehlende Bücher und Spielzeug in Notunterkünften; Mangel- oder Fehlernährung; die Eltern kennen den Anspruch auf einen Kita-Platz nicht oder die Bedeutung vorschulischer Bildung ist ihnen nicht bewusst. <span class="beleg">[Kinderpflege, S. 360]</span></p>
+<p>Aufgaben der Fachpersonen: nicht nur die Sprache fördern, sondern Identitätsfindung und Eingliederung ins Schulsystem ermöglichen; die Familie über Bildungssystem und lebenspraktische Dinge informieren. Die Kita kann sich zu einem Ort sozialer und interkultureller Begegnung entwickeln. <span class="beleg">[Kinderpflege, S. 360]</span></p>
+<div class="de">Der Rechtsanspruch auf einen Kindergartenplatz, das Bundesamt für Migration und Flüchtlinge und die Fachdienste der Jugendämter auf S. 360–361 beziehen sich auf Deutschland. <span class="beleg">[Kinderpflege, S. 360–361]</span></div>
+</div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung</h5><p>Gemeinsamer Text. Zu Migration und Beeinträchtigung liegt im Dossier keine eigene MmB-Quelle vor; das Careum-Lehrmittel nennt als Hintergrundwissen für transkulturelle Kompetenz ausdrücklich kulturell unterschiedlich geprägte Konzepte zu Normalität und Behinderung (Abschnitt 5). <span class="beleg">[Careum HKB A, S. 143, Tab. 25]</span></p></div>
+</div>
+
+<div class="ebenen" data-sid="t4"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Ich will wissen, was ein Kind erlebt hat, aber ich will es nicht ausfragen.»</p>
+<h4>Was mich packt</h4>
+<p>Die Phasen des Einlebens kenne ich aus der Kita, auch wenn ich sie nie so benannt hätte. Erst ist alles interessant und man sieht vor allem Ähnlichkeiten zum Bekannten, dann kommen Missverständnisse, Angst und Verärgerung, und das Herkunftsland wirkt plötzlich viel besser <span class="beleg">[Careum HKB A, S. 149]</span>. Tiago im Hort, der am Fenster die Autos beobachtet, macht die erste Phase greifbar <span class="beleg">[Careum HKB A, S. 149–150]</span>. Bei uns steht morgens ein Kind oft am Fenster, und ich weiss nie, in welcher Phase es gerade ist.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den Listen. Arbeitslosigkeit, Bevölkerungswachstum und Verstädterung als Push-Faktoren <span class="beleg">[Careum HKB A, S. 146, Tab. 26 «Gründe für Migration»]</span> und die Folgen für Arbeitsmarkt und Volkswirtschaft <span class="beleg">[Careum HKB A, S. 148]</span> sind sicher richtig, aber sie haben mit meinem Morgen in der Kita wenig zu tun. Ich lese sie, nicke und habe sie am Nachmittag vergessen.</p>
+<h4>Meine Frage</h4>
+<p>Das Kapitel aus der Kinderpflege trennt Kinder von Flüchtlingen, denen oft traumatische Erlebnisse vorausgegangen sind, von Familien, die wegen Fachkräftemangels zum Arbeiten kommen <span class="beleg">[Kinderpflege, S. 359]</span>. Woher weiss ich in der Kita, was auf ein Kind zutrifft? Ich will keine Eltern ausfragen und kein Kind zum Erzählen drängen. Und was tue ich, wenn ich es schlicht nicht weiss?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An einem Fall aus einer Kita statt an Listen. Ich möchte die drei Phasen an kurzen Szenen erkennen und dann besprechen, was ich als Fachperson in jeder Phase konkret tun kann. Das Buch nennt als Aufgabe, nicht nur die Sprache zu fördern, sondern auch die Familie über Bildungssystem und lebenspraktische Dinge zu informieren <span class="beleg">[Kinderpflege, S. 360]</span>. Dazu hätte ich gern Beispiele, die zeigen, wie das im Alltag aussieht, und niemand in der Klasse soll von sich erzählen müssen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Die Listen bleiben für dich abstrakt, und du willst ein Kind nicht ausfragen, suchst aber Orientierung. Beides nehme ich ernst. Das Lehrmittel sagt selbst, wichtiger als objektive Faktoren sei, wie diese individuell wahrgenommen werden <span class="beleg">[Careum HKB A, S. 146]</span>. Das ist meine Brücke zum einzelnen Kind.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich sage zu Beginn: Heute geht es um Migration, und niemand muss etwas von sich erzählen. In der Klasse können Lernende mit eigener Migrations- oder Fluchtgeschichte sitzen, ich weiss es nicht und frage nicht danach. Dann zeige ich die Szene von Tiago am Fenster ohne Titel <span class="beleg">[Careum HKB A, S. 149–150]</span> und frage: Was könnte er gerade denken?</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Die drei Phasen liegen als Karten auf dem Tisch: Vorfreude, Unsicherheiten, Bereitschaft zur Auseinandersetzung <span class="beleg">[Careum HKB A, S. 149]</span>. Ich erfinde kurze Kita-Szenen, die Lernenden ordnen sie zu und begründen mit einem Merkmal aus dem Text. Dann notieren wir pro Phase eine Handlung, etwa die Familie über das Bildungssystem zu informieren <span class="beleg">[Kinderpflege, S. 360]</span>.</p>
+<h4>Stolperstelle</h4>
+<p>Zwei Dinge kippen leicht. Erstens: Wir schliessen nicht von einem Herkunftsland auf ein Kind. Die Typen in der Tabelle sagen laut Lehrmittel nichts über die Ursachen aus <span class="beleg">[Careum HKB A, S. 146]</span>. Zweitens: Der Rechtsanspruch auf einen Kindergartenplatz, das Bundesamt für Migration und Flüchtlinge und die Jugendämter beziehen sich auf Deutschland <span class="beleg">[Kinderpflege, S. 360–361]</span>. Ich schreibe «Deutschland» daneben, damit niemand es für eine Regel in unserem Betrieb hält.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Ich gebe diese Aufgabe: Ein Kind in deiner Gruppe steht morgens oft am Fenster und spricht wenig. Schreib auf, in welcher Phase es sein könnte, woran du das festmachst und was du tun würdest, ohne das Kind oder die Eltern auszufragen. Das prüft das Lernziel «Zu den verschiedenen Migrationsformen Beispiele und die Auswirkungen für die betreuten Personen beschreiben» (K2).</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Zwei Menschen können dasselbe erleben und trotzdem ganz verschieden entscheiden, ob sie gehen.»</p>
+<h4>Was mich packt</h4>
+<p>Mich packt der Satz, dass Migration ein einschneidender, häufig unumkehrbarer Entscheid ist und dass jemand erst geht, wenn die Unzufriedenheit grösser ist als der Verlust aller sozialen Beziehungen und der vertrauten Umgebung. Wichtiger als die objektiven Faktoren ist, wie jemand sie wahrnimmt. <span class="beleg">[Careum HKB A, S. 146]</span> Bei uns in der Wohngruppe ist schon ein Zimmerwechsel für manche eine grosse Sache, weil das Vertraute weg ist. Das ist nicht dasselbe wie auswandern, aber ich ahne, was mit Entwurzelung und Trauer gemeint sein könnte. <span class="beleg">[Careum HKB A, S. 149]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den Listen. Acht Push-Faktoren, neun Pull-Faktoren, dann fünf Migrationstypen in einer Tabelle. <span class="beleg">[Careum HKB A, S. 146]</span> <span class="beleg">[Careum HKB A, S. 147]</span> Das ist Auswendiglernen, und nach zehn Minuten weiss ich nicht mehr, welcher Typ welcher ist. Die Rentnerinnenmigration ist weit weg von meinem Alltag, und die Folgen für Arbeitsmarkt und Volkswirtschaft sind mir zu abstrakt.</p>
+<h4>Meine Frage</h4>
+<p>Das Lehrmittel sagt, die Unterscheidung von Push und Pull sei in der Praxis meist nicht eindeutig. <span class="beleg">[Careum HKB A, S. 146]</span> Woran merke ich dann, was bei einem Menschen gerade gilt? Und muss ich das überhaupt wissen, wenn ich jemanden betreue, oder frage ich besser nicht nach?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Mit einem Fall pro Migrationstyp, den ich in der Gruppe besprechen kann, statt mit der Tabelle. Mir hilft, wenn ich zuerst etwas Eigenes überlege, etwa einen Ortswechsel, und erst danach die Fachwörter bekomme. Und ich möchte nicht, dass jemand nach seiner Geschichte gefragt wird, nur weil das Thema gerade dran ist. Wer erzählen will, soll, alle anderen nicht.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du sagst, Listen bleiben dir nicht, aber der Satz über die Wahrnehmung schon. Das Lehrmittel gewichtet tatsächlich nicht die Faktoren selbst, sondern wie sie jemand individuell wahrnimmt. <span class="beleg">[Careum HKB A, S. 146]</span> Deine Bitte gilt: Ich frage nie, wer woher kommt, und niemand muss etwas Persönliches erzählen. Wer von sich aus etwas teilt, wird gehört, und wir verallgemeinern es nicht.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich beginne bei einem Ortswechsel irgendeiner Art: Umzug, neue Schule, neue Stelle. Alle notieren für sich, was gestossen und was gezogen hat. Es wird nichts eingesammelt. Dann gebe ich die Wörter: Push-Faktoren sind abstossende Kräfte im Herkunftsland, Pull-Faktoren anziehende Kräfte im Zielland. <span class="beleg">[Careum HKB A, S. 145]</span></p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Jedes Paar bekommt einen Migrationstyp mit dem Beispiel aus dem Lehrmittel, etwa die Familie, die ins Nachbarland flüchtet, weil sie von der politischen Macht zu Feinden erklärt wurde. <span class="beleg">[Careum HKB A, S. 147]</span> Die Paare suchen aus der Tabelle Push- und Pull-Faktoren, die in diesem Fall mitspielen könnten, und stellen den Fall vor.</p>
+<h4>Stolperstelle</h4>
+<p>Die Typen ordnen Fälle, über die Ursachen sagen sie nichts. <span class="beleg">[Careum HKB A, S. 146]</span> Ich achte darauf, dass niemand von «den» Menschen einer Herkunft spricht. Stereotype und vorurteilsbehaftete Aussagen wecken Ängste. <span class="beleg">[Careum HKB A, S. 148]</span> Fällt so ein Satz, fragen wir: Woher wissen wir das?</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Wähle einen der fünf Migrationstypen. Erkläre ihn mit eigenen Worten, nenne das Beispiel und beschreibe daran einen Push- und einen Pull-Faktor. Warum ist die Unterscheidung in der Praxis nicht immer eindeutig? So prüfe ich auf K2 «Zwischen den verschiedenen Migrationstypen unterscheiden und Beispiele beschreiben» und den Push-Pull-Teil von «Die Unterschiede zwischen ‹Emigration› und ‹Immigration› sowie zwischen Push- und Pull-Faktoren beschreiben».</p>
+</section></div></div></div>
+
+<h2 id="t5">5 · Umgang mit kultureller Vielfalt und Vorurteilen — transkulturelle Kompetenz</h2>
+<h3>5.1 Was Kultur ist</h3>
+<div class="def"><b>Definition</b> — Kultur ist, was der Mensch selbst geschaffen hat: die Sprache, die Wohnverhältnisse, Bräuche und Gewohnheiten, Religion, Recht, Wissenschaft, Wert- und Normvorstellungen — kurz die ganze Lebensweise einer Gesellschaft. Die UNESCO definiert Kultur als «Gesamtheit der unverwechselbaren geistigen, materiellen, intellektuellen und emotionalen Eigenschaften, die eine Gesellschaft oder eine soziale Gruppe kennzeichnet». <span class="beleg">[Careum HKB A, S. 135]</span></div>
+<p>Kultur und Gesellschaft sind nicht dasselbe, ergänzen sich aber: Jede Gesellschaft hat ihre eigene Kultur, und Kultur ist eine Praxis der Sinngebung. Hofstede vergleicht Kultur mit der «mentalen Software» eines Menschen. Drei Ebenen machen die Identität aus: die <b>menschliche Natur</b> (vererbt, für alle gleich — z. B. Gefühle, Bedürfnis nach Gemeinschaft), die <b>Kultur</b> (erlernt, je nach Gesellschaft — z. B. wie wir Gefühle ausdrücken oder einander begrüssen) und die <b>Identität</b> (individuell erlebt und erlernt; kein Mensch gleicht dem anderen). <span class="beleg">[Careum HKB A, S. 135–137, Abb. 11, Tab. 24]</span></p>
+<p>Jeder Mensch gehört vielen sozialen Gruppen an (Auszubildende, Familie, Religionsgemeinschaft, Hobbygruppe), deren Kulturen sich auch widersprechen können. Es gibt weder «die» Schweizer noch «die» italienische Kultur; die Kultur einer Person ist ein individuelles Puzzle. Man spricht deshalb besser von der eigenen <b>kulturellen Identität</b>, die Wertvorstellungen und Haltungen prägt. <span class="beleg">[Careum HKB A, S. 138–139]</span></p>
+
+<h3>5.2 Interkulturell, multikulturell, transkulturell</h3>
+<div class="tabwrap">
+<table>
+<tr><th>Begriff</th><th>Bedeutung</th></tr>
+<tr><td><b>interkulturell</b></td><td>Austausch oder Vermittlung <i>zwischen</i> Menschen mit unterschiedlichen kulturellen Identitäten («Zwischenkulturalität»). Der Betreuungsalltag ist grundsätzlich interkulturell geprägt.</td></tr>
+<tr><td><b>multikulturell</b></td><td>Ein Zustand oder eine Situation, in der verschiedene Menschen mit verschiedenen kulturellen Identitäten zusammentreffen — z. B. ein Betreuungsteam mit unterschiedlichen ethnischen, sprachlichen oder religiösen Wurzeln.</td></tr>
+<tr><td><b>transkulturell</b></td><td>Fähig sein, sich «über» («trans») die Kulturen hinweg — unabhängig von der Kultur eines Menschen, aber mit Respekt ihr gegenüber — an den Bedürfnissen dieses Menschen zu orientieren. Die existenziellen Bedürfnisse sind für alle gleich; je nach Prägung bewerten und kommunizieren Menschen sie unterschiedlich.</td></tr>
+</table>
+<caption>Quelle: Careum HKB A, S. 139 und 141</caption>
+</div>
+<p>Die häufigsten Herausforderungen im multikulturellen Betreuungsalltag sind sprachliche Verständigungsschwierigkeiten; sie lassen sich mit Dolmetschenden relativ einfach lösen. Schwieriger sind unterschiedliche kulturell geprägte Konzepte, Werte und Lebensanschauungen — etwa zur Rollenverteilung der Geschlechter, zu Familienformen, Erziehungsgrundsätzen, Essgeboten, Berührungstabus oder zum Umgang mit Krankheit und Tod. Die grösste Herausforderung ist, die Bedürfnisse der Menschen zu erkennen, zu verstehen und angemessen darauf zu reagieren. <span class="beleg">[Careum HKB A, S. 140]</span></p>
+
+<h3>5.3 Transkulturelle Kompetenz — drei Aspekte</h3>
+<div class="def"><b>Definition</b> — «Transkulturelle Kompetenz» heisst vor allem, Menschen in ihrer je eigenen kulturellen Identität zu verstehen und daran angepasste Handlungsweisen abzuleiten. <span class="beleg">[Careum HKB A, S. 141]</span></div>
+<div class="tabwrap">
+<table>
+<tr><th>Aspekt</th><th>Was das für Sie als Fachperson bedeutet</th></tr>
+<tr><td><b>Selbstreflexion</b></td><td>Über die eigene kulturelle Identität, Werte und Überzeugungen nachdenken; alle Menschen <b>vorurteilsfrei</b> wahrnehmen und ihre Lebensweise als weitere Möglichkeit neben der eigenen akzeptieren; eigene Vorurteile gegenüber dem «Anderen» erkennen und abbauen. Die eigene Kultur weder «höher» noch «besser» einstufen, aber auch nicht in den Schatten stellen. Selbstreflexion ist die Grundvoraussetzung für Verständnis.</td></tr>
+<tr><td><b>Grundhaltung in Kommunikation und Begegnung</b></td><td>Annahmen: Jeder Mensch hat seine eigene Geschichte und Kultur; Kulturen sind nie so getrennt, dass Austausch unmöglich wäre; es gibt immer Gemeinsamkeiten; das Aufeinandertreffen setzt Respekt, Verständnis und Sensibilität voraus. <b>Offen, interessiert und mit gesunder Neugier</b> begegnen; nach Bedürfnissen, Wünschen, Hoffnungen, Geboten und Verboten und Ängsten fragen.</td></tr>
+<tr><td><b>Hintergrundwissen</b></td><td>Wissen zu Kulturen, Religionen, Symbolen; zu migrationsspezifisch geprägten Lebenswelten; zu integrationshindernden und -fördernden Faktoren; zu Vorurteilen, Stereotypisierungen, Diskriminierung und Rassismus; zu kulturell unterschiedlich geprägten Konzepten von Normalität und Behinderung. Aneignen durch Bücher, Medien, Gespräche, Teilnahme an Treffen und Veranstaltungen.</td></tr>
+</table>
+<caption>Quelle: Careum HKB A, S. 142–143, Tab. 25 «Aspekte transkultureller Kompetenz»</caption>
+</div>
+<div class="merk">Fazit des Lehrmittels: Transkulturell kompetent ist eine Person, die sich und ihre eigene kulturelle Identität nicht zu wichtig nimmt, sich bewusst ist, dass diese ihre Wahrnehmung beeinflusst, und die Multikulturalität im Betreuungsalltag als Gelegenheit zur Horizonterweiterung versteht. Respekt erweisen wir, indem wir Gewohnheiten, Rituale und Traditionen ernst nehmen — und indem wir unsere Vorurteile hinterfragen und gegebenenfalls revidieren. <span class="beleg">[Careum HKB A, S. 141–143]</span></div>
+
+<h3>5.4 Vorurteile und Wahrnehmungsfehler</h3>
+<p>Unsere Wahrnehmung ist subjektiv, selektiv, situativ und fehleranfällig. Beim <b>Halo-Effekt</b> schliessen wir von einer einzelnen auffallenden Leistung auf die Gesamtperson — so wird bei Menschen mit körperlicher Beeinträchtigung oft vorschnell auf eine kognitive Beeinträchtigung geschlossen. Beim <b>Pygmalion-Effekt</b> («selbsterfüllende Prophezeiung») nehmen wir Verhalten so wahr, wie wir es erwarten, und beeinflussen es dadurch in die erwartete Richtung; beim <b>Primacy-Effekt</b> prägt der erste Eindruck alle weiteren Beobachtungen. Reflexion hilft, «blinde Flecken» zu korrigieren. <span class="beleg">[Careum HKB A, S. 130]</span></p>
+<p>Werte sind an ein Umfeld gebunden: Jede Kultur, Religion, Familie oder Partei vertritt eigene Werte. Als Folge von Globalisierung und Migration existieren in unserer Gesellschaft zeitgleich unterschiedliche Wertorientierungen (<b>Wertepluralismus</b>). Die Herausforderung besteht darin, Werte im Alltag, in der Zusammenarbeit und auf gesellschaftlicher Ebene immer wieder neu auszuhandeln. <span class="beleg">[Careum HKB A, S. 134]</span></p>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — mit kulturellen Unterschieden umgehen</h5>
+<p>Jede Kultur hat eigene Werte und Zielvorstellungen; Eltern vermitteln in der Familie die Normen und Werte ihrer Kultur. In Kita und Schule lernen Kinder häufig andere Zielvorstellungen kennen und müssen den Spagat zwischen den Welten schaffen. Die Fachperson darf Erziehungsziele, die sie selbst nicht richtig findet, nicht verurteilen oder abwerten, sondern setzt sich mit der anderen Kultur auseinander — auf dieser Grundlage sind Annäherung und Erziehungspartnerschaft möglich. <span class="beleg">[Kinderpflege, S. 229]</span></p>
+<p>Handlungsmöglichkeiten: Offenheit für andere Kulturen und Sprachen; Achtung und Respekt aller Kulturen im täglichen Umgang; die Lebensgeschichte jedes Kindes berücksichtigen; Projekte zu den Herkunftsländern; Eltern die Kita kennenlernen lassen; gezielte Sprachförderung; das eigene Verhalten gegenüber Migranten immer wieder kritisch überdenken; Vorurteile durch Kontakt zu den Eltern abbauen — denn Vorurteile entstehen oft, wenn Menschen schlecht informiert sind. <span class="beleg">[Kinderpflege, S. 362]</span></p></div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung</h5>
+<p>Gemeinsamer Text. Beispiel aus dem Lehrmittel: Eine Serbokroatisch sprechende Kindergruppe führt mit einer Deutsch sprechenden Gruppe eine zweisprachige Zoo-Aktivität durch; die Betreuungspersonen ermöglichen den Erfahrungsaustausch zwischen den Gruppen. Ältere Menschen, die sich nicht aktivieren lassen wollen, weil in ihrem Verständnis der Abbau im Alter hinzunehmen ist, zeigen, wie kulturelle Konzepte die Betreuung prägen. <span class="beleg">[Careum HKB A, S. 140]</span></p></div>
+</div>
+
+<div class="ebenen" data-sid="t5"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Ich dachte, Vorurteile haben immer die anderen.»</p>
+<h4>Was mich packt</h4>
+<p>Der Satz, dass es weder «die» Schweizer noch «die» italienische Kultur gibt und die Kultur einer Person ein individuelles Puzzle ist <span class="beleg">[Careum HKB A, S. 138–139]</span>. Bei uns im Team sagt manchmal jemand «bei denen ist das halt so», und ich habe nie widersprochen. Jetzt merke ich, dass das schon ein Urteil ist. Der Pygmalion-Effekt geht mir nach: Wenn ich ein Verhalten erwarte, nehme ich es so wahr und beeinflusse es sogar in diese Richtung <span class="beleg">[Careum HKB A, S. 130]</span>.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei interkulturell, multikulturell und transkulturell. Drei Wörter, die gleich klingen, und ich verwechsle sie jedes Mal <span class="beleg">[Careum HKB A, S. 139 und 141]</span>. Auch Hofstedes «mentale Software» und die drei Ebenen menschliche Natur, Kultur und Identität bleiben bei mir abstrakt <span class="beleg">[Careum HKB A, S. 135–137, Abb. 11, Tab. 24]</span>.</p>
+<h4>Meine Frage</h4>
+<p>Die Kinderpflege sagt, ich dürfe Erziehungsziele, die ich selbst nicht richtig finde, nicht verurteilen oder abwerten <span class="beleg">[Kinderpflege, S. 229]</span>. Was heisst das konkret, wenn Eltern etwas anders machen, als ich es machen würde? Und gibt es eine Grenze?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An Situationen aus der Kita, die ich selbst einschätzen muss, nicht an Definitionen. Die drei Aspekte Selbstreflexion, Grundhaltung in Kommunikation und Begegnung und Hintergrundwissen <span class="beleg">[Careum HKB A, S. 142–143, Tab. 25 «Aspekte transkultureller Kompetenz»]</span> möchte ich an einem Fall durchgehen. Und ich möchte nicht über Herkunftsgruppen reden, sondern über Kinder und Eltern, wie sie im Alltag vorkommen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du hast Vorurteile zuerst bei anderen vermutet und suchst jetzt bei dir selbst. Das ist Selbstreflexion, die das Lehrmittel als Grundvoraussetzung für Verständnis nennt <span class="beleg">[Careum HKB A, S. 142–143, Tab. 25]</span>. Drei ähnliche Begriffe bremsen dich aus, und bei den Erziehungszielen fragst du nach einer Grenze.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Alle schreiben für sich auf einen Zettel, zu welchen Gruppen sie gehören, etwa Klasse, Familie, Hobbygruppe. Niemand muss etwas zeigen. Dann frage ich, wo sich die Regeln dieser Gruppen widersprechen können. So entsteht das Puzzle aus dem Text <span class="beleg">[Careum HKB A, S. 138–139]</span> zuerst bei den Lernenden selbst.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ein Team mit verschiedenen Wurzeln ist multikulturell, der Austausch zwischen Menschen mit unterschiedlichen kulturellen Identitäten interkulturell. Transkulturell handelt, wer sich unabhängig von der Kultur am Bedürfnis des Menschen orientiert <span class="beleg">[Careum HKB A, S. 139 und 141]</span>. Kleingruppen erhalten dieselbe Beobachtung zu einem Kind mit verschiedenem ersten Satz und vergleichen, was sie herauslesen: Primacy-Effekt <span class="beleg">[Careum HKB A, S. 130]</span>.</p>
+<h4>Stolperstelle</h4>
+<p>Zur Frage nach der Grenze: Das Lehrmittel sagt, man verurteile solche Erziehungsziele nicht, sondern setze sich mit der anderen Kultur auseinander, dann seien Annäherung und Erziehungspartnerschaft möglich <span class="beleg">[Kinderpflege, S. 229]</span>. Wo die Grenze liegt, sagt der Abschnitt nicht, und das sage ich offen. Zweite Stelle: «transkulturell» wird gern als «alle sind gleich» gelesen. Gleich sind laut Text die existenziellen Bedürfnisse, bewertet und kommuniziert werden sie je nach Prägung unterschiedlich <span class="beleg">[Careum HKB A, S. 139 und 141]</span>.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Ich gebe diese Aufgabe: Eine Mutter hat für die Erziehung ihres Kindes ein Ziel, das du selbst nicht richtig findest. Schreib in drei Sätzen, was du bei dir selbst prüfst, wie du mit ihr sprichst und was du über ihre Sichtweise wissen möchtest. Das prüft das Lernziel «Anhand von Aspekten der transkulturellen Kompetenz (Selbstreflexion, Kommunikation, Hintergrundwissen) den professionellen Umgang mit kultureller Vielfalt handhaben und mit kulturellen Unterschieden umgehen» (K2).</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Ich merke, wie schnell ich bei einem Menschen schon etwas denke, bevor er den Mund aufgemacht hat.»</p>
+<h4>Was mich packt</h4>
+<p>Der Halo-Effekt. Wenn jemand körperlich beeinträchtigt ist, wird oft vorschnell auf eine kognitive Beeinträchtigung geschlossen. <span class="beleg">[Careum HKB A, S. 130]</span> Das kenne ich: Bei uns in der Wohngruppe hat eine neue Mitarbeiterin einen Bewohner im Rollstuhl nur laut und langsam angesprochen, als würde er nichts verstehen. Auch das Bild von der Kultur als «mentaler Software» bleibt mir hängen. <span class="beleg">[Careum HKB A, S. 135]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Bei interkulturell, multikulturell und transkulturell. Drei fast gleiche Wörter, und ich verwechsle sie jedes Mal. <span class="beleg">[Careum HKB A, S. 139 und 141]</span> Und «Selbstreflexion» klingt für mich nach einem Wort, das man in jedes Fach schreibt. Was soll ich da konkret tun?</p>
+<h4>Meine Frage</h4>
+<p>Das Lehrmittel sagt, ich soll offen und mit gesunder Neugier begegnen und nach Bedürfnissen, Wünschen und Ängsten fragen. <span class="beleg">[Careum HKB A, S. 143, Tab. 25]</span> Aber was mache ich, wenn jemand sich kaum äussern kann? Wie frage ich dann, ohne dass ich einfach etwas annehme?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An Szenen aus dem Arbeitsalltag, nicht an Länderlisten. Ich möchte zuerst bei mir schauen, was ich in einer Szene denke, und erst danach über andere reden. Und ich möchte nicht für «meine Kultur» sprechen müssen. Ich bin nicht die Vertretung von irgendetwas, ich bin eine Person.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Den Halo-Effekt hast du in deinem Betrieb sofort wiedererkannt, darauf baue ich auf. Deine Frage, wie du fragst, wenn sich jemand kaum äussern kann, beantwortet der Text nicht. Ich erfinde dazu keinen Fachbegriff, sondern nehme sie als offene Frage in die Klasse mit, denn dort steckt Erfahrung aus euren Betrieben. Niemand muss für «seine» Kultur sprechen. Wir arbeiten an Szenen, nicht an Herkunftsgruppen.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich lese deine Szene mit der neuen Mitarbeiterin anonym vor und frage: Was hat sie angenommen, und woher? Danach folgen die Wörter Halo-Effekt, Pygmalion-Effekt und Primacy-Effekt. Reflexion hilft, «blinde Flecken» zu korrigieren. <span class="beleg">[Careum HKB A, S. 130]</span></p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Fall: Eine ältere Person in der Tagesstruktur will nicht aktiviert werden, weil in ihrem Verständnis der Abbau im Alter hinzunehmen ist. <span class="beleg">[Careum HKB A, S. 140]</span> Die Klasse fragt in drei Schritten: Was denke ich zuerst, und welcher Wert steckt darin? Wonach würde ich fragen? Welches Wissen fehlt mir? Das sind Selbstreflexion, Grundhaltung und Hintergrundwissen. <span class="beleg">[Careum HKB A, S. 143, Tab. 25]</span></p>
+<h4>Stolperstelle</h4>
+<p>Merkhilfe: inter heisst zwischen den Menschen, multi heisst viele sind da, trans heisst, sich unabhängig von der Kultur, aber mit Respekt, an den Bedürfnissen des Menschen zu orientieren. <span class="beleg">[Careum HKB A, S. 139 und 141]</span> Hintergrundwissen darf keine Schublade werden. Ziel ist, einen Menschen in seiner eigenen kulturellen Identität zu verstehen. <span class="beleg">[Careum HKB A, S. 141]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Beschreibe ohne Namen eine Szene aus deinem Betrieb. Welchen Wahrnehmungsfehler könntest du bei dir bemerken? Formuliere eine Frage an die Person und erkläre, warum sie bei ihrem Bedürfnis ansetzt. So prüfe ich auf K2 «Anhand von Aspekten der transkulturellen Kompetenz den professionellen Umgang mit kultureller Vielfalt handhaben und mit kulturellen Unterschieden umgehen».</p>
+</section></div></div></div>
+
+<h2 id="t6">6 · Definition Sozialraum und Sozialraumorientierung</h2>
+<p class="kl">Unterrichtsthema im Schullehrplan MmB; für Kind steht die Bedeutung des Sozialraums als Lernziel (siehe Lernzieltabelle). Der Text gilt für beide Fachrichtungen.</p>
+<div class="def"><b>Definition</b> — Soziale Räume sind sozial und/oder räumlich begrenzte Bereiche. Zum einen beinhaltet ein <b>Sozialraum</b> das soziale Miteinander von Menschen und deren soziale Netzwerke — er bezieht sich auf bestimmte Gruppen, die diesen Raum prägen und mitgestalten. Zum anderen ist der Sozialraum die räumliche Umgebung dieser Menschen; die dort vorhandenen Ressourcen und Lebensbedingungen wirken sich auf die Möglichkeiten aus, ein gelingendes Leben zu führen. Weitere Bezeichnungen: Kontext, Setting, Lebenswelt, Lebensbereich, Lebensraum. <span class="beleg">[Careum HKB C, S. 18]</span></div>
+<p>Der Sozialraum wird von den Menschen, die in ihm leben, geschaffen und geprägt — und zugleich prägt er ihre Entwicklungsmöglichkeiten. Partizipation setzt voraus, dass sich Umfeld, Strukturen und Haltungen so verändern, dass die Handlungs- und Mitentscheidungsspielräume der Menschen erweitert werden; zugleich wandelt sich der Sozialraum durch die Mitwirkung der Menschen. Partizipation erfordert und bewirkt somit <b>Sozialraumorientierung</b>, das heisst das Gestalten von Lebenswelten «unter tätiger Mitwirkung der betroffenen Menschen» (Hinte, 2012). <span class="beleg">[Careum HKB C, S. 18]</span></p>
+<p>Sozialraumorientierung setzt nicht bei der Betrachtung des Raums an, sondern stellt die individuellen Interessen und Bedürfnisse des Menschen ins Zentrum und setzt diese in Bezug zu den im Umfeld vorhandenen Ressourcen. Sie versteht den Menschen und sein Handeln immer im Zusammenhang mit seinem sozialen Umfeld. <span class="beleg">[Careum HKB C, S. 20]</span></p>
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind</h5>
+<p>Als Sozialraum wird in der Pädagogik der Ort bezeichnet, an dem der Einzelne oder eine Gruppe lebt: etwa ein Stadtteil, ein Dorf oder eine Strasse. <span class="beleg">[Kinderpflege, S. 53]</span></p>
+<p>Der Sozialraum ist Lebensraum, Quartier, Heimat, sozialer Mikrokosmos, in dem sich regionale und globale Entwicklungen, aber auch Versäumnisse widerspiegeln; er ist überschaubar und trägt zur Identitätsbildung bei. Lebensweltorientierung und Sozialraumorientierung wurden seit den 1980er Jahren zunehmend synonym verwendet. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span></p>
+<div class="de">Das Lehrmittel leitet die Lebensweltorientierung aus dem 8. Kinder- und Jugendbericht (1990) der deutschen Bundesregierung und dem SGB VIII ab. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span></div></div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung</h5>
+<p>Der Sozialraum wird als Ort verstanden, der von bestimmten soziostrukturellen Verhältnissen geprägt ist und an dem konkret, überschaubar und identitätsbildend der Alltag gelebt wird. Die Leitidee der Sozialraumorientierung in der Behindertenhilfe verfolgt zwei Hauptziele: uneingeschränkte Teilhabe von Menschen mit Behinderung am öffentlichen Leben und Nutzbarmachung der Möglichkeiten des Gemeinwesens für alle. <span class="beleg">[HEP Band 2, S. 158]</span></p>
+<p>Sozialraumorientierung ist ein bewährtes Handlungskonzept sozialer Arbeit. Statt Hilfen in Sondereinrichtungen anzubieten, wird auf die Infrastruktur des Sozialraums bzw. der Gemeinde zurückgegriffen; Einrichtungen und Dienste vor Ort sowie Stärken und Interessen der Menschen werden analysiert und gebündelt. Die eindimensionale Geber- und Nehmer-Struktur von Hilfesystemen wird aufgelockert. <span class="beleg">[HEP Band 1, S. 83]</span></p>
+<p>In der Behindertenhilfe kam es zu einem Paradigmenwechsel: weg von stationärer Heimunterbringung, separiert von der Gesellschaft, hin zu Integration in die Gemeinschaft — ein Zusammenleben «auf gleicher Augenhöhe». <span class="beleg">[HEP Band 2, S. 158]</span></p></div>
+</div>
+
+<div class="ebenen" data-sid="t6"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Ich dachte immer, Sozialraum sei einfach das Quartier.»</p>
+<h4>Was mich packt</h4>
+<p>Der Sozialraum hat zwei Seiten: das Miteinander der Menschen mit ihren Netzwerken und die räumliche Umgebung, deren Ressourcen und Lebensbedingungen mitbestimmen, ob ein gelingendes Leben möglich ist. <span class="beleg">[Careum HKB C, S. 18]</span> Bei uns in der Kita merke ich das an den Wegen der Kinder: Das eine kommt mit dem Nachbarn, das andere muss allein über die grosse Kreuzung. Das Kinderpflege-Buch nennt als Beispiele einen Stadtteil, ein Dorf oder eine Strasse. <span class="beleg">[Kinderpflege, S. 53]</span> Dass ein Sozialraum überschaubar ist und zur Identitätsbildung beiträgt, hätte ich nicht gedacht. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den vielen Wörtern. Kontext, Setting, Lebenswelt, Lebensbereich, Lebensraum sollen weitere Bezeichnungen sein. <span class="beleg">[Careum HKB C, S. 18]</span> Dazu heisst es, Lebensweltorientierung und Sozialraumorientierung seien seit den 1980er Jahren zunehmend gleich gebraucht worden. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span> Warum lerne ich dann zwei Wörter? Und der 8. Kinder- und Jugendbericht kommt von der deutschen Bundesregierung, das SGB VIII ist deutsches Recht. Ich arbeite in Basel und weiss nicht, was ich damit soll. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span></p>
+<h4>Meine Frage</h4>
+<p>Sozialraumorientierung setzt nicht beim Raum an, sondern bei den Interessen und Bedürfnissen des Menschen. <span class="beleg">[Careum HKB C, S. 20]</span> Wie fange ich das an, wenn ein Kind in meiner Gruppe kaum sagt, was es will? Es soll ja um das Gestalten von Lebenswelten «unter tätiger Mitwirkung der betroffenen Menschen» gehen. <span class="beleg">[Careum HKB C, S. 18]</span></p>
+<h4>So möchte ich es lernen</h4>
+<p>An einem Kind aus unserer Gruppe, nicht an einem Lehrbuchfall. Ich würde gern aufzeichnen, mit wem es zu tun hat und was in seiner Umgebung da ist, und dann zu zweit besprechen, wo ich bei seinem Interesse ansetzen würde. Eine Tabelle mit Begriffen brauche ich nicht. Ich brauche ein Beispiel, an dem ich den Unterschied sehe zwischen dem Raum anschauen und den Menschen ins Zentrum stellen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du steigst bei der Wortvielfalt aus und fragst, was du mit einem Kind anfangen sollst, das kaum sagt, was es will. Zum ersten Punkt: Die Definition hat zwei Teile, das soziale Miteinander und die räumliche Umgebung, die anderen Wörter sind weitere Bezeichnungen dafür. <span class="beleg">[Careum HKB C, S. 18]</span> Deine Frage ist keine Randfrage, sie ist der Kern: Sozialraumorientierung beginnt bei den Interessen und Bedürfnissen des Menschen. <span class="beleg">[Careum HKB C, S. 20]</span></p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich gebe noch keinen Begriff. Alle skizzieren auf einem Blatt den Weg eines Kindes aus ihrem Betrieb, von zu Hause bis in die Kita oder den Hort, mit den Menschen und Orten, die dazugehören. Danach erst zeige ich die Definition. So sehen die Lernenden selbst, dass ihre Skizze beides enthält.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Auf der Skizze färben die Lernenden die Menschen und Netzwerke in einer Farbe, Orte und Ressourcen in einer anderen. Dann legen wir die Kind-Beschreibung daneben: Stadtteil, Dorf oder Strasse. <span class="beleg">[Kinderpflege, S. 53]</span> Beim Wortsalat treffen wir eine Abmachung: Wir sagen Lebenswelt oder Sozialraum, und beide Wörter meinen hier fast dasselbe. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span></p>
+<h4>Stolperstelle</h4>
+<p>Der 8. Kinder- und Jugendbericht ist ein Bericht der deutschen Bundesregierung, das SGB VIII ist deutsches Recht. Beides ist keine Schweizer Regel. Ich sage das ausdrücklich und lasse es als Herkunft eines Begriffs im Lehrmittel stehen, nicht als Vorgabe für unsere Kitas. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 362]</span></p>
+<p>Für diesen Abschnitt steht in der Lernzieltabelle Kind kein eigenes Lernziel. Ich prüfe darum nichts Abfragbares, das Fragment zu den Ressourcen folgt im nächsten Abschnitt.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Nimm ein Kind aus deiner Gruppe. Nenne eine Person oder Gruppe, die zu seinem sozialen Miteinander gehört, und eine Gegebenheit in seiner räumlichen Umgebung. Dann schreib einen Satz dazu, bei welchem Interesse des Kindes du ansetzen würdest und warum der Raum allein dafür nicht reicht.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Wenn alles Sozialraum heisst, was Menschen umgibt, will ich wissen, womit ich bei einem Menschen anfange.»</p>
+<h4>Was mich packt</h4>
+<p>Bei uns geht ein Bewohner jeden Donnerstag allein zum Kiosk an der Ecke, und die Frau dort kennt ihn mit Namen. Als ich gelesen habe, dass Sozialraumorientierung nicht beim Raum anfängt, sondern bei den Interessen und Bedürfnissen des Menschen und sie dann zu dem in Beziehung setzt, was im Umfeld da ist, habe ich an ihn gedacht <span class="beleg">[Careum HKB C, S. 20]</span>. Das machen wir im Alltag schon, nur ohne das Wort dafür.</p>
+<h4>Wo ich aussteige</h4>
+<p>Die Definition hat zwei Hälften, das soziale Miteinander und die räumliche Umgebung, und dazu kommen die Wörter Kontext, Setting, Lebenswelt, Lebensbereich und Lebensraum <span class="beleg">[Careum HKB C, S. 18]</span>. Wenn das alles dasselbe heissen kann, weiss ich nicht, welches Wort ich in der Prüfung schreiben soll. Und wenn im Text von «soziostrukturellen Verhältnissen» die Rede ist <span class="beleg">[HEP Band 2, S. 158]</span>, lese ich ihn wie einen Amtsbrief und lege ihn weg.</p>
+<h4>Meine Frage</h4>
+<p>Im Text steht, dass man statt Hilfen in Sondereinrichtungen auf die Infrastruktur des Sozialraums bzw. der Gemeinde zurückgreift <span class="beleg">[HEP Band 1, S. 83]</span>. Heisst das, dass unsere Wohngruppe nicht mehr gut ist? Oder was ist dann unser Teil daran?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Am liebsten mit einem Plan vom Quartier rund um meinen Betrieb, den ich selbst beschrifte. Und mit einem Beispiel, das wirklich aus der Behindertenhilfe kommt, nicht nur mit Wörtern.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du erkennst den Stoff in deinem Alltag wieder und verlierst dich in den vielen Wörtern. Deine Frage zur Wohngruppe nehme ich ernst. Der Text beschreibt einen Paradigmenwechsel weg von stationärer Heimunterbringung, separiert von der Gesellschaft, hin zu Integration in die Gemeinschaft, ein Zusammenleben «auf gleicher Augenhöhe» <span class="beleg">[HEP Band 2, S. 158]</span>. Das ist eine Richtung und kein Urteil über deine Gruppe.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Alle zeichnen auf ein leeres Blatt den Weg von ihrem Betrieb zu einem Ort, an dem sich eine betreute Person gern aufhält. Ohne Fachwort, nur Weg, Ort und die Menschen dort. Dein Kiosk gehört auf dieses Blatt.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Wir legen die Definition neben die Zeichnung. Die Menschen und ihre Netzwerke malen wir in einer Farbe an, die räumliche Umgebung mit ihren Ressourcen in einer zweiten <span class="beleg">[Careum HKB C, S. 18]</span>. Die Wörter Kontext, Setting, Lebenswelt, Lebensbereich und Lebensraum sammeln wir auf einem Plakat als eine Wortfamilie, und jede wählt das Wort, das sie sich merkt. Den Satz mit den «soziostrukturellen Verhältnissen» lesen wir zusammen, und ich frage, was für euch der Ort ist, an dem Alltag konkret, überschaubar und identitätsbildend gelebt wird <span class="beleg">[HEP Band 2, S. 158]</span>. Zur Wohngruppe fragen wir: Was im Umfeld könnte die betreute Person nutzen, und wo fangen wir bei ihren Interessen an?</p>
+<h4>Stolperstelle</h4>
+<p>Viele lesen «Sozialraum» als Ort auf der Karte. Sozialraumorientierung setzt aber nicht bei der Betrachtung des Raums an <span class="beleg">[Careum HKB C, S. 20]</span>. Wenn jemand nur Gebäude einträgt, frage ich: Wo sind die Menschen?</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Lernziel 7 (K2): «Die Begriffe ‹Sozialraum› und ‹Sozialraumorientierung› mithilfe der Fachliteratur erklären.» Wähle eine betreute Person aus deiner Gruppe, ohne Namen. Erkläre in vier Sätzen, was ihr Sozialraum ist und was Sozialraumorientierung bei ihr hiesse, wenn du bei ihren Interessen anfängst.</p>
+</section></div></div></div>
+
+<h2 id="t7">7 · Bedeutung des Sozialraums und seine Ressourcen</h2>
+<p class="kl">Unterrichtsthema im Schullehrplan MmB (Leistungsziel c1.3.1); für Kind als Lernziel-Fragment im Schullehrplan enthalten. Der Text gilt für beide Fachrichtungen.</p>
+<h3>7.1 Dasselbe Verhalten — je nach Umfeld Schwäche oder Stärke</h3>
+<p>Dasselbe Verhalten kann von unterschiedlichen Personen ganz unterschiedlich bewertet werden: Die Fachperson nimmt eine Person mit kognitiver Beeinträchtigung in der Wohngruppe als kontaktfreudig wahr, die Verkäuferin im Laden empfindet sie als aufdringlich. Ein Kind, das häufig allein spielt, gilt in der Kita als zurückgezogen, zu Hause als selbstständig. Hinte spricht von der «Kontextualisierung des Falles»: Die Bewertung eines Verhaltens erfolgt nicht mehr nur in Bezug auf die Person, sondern es rückt ins Zentrum, in welchem sozialen Umfeld dieses Verhalten entsteht. Ein Verhalten, das in einem Umfeld problematisch ist, kann in einem anderen eine Ressource sein — «Schwächen sind immer auch Stärken, denn entscheidend ist der Kontext!» (Früchtel und Budde, 2006). <span class="beleg">[Careum HKB C, S. 20–21]</span></p>
+<p>Der Mensch neigt dazu, Schwächen und Fehler schneller wahrzunehmen als Stärken — so nehmen wir andere eher als hilfebedürftig statt als hilfefähig wahr. Hier setzt das <b>Stärkemodell</b> an: Die Fachperson wendet den Blick bewusst von den Schwächen ab und den Stärken zu. Dazu sollte sie wissen, wo und wie die betreuten Personen wohnen bzw. gewohnt haben, die Lebens- und Bildungsqualität des Wohnumfelds einschätzen können, Interessen und Hobbys kennen, über die sozialen Netzwerke informiert sein und sich in die Gestaltung des Lebensumfelds einmischen. <span class="beleg">[Careum HKB C, S. 22]</span></p>
+<p>Beispiel Herr Gerhardt: In seiner Wohnung war das Internetforum für Orchideenfreunde seine Möglichkeit, trotz Beeinträchtigung Kontakt zu halten; im Seniorenheim wird dasselbe Verhalten als Abschottung wahrgenommen. Bezieht die Fachperson den früheren Sozialraum ein, kauft sie Orchideenbücher, pflegt mit ihm Orchideen im Zimmer oder besucht mit ihm eine Ausstellung. Sozialraumorientiertes Handeln beinhaltet den systematischen Einbezug und die gezielte Nutzung des Sozialraums zugunsten der betreuten Person, aber auch die Veränderung des Sozialraums zu ihrem Vorteil. <span class="beleg">[Careum HKB C, S. 23–24]</span></p>
+
+<h3>7.2 Persönliche und sozialräumliche Ressourcen</h3>
+<p>Ressourcen helfen einem Menschen, sein Leben, seinen Alltag und seine Probleme zu bewältigen und Ziele zu erreichen; sie sind wichtig für Wohlbefinden und Lebensqualität. Herriger unterscheidet persönliche und sozialräumliche Ressourcen. Auf der Ebene der persönlichen Ressourcen wendet die Fachperson den Blick von den Defiziten ab und richtet ihn auf «Potenziale, Fähigkeiten, Kompetenzen, Stärken» (Hinte und Treess, 2014). Sozialräumliche Ressourcen zeigen sich dort, wo es Menschen gelingt, mittels sozialer Netzwerke, Unterstützung und Solidarität ihr Leben zu meistern; auch materielle Räume können eine Ressource sein. Wo Ressourcen nicht ausreichen, werden fachliche Hilfsangebote eingesetzt. <span class="beleg">[Careum HKB C, S. 26–27]</span></p>
+<div class="zwei">
+<div><b>Persönliche Ressourcen</b><ul><li><i>körperlich:</i> Gesundheit, Immunsystem, Kraft, Ausdauer, Beweglichkeit</li><li><i>geistig:</i> Auffassungsgabe, Ideenreichtum, Kreativität, praktische Begabung</li><li><i>emotional:</i> Ausgeglichenheit, Offenheit, Empathie, Kontaktfreude, Selbstwertgefühl, Konfliktfähigkeit, Selbstwirksamkeitsüberzeugung, Kritikfähigkeit</li><li><i>weitere:</i> Bildung, Qualifikationen</li></ul></div>
+<div><b>Sozialräumliche Ressourcen</b><ul><li><i>Beziehungsressourcen / soziales Kapital:</i> Familie, Freundeskreis, Nachbarschaft, Interessengemeinschaften</li><li><i>soziale Anerkennung und Wertschätzung</i> (sozialer Status)</li><li><i>ökonomisch:</i> Einkommen, berufliche Situation, Besitz</li><li><i>infrastrukturell:</i> Qualität der Wohnung und des Wohnumfelds, Mobilität, öffentliche Anbindung, Einkaufsmöglichkeiten, Dienstleistungen, Spiel- und Freizeitangebote</li></ul></div>
+</div>
+<p class="kl">Quelle: Careum HKB C, S. 27, Tab. 4 «Persönliche und sozialräumliche Ressourcen». Beispiel Lena (9): Die Nachbarschaftshilfe im Quartier bringt eine pensionierte Lehrerin, die Hausaufgabenhilfe anbietet, und Lena, die dafür den Hund ausführt, zusammen (S. 27).</p>
+
+<h3>7.3 Vertiefung: Die Systemebenen nach Bronfenbrenner</h3>
+<div class="hinweis">Der Schullehrplan hält fest, dass die Systemtheorie nach Bronfenbrenner nicht im Ausbildungsprogramm ist und als fakultative Vertiefung behandelt werden kann; zugleich nennt er ein Lernziel dazu. Ein eigener Fachtext liegt nicht vor — die Grundlage ist der folgende Abschnitt des Careum-Lehrmittels. <span class="beleg">[Schullehrplan BKU1 vG Kind und MmB, S. 10; Careum HKB C, S. 18–20]</span></div>
+<p>Bronfenbrenner (1981) unterscheidet nahe und fernere Sozialräume, in denen sich der Mensch entwickelt, und unterteilt sie in Mikrosystem, Mesosystem, Exosystem und Makrosystem. <span class="beleg">[Careum HKB C, S. 18]</span></p>
+<figure>
+<svg viewBox="0 0 520 330" role="img" aria-label="Vier ineinanderliegende Kreise: Makrosystem, Exosystem, Mesosystem, Mikrosysteme">
+<defs><style>.bt{font-family:Helvetica,Arial,sans-serif;font-size:13px;fill:#1f2a33}.bb{font-weight:bold}</style></defs>
+<circle cx="260" cy="165" r="158" fill="#e3edf2" stroke="#8fb0bf"/>
+<circle cx="260" cy="165" r="120" fill="#cfe0e8" stroke="#8fb0bf"/>
+<circle cx="260" cy="165" r="82" fill="#b8d2de" stroke="#8fb0bf"/>
+<circle cx="260" cy="165" r="44" fill="#fff" stroke="#1f6f8b" stroke-width="2"/>
+<text x="260" y="22" text-anchor="middle" class="bt bb">Makrosystem</text>
+<text x="260" y="40" text-anchor="middle" class="bt">kulturelle Werte und Normen</text>
+<text x="260" y="62" text-anchor="middle" class="bt bb">Exosystem</text>
+<text x="260" y="78" text-anchor="middle" class="bt">Lebensbereiche, in denen man nicht selbst aktiv ist</text>
+<text x="260" y="100" text-anchor="middle" class="bt bb">Mesosystem</text>
+<text x="260" y="115" text-anchor="middle" class="bt">Beziehungen zwischen Mikrosystemen</text>
+<text x="260" y="160" text-anchor="middle" class="bt bb">Mikrosysteme</text>
+<text x="260" y="176" text-anchor="middle" class="bt">Familie · Kita ·</text>
+<text x="260" y="190" text-anchor="middle" class="bt">Wohngruppe · Verein</text>
+</svg>
+<figcaption>Eigene Darstellung der vier Systemebenen nach Careum HKB C, S. 18–20 (Abb. 1 und Tab. 3). Die Buchabbildung selbst: siehe Abb. 1, Careum HKB C, S. 19.</figcaption>
+</figure>
+<div class="tabwrap">
+<table>
+<tr><th>System</th><th>Was dazugehört</th><th>Bedeutung für die Betreuung</th></tr>
+<tr><td><b>Mikrosystem</b> — unmittelbare Beziehungen in einem bestimmten Umfeld</td><td>Direkte Beziehungen mit Bindungen und gegenseitiger Beeinflussung. Eine betreute Person bewegt sich in mehreren Mikrosystemen (Familie, Freundeskreis, Kita, Schulklasse, Wohngruppe, Sportverein); Rollen, Tätigkeiten und Beziehungsqualität sind je nach System verschieden.</td><td>Die Ausgestaltung dieser Beziehungen (fördernd, unterstützend) wirkt sich auf die Entwicklungsmöglichkeiten aus.</td></tr>
+<tr><td><b>Mesosystem</b> — Beziehungen zwischen mindestens zwei Mikrosystemen</td><td>Z. B. die Beziehung zwischen Eltern (Familie) und Fachpersonen (Kita/Wohngruppe) oder zwischen betreuter Person und Leitung des Hip-Hop-Kurses (Verein).</td><td>Viele positive Beziehungen zwischen Lebensbereichen wirken sich vorteilhaft aus; betreute Personen sollen Zugänge zu neuen Mikrosystemen erhalten (Museum, Bibliothek, Musikgruppe).</td></tr>
+<tr><td><b>Exosystem</b> — Lebensbereiche, in denen die Person nicht selbst aktiv ist</td><td>Z. B. der Arbeitsplatz des Vaters: Verliert er die Stelle, spürt das Kind die Folgen. Auch politische Entscheide, etwa die Einführung des Rechts auf Partizipation.</td><td>Ereignisse im Exosystem haben Folgen für die betreute Person und für den Arbeitsauftrag der Fachpersonen.</td></tr>
+<tr><td><b>Makrosystem</b> — kulturelles und normatives Umfeld</td><td>Übergeordnete kulturelle Werte und Normen; sie prägen Mikro-, Meso- und Exosystem.</td><td>Der kulturelle Rahmen gibt Orientierung, kann aber irritieren, wenn sich eine Person in stark unterschiedlichen Makrosystemen bewegt — etwa nach dem Umzug aus einem anderen Land in die Schweiz.</td></tr>
+</table>
+<caption>Quelle: Careum HKB C, S. 19–20, Tab. 3 «Formen von Sozialräumen»</caption>
+</div>
+<p class="kl">Hinweis zur Schreibweise: Der Schullehrplan schreibt «Uri Bronfenbrenner» und «sozioökologischer Ansatz»; das Careum-Lehrmittel nennt nur den Nachnamen «Bronfenbrenner (1981)» und spricht von «Systemen». Andere Quellen zu Bronfenbrenner liegen im Dossier nicht vor.</p>
+
+<div class="ebenen" data-sid="t7"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Ich habe in der Kita schon Kinder in eine Schublade gesteckt, ohne es zu merken.»</p>
+<h4>Was mich packt</h4>
+<p>Ein Kind, das häufig allein spielt, gilt in der Kita als zurückgezogen, zu Hause als selbstständig. <span class="beleg">[Careum HKB C, S. 20–21]</span> Bei uns gibt es so ein Kind, und ich habe es bisher für ein bisschen traurig gehalten. Dass ein Verhalten im einen Umfeld problematisch und im anderen eine Ressource sein kann, verändert meinen Blick. <span class="beleg">[Careum HKB C, S. 20–21]</span> Gut finde ich auch das Stärkemodell: Wir nehmen Schwächen und Fehler schneller wahr als Stärken, darum soll die Fachperson den Blick bewusst auf die Stärken richten. <span class="beleg">[Careum HKB C, S. 22]</span> Lena (9) mit der pensionierten Lehrerin und dem Hund gefällt mir, weil beide etwas geben. <span class="beleg">[Careum HKB C, S. 27]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den Ressourcen. Körperlich, geistig, emotional, Beziehungen, ökonomisch, infrastrukturell: Die Liste ist lang, und ich weiss nicht, wie ich das bei einem Kind aus meiner Gruppe auseinanderhalten soll. <span class="beleg">[Careum HKB C, S. 27, Tab. 4]</span> Mikro, Meso, Exo und Makro bei Bronfenbrenner klingen für mich nach Wörterwirrwarr. <span class="beleg">[Careum HKB C, S. 18]</span> Ich lese, das sei eine fakultative Vertiefung, und frage mich, ob ich es überhaupt lernen muss. <span class="beleg">[Schullehrplan BKU1 vG Kind und MmB, S. 10]</span></p>
+<h4>Meine Frage</h4>
+<p>Wenn der Vater eines Kindes die Stelle verliert, spürt das Kind die Folgen. Gehört das zum Exosystem, und was heisst das dann für mich in der Kita? <span class="beleg">[Careum HKB C, S. 19–20, Tab. 3]</span></p>
+<h4>So möchte ich es lernen</h4>
+<p>Zuerst mit dem einen Kind aus meiner Gruppe: Wo spielt es allein, wo nicht? Die Kreise von Bronfenbrenner male ich dann gern selbst, mit meinen Orten und Personen, statt sie fertig vorgesetzt zu bekommen. Und bitte zuerst die Stärken sammeln, bevor wir über Probleme reden.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du hast ein Kind vor Augen, das du bisher traurig fandest, und merkst, dass die Kita nur einen Ausschnitt zeigt. Das ist genau die «Kontextualisierung des Falles»: Ins Zentrum rückt, in welchem Umfeld ein Verhalten entsteht. <span class="beleg">[Careum HKB C, S. 20–21]</span> Bei Bronfenbrenner fragst du, ob es sein muss. Die Systemtheorie ist nicht im Ausbildungsprogramm und kann als fakultative Vertiefung behandelt werden, ein Lernziel dazu gibt es trotzdem. <span class="beleg">[Schullehrplan BKU1 vG Kind und MmB, S. 10]</span> Es lautet: «den sozioökologischen Ansatz nach U. Bronfenbrenner erklären und auf Praxisbeispiele anwenden» (K2). Bei den Ressourcen verlangt das Lernziel-Fragment, sie «anhand von Beispielen beschreiben» zu können (K2).</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Alle wählen in Gedanken ein Kind aus ihrer Gruppe und schreiben einen Satz auf, wie sie sein Verhalten beschreiben. In Zweiergruppen kommt die Frage dazu: Wie würde die Mutter oder der Vater dasselbe Verhalten beschreiben? Dein Kind, das allein spielt, nehme ich mit deinem Einverständnis ohne Namen als Beispiel.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Pro Kind ein Blatt mit zwei Spalten, persönliche und sozialräumliche Ressourcen, und zuerst werden nur Stärken eingetragen. <span class="beleg">[Careum HKB C, S. 26–27]</span> Danach zeichnen die Lernenden vier Kreise mit dem Kind in der Mitte und setzen je ein eigenes Beispiel ein: die Kita als Mikrosystem, Eltern und Fachpersonen im Mesosystem, den Arbeitsplatz des Vaters im Exosystem, kulturelle Werte im Makrosystem. <span class="beleg">[Careum HKB C, S. 19–20]</span></p>
+<h4>Stolperstelle</h4>
+<p>Mikro und Meso werden verwechselt. Das Mesosystem ist die Beziehung zwischen mindestens zwei Mikrosystemen. <span class="beleg">[Careum HKB C, S. 19–20]</span> Ich lasse deshalb Pfeile zwischen Familie und Kita ziehen. Zweite Stolperstelle: Das Stärkemodell heisst nicht, Probleme wegzuschauen. Wo Ressourcen nicht ausreichen, werden fachliche Hilfsangebote eingesetzt. <span class="beleg">[Careum HKB C, S. 26–27]</span></p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Beschreibe das Verhalten des Kindes, das häufig allein spielt, einmal aus Sicht der Kita und einmal aus Sicht von zu Hause. Nenne dann eine persönliche und eine sozialräumliche Ressource von ihm und ordne ein Beispiel aus seinem Leben dem Mikro-, Meso- oder Exosystem zu.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Bei uns gilt einer als kontaktfreudig, im Laden als aufdringlich, und es ist derselbe Mensch.»</p>
+<h4>Was mich packt</h4>
+<p>Genau das erlebe ich bei uns. Ein Bewohner spricht in der Wohngruppe alle an und wird dafür gemocht, im Laden schauen ihn manche komisch an. Im Text steht, dass ein Verhalten im einen Umfeld problematisch und im anderen eine Ressource sein kann <span class="beleg">[Careum HKB C, S. 20–21]</span>. Auch mit Herrn Gerhardt habe ich mitgelitten: Sein Orchideenforum war in der Wohnung sein Draht zu anderen, im Seniorenheim gilt es als Abschottung <span class="beleg">[Careum HKB C, S. 23–24]</span>.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei der Ressourcenliste. Von Immunsystem bis Selbstwirksamkeitsüberzeugung steht da so viel, dass ich nichts davon behalte <span class="beleg">[Careum HKB C, S. 27, Tab. 4]</span>. Und die vier Systeme in 7.3 klingen für mich alle gleich. Der Schullehrplan sagt, das sei eine fakultative Vertiefung <span class="beleg">[Schullehrplan BKU1 vG Kind und MmB, S. 10]</span>. Ich frage mich, ob ich das überhaupt brauche, vor allem beim Exosystem, wo die Person selbst gar nicht aktiv ist.</p>
+<h4>Meine Frage</h4>
+<p>Ist unsere Wohngruppe ein Mikrosystem? Und was ist dann die Beziehung zwischen der Wohngruppe und der Familie eines Bewohners, ein Mesosystem <span class="beleg">[Careum HKB C, S. 19–20, Tab. 3]</span>?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An einer Person aus meinem Alltag, nicht als Liste zum Auswendiglernen. Ich möchte aufzeichnen können, wo sie sich bewegt, und dazu schreiben, was ihr dort hilft.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du kennst den Kern schon aus deiner Gruppe, nur die Ressourcenliste erschlägt dich. Die Liste ist ein Nachschlagewerk, du musst sie nicht auswendig können. Das Lernziel ist K2: «Die Bedeutung des Sozialraums für die betreuten Personen und die darin vorhandenen Ressourcen anhand von Beispielen beschreiben.» Die vier Systeme biete ich als Vertiefung an, denn laut Schullehrplan kann die Systemtheorie fakultativ behandelt werden <span class="beleg">[Schullehrplan BKU1 vG Kind und MmB, S. 10]</span>.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich lese die zwei Sätze zu Herrn Gerhardt vor, Forum in der Wohnung und Seniorenheim <span class="beleg">[Careum HKB C, S. 23–24]</span>. Dann schreibt ihr auf zwei Zettel ein Verhalten aus eurer Gruppe: einmal, wie es dort gesehen wird, einmal, wie es draussen gesehen werden könnte.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Wir teilen ein Blatt in zwei Spalten, persönliche und sozialräumliche Ressourcen <span class="beleg">[Careum HKB C, S. 26–27]</span>. Du wählst eine Person ohne Namen und trägst je vier Ressourcen mit eigenen Worten ein. Wer die Vertiefung will, zeichnet die Person in die Mitte und legt Wohngruppe und Familie als zwei Kreise daneben. Die Verbindung dazwischen ist das Mesosystem, die Beziehung zwischen mindestens zwei Mikrosystemen <span class="beleg">[Careum HKB C, S. 19–20]</span>. Beim Exosystem nehme ich ein Beispiel aus dem Text: den politischen Entscheid, ein Recht auf Partizipation einzuführen. Die Person ist dort nicht selbst aktiv, und er hat trotzdem Folgen für sie <span class="beleg">[Careum HKB C, S. 19–20]</span>.</p>
+<h4>Stolperstelle</h4>
+<p>Viele lesen «Stärken sehen» als «Hilfe weglassen». Der Text sagt: Wo Ressourcen nicht ausreichen, werden fachliche Hilfsangebote eingesetzt <span class="beleg">[Careum HKB C, S. 26–27]</span>. Und das Mesosystem ist kein weiterer Ort, sondern eine Beziehung.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Nimm eine Person aus deiner Gruppe, ohne Namen. Beschreibe ein Verhalten, das in einem Umfeld als Schwäche und in einem anderen als Stärke gelesen wird, und nenne je eine persönliche und eine sozialräumliche Ressource. Wer die Vertiefung gemacht hat, nennt zusätzlich zwei Mikrosysteme der Person und sagt, ob zwischen ihnen eine Beziehung besteht.</p>
+</section></div></div></div>
+
+<h2 id="t8">8 · Sozialraum zugänglich machen: Handlungsprinzipien, Handlungsfelder, Methoden</h2>
+<h3>8.1 Die fünf Handlungsprinzipien der Sozialraumorientierung</h3>
+<p>Sozialraumorientiertes Handeln ist immer auch partizipatives Handeln, weil es den Willen der betreuten Person ins Zentrum stellt. Ziel ist nicht, den Menschen an sein Umfeld anzupassen, sondern ihn zu unterstützen, seine Lebenswelt aktiv mitzugestalten. Unterschiedliche Autorinnen und Autoren beschreiben <b>fünf</b> handlungsleitende, methodische Prinzipien: <span class="beleg">[Careum HKB C, S. 24]</span></p>
+<div class="tabwrap">
+<table>
+<tr><th>Prinzip</th><th>Inhalt</th><th>Beispiel aus dem Lehrmittel</th></tr>
+<tr><td><b>A Ausrichtung am Willen und an den individuellen Interessen</b></td><td>Der Wille ist das Streben nach selbstbestimmter Lebensgestaltung — für Hinte und Treess die «Kraftquelle» für Eigeninitiative. Die Fachperson ersetzt die aufwendige Suche nach dem Willen nicht durch Vermutungen, bewertet Entscheidungen nicht und achtet auf erreichbare Ziele.</td><td>Marco Levante (36) läuft immer wieder zum Autohaus — nicht wegen der Sportwagen, sondern wegen der heissen Schokolade am Automaten. Der Tagesablauf wird so geändert, dass er täglich mit einem Einfränkler selbst einen Becher kaufen kann.</td></tr>
+<tr><td><b>B Aktivierung von Eigeninitiative und Selbsthilfe</b></td><td>Bedeutsamer als die Betreuung ist die Aktivierung: «Arbeite nie härter als Dein Klient» (Fürst und Hinte, 2019). So wenig wie möglich, so viel wie nötig unterstützen; Unterstützung so anlegen, dass sie auf lange Sicht nicht mehr gebraucht wird.</td><td>Herr Michels (82) will nach dem Oberschenkelhalsbruch die Gartenpflege abgeben; die Fachperson schlägt Gehtraining vor, und er kann sich bald wieder selbst um seine Pflanzen kümmern.</td></tr>
+<tr><td><b>C Berücksichtigung persönlicher und sozialräumlicher Ressourcen</b></td><td>Blick auf Potenziale statt Defizite; Ressourcen werden nur sichtbar, wenn sich die Fachperson im Sozialraum der Person auskennt und die Lebenswelt aus deren Blickwinkel versteht (siehe Abschnitt 7.2).</td><td>Lena (9): Nachbarschaftshilfe mit Hausaufgabenbetreuung gegen Hundespaziergang.</td></tr>
+<tr><td><b>D Zielgruppen- und bereichsübergreifende Betrachtung</b></td><td>Es gibt nicht «die» prototypischen Problemgruppen (die Alleinerziehenden, die Menschen mit Beeinträchtigung); jede Gruppe besteht aus einzelnen Menschen, die unterschiedlich mit ihren Bedingungen umgehen. Vorschnelle Etikettierung blendet das soziale Umfeld aus.</td><td>Herr Wälti (76): Das Team glaubt, er habe keine Verwandten mehr — im Gespräch erzählt er von seiner Schwester im Ausland, mit der er sich wieder schreibt.</td></tr>
+<tr><td><b>E Vernetzung, Kooperation und Koordination</b></td><td>Ressourcen des Umfelds lassen sich leichter nutzen, wenn Menschen und Institutionen zusammenarbeiten (Fachpersonen, Ämter wie IV, Krankenkasse, KESB, Institutionen); Angebote werden in vorhandene sozialräumliche Aktivitäten integriert.</td><td>Luca (6) mit Sprachschwierigkeiten: Statt lange auf Logopädie zu warten, wechselt er stundenweise in eine Kita-Gruppe mit Sprachförderangebot.</td></tr>
+</table>
+<caption>Quelle: Careum HKB C, S. 24–29 (Anzahl «fünf» am Seitenbild geprüft)</caption>
+</div>
+<div class="hinweis">Der Schullehrplan fasst die Prinzipien in Klammern verkürzt zusammen («partizipativ, Wille/Bedürfnis im Mittelpunkt, FaBe handelt angemessen bzw. orientiert sich an der Lebenswelt»). Die Quelle nennt fünf Prinzipien; <b>erläutern</b> Sie im Unterricht alle fünf. <span class="beleg">[Schullehrplan BKU1 vG, S. 10; Careum HKB C, S. 24]</span></div>
+
+<h3>8.2 Die vier Handlungsfelder zur Einflussnahme in den Sozialraum</h3>
+<p>Der Sozialraum kann gestaltet werden. Früchtel, Budde und Cyprian unterscheiden <b>vier</b> Handlungsfelder («SONI»: Sozialstruktur, Organisation, Netzwerk, Individuum). In allen vier Feldern gibt es Möglichkeiten, den Sozialraum an die Bedürfnisse der betreuten Personen anzupassen und so persönliche wie soziale Ressourcen zu stärken. <span class="beleg">[Careum HKB C, S. 29–30, Tab. 5; HEP Band 1, S. 84]</span></p>
+<div class="tabwrap">
+<table>
+<tr><th>Handlungsfeld</th><th>Schwerpunkt der Einflussnahme</th><th>Beispiel</th><th>Methoden (je zwei)</th></tr>
+<tr><td><b>A Sozialstruktur</b> (gesellschaftliche Ebene, soziale und politische Ausgangslage)</td><td>Veränderung politischer Rahmenbedingungen und gesellschaftlicher Strukturen</td><td>Verbesserung der Infrastruktur (Quartierladen, medizinischer Dienst, Nachmittagsbetreuung), rechtliche Anpassungen (Barrierefreiheit)</td><td>Problemvorlagen erstellen · Aktionsformen im öffentlichen Raum</td></tr>
+<tr><td><b>B Organisation</b> (Kita, Einrichtung für Menschen mit Beeinträchtigung oder im Alter)</td><td>Unterstützung richtet sich an den betreuten Personen aus, damit sie individuelle Hilfsangebote erhalten</td><td>Frau Beer, die gern Patchworkdecken näht, erhält einen Platz in einer Institution mit Nähatelier; die Anfahrt übt eine Fachperson mit ihr</td><td>Perspektivenwechsler · Ideenkonferenz</td></tr>
+<tr><td><b>C Netzwerk</b> (Vernetzung von Menschen und Institutionen)</td><td>Statt isoliert zu arbeiten, werden sozialräumliche Ressourcen genutzt und erweitert (Familie, Nachbarschaft, Vereine, Ehrenamt)</td><td>Ein neuer Heimbewohner ohne Familienkontakt erhält wöchentlich Besuch vom ehrenamtlichen Besuchsdienst der Stadt</td><td>Subjektive Landkarten / Nadelmethode · Stadtteilerkundung</td></tr>
+<tr><td><b>D Individuum</b> (betreute Personen)</td><td>Verhalten wird abhängig vom Umfeld betrachtet; nicht der Mensch, sondern der Raum wird angepasst</td><td>Damit Tom seinen Bewegungsdrang ausleben kann, wird mit den Kindern ein Zimmer zum Turn- und Tobraum umgebaut</td><td>Arbeit mit dem Willen: «Heimspiele» · Ressourcencheck</td></tr>
+</table>
+<caption>Quelle: Careum HKB C, S. 30, Tab. 5 und Tab. 6 (Anzahl «vier» und Zuordnung am Seitenbild geprüft)</caption>
+</div>
+<div class="hinweis">Der Schullehrplan zählt drei Handlungsfelder auf («Sozialstruktur, Organisation Netzwerk und Individuen/sozialräumliche/persönliche Ressourcen»). Die Quelle unterscheidet vier Felder; die Ressourcen gehören zu den Handlungsprinzipien (Prinzip C). <b>Beschreiben</b> Sie alle vier Felder. <span class="beleg">[Schullehrplan BKU1 vG, S. 10; Careum HKB C, S. 30]</span></div>
+
+<h3>8.3 Die acht Methoden der Sozialraumgestaltung</h3>
+<h4>A — Sozialstruktur</h4>
+<p><b>Problemvorlagen erstellen:</b> Laien soll nachvollziehbar aufgezeigt werden, warum ein gesellschaftlicher Umstand ein Problem ist. Sechs Elemente: 1. gängige, einprägende Bezeichnung ohne Fachbegriffe (z. B. «Schulverweigerung» statt «Schulabsentismus»), 2. Identifizierungsmerkmale, 3. Faktenlage (Verbreitung, Ursachen, Folgen), 4. geltende Normen, Werte und Rechtsgrundlagen, 5. Handlungsanleitungen zur Lösung, 6. emotionale Bestandteile aus Sicht der Betroffenen. Zu den Elementen 2–6 formuliert die Fachperson je zwei bis fünf kurze Sätze. Je mehr Menschen sich betroffen fühlen, desto grösser der Einfluss auf politische Entscheide. <b>Aktionen im öffentlichen Raum:</b> Vorträge, Broschüren, Flugblätter, Podiumsdiskussionen, Leserbriefe, Unterschriftensammlungen; Mahnwachen, Menschenketten, Märsche, Streiks, Sitzblockaden, Boykotte. <span class="beleg">[Careum HKB C, S. 31–32, Tab. 7]</span></p>
+<h4>B — Organisation</h4>
+<p><b>Perspektivenwechsler:</b> Für ein Verhalten (z. B. zu spät kommen) gibt es immer viele Erklärungen; welche als Handlungsgrundlage dient, hängt von der Interessenlage der erklärenden Person ab. Die Methode lenkt den Blick auf die Lebenswelt der betreuten Person: Eine Perspektivenwechslerin nimmt bewusst die Sichtweise einer abwesenden Person ein («Welche nicht anwesende Person würde sich darüber ärgern?») oder weist auf eine zu wenig berücksichtigte Perspektive hin. <b>Ideenkonferenz:</b> neue Lösungswege finden — durch Vergleich mit anderen Institutionen (was dort funktioniert hat, übernehmen) oder mit dem Zauberwortansatz: Man beschreibt die Lösung mit einer «magischen Person», einem «magischen Gegenstand», einem «magischen System» oder einer «magischen Situation» und leitet daraus reale Lösungen ab (die «gute Fee» für Anna Wohler wird eine Mitbewohnerin, die sie zum Atelier begleitet). <span class="beleg">[Careum HKB C, S. 33–35]</span></p>
+<h4>C — Netzwerk</h4>
+<p><b>Subjektive Landkarten / Nadelmethode:</b> Wie ein Stadtviertel wahrgenommen wird, ist individuell verschieden — Kinder achten auf Spielmöglichkeiten, Menschen mit Beeinträchtigung auf Barrierefreiheit, ältere Menschen auf die Entfernung zum Einkauf. Vier Schritte: 1. Landkarte zeichnen (Lieblingsorte, häufig genutzte Wege, gemiedene Orte), kombiniert mit farbigen Stecknadeln (rot Lieblingsorte, blau Oft-Orte, schwarz Angst-Orte); 2. Landkarte besprechen («Was ist das?»-Fragen, dokumentieren); 3. Landkarten interpretieren und vergleichen; 4. Auswertung und Veränderungsplanung mit weiteren Personen aus dem Wohnviertel. <b>Stadtteilerkundung:</b> Die Fachperson besucht typische Orte, spricht mit je drei Ortsansässigen verschiedener Altersgruppen, nimmt Dienstleistungen in Anspruch, analysiert beliebte Aufenthaltsorte und liest Zeitungsartikel über das Viertel. <span class="beleg">[Careum HKB C, S. 35–37]</span></p>
+<h4>D — Individuum</h4>
+<p><b>Heimspiele:</b> Die betreute Person soll sich als Expertin erleben; die Fachperson gibt Macht ab. Mit der Drei-Schritt-Frage (thematischen Rahmen definieren, Spielraum durch Beispiele eröffnen, zum Expertenstatus ermutigen: «Das entscheidest nur du») werden Ort, Zeiten, Beteiligte, Beginn, Sprachform, Regeln und Inhalte eines Gesprächs gemeinsam festgelegt. <b>Ressourcencheck:</b> Das Wissen des sozialen Netzwerks wird genutzt, um die Stärken der Person zu erkennen — in sieben Phasen: <span class="beleg">[Careum HKB C, S. 38–41, Tab. 8 und 9]</span></p>
+<ol class="kette">
+<li>Vertrauen schaffen (Vertrag mit der betreuten Person)</li>
+<li>Kompetenzteam und Heimspiel organisieren (8-Felder-Karte: Verwandte, Freundeskreis, Nachbarschaft, Kolleginnen, Verein, Fachleute …)</li>
+<li>Spielregeln klären (nur Positives, nichts abschwächen)</li>
+<li>Strengths Storming (Stärken sammeln auf A0-Plakaten)</li>
+<li>Feedback (Stärken mit Beobachtungen konkretisieren)</li>
+<li>Stärkenkartei erstellen</li>
+<li>Gelegenheiten schaffen (Ressourcen mit Angeboten im Sozialraum verbinden)</li>
+</ol>
+<p class="kl">Quelle: Careum HKB C, S. 39–41, Abb. 2 und 3. In den Phasen 1–6 stehen die Ressourcen des Individuums und seines Netzwerks im Zentrum, in der 7. Phase die Ressourcen des Sozialraums.</p>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — Vernetzung im Sozialraum</h5>
+<p>Pädagogische Einrichtungen bemühen sich, sich im Sozialraum zu vernetzen: Kitas kooperieren miteinander, Grundschulen mit Kitas, Kitas mit Musikschulen oder Sportvereinen. Vorteile: Informationsaustausch wird erleichtert, der Koordinationsaufwand sinkt, die Zusammenarbeit verbessert sich. <span class="beleg">[Kinderpflege, S. 53]</span></p>
+<p>Sozialraumorientiert arbeiten heisst, Angebote dort anzusiedeln, wo sie gebraucht werden — alltagsnah, erreichbar und niederschwellig (Spielplatz, mobile Bibliothek, Kita, Beratungsstelle im Stadtteil), sie zu dezentralisieren und im Interesse der Adressaten zu vernetzen. Dazu gehört auch aufsuchende, auf die Menschen zugehende Arbeit (Familienhilfe, SpielMobile, Streetwork). <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 363]</span></p>
+<div class="de">Das Städtebauförderungsprogramm «Soziale Stadt» (1999) und das Quartiersmanagement auf S. 363 sind deutsche Programme. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 363]</span></div></div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung — Zugang zur Gemeinde</h5>
+<p>Konkret bedeutet Sozialraumorientierung, die Angebote der Gemeinde zu kennen und sie für den Menschen mit Unterstützungsbedarf nutzbar zu machen: auf die Gemeinschaft zugehen und umgekehrt der Gemeinschaft Zugang ermöglichen, auch wenn anfangs Berührungsängste bestehen. Öffentlichkeitsarbeit, positives Auftreten und das Initiieren von Gelegenheiten spielen eine wichtige Rolle. Die Fachperson baut mit und für den Menschen ein persönliches Netzwerk auf und agiert Barrieren abbauend im Sozialraum. <span class="beleg">[HEP Band 1, S. 84]</span></p>
+<p>Beispiel: Peter Tauber zieht mit einem Mitbewohner in ein Mehrfamilienhaus. Die Fachkräfte raten, sich bei der Nachbarschaft vorzustellen, und initiieren einen Hilfering: Die beiden Männer sorgen für Mülltonnen und Altpapier — und erhalten dafür Einladungen zum Kaffee und Hilfe beim Knöpfe annähen. <span class="beleg">[HEP Band 1, S. 84]</span></p>
+<p>Menschen mit Behinderung können allein oder mit ihren Assistenten sinnvolle Beiträge in ihren sozialen Nahräumen leisten — Aufgaben übernehmen (Müll entsorgen, einkaufen) erzeugt positive soziale Rollen und Erlebnisse und integriert eine Wohngemeinschaft in der Strasse. Es gibt keine ausschliesslichen Adressaten von Hilfe, sondern soziale Verknüpfungen und Netzwerke der freiwilligen Unterstützung und gegenseitigen Bereicherung. <span class="beleg">[HEP Band 1, S. 292]</span></p>
+<p>Hinte und Treess nennen fünf methodische Prinzipien sozialraumorientierter Arbeit (Orientierung an Interessen und Willen, Unterstützung von Eigeninitiative und Selbsthilfe, Konzentration auf Ressourcen, zielgruppen- und bereichsübergreifende Sichtweise, Kooperation und Koordination) — dieselben wie im Careum-Lehrmittel. <span class="beleg">[HEP Band 1, S. 84]</span></p></div>
+</div>
+
+<div class="ebenen" data-sid="t8"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Fünf Prinzipien, vier Felder, acht Methoden: Ich brauche erst mal eine Landkarte für diese Landkarten.»</p>
+<h4>Was mich packt</h4>
+<p>Am meisten packt mich Tom. Damit er seinen Bewegungsdrang ausleben kann, wird mit den Kindern ein Zimmer zum Turn- und Tobraum umgebaut. Nicht der Mensch, sondern der Raum wird angepasst. <span class="beleg">[Careum HKB C, S. 30, Tab. 5]</span> Bei uns in der Kita höre ich den ganzen Tag «Nicht rennen!», und ich habe mich noch nie gefragt, ob der Raum das Problem ist.</p>
+<p>Auch die Nadelmethode gefällt mir. Kinder achten in einem Stadtviertel auf Spielmöglichkeiten, und mit roten, blauen und schwarzen Stecknadeln werden Lieblingsorte, Oft-Orte und Angst-Orte markiert. <span class="beleg">[Careum HKB C, S. 35–37]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den Handlungsfeldern verliere ich den Faden. Sozialstruktur heisst, politische Rahmenbedingungen zu verändern <span class="beleg">[Careum HKB C, S. 30, Tab. 5]</span>, und bei Problemvorlagen mit sechs Elementen oder Mahnwachen und Sitzblockaden sehe ich meine Kita nicht mehr. <span class="beleg">[Careum HKB C, S. 31–32, Tab. 7]</span></p>
+<p>Dazu verwirrt mich, dass der Schullehrplan drei Handlungsfelder aufzählt und die Quelle vier. <span class="beleg">[Schullehrplan BKU1 vG, S. 10; Careum HKB C, S. 30]</span> Und im Kind-Kasten stehen «Soziale Stadt» und das Quartiersmanagement, deutsche Programme. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 363]</span> Ich weiss nicht, was davon für mich gilt.</p>
+<h4>Meine Frage</h4>
+<p>Beim ersten Prinzip soll die Fachperson den Willen nicht durch Vermutungen ersetzen. <span class="beleg">[Careum HKB C, S. 24]</span> Aber wie finde ich den Willen eines Kindes heraus, das noch gar nicht sagen kann, was es will? Woran merke ich, dass ich nicht einfach rate?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte zuerst meine eigene Karte vom Quartier um die Kita zeichnen und sie neben die Karte eines Kindes legen. Dann sehe ich vielleicht, wozu man Prinzipien und Felder überhaupt braucht. Das Lernziel «Sozialräume in meiner Umgebung für die betreuten Personen ausfindig machen und ihnen den Zugang dazu erschliessen» (K3) will ich wirklich können und nicht nur aufsagen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du steigst nicht aus, weil es zu schwer wäre, sondern weil es weit weg von deiner Kita klingt. Das nehme ich ernst. Toms Tobraum, der dich gepackt hat, ist genau der Kern des Handlungsfelds Individuum: Das Verhalten wird abhängig vom Umfeld betrachtet. <span class="beleg">[Careum HKB C, S. 30, Tab. 5]</span> Ich zeige dir alle vier Felder, auch wenn der Schullehrplan nur drei nennt. <span class="beleg">[Schullehrplan BKU1 vG, S. 10; Careum HKB C, S. 30]</span> «Soziale Stadt» und das Quartiersmanagement sind deutsche Programme, ich verwende sie nicht als Schweizer Regel. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 363]</span></p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Bevor ein Fachbegriff fällt, zeichnet ihr in zwei Minuten den Weg von zu Hause zur Schule. Ihr markiert einen Lieblingsort, einen Ort, an dem ihr oft seid, und einen Ort, den ihr meidet. Danach vergleicht ihr zu zweit. Erst dann sage ich, dass genau das die Nadelmethode im Kleinen ist.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Ich gebe euch Karten mit Beispielen aus dem Lehrmittel: Nachmittagsbetreuung, Tom mit dem Tobraum, Frau Beer mit dem Nähatelier, Besuchsdienst der Stadt. Ihr ordnet sie den Feldern Sozialstruktur, Organisation, Netzwerk und Individuum zu und begründet. Zu deiner Frage nehme ich Marco Levante: Er läuft zum Autohaus, nicht wegen der Sportwagen, sondern wegen der heissen Schokolade. <span class="beleg">[Careum HKB C, S. 24]</span> Beobachten, nachfragen, nicht raten: Das üben wir an einem Kind aus eurer Gruppe.</p>
+<h4>Stolperstelle</h4>
+<p>Viele verwechseln Prinzipien und Felder. Die Prinzipien sind fünf und sagen, wie ich handle. Die Felder sind vier und sagen, wo ich ansetze. Die Ressourcen gehören zu den Prinzipien (Prinzip C) und sind kein eigenes Feld. <span class="beleg">[Careum HKB C, S. 30]</span> Das schreiben wir nebeneinander an die Wandtafel.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Nimm ein Kind aus deiner Gruppe. Beschreibe in drei Sätzen, in welchem der vier Handlungsfelder du ansetzen würdest, damit es einen Ort im Quartier erreicht, und welches der fünf Prinzipien du dabei zuerst beachtest.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Ich dachte immer, ein Wille müsse etwas Grosses sein, und dann geht es um heisse Schokolade.»</p>
+<h4>Was mich packt</h4>
+<p>Marco Levante läuft immer wieder zum Autohaus, und alle denken, es gehe um die Sportwagen. In Wahrheit will er die heisse Schokolade am Automaten. Der Tagesablauf wird so geändert, dass er täglich mit einem Einfränkler selbst einen Becher kaufen kann <span class="beleg">[Careum HKB C, S. 24]</span>. Bei uns in der Wohngruppe will ein Bewohner jeden Nachmittag zur Bushaltestelle. Ich habe nie gefragt, was dort für ihn ist. Auch Peter Tauber bleibt bei mir hängen: Er sorgt mit seinem Mitbewohner für Mülltonnen und Altpapier und wird dafür zum Kaffee eingeladen <span class="beleg">[HEP Band 1, S. 84]</span>.</p>
+<h4>Wo ich aussteige</h4>
+<p>Bei den vier Handlungsfeldern und den acht Methoden. Sozialstruktur, Organisation, Netzwerk, Individuum, zu jedem Feld zwei Methoden mit Namen wie Perspektivenwechsler oder Ideenkonferenz <span class="beleg">[Careum HKB C, S. 29–30, Tab. 5]</span>. Das sind viele Begriffe auf einmal. Bei den Problemvorlagen mit ihren sechs Elementen schalte ich ab <span class="beleg">[Careum HKB C, S. 31–32, Tab. 7]</span>. Das klingt für mich nach Politik und nicht nach meinem Arbeitstag.</p>
+<h4>Meine Frage</h4>
+<p>Wenn ein Bewohner kaum spricht, wie finde ich seinen Willen heraus, ohne zu vermuten? Im Text steht, dass die Fachperson die Suche nach dem Willen nicht durch Vermutungen ersetzt <span class="beleg">[Careum HKB C, S. 24]</span>. Aber wie sieht diese Suche im Alltag aus?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte es selber ausprobieren, zum Beispiel die Nadelmethode für das Quartier rund um unsere Institution, mit roten, blauen und schwarzen Stecknadeln <span class="beleg">[Careum HKB C, S. 35–37]</span>. Und ich möchte die Felder an echten Beispielen auseinanderhalten, nicht als Wörterliste auswendig lernen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du steigst nicht beim Inhalt aus, sondern bei der Menge. Und bei Marco Levante hast du gemerkt, dass hinter einem Verhalten ein Wille stecken kann, den man zuerst nicht sieht. Deine Frage ist berechtigt. Der Text sagt dazu: nicht vermuten, Entscheidungen nicht bewerten, auf erreichbare Ziele achten <span class="beleg">[Careum HKB C, S. 24]</span>. Für Menschen, die kaum sprechen, nennt der Abschnitt keine eigene Technik. Das klären wir gemeinsam, ich erfinde dafür nichts.</p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ich zeige nur den ersten Satz zu Marco Levante: «Er läuft immer wieder zum Autohaus.» Alle schreiben auf einen Zettel, was er wohl will. Erst danach lese ich die Auflösung vor. Du bringst die Bushaltestelle aus deiner Gruppe mit, und das Muster ist dasselbe: Wir haben schnell eine Vermutung, und der Wille bleibt unbeachtet.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Die acht Methoden gehen wir nicht der Reihe nach durch. Wir machen eine einzige richtig: die Nadelmethode im Quartier eurer Institution <span class="beleg">[Careum HKB C, S. 35–37]</span>. Für die vier Felder gebe ich dir Beispielkarten zum Zuordnen: das Nähatelier von Frau Beer, den Besuchsdienst, die Barrierefreiheit <span class="beleg">[Careum HKB C, S. 30, Tab. 5]</span>.</p>
+<h4>Stolperstelle</h4>
+<p>Fünf Prinzipien und vier Felder werden leicht vermischt. Der Schullehrplan zählt drei Felder auf und rechnet die Ressourcen dazu. Die Quelle nennt vier Felder, die Ressourcen gehören zu den Prinzipien <span class="beleg">[Schullehrplan BKU1 vG, S. 10; Careum HKB C, S. 30]</span>. Das sage ich laut, damit du nicht an dir zweifelst.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Wähle eine Person aus deiner Gruppe, ohne Namen. Schreib auf, was du über ihren Willen weisst und was du nur vermutest. Wähle dann ein Handlungsfeld und eine seiner zwei Methoden und begründe, wie du damit den Sozialraum beeinflussen würdest. Das übt das Lernziel «Die Handlungsfelder zur Einflussnahme in den Sozialraum beschreiben und erklären, wie sie den Sozialraum beeinflussen» (K3).</p>
+</section></div></div></div>
+
+<h2 id="t9">9 · Umsetzung von Partizipation im Betreuungsalltag</h2>
+<h3>9.1 Grundhaltung: mit der Person, nicht für die Person</h3>
+<p>Gutes tun bedeutet nicht, der betreuten Person alles abzunehmen. Gute Betreuungsarbeit heisst, nicht <i>für</i> die, sondern <i>mit</i> der betreuten Person zu arbeiten. Echte Partizipation macht die betreuten Personen zu Expertinnen und Experten in eigener Sache; sie stärkt die Selbstbestimmung, erweitert Handlungsfreiheit und Handlungsmöglichkeiten und lehrt, das Leben aktiv zu gestalten. Die Fähigkeit zu demokratischem Handeln erwirbt der Mensch nur, wenn er im Laufe seines Lebens entsprechende Lernmöglichkeiten hat — schon in der Kita. <span class="beleg">[Careum HKB C, S. 13]</span></p>
+
+<h3>9.2 Sechs Voraussetzungen für Partizipation</h3>
+<div class="tabwrap">
+<table>
+<tr><th>Voraussetzung</th><th>Inhalt</th><th>Beispiel für Nichtpartizipation</th></tr>
+<tr><td><b>A Begegnung auf Augenhöhe</b></td><td>Fachpersonen interessieren sich für die Anliegen der betreuten Personen; schon die Suche nach Partizipationsthemen erfolgt gemeinsam — «Partizipation beginnt mit Zuhören statt Bevormunden» (Strassburger und Rieger, 2016).</td><td>Max (5) will nicht in den Sitzkreis; Nichtpartizipation wäre, ihn zu zwingen, statt seine Bedürfnisse anzuhören.</td></tr>
+<tr><td><b>B Lernfelder für Partizipation</b></td><td>Partizipieren muss erlernt und erlebt werden. Kindern und Menschen mit kognitiver Beeinträchtigung wird das Mitentscheiden oft von vornherein nicht zugetraut — so fehlen ihnen die Lernfelder.</td><td>Bewohner der Stiftung Horizont möchten auch einmal DJ am Discoabend sein; Nichtpartizipation, wenn die Fachperson die Rolle nicht abgibt.</td></tr>
+<tr><td><b>C Machtgefälle reduzieren</b></td><td>Einbezug kann dazu führen, dass Entscheide anders ausfallen als von der Fachperson gewünscht. Betreute Personen als gleichwertige Menschen mit gleichen Rechten ansehen; offen für Lösungen sein, die die Fachperson kritisch sieht.</td><td>Herr Ziegler (82) geht seit je erst gegen 23.00 Uhr ins Bett; Nichtpartizipation, wenn er sich der Heimstruktur (spätestens 22.00 Uhr) anpassen muss.</td></tr>
+<tr><td><b>D Institutionelle Strukturen</b></td><td>Die Institution bietet Partizipationsspielräume gezielt an (Heimbeirat, Kinderrat, Beteiligungs- und Beschwerdeverfahren). Wo die Chefin allein entscheidet, sind auch die Spielräume der betreuten Personen gering.</td><td>Regeln in der Kita werden von der Leitung vorgegeben; knappe Tagesstrukturen ohne Raum für Anliegen der Kinder.</td></tr>
+<tr><td><b>E Transparenz bezüglich der Grenzen</b></td><td>Der Schutzauftrag begrenzt Handlungs- und Entscheidungsfreiheit. Die Fachperson kennt Regeln, Abläufe und Ziele und spricht die Grenzen offen an.</td><td>Michael Arnold (39) möchte sein Konto selbst verwalten; die Fachperson erklärt, dass die gesetzliche Vertretung entscheidet, und bietet gemeinsames Einkaufen zum Üben an.</td></tr>
+<tr><td><b>F Auseinandersetzung mit ethischen Dilemmata</b></td><td>Spannungsfelder: Hilfe versus Kontrolle, Freiheit versus Sicherheit, Selbstverwirklichung versus Verantwortung für die Gemeinschaft. Es gibt oft keine eindeutige Lösung; der Austausch im Team hilft.</td><td>Frau Zehnder (92) mit frontotemporaler Demenz darf vorerst nur noch im Garten der Institution spazieren.</td></tr>
+</table>
+<caption>Quelle: Careum HKB C, S. 13–17</caption>
+</div>
+<div class="merk">Drei Kernkompetenzen partizipativen Arbeitens: 1. sich auf Sichtweisen und Interessen der betreuten Personen einlassen (fragen, Vorgehen gemeinsam bestimmen, eigene Lösungsstrategien ermöglichen); 2. Einzigartigkeit und Stärken erkennen und nutzen (Lebenserfahrung als «Schatz», Positives ins Zentrum rücken); 3. zusammenarbeiten und Eigenständigkeit fördern (Hilfe zur Selbsthilfe statt stellvertretendes Handeln). Die eigenen Partizipationserfahrungen beeinflussen diese Kompetenzen — deshalb lohnt sich Biografiearbeit. <span class="beleg">[Careum HKB C, S. 17, Tab. 2]</span></div>
+
+<div class="fr">
+<div class="kind"><h5>Fachrichtung Kind — Methoden der Beteiligung</h5>
+<p>Kinder haben ein Bedürfnis, sich einzubringen. Beteiligung ist bei Raumgestaltung und Projektplanung denkbar und wird über Methoden eingeübt: Projektarbeit, Kinderkonferenz (z. B. Entscheidung über eine neue Gruppenregel), Erzähl- und Morgenkreis, Kinderparlament. Wenn Kinder mitbestimmen dürfen, fühlen sie sich ernst genommen, bauen Selbstbewusstsein auf, entwickeln Resilienz und lernen demokratisches Verhalten. Voraussetzung ist eine fragende, wertschätzende Grundhaltung der Fachkraft. <span class="beleg">[Kinderpflege, S. 438–439]</span></p>
+<p>Im Alltag verankerte Beteiligungsformen: <b>Anfangs- und Abschlussrunden</b> (Morgenkreis mit Begrüssung in den Herkunftssprachen, Anwesenheit, Erlebnisse, Tages- und Wochenplanung, Abstimmung über Angebote), <b>Dienste</b> (Teilhabe heisst nicht nur Mitbestimmen, sondern auch Mitverantworten — Tische vorbereiten, Blumen giessen; in Wohngruppen Wäsche, Einkauf, Essensplan), <b>Arbeitsgemeinschaften und Bildungsangebote</b>, die Kinder selbst planen, <b>Regelkreise</b> als ritualisiertes Diskussionsforum und <b>Kinder- und Jugendparlamente</b> in der Gemeinde. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 257–259]</span></p>
+<p><b>Projektarbeit</b> ist Planung, Durchführung und Reflexion eines gemeinsamen Vorhabens zu einem Thema aus der Lebenswelt der Zielgruppe; sie verläuft in Planungs-, Durchführungs- und Abschlussphase, und schon die Themenfindung kann partizipativ gestaltet werden. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 252–256, Abb. 6.9]</span></p>
+<p>Ziele partizipativer Arbeit: Selbstkonzept, Perspektivübernahme/Empathie, kommunikative Kompetenzen, Kooperationsfähigkeit, Konfliktbewältigung, Moralentwicklung, lernmethodische Kompetenzen. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 246–251]</span></p></div>
+<div class="mmb"><h5>Fachrichtung Menschen mit Beeinträchtigung — Mitbestimmung und Empowerment</h5>
+<p><b>Politische Mitbestimmung</b> beinhaltet Wahlrecht, Mitgliedschaft in Parteien, Bürgerinitiativen. Menschen mit Lernschwierigkeiten sind «Experten in eigener Sache» und können mitreden; Barrieren sind schwer verständliche Wahlunterlagen — Abhilfe schaffen Wahlprogramme und Informationshefte in Leichter Sprache. <b>Mitbestimmung in Verbänden:</b> Selbstvertreterinnen und Selbstvertreter sitzen in Vorständen und Beiräten (Fallbeispiel Ramona Günther, die seit neun Jahren im Bundesvorstand mitwirkt und verständliche Unterlagen und Pausen einfordert). <b>Mitbestimmung im Wohnen:</b> Förderpläne werden oft über die Köpfe hinweg festgelegt; der Heimbeirat ist das zentrale Mitwirkungsgremium (Aufenthaltsbedingungen, Heimordnung, Freizeit, Beschwerden). <span class="beleg">[HEP Band 2, S. 378–380]</span></p>
+<div class="de">Wahlrecht, Lebenshilfe, Werkstatträte, Heimbeirat nach Heimgesetz (HeimG), Gesamtplankonferenz und Bundesteilhabegesetz auf S. 378–381 beschreiben deutsches Recht und deutsche Verbände. <span class="beleg">[HEP Band 2, S. 378–381]</span></div>
+<p><b>Teilhabe am kulturellen Leben:</b> Menschen mit Behinderung sind Konsumenten von Kultur — Bücher, Theater, Filme sind aber wegen schwerer Sprache und Gruppenreisen ohne Wahlmöglichkeit oft kaum zugänglich; sie brauchen Unterstützung, damit sie besuchen können, was <i>sie</i> wollen. Sie sind auch Produzenten von Kultur: als Schauspieler in Fernsehserien, in Theatergruppen und Kunstateliers. Das System muss sich den Menschen anpassen, nicht der Mensch dem System. <span class="beleg">[HEP Band 2, S. 382–383]</span></p>
+<p><b>Empowerment</b> (wörtlich Selbstbefähigung oder Selbstermächtigung) stärkt Menschen, die sich in einer Situation von Ohnmacht befinden; Ziel ist, dass die Betroffenen ihre Angelegenheiten selbst in die Hand nehmen. Der Prozess spielt sich auf vier Ebenen ab: <span class="beleg">[Heilerziehungspflege HT Bd. 1, S. 340–341]</span></p>
+<ol class="kette">
+<li><b>Individuum</b> — Biografiearbeit, persönliche Assistenz, Zukunfts- und Hilfeplanung</li>
+<li><b>Gruppe</b> — Netzwerke, «Gemeinsam sind wir stark!»</li>
+<li><b>Institution</b> — Wohnheimbeirat, Dienstplan an den Betroffenen ausrichten</li>
+<li><b>Politik</b> — kommunale Wahlen, Wahlrecht, Debatten in Leichter Sprache, Wahlinformationen mit Piktogrammen</li>
+</ol>
+<p class="kl">Quelle: Heilerziehungspflege HT Bd. 1, S. 341, Abb. 1 «Die Ebenen». Wichtigster methodischer Grundsatz: die Einbindung der Betroffenen in alle Unterstützungsarrangements; ein Ressourcenplan hält eigene Erfahrungen, Fähigkeiten und Kompetenzen fest (Abb. 2).</p></div>
+</div>
+
+<div class="ebenen" data-sid="t9"><p class="ebenen-titel">Lernende und Lehrperson zu diesem Abschnitt</p><div class="ebenen-raster"><div class="spalte kind"><p class="fr-kopf">Fachrichtung Kind</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, Kind"><p class="ebene">Lernende | vG Kind, 1. Lehrjahr</p>
+<p class="stimme">«Beim Morgenkreis dachte ich immer, ich leite bloss an. Dass das schon Beteiligung ist, habe ich nie gesehen.»</p>
+<h4>Was mich packt</h4>
+<p>Kinder haben ein Bedürfnis, sich einzubringen, und wenn sie mitbestimmen dürfen, fühlen sie sich ernst genommen und bauen Selbstbewusstsein auf. <span class="beleg">[Kinderpflege, S. 438–439]</span> Dass der Morgenkreis dazugehört, mit Begrüssung in den Herkunftssprachen und Abstimmung über Angebote, hat mich überrascht. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 257–259]</span> Bei uns sprechen mehrere Kinder zu Hause eine andere Sprache, und ich habe nie daran gedacht, sie im Kreis grüssen zu lassen.</p>
+<p>Gut finde ich auch die Dienste: Teilhabe heisst nicht nur mitbestimmen, sondern mitverantworten, etwa Tische vorbereiten oder Blumen giessen. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 257–259]</span></p>
+<h4>Wo ich aussteige</h4>
+<p>Die Tabelle mit den sechs Voraussetzungen ist voll mit Heimbeispielen wie Herr Ziegler, der erst um 23.00 Uhr ins Bett will. <span class="beleg">[Careum HKB C, S. 13–17]</span> Das sehe ich bei uns nicht. Bei den sieben Zielen partizipativer Arbeit, von Selbstkonzept bis lernmethodische Kompetenzen, langweile ich mich, das ist für mich eine Wörterliste. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 246–251]</span> Und wenn die Regeln in der Kita von der Leitung vorgegeben werden, bleibt für Kinder wenig Spielraum. <span class="beleg">[Careum HKB C, S. 13–17]</span> Was kann ich als Lernende da schon ändern?</p>
+<h4>Meine Frage</h4>
+<p>Max will nicht in den Sitzkreis, und Zwang wäre Nichtpartizipation. <span class="beleg">[Careum HKB C, S. 13–17]</span> Aber was mache ich konkret, wenn er draussen bleibt und die anderen schon warten? Und wo hört sein Mitentscheiden auf?</p>
+<h4>So möchte ich es lernen</h4>
+<p>Ich möchte eine Kinderkonferenz einmal selbst durchspielen, zum Beispiel mit dem Entscheid über eine neue Gruppenregel. <span class="beleg">[Kinderpflege, S. 438–439]</span> Dann merke ich, wie es sich anfühlt, wenn man mitreden darf. Das Lernziel «Umsetzungsmöglichkeiten der Partizipation beschreiben» (K2) kann ich dann mit Beispielen aus meinem Alltag füllen.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, Kind"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du hast den Morgenkreis bisher als Anleiten erlebt, und jetzt merkst du, dass darin Beteiligung steckt. Genau da setzen wir an: Beteiligungsformen sind im Alltag verankert, und die Kind-Box mit Morgenkreis, Kinderkonferenz, Diensten und Projektarbeit ist unser Zentrum. Die Heimbeispiele übersetze ich in die Kita. Zu Max passt der Satz «Partizipation beginnt mit Zuhören statt Bevormunden» (Strassburger und Rieger, 2016). <span class="beleg">[Careum HKB C, S. 13–17]</span></p>
+<h4><span class="aviva">Vorwissen aktivieren</span> Einstieg</h4>
+<p>Ihr schreibt auf einen Zettel eine Szene aus eurer Kita, in der ein Kind etwas mitentscheiden durfte. Wer keine hat, schreibt eine, in der es hätte mitentscheiden können. Wir sammeln die Zettel und sortieren sie später.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Vier Stationen mit je einer Beteiligungsform und eine fünfte für deine Frage. Am Morgenkreis klärt ihr, worüber abgestimmt werden könnte. Bei der Kinderkonferenz spielt ihr den Entscheid über eine neue Gruppenregel durch. <span class="beleg">[Kinderpflege, S. 438–439]</span> Bei den Diensten fragt ihr, wer mitverantwortet. Bei der Projektarbeit skizziert ihr Planungs-, Durchführungs- und Abschlussphase und überlegt, wie die Themenfindung partizipativ gelingt. <span class="beleg">[Erzieherinnen und Erzieher Bd. 1, S. 252–256, Abb. 6.9]</span> An einer fünften Station spielt eine von euch Max. Die anderen probieren aus, was sie ihm anbieten.</p>
+<h4>Stolperstelle</h4>
+<p>Partizipation heisst nicht, dass Kinder alles entscheiden. Einbezug kann zu anderen Entscheiden führen, als die Fachperson sie sich wünscht. Zugleich begrenzt der Schutzauftrag die Entscheidungsfreiheit, und die Fachperson spricht diese Grenzen offen an. <span class="beleg">[Careum HKB C, S. 13–17]</span> Wo die Leitung die Regeln setzt, nutzt du den Spielraum, den du hast, zum Beispiel im Kreis.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Max will nicht in den Sitzkreis. Beschreibe in vier Sätzen, was du tust, welche Beteiligungsform aus der Kind-Box du ihm anbietest und welche Grenze du ihm offen nennst.</p>
+</section></div><div class="spalte mmb"><p class="fr-kopf">Fachrichtung MmB</p><section class="ansicht-box lern" aria-label="Sicht der Lernenden, MmB"><p class="ebene">Lernende | vG MmB, 1. Lehrjahr</p>
+<p class="stimme">«Wenn ich ehrlich bin, entscheide bei uns oft ich, und ich nenne es dann Partizipation.»</p>
+<h4>Was mich packt</h4>
+<p>Herr Ziegler, 82, geht seit je gegen 23.00 Uhr ins Bett, im Heim gilt aber spätestens 22.00 Uhr. Das Beispiel nennt es Nichtpartizipation, wenn er sich anpassen muss <span class="beleg">[Careum HKB C, S. 13–17]</span>. Bei uns gibt es dieselbe Hausregel am Abend, und ich habe sie nie hinterfragt. Der Satz, dass man nicht für, sondern mit der betreuten Person arbeitet, trifft mich ebenfalls <span class="beleg">[Careum HKB C, S. 13]</span>. Und ich verstehe jetzt, warum Bewohner auch einmal DJ am Discoabend sein wollen <span class="beleg">[Careum HKB C, S. 13–17]</span>.</p>
+<h4>Wo ich aussteige</h4>
+<p>Beim Teil über Mitbestimmung im Wohnen und in der Politik. Heimbeirat, Wahlrecht, Werkstatträte: Der Text sagt selbst, dass das deutsches Recht und deutsche Verbände sind <span class="beleg">[HEP Band 2, S. 378–381]</span>. Ich weiss nicht, was davon für meinen Betrieb gilt. Dazu kommen sechs Voraussetzungen von A bis F auf einmal <span class="beleg">[Careum HKB C, S. 13–17]</span>, das ist mir zu viel zum Merken.</p>
+<h4>Meine Frage</h4>
+<p>Wo hört Mitbestimmen auf? Frau Zehnder darf vorerst nur noch im Garten spazieren. Der Text nennt das ein ethisches Dilemma, es gebe oft keine eindeutige Lösung <span class="beleg">[Careum HKB C, S. 13–17]</span>. Bei Michael Arnold entscheidet die gesetzliche Vertretung über sein Konto, und die Fachperson bietet gemeinsames Einkaufen zum Üben an <span class="beleg">[Careum HKB C, S. 13–17]</span>. Wie sage ich einem Bewohner eine Grenze, ohne dass er denkt, ich bestimme über ihn?</p>
+<h4>So möchte ich es lernen</h4>
+<p>An echten Situationen aus unserer Gruppe, im Gespräch mit anderen, denn der Text sagt, der Austausch im Team helfe <span class="beleg">[Careum HKB C, S. 13–17]</span>. Und ich würde gern aufschreiben, wann ich selber zuletzt mitbestimmen durfte. Der Text sagt, die eigenen Partizipationserfahrungen beeinflussen unsere Kompetenzen <span class="beleg">[Careum HKB C, S. 17, Tab. 2]</span>.</p>
+</section><section class="ansicht-box lp" aria-label="Antwort der Lehrperson, MmB"><p class="ebene">Lehrperson | didaktischer Vorschlag</p>
+<h4>Was ich höre</h4>
+<p>Du sagst offen, dass oft du entscheidest. Das werte ich nicht, es ist ein Anfang. Machtgefälle reduzieren heisst, offen zu sein für Lösungen, die die Fachperson kritisch sieht <span class="beleg">[Careum HKB C, S. 13–17]</span>. Bei deiner Abendregel frage ich mit dir, was bei euch die Institution vorgibt und was du als Fachperson mitentscheidest. Heimbeirat und Wahlrecht aus HEP Band 2 lasse ich nicht als gültige Regel für euren Betrieb stehen, der Text markiert sie als deutsches Recht <span class="beleg">[HEP Band 2, S. 378–381]</span>. Wir fragen stattdessen, welche Gefässe zum Mitreden es bei euch gibt.</p>
+<h4><span class="aviva">Ankommen</span> Einstieg</h4>
+<p>Ich lese den Fall von Herrn Ziegler vor und spanne eine Linie durch den Raum: links entscheiden die betreuten Personen, rechts das Team. Alle stellen sich dorthin, wo es in ihrem Betrieb beim Zubettgehen steht, und begründen den Standort in einem Satz.</p>
+<h4><span class="aviva">Verarbeiten</span> Begreifbar machen</h4>
+<p>Die sechs Voraussetzungen verteile ich nicht als Liste. Paare erhalten die Beispiele für Nichtpartizipation auf Kärtchen und ordnen sie den Voraussetzungen zu: Herr Ziegler, die Discoabend-DJs, Frau Zehnder <span class="beleg">[Careum HKB C, S. 13–17]</span>. Dann drehen wir um: Wie würde dasselbe Beispiel partizipativ aussehen?</p>
+<h4>Stolperstelle</h4>
+<p>Partizipation heisst nicht, alles zu erlauben. Der Schutzauftrag begrenzt die Entscheidungsfreiheit, und die Fachperson spricht die Grenzen offen an <span class="beleg">[Careum HKB C, S. 13–17]</span>. Michael Arnold zeigt, wie das geht: Die Grenze wird genannt, und trotzdem gibt es etwas zum Üben. Das beantwortet deine Frage teilweise, den Rest üben wir im Rollenspiel.</p>
+<h4><span class="aviva">Auswerten</span> Woran ich merke, dass es sitzt</h4>
+<p>Beschreibe eine Alltagssituation aus deinem Betrieb, ohne Namen. Ordne sie einer der sechs Voraussetzungen zu und schreib auf, wie du einer betreuten Person eine Grenze offen nennst und was du ihr zum Mitentscheiden anbietest. Das übt das Lernziel «Umsetzungsmöglichkeiten der Partizipation beschreiben» (K2).</p>
+</section></div></div></div>
+
+<h2 id="glossar">Begriffe auf einen Blick</h2>
+<div class="tabwrap">
+<table>
+<tr><th>Begriff</th><th>Erklärung</th><th>Quelle</th></tr>
+<tr><td>Partizipation</td><td>Oberbegriff für Formen des «Einbezogenseins in eine Lebenssituation»: Recht auf Zugang, Mitwirkung und Zugehörigkeit</td><td>Careum HKB C, S. 11</td></tr>
+<tr><td>Teilnahme / Teilhabe / Teilgabe</td><td>Dabeisein (Zugang) / aktive Mitgestaltung (Mitwirkung) / eigene Fähigkeiten einbringen (Zugehörigkeit)</td><td>Careum HKB C Web-PDF, S. 1–2</td></tr>
+<tr><td>Nichtpartizipation</td><td>Fremdbestimmung, Dekoration, Alibi-Teilhabe (Stufen 1–3 nach Schröder)</td><td>Careum HKB C, S. 12</td></tr>
+<tr><td>Machtgefälle</td><td>Ungleiche Entscheidungsmacht zwischen Hilfeleistenden und Hilfebedürftigen; je geringer, desto höher die Partizipationsstufe</td><td>Careum HKB C, S. 11–12</td></tr>
+<tr><td>Migration</td><td>Längerfristige räumliche Verlagerung des Lebensschwerpunkts über eine grössere Distanz (Wenning 1996)</td><td>Careum HKB A, S. 144</td></tr>
+<tr><td>Emigration / Immigration / Remigration / Binnenmigration</td><td>Auswanderung / Einwanderung / Rückwanderung / Wanderung innerhalb desselben Landes</td><td>Careum HKB A, S. 144</td></tr>
+<tr><td>Push- / Pull-Faktoren</td><td>Abstossende Kräfte im Herkunftsland / anziehende Kräfte im Zielland</td><td>Careum HKB A, S. 145</td></tr>
+<tr><td>Brain-Drain / Brain-Gain</td><td>Wissensabfluss aus dem Herkunftsland / Wissenszuwachs im Zielland</td><td>Careum HKB A, S. 147</td></tr>
+<tr><td>Integration</td><td>Vielschichtiger Prozess, den Migrierende und Aufnahmegesellschaft gemeinsam anstreben; Ziel ist Teilhabe und Chancengleichheit für alle</td><td>Careum HKB A, S. 150</td></tr>
+<tr><td>Kultur</td><td>Alles, was der Mensch selbst geschaffen hat — die ganze Lebensweise einer Gesellschaft</td><td>Careum HKB A, S. 135</td></tr>
+<tr><td>Kulturelle Identität</td><td>Das individuelle «Puzzle» kultureller Prägungen einer Person, das Werte und Haltungen prägt</td><td>Careum HKB A, S. 139</td></tr>
+<tr><td>Interkulturell / multikulturell / transkulturell</td><td>Austausch zwischen Kulturen / Zustand des Zusammentreffens / Orientierung an den Bedürfnissen über die Kulturen hinweg</td><td>Careum HKB A, S. 139, 141</td></tr>
+<tr><td>Transkulturelle Kompetenz</td><td>Menschen in ihrer kulturellen Identität verstehen und angepasste Handlungsweisen ableiten; Aspekte: Selbstreflexion, Grundhaltung, Hintergrundwissen</td><td>Careum HKB A, S. 141–143</td></tr>
+<tr><td>Wertepluralismus</td><td>Gleichzeitiges Bestehen unterschiedlicher, gleich gültiger Wertorientierungen in einer Gesellschaft</td><td>Careum HKB A, S. 134</td></tr>
+<tr><td>Halo-, Pygmalion-, Primacy-Effekt</td><td>Wahrnehmungsfehler: von einem Merkmal auf alles schliessen / Erwartung erfüllt sich selbst / erster Eindruck prägt</td><td>Careum HKB A, S. 130</td></tr>
+<tr><td>Sozialraum</td><td>Sozial und/oder räumlich begrenzter Bereich: soziales Miteinander und Netzwerke plus räumliche Umgebung mit ihren Ressourcen</td><td>Careum HKB C, S. 18</td></tr>
+<tr><td>Sozialraumorientierung</td><td>Gestalten von Lebenswelten unter tätiger Mitwirkung der Betroffenen; stellt Interessen und Bedürfnisse des Menschen ins Zentrum</td><td>Careum HKB C, S. 18, 20</td></tr>
+<tr><td>Kontextualisierung des Falles</td><td>Ein Verhalten wird abhängig vom sozialen Umfeld bewertet (Hinte)</td><td>Careum HKB C, S. 21</td></tr>
+<tr><td>Stärkemodell</td><td>Der Blick wird bewusst von Schwächen ab- und den Stärken zugewandt</td><td>Careum HKB C, S. 22</td></tr>
+<tr><td>Persönliche / sozialräumliche Ressourcen</td><td>Körperliche, geistige, emotionale Ressourcen / Beziehungen, Anerkennung, ökonomische und infrastrukturelle Ressourcen (Herriger)</td><td>Careum HKB C, S. 26–27</td></tr>
+<tr><td>Mikro-, Meso-, Exo-, Makrosystem</td><td>Vier Systemebenen nach Bronfenbrenner (1981): direkte Beziehungen / Beziehungen zwischen Mikrosystemen / Bereiche ohne eigene Beteiligung / kulturelle Werte und Normen</td><td>Careum HKB C, S. 18–20</td></tr>
+<tr><td>SONI</td><td>Vier Handlungsfelder der Sozialraumorientierung: Sozialstruktur, Organisation, Netzwerk, Individuum (Früchtel, Budde, Cyprian)</td><td>Careum HKB C, S. 30; HEP Band 1, S. 84</td></tr>
+<tr><td>Problemvorlage</td><td>Verständliche Beschreibung eines gesellschaftlichen Missstands in sechs Elementen</td><td>Careum HKB C, S. 31</td></tr>
+<tr><td>Perspektivenwechsler / Ideenkonferenz</td><td>Methoden im Handlungsfeld Organisation: Sicht Abwesender einnehmen / neue Lösungswege, z. B. Zauberwortansatz</td><td>Careum HKB C, S. 33–35</td></tr>
+<tr><td>Subjektive Landkarten / Nadelmethode / Stadtteilerkundung</td><td>Methoden im Handlungsfeld Netzwerk</td><td>Careum HKB C, S. 35–37</td></tr>
+<tr><td>Heimspiele / Ressourcencheck</td><td>Methoden im Handlungsfeld Individuum: Gespräch zu den Bedingungen der betreuten Person / Stärkensammlung mit dem Netzwerk in sieben Phasen</td><td>Careum HKB C, S. 38–41</td></tr>
+<tr><td>Heimbeirat / Kinderrat</td><td>Institutionell verankerte Partizipationsgremien</td><td>Careum HKB C, S. 15; HEP Band 2, S. 380</td></tr>
+<tr><td>Empowerment</td><td>Selbstbefähigung oder Selbstermächtigung; Prozess auf vier Ebenen (Individuum, Gruppe, Institution, Politik)</td><td>Heilerziehungspflege HT Bd. 1, S. 340–341</td></tr>
+<tr><td>Leichte Sprache</td><td>Sprachform, die Menschen mit Lernschwierigkeiten Zugang zu Wahlprogrammen und Kultur ermöglicht</td><td>HEP Band 2, S. 378, 382</td></tr>
+<tr><td>Kinderkonferenz / Kinderparlament</td><td>Methoden, mit denen Kinder Beteiligung einüben</td><td>Kinderpflege, S. 438</td></tr>
+<tr><td>Leiter der Partizipation (Hart)</td><td>Achtstufiges Modell von Fremdbestimmung bis zu gemeinsam gefällten Entscheidungen</td><td>Erzieherinnen und Erzieher Bd. 1, S. 241</td></tr>
+</table>
+</div>
+
+<h2 id="lernziele">Lernziele und wo sie stehen</h2>
+<p class="kl">Die K-Stufe ist die des zugehörigen BFS-Leistungsziels laut Schullehrplan (c1.1.1 K2, c1.1.2 K2, c1.2.1 K3, c1.3.1 K2 nur MmB). Zu Bronfenbrenner nennt der Schullehrplan Kind in der Literaturangabe «(K2)».</p>
+<h3>Fachrichtung Kind (12 Lernziele)</h3>
+<div class="tabwrap">
+<table>
+<tr><th>#</th><th>Lernziel («Ich kann …»)</th><th>K</th><th>Abschnitt</th><th>Quelle</th></tr>
+<tr><td>1</td><td>Partizipation anhand der Definition erläutern.</td><td>K2 (c1.1.1)</td><td>1</td><td>Careum HKB C, S. 11; Web-PDF S. 1–2</td></tr>
+<tr><td>2</td><td>Die Stufen der Partizipation (Nicht-Information/Manipulation, Information, Mitsprache, Mitbestimmung, Selbstbestimmung, n. M. Kühn) erläutern und mit berufsrelevanten Beispielen beschreiben.</td><td>K2 (c1.1.1)</td><td>2.1</td><td>Fachtext Kühn; Careum HKB C, S. 13</td></tr>
+<tr><td>3</td><td>Die Definition von Migration erklären.</td><td>K2 (c1.1.2)</td><td>3</td><td>Careum HKB A, S. 144; Kinderpflege, S. 360</td></tr>
+<tr><td>4</td><td>Die Unterschiede zwischen «Emigration» und «Immigration» sowie zwischen Push- und Pull-Faktoren beschreiben.</td><td>K2 (c1.1.2)</td><td>3, 4.1</td><td>Careum HKB A, S. 144–146</td></tr>
+<tr><td>5</td><td>Zu den verschiedenen Migrationsformen Beispiele und die Auswirkungen für die betreuten Personen beschreiben.</td><td>K2 (c1.1.2)</td><td>4.2–4.4</td><td>Careum HKB A, S. 147–150; Kinderpflege, S. 359–360</td></tr>
+<tr><td>6</td><td>Anhand von Aspekten der transkulturellen Kompetenz (Selbstreflexion, Kommunikation, Hintergrundwissen) den professionellen Umgang mit kultureller Vielfalt handhaben und mit kulturellen Unterschieden umgehen. <span class="kl">Im Schullehrplan folgt hier ein Textfragment «…treuten Personen und die darin vorhandenen Ressourcen anhand von Beispielen beschreiben» — offenbar der Rest des Lernziels zur Bedeutung des Sozialraums (Seitenumbruch).</span></td><td>K2 (c1.1.2) / K2</td><td>5 (Fragment: 7)</td><td>Careum HKB A, S. 141–143; Kinderpflege, S. 229, 362; Careum HKB C, S. 18–27</td></tr>
+<tr><td>7</td><td>Die Handlungsfelder zur Einflussnahme in den Sozialraum beschreiben und erklären, wie sie den Sozialraum beeinflussen.</td><td>K3 (c1.2.1)</td><td>8.2</td><td>Careum HKB C, S. 30, Tab. 5</td></tr>
+<tr><td>8</td><td>Die Handlungsprinzipien der Sozialraumorientierung erläutern.</td><td>K3 (c1.2.1)</td><td>8.1</td><td>Careum HKB C, S. 24–29</td></tr>
+<tr><td>9</td><td>Umsetzungsmöglichkeiten der Partizipation beschreiben.</td><td>K2 (c1.1.1)</td><td>9</td><td>Careum HKB C, S. 13–17; Kinderpflege, S. 438–439; Erzieherinnen und Erzieher Bd. 1, S. 257–259</td></tr>
+<tr><td>10</td><td>Anhand von Beispielen Möglichkeiten aufzeigen, wie der Sozialraum für betreute Personen zugänglich gemacht werden kann.</td><td>K3 (c1.2.1)</td><td>8.2–8.3</td><td>Careum HKB C, S. 30–41; Kinderpflege, S. 53</td></tr>
+<tr><td>11</td><td>Sozialräume in meiner Umgebung für die betreuten Personen ausfindig machen und ihnen den Zugang dazu erschliessen.</td><td>K3 (c1.2.1)</td><td>8.3 (Methoden C)</td><td>Careum HKB C, S. 35–37; Erzieherinnen und Erzieher Bd. 1, S. 363</td></tr>
+<tr><td>12</td><td>Den sozioökologischen Ansatz nach U. Bronfenbrenner erklären und auf Praxisbeispiele anwenden.</td><td>K2 (laut SLP-Literaturangabe)</td><td>7.3</td><td>Careum HKB C, S. 18–20</td></tr>
+</table>
+</div>
+<h3>Fachrichtung Menschen mit Beeinträchtigung (15 Lernziele)</h3>
+<div class="tabwrap">
+<table>
+<tr><th>#</th><th>Lernziel («Ich kann …»)</th><th>K</th><th>Abschnitt</th><th>Quelle</th></tr>
+<tr><td>1</td><td>Partizipation anhand der Definition erläutern.</td><td>K2 (c1.1.1)</td><td>1</td><td>Careum HKB C, S. 11; Web-PDF S. 1–2; HEP Band 2, S. 378</td></tr>
+<tr><td>2</td><td>Die Stufen der Partizipation (n. M. Kühn) systematisch erläutern und mit berufsrelevanten Beispielen beschreiben.</td><td>K2 (c1.1.1)</td><td>2.1–2.2</td><td>Fachtext Kühn (Kita-Beispiele); Careum HKB C, S. 12–13</td></tr>
+<tr><td>3</td><td>Die Definition von Migration erklären.</td><td>K2 (c1.1.2)</td><td>3</td><td>Careum HKB A, S. 144</td></tr>
+<tr><td>4</td><td>Die Unterschiede zwischen «Emigration» und «Immigration» sowie zwischen Push- und Pull-Faktoren beschreiben.</td><td>K2 (c1.1.2)</td><td>3, 4.1</td><td>Careum HKB A, S. 144–146</td></tr>
+<tr><td>5</td><td>Zwischen den verschiedenen Migrationstypen unterscheiden und Beispiele beschreiben.</td><td>K2 (c1.1.2)</td><td>4.2</td><td>Careum HKB A, S. 147</td></tr>
+<tr><td>6</td><td>Anhand von Aspekten der transkulturellen Kompetenz den professionellen Umgang mit kultureller Vielfalt handhaben und mit kulturellen Unterschieden umgehen.</td><td>K2 (c1.1.2)</td><td>5</td><td>Careum HKB A, S. 139–143</td></tr>
+<tr><td>7</td><td>Die Begriffe «Sozialraum» und «Sozialraumorientierung» mithilfe der Fachliteratur erklären.</td><td>K2 (c1.3.1)</td><td>6</td><td>Careum HKB C, S. 18, 20; HEP Band 1, S. 83; HEP Band 2, S. 158</td></tr>
+<tr><td>8</td><td>Die Bedeutung des Sozialraums für die betreuten Personen und die darin vorhandenen Ressourcen anhand von Beispielen beschreiben.</td><td>K2 (c1.3.1)</td><td>7</td><td>Careum HKB C, S. 18–27</td></tr>
+<tr><td>9</td><td>Die Handlungsfelder zur Einflussnahme in den Sozialraum beschreiben und erklären, wie sie den Sozialraum beeinflussen.</td><td>K3 (c1.2.1)</td><td>8.2</td><td>Careum HKB C, S. 30; HEP Band 1, S. 84</td></tr>
+<tr><td>10</td><td>Die Handlungsprinzipien der Sozialraumorientierung erläutern.</td><td>K3 (c1.2.1)</td><td>8.1</td><td>Careum HKB C, S. 24–29; HEP Band 1, S. 84</td></tr>
+<tr><td>11</td><td>Anhand von Beispielen Möglichkeiten aufzeigen, wie der Sozialraum für die betreuten Personen zugänglich gemacht werden kann.</td><td>K3 (c1.2.1)</td><td>8.2–8.3</td><td>Careum HKB C, S. 30–41; HEP Band 1, S. 84, 292</td></tr>
+<tr><td>12</td><td>Umsetzungsmöglichkeiten der Partizipation beschreiben.</td><td>K2 (c1.1.1)</td><td>9</td><td>Careum HKB C, S. 13–17; HEP Band 2, S. 378–383; HT Bd. 1, S. 340–341</td></tr>
+<tr><td>13</td><td>Anhand von konkreten Massnahmen erläutern, wie der Sozialraum für betreute Personen zugänglich gemacht werden kann.</td><td>K3 (c1.2.1)</td><td>8.3, 9 (MmB)</td><td>Careum HKB C, S. 31–41; HEP Band 1, S. 84; HEP Band 2, S. 382</td></tr>
+<tr><td>14</td><td>Sozialräume in meiner Umgebung für die betreuten Personen ausfindig machen und ihnen den Zugang dazu erschliessen.</td><td>K3 (c1.2.1)</td><td>8.3 (Methoden C)</td><td>Careum HKB C, S. 35–37</td></tr>
+<tr><td>15</td><td>Den sozioökologischen Ansatz nach Uri Bronfenbrenner erklären und auf Praxisbeispiele anwenden.</td><td>K2 (c1.3.1, Vertiefung)</td><td>7.3</td><td>Careum HKB C, S. 18–20</td></tr>
+</table>
+</div>
+
+<h2 id="quellen">Quellenverzeichnis</h2>
+<p class="kl">Alle Dateien liegen im Ordner «LS 1.04 Partizipation am sozialen und kulturellen Leben ermöglichen und begleiten». Seitenangaben sind die gedruckten Seiten.</p>
+<div class="tabwrap">
+<table>
+<tr><th>Kurzbeleg</th><th>Datei</th><th>Gedruckte Seiten</th><th>Bemerkung</th></tr>
+<tr><td>Careum HKB C</td><td>LS 1.04_Careum HKB C (2021)_Kap. 1-1.2 Einstieg C1 und Partizipation_S.8-14.pdf</td><td>8–14</td><td>Bildscan, am Seitenbild gelesen</td></tr>
+<tr><td>Careum HKB C</td><td>LS 1.04_Careum HKB C (2021)_Kap. 1.2-1.3.2 Partizipation, Stufen der Partizipation, Sozialraum_S.11-29.pdf</td><td>11–29</td><td>Bildscan; überlappt mit den beiden anderen HKB-C-Dateien</td></tr>
+<tr><td>Careum HKB C</td><td>LS 1.04_Careum HKB C (2021)_Kap. 1.3 Sozialraum und Sozialraumorientierung_S.18-41.pdf</td><td>18–41</td><td>Bildscan; Kopfzeile der BFS nennt «LS 2.07», Inhalt gehört zu LS 1.04</td></tr>
+<tr><td>Careum HKB C Web-PDF</td><td>LS 1.04_Careum HKB C Web-PDF_Formen des Einbezogenseins - Teilnahme, Teilhabe, Teilgabe_S.1-5.pdf</td><td>1–5</td><td>eigene Textebene</td></tr>
+<tr><td>Careum HKB A</td><td>LS 1.04_Careum HKB A (2021)_Kap. 2.2-2.3.1 Wahrnehmungsfehler, Werte, Kulturbegriff_S.130-135.pdf</td><td>130–135</td><td>Bildscan</td></tr>
+<tr><td>Careum HKB A</td><td>LS 1.04_Careum HKB A (2021)_Kap. 2.3.1-2.3.2 Wertewandel, kulturelle Identität, transkulturelle Kompetenz_S.134-143.pdf</td><td>134–143</td><td>Bildscan</td></tr>
+<tr><td>Careum HKB A</td><td>LS 1.04_Careum HKB A (2021)_Kap. 2.3.2-2.3.3 Transkulturelle Kompetenz und Migration_S.143-150.pdf</td><td>143–150</td><td>Bildscan</td></tr>
+<tr><td>Careum HKB A</td><td>LS 1.04_Careum HKB A (2021)_Kap. 2.3.3 Bedeutung und Auswirkungen von Migration_S.144-150.pdf</td><td>143–150</td><td>Dublette der vorigen Datei (gleiche Seiten, andere Auflösung); nicht doppelt ausgewertet</td></tr>
+<tr><td>Fachtext Kühn</td><td>Fachtext_Stufen der Partzipation nach M. Kühn.docx</td><td>—</td><td>Word-Datei mit Grafik; Quelle laut Text: Kühn, M. (2023), Traumapädagogik, Beltz Juventa. Die Grafik ist mit «Kühn, 2006» beschriftet.</td></tr>
+<tr><td>Kinderpflege</td><td>LS 1.04_Kinderpflege (2015)_Kinder beteiligen und mitwirken lassen_S.438-439.pdf</td><td>438–439</td><td>eigene Textebene; deutsches Lehrmittel</td></tr>
+<tr><td>Kinderpflege</td><td>LS 1.04_Kinderpflege (2015)_Kinder mit Migrationshintergrund_S.359-363.pdf</td><td>359–363</td><td>eigene Textebene; deutsches Lehrmittel</td></tr>
+<tr><td>Kinderpflege</td><td>LS 1.04_Kinderpflege (2015)_Mit kulturellen Unterschieden umgehen_S.229.pdf</td><td>229</td><td>eigene Textebene; deutsches Lehrmittel</td></tr>
+<tr><td>Kinderpflege</td><td>LS 1.04_Kinderpflege (2015)_Sich im Sozialraum vernetzen_S.53.pdf</td><td>53</td><td>eigene Textebene; deutsches Lehrmittel</td></tr>
+<tr><td>Erzieherinnen und Erzieher Bd. 1</td><td>LS 1.04_Erzieherinnen und Erzieher Band 1 (2020)_Modelle und Methoden der partizipativen pädagogischen Arbeit_S.240-259.pdf</td><td>240–259</td><td>eigene Textebene; Abb. 6.2 am Seitenbild geprüft; deutsches Lehrmittel</td></tr>
+<tr><td>Erzieherinnen und Erzieher Bd. 1</td><td>LS 1.04_Erzieherinnen und Erzieher Band 1 (2020)_Lebenswelt- und Sozialraumorientierung_S.362-363.pdf</td><td>362–363</td><td>Bildscan (Deckblatt + 2 Seiten); deutsches Lehrmittel</td></tr>
+<tr><td>HEP Band 1</td><td>LS 1.04_HEP Band 1 (2022)_Sozialraumorientierung_S.83-84.pdf</td><td>83–84</td><td>Bildscan; deutsches Lehrmittel</td></tr>
+<tr><td>HEP Band 1</td><td>LS 1.04_HEP Band 1 (2022)_Sozialraumorientierung und bürgerschaftliches Engagement_S.292.pdf</td><td>292</td><td>Bildscan; deutsches Lehrmittel</td></tr>
+<tr><td>HEP Band 2</td><td>LS 1.04_HEP Band 2 (2022)_Sozialraumorientierung_S.158.pdf</td><td>158</td><td>Bildscan; deutsches Lehrmittel</td></tr>
+<tr><td>HEP Band 2</td><td>LS 1.04_HEP Band 2 (2022)_Kap. G VII 2.2-2.4 Mitbestimmung und Teilhabe am kulturellen Leben_S.378-383.pdf</td><td>378–383</td><td>Bildscan; deutsches Recht und deutsche Verbände</td></tr>
+<tr><td>Heilerziehungspflege HT Bd. 1</td><td>LS 1.04_Heilerziehungspflege HT Band 1_Kap. M4 5 Empowerment und Ebenen des Empowermentprozesses_S.340-341.pdf</td><td>340–341</td><td>Doppelseiten-Scan (eine PDF-Seite); deutsches Lehrmittel</td></tr>
+<tr><td>Schullehrplan</td><td>Schullehrplan BKU1 vG Kind und MmB, LS 1.04 (über die Skills slp-bku1-kind / slp-bku1-beh)</td><td>10</td><td>Gliederung, Lernziele, Leistungsziele</td></tr>
+</table>
+</div>
+
+<h2 id="offen">Was nicht belegt ist</h2>
+<ul>
+<li><b>Stufen nach Kühn für die Fachrichtung MmB:</b> Der einzige Fachtext ist durchgehend auf Kinder und Kita-Beispiele formuliert. MmB-Beispiele (Wohngruppe, Werkstatt, Tagesstruktur) stehen in keiner Quelle; im Careum-Lehrmittel steht Kühn in einem Satz mit Verweis auf Internetrecherche. Ein Stufenmodell der Partizipation für die Behindertenhilfe liegt im Dossier nicht vor. <span class="beleg">[Careum HKB C, S. 13; Fachtext Kühn]</span></li>
+<li><b>Kühn-Fachtext, innere Unstimmigkeit:</b> Die Grafik ist mit «Kühn, 2006» beschriftet, die Quellenangabe lautet «Kühn, M. (2023)»; der Text spricht von «vier Handlungsstufen» plus Vorstufe 0. Welche Jahreszahl gilt, lässt sich aus dem Dossier nicht klären.</li>
+<li><b>Bronfenbrenner:</b> Der im Schullehrplan genannte «Fachtext U. Bronfenbrenner» existiert im Ordner nicht. Belegt sind nur die vier Systeme aus dem Careum-Lehrmittel (S. 18–20). Der Schullehrplan widerspricht sich (Hinweis «nicht im Ausbildungsprogramm» gegen ein Lernziel, das den Ansatz nennt). Vorname und Bezeichnung «sozioökologisch» stehen in keiner vorliegenden Quelle.</li>
+<li><b>«Anthropoi — Gemeinsam Mensch sein»</b> (Literatur MmB) liegt nur als Weblink bei David vor; keine Datei im Ordner, daher hier nicht ausgewertet.</li>
+<li><b>Schweizer Rechtsgrundlagen</b> zur Beteiligung von Kindern und zur Mitwirkung in Institutionen (Entsprechung zu SGB VIII, HeimG, Bundesteilhabegesetz): in keiner Quelle enthalten. Belegt ist nur der Hinweis auf UN-Kinderrechtskonvention und Artikel 3 UN-Behindertenrechtskonvention (Careum HKB C, S. 11).</li>
+<li><b>Handlungsfelder und Handlungsprinzipien:</b> Der Schullehrplan zählt drei Felder und drei Prinzipien; die Quellen nennen vier bzw. fünf. Diese Zusammenfassung folgt den Quellen.</li>
+<li><b>Careum HKB A, S. 130–133</b> (Wahrnehmungsfehler, Werte, Wertehierarchie) sind im Ordner, gehören aber zu keinem Unterrichtsthema dieser Lernsituation im engeren Sinn; nur der Bezug zu Vorurteilen (S. 130) und Wertepluralismus (S. 134) wurde aufgenommen.</li>
+</ul>
+
+</main>
+<script>(function(){var bs=document.querySelectorAll(".schalter button");function setze(an){document.body.classList.toggle("ohne-ebenen",!an);bs.forEach(function(b){b.setAttribute("aria-pressed",(b.getAttribute("data-an")==="1")===an?"true":"false");});}bs.forEach(function(b){b.addEventListener("click",function(){var an=b.getAttribute("data-an")==="1";var h=document.querySelector(".schalter").getBoundingClientRect().height;var anker=null,abst=0,kids=document.querySelector("main").children;for(var i=0;i<kids.length;i++){var k=kids[i];if(k.classList.contains("schalter")||k.classList.contains("ebenen"))continue;var r=k.getBoundingClientRect();if(r.bottom>h+1){anker=k;abst=r.top;break;}}setze(an);if(anker){window.scrollBy(0,anker.getBoundingClientRect().top-abst);}});});})();</script>
+</body>
+</html>
