@@ -1,0 +1,84 @@
+filters:
+  and:
+    - typ == "methode"
+    - not:
+        - file.inFolder("00 Start")
+views:
+  - type: table
+    name: Alle Methoden
+    order:
+      - nr
+      - file.name
+      - aviva_phase
+      - k_stufe
+      - sozialform
+      - dauer
+      - eignung_fabe
+      - herkunft
+  - type: table
+    name: Ankommen
+    filters:
+      and:
+        - aviva_phase.contains("Ankommen")
+    order:
+      - nr
+      - file.name
+      - k_stufe
+      - sozialform
+      - eignung_fabe
+  - type: table
+    name: Vorwissen aktivieren
+    filters:
+      and:
+        - aviva_phase.contains("Vorwissen aktivieren")
+    order:
+      - nr
+      - file.name
+      - k_stufe
+      - sozialform
+      - eignung_fabe
+  - type: table
+    name: Informieren
+    filters:
+      and:
+        - aviva_phase.contains("Informieren")
+    order:
+      - nr
+      - file.name
+      - k_stufe
+      - sozialform
+      - eignung_fabe
+  - type: table
+    name: Verarbeiten
+    filters:
+      and:
+        - aviva_phase.contains("Verarbeiten")
+    order:
+      - nr
+      - file.name
+      - k_stufe
+      - sozialform
+      - eignung_fabe
+  - type: table
+    name: Auswerten
+    filters:
+      and:
+        - aviva_phase.contains("Auswerten")
+    order:
+      - nr
+      - file.name
+      - k_stufe
+      - sozialform
+      - eignung_fabe
+  - type: table
+    name: Eignung hoch und sehr hoch
+    filters:
+      or:
+        - eignung_fabe == "hoch"
+        - eignung_fabe == "sehr hoch"
+    order:
+      - nr
+      - file.name
+      - aviva_phase
+      - k_stufe
+      - eignung_fabe
