@@ -1,0 +1,16 @@
+filters:
+  and:
+    - typ == "kriterium"
+    - file.inFolder("70 EHB-Qualifikation")
+views:
+  - type: table
+    name: Indikatoren
+    groupBy:
+      property: raster
+      direction: DESC
+    order:
+      - file.name
+      - nummer
+      - bezugssituation
+      - punkte_max
+      - kurz

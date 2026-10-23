@@ -1,0 +1,15 @@
+filters:
+  and:
+    - typ == "quelle"
+    - not:
+        - file.inFolder("00 Start")
+views:
+  - type: table
+    name: Quellen
+    order:
+      - file.name
+      - autor
+      - jahr
+      - art
+      - pfad_geprueft
+      - status

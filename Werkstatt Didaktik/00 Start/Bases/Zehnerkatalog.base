@@ -1,0 +1,11 @@
+filters:
+  and:
+    - raster == "Zehnerkatalog Meyer"
+views:
+  - type: table
+    name: Merkmale
+    order:
+      - nummer
+      - file.name
+      - kurz
+      - status

@@ -1,0 +1,262 @@
+{
+  "main": {
+    "id": "b8b1e9a36eca01d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "56a261b3ba36a240",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "badf010ac4971b8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CLAUDE"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9f69615650f61446",
+    "type": "split",
+    "children": [
+      {
+        "id": "d7ec1fc680200d51",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b760433e47458fb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Dateiexplorer"
+            }
+          },
+          {
+            "id": "647d7ec4cbb8888c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Suchen"
+            }
+          },
+          {
+            "id": "60596d085e0fdbd2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Lesezeichen"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 399.6015625
+  },
+  "right": {
+    "id": "decfd02d5e2778d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "3224e6efea892aac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "26c2d006f3416ab0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rückverweise"
+            }
+          },
+          {
+            "id": "eee831d754d368c2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Ausgehende Links"
+            }
+          },
+          {
+            "id": "65e0aa6cc64dce4c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3b108fb745a58774",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Alle Eigenschaften"
+            }
+          },
+          {
+            "id": "efcda8df90fd7423",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Gliederung"
+            }
+          },
+          {
+            "id": "6aa96df4d8ef83a8",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {
+                "tabWorkspace": {
+                  "version": 1,
+                  "openTabs": [
+                    {
+                      "tabId": "tab-1792691491891-7a3z18j",
+                      "conversationId": "conv-1792735473528-gn7gqpux4"
+                    }
+                  ],
+                  "activeTabId": "tab-1792691491891-7a3z18j"
+                }
+              },
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          },
+          {
+            "id": "3c9ab3a9d1351e4b",
+            "type": "leaf",
+            "state": {
+              "type": "notebooklm-webview",
+              "state": {},
+              "icon": "book-open",
+              "title": "NotebookLM"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 554.5625
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Schnellauswahl öffnen": false,
+      "graph:Graph-Ansicht öffnen": false,
+      "canvas:Neuen Canvas erstellen": false,
+      "templates:Vorlage einfügen": false,
+      "command-palette:Befehlspalette öffnen": false,
+      "bases:Neue Base erstellen": false,
+      "obsidian42-brat:BRAT": false,
+      "realclaudian:Open Claudian": false,
+      "star-notebooklm:Send to NotebookLM": false,
+      "star-notebooklm:Open NotebookLM": false
+    }
+  },
+  "active": "badf010ac4971b8e",
+  "lastOpenFiles": [
+    "Start.md",
+    "CLAUDE.md",
+    "30 Methoden und Medien/Methodensammlung/A-B-C-Methode.md",
+    "30 Methoden und Medien/Berichtsheft und Lerndokumentation.md",
+    "30 Methoden und Medien/Methodensammlung/Advance Organizer.md",
+    "00 Start/Playbook.md",
+    "20 Planung und didaktische Modelle/Planungskette fertigen Unterricht.md",
+    "00 Start/Vorlagen/Vorlage vorgabe.md",
+    "00 Start/Vorlagen/Vorlage verfahren.md",
+    "00 Start/Vorlagen/Vorlage quelle.md",
+    "00 Start/Vorlagen/Vorlage kriterium.md",
+    "00 Start/Vorlagen/Vorlage konzept.md",
+    "00 Start/Vorlagen/Vorlage aufgabentyp.md",
+    "00 Start/Prüfungen/Prüfungen.md",
+    "00 Start/Kontrolle/Vorschlaege_ausserhalb.md",
+    "00 Start/Kontrolle/Übergabe.md",
+    "00 Start/Kontrolle/Befundliste.md",
+    "00 Start/Kontrolle/Arbeitsplan.md",
+    "00 Start/Bases/Zehnerkatalog.base",
+    "00 Start/Bases/Quellen.base",
+    "00 Start/Bases/Methoden.base",
+    "00 Start/Bases/Kontrolle.base",
+    "00 Start/Bases/EHB-Indikatoren.base",
+    "00 Start/Bases/Aufgabentypen.base",
+    "00 Start/Bases/Alle Notizen.base",
+    "80 Quellen/Quelle Bildungsplan FaBe.md",
+    "TEST NotebookLM AVIVA-Kurzinformation.md",
+    "00 Start/Kontrolle/Testprotokoll Obsidian.md",
+    "00 Start/Prüfungen/__pycache__/raster.cpython-311.pyc",
+    "00 Start/Kontrolle/Archiv/Entscheidkarten.md",
+    "60 Unterrichtsqualität und Reflexion/Merkmal 9 Transparente Leistungserwartungen.md",
+    "20 Planung und didaktische Modelle/Lernprodukt festlegen.md",
+    "00 Start/Kontrolle/Entscheidungsprotokoll.md",
+    "50 Prüfen und Bewerten/Erwartungshorizont und Punkte.md",
+    "00 Start/Navigator/Schriften/texgyreadventor-regular.otf",
+    "00 Start/Navigator/Schriften/texgyreadventor-italic.otf",
+    "Unbenannt.canvas"
+  ]
+}

@@ -1,0 +1,16 @@
+filters:
+  and:
+    - file.ext == "md"
+    - not:
+        - file.inFolder("00 Start")
+views:
+  - type: table
+    name: Nach Typ
+    groupBy:
+      property: typ
+      direction: ASC
+    order:
+      - file.name
+      - kurz
+      - status
+      - file.folder

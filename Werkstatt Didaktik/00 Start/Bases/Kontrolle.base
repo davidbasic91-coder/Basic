@@ -1,0 +1,65 @@
+filters:
+  and:
+    - file.ext == "md"
+    - typ != "index"
+    - typ != "kontrolle"
+    - not:
+        - file.inFolder("00 Start")
+properties:
+  kurz:
+    displayName: Kurz
+views:
+  - type: table
+    name: Nicht geprüft
+    filters:
+      and:
+        - status == "nicht geprüft"
+    groupBy:
+      property: typ
+      direction: ASC
+    order:
+      - file.name
+      - typ
+      - entscheide
+      - file.folder
+  - type: table
+    name: Widerspruch
+    filters:
+      and:
+        - status == "widerspruch"
+    order:
+      - file.name
+      - typ
+      - entscheide
+      - kurz
+  - type: table
+    name: Mit Auslegung
+    filters:
+      and:
+        - auslegung == true
+    order:
+      - file.name
+      - status
+      - entscheide
+  - type: table
+    name: Nach Status
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - typ
+      - entscheide
+      - file.folder
+  - type: table
+    name: Nach Entscheid
+    filters:
+      and:
+        - entscheide.length > 0
+    groupBy:
+      property: entscheide
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - typ

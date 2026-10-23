@@ -1,0 +1,30 @@
+
+Feld | Notizen gesamt | ohne Methoden | Wörter ohne Methoden | belegt | sammlung
+Erwachsene lernen: Lernbiografie, Motivation und Gedächtnis | 15 | 11 | 1281 | 11 | 4
+Lernprinzipien, Unterrichtsformen und Methodenwahl | 51 | 9 | 1436 | 10 | 41
+Lerngruppe, Klima, Rollen und Konflikte | 28 | 12 | 1352 | 12 | 16
+Kommunikation, Gespräch, Präsentation und Debatte | 62 | 3 | 411 | 3 | 59
+Feedback, Reflexion und Evaluation | 37 | 7 | 864 | 9 | 28
+Kompetenzen, Lernziele und Lernzielketten | 11 | 10 | 1491 | 10 | 1
+K-Stufen, Operatoren und Zieltiefe | 15 | 15 | 5561 | 15 | 0
+Aufgabentypen und Arbeitsaufträge | 31 | 26 | 4343 | 26 | 5
+Didaktische Analyse, Reduktion und Stoffstruktur | 12 | 12 | 1730 | 12 | 0
+Planungsstufen, Verlaufsplanung und Zeit | 15 | 15 | 2484 | 15 | 0
+Phasenmodelle AVIVA, AITUS und Sandwich | 19 | 13 | 1827 | 18 | 1
+Medien, Visualisierung, Raum und Unterlagen | 32 | 7 | 747 | 8 | 24
+Kreativität, Gestalten und Problemlösen | 27 | 3 | 257 | 3 | 24
+Projekt, Fallstudie, Planspiel und Grossgruppenverfahren | 25 | 1 | 121 | 2 | 23
+Szenisches Spiel, Rollenspiel und Körperdarstellung | 17 | 1 | 123 | 1 | 16
+Kennenlernen, Bewegung und Warm-up | 37 | 4 | 394 | 4 | 33
+Vorwissen, Assoziation und Bildimpulse | 36 | 3 | 413 | 3 | 33
+Erzählen, Lesen, Schreiben und Recherchieren | 41 | 2 | 287 | 2 | 39
+Üben, Wiederholen und Quiz | 32 | 4 | 520 | 4 | 28
+Prüfen: Funktionen, Gütekriterien und Bezugsnormen | 9 | 9 | 1398 | 9 | 0
+Prüfen: Aufgabenformen, Raster und Notengebung | 20 | 19 | 2813 | 19 | 1
+Guter Unterricht nach Meyer und Unterrichtsqualität | 26 | 24 | 5140 | 24 | 2
+EHB-Qualifikation: Verfahren, Vorgaben und Bewertung | 17 | 17 | 3145 | 17 | 0
+EHB-Vorbereitungsdossier: Indikatoren | 13 | 13 | 2425 | 13 | 0
+EHB-Lehrprobe und Fachgespräch: Indikatoren | 20 | 20 | 3068 | 20 | 0
+
+Notizen in der Liste: 542 | genannt: 542 | nicht zugeordnet: 0 | Felder: 25
+Verstösse: 0

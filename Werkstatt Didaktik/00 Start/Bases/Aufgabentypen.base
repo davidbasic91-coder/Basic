@@ -1,0 +1,16 @@
+filters:
+  and:
+    - typ == "aufgabentyp"
+    - not:
+        - file.inFolder("00 Start")
+views:
+  - type: table
+    name: Aufgabentypen
+    order:
+      - nr
+      - file.name
+      - k_stufe
+      - operatoren
+      - aviva_phase
+      - musterloesung
+      - status
