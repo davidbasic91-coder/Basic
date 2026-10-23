@@ -5,6 +5,7 @@ quelle: []
 status: belegt
 entscheide:
 - E-111
+- E-220
 verwandt: []
 ---
 
@@ -18,7 +19,7 @@ Wie Unterricht geplant wird: vom Planungsmodell über Analyse, Reduktion und Zie
 
 ## Planungsmodelle
 
-[[Planungskette fertigen Unterricht]] | [[Grobplanung und Feinplanung]] | [[Bedingungs- und Entscheidungsfelder]] | [[Didaktisches Dreieck]] | [[Kompetenzen-Ressourcen-Modell]] | [[Direktes und indirektes Vorgehen]] | [[Makroplanung und Semesterplan]]
+[[Planungskette fertigen Unterricht]] | [[Grobplanung und Feinplanung]] | [[Bedingungs- und Entscheidungsfelder]] | [[Didaktisches Dreieck]] | [[Kompetenzen-Ressourcen-Modell]] | [[Direktes und indirektes Vorgehen]] | [[Makroplanung und Semesterplan]] | [[Unterrichtsprinzipien]]
 
 ## Analysieren und reduzieren
 

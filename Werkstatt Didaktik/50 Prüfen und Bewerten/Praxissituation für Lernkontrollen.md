@@ -8,6 +8,7 @@ quelle:
 status: belegt
 entscheide:
 - E-027
+- E-220
 verwandt:
 - "[[Vollständige Handlung]]"
 - "[[Wissensarten]]"
@@ -36,3 +37,7 @@ Bezug zur Situation; passend zu Zielen und deren K-Stufe; gleiche Ansprechform (
 ## Regel des Skills
 
 Die K-Stufe kommt vom Leistungsziel, nicht vom Reiz der Situation. Die Figuren der Situationen stammen aus dem Setting Sonnenblick im Tresor BFS.
+
+## Durchgespieltes Beispiel: von der Situation zu Aufgaben, Punkten und Erwartungshorizont
+
+Konstruiertes Beispiel (nicht aus einer Quelle): Eine Lehrperson plant im Berufskundeunterricht FaBe an der BFS Basel eine Lernkontrolle zu einem Thema aus dem BKU. Das Leistungsziel im Bildungsplan trägt K2; sie richtet die Aufgaben daran aus und nicht am Reiz der Situation. Sie schreibt eine Situation von höchstens einer halben Seite: Eine Lernende erlebt in ihrer Praxis eine Szene zu diesem Thema. Daraus leitet sie drei Aufgaben ab, je mit einer K-Stufe und passendem Operator: «nennen» (K1) zu 0.5 Punkten, «beschreiben» (K2) zu 1 Punkt, «erklären» (K2) zu 2 Punkten, weil diese Aufgabe die zentrale Kompetenz betrifft und mehr Bearbeitungszeit braucht. Die Titel folgen dem Format «Aufgabe N (Typ, K-Stufe)», die schwierigste Aufgabe steht im zweiten Teil. Beim Aufschreiben der erwarteten Antworten merkt sie, dass sich die Beschreibungsaufgabe ohne die Situation lösen lässt. Das wäre eine reine Wissensfrage; sie formuliert die Aufgabe so um, dass sie sich auf die Situation bezieht.

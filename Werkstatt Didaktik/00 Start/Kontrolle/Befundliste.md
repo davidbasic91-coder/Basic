@@ -1,6 +1,6 @@
 ---
 typ: kontrolle
-kurz: 'Befunde ab B-088: Widersprüche, fehlende Quellen, Unstimmigkeiten, Grenzfälle, Korrekturen. B-088 bis B-144 sind am 16.10.2026 geschlossen, B-145 am 17.10.2026, B-146 bis B-158 am 22.10.2026; keiner ist offen; B-001 bis B-087 stehen im Archiv.'
+kurz: 'Befunde ab B-088: Widersprüche, fehlende Quellen, Unstimmigkeiten, Grenzfälle, Korrekturen. B-088 bis B-144 sind am 16.10.2026 geschlossen, B-145 am 17.10.2026, B-146 bis B-158 am 22.10.2026; offen sind B-159 bis B-161 (23.10.2026); B-001 bis B-087 stehen im Archiv.'
 quelle: []
 status: belegt
 entscheide:
@@ -26,17 +26,48 @@ entscheide:
 - E-200
 - E-201
 - E-203
+- E-220
 verwandt:
 - "[[Befundliste Archiv 2026-10-16]]"
 ---
 
 ## Kurz
 
-Befunde ab B-088: Widersprüche, fehlende Quellen, Unstimmigkeiten, Grenzfälle, Korrekturen. B-088 bis B-144 sind am 16.10.2026 geschlossen, B-145 am 17.10.2026, B-146 bis B-158 am 22.10.2026; keiner ist offen; B-001 bis B-087 stehen im Archiv.
+Befunde ab B-088: Widersprüche, fehlende Quellen, Unstimmigkeiten, Grenzfälle, Korrekturen. B-088 bis B-144 sind am 16.10.2026 geschlossen, B-145 am 17.10.2026, B-146 bis B-158 am 22.10.2026; offen sind B-159 bis B-161 (23.10.2026); B-001 bis B-087 stehen im Archiv.
 
 ## Offene Befunde
 
-Keine (Stand 22.10.2026).
+Gefunden beim Eintragen der Entwürfe für Lauf 2 am 23.10.2026 (E-220).
+
+### B-159 Widerspruch: Dauer des Standbilds
+
+Die Methodennotiz [[Standbild]] nennt rund eine Minute, in der die Figuren erstarren (Ursprung laut Skill: Methodenkartei Oldenburg). Die neue Notiz [[Kreatives und szenisches Gestalten]] gibt nach Scholz etwa eine halbe Minute an (Methoden-Kiste, S. 39).
+
+**Quelle:** [[Standbild]] (status sammlung); Scholz, L. (2010): Methoden-Kiste, bpb, 4. Aufl., S. 39
+
+**Notizen:** keine geändert; beide Angaben stehen in ihrer Notiz
+
+**Stand 23.10.2026:** offen, David entscheidet.
+
+### B-160 Unstimmigkeit: K-Stufe der Fallstudie
+
+Laut Skill lk-grundlagen (references/bloom-kstufen.md) sind «kurze Fallstudien» eine Aufgabenform der Stufe K5. [[Aufgabentyp 11 Fallanalyse]] steht in Davids Palette bei K4. Ob beides dasselbe meint, sagt der Skill nicht; nicht geprüft.
+
+**Quelle:** Skill lk-grundlagen, references/bloom-kstufen.md; [[Aufgabentyp 11 Fallanalyse]]
+
+**Notizen:** keine geändert
+
+**Stand 23.10.2026:** offen, David entscheidet.
+
+### B-161 Unstimmigkeit: Klassengrösse bei der Methodenwahl
+
+Laut Skill fertigen-unterricht-planen werden Methoden inhaltsgetrieben gewählt, und die Klassengrösse ist kein Ausschlussgrund. Lehren kompakt 1 beschränkt die Diskussion auf höchstens zehn Teilnehmende (S. 113). Welche Regel in der Lehrprobe gilt, sagen die Quellen nicht; [[Lehrprobe 01 Umsetzung der Feinplanung]] nennt beide.
+
+**Quelle:** Skill fertigen-unterricht-planen, SKILL.md; Meyer, R. / Stocker, F. (2024): Lehren kompakt 1, hep, 7. Aufl., S. 113
+
+**Notizen:** keine geändert
+
+**Stand 23.10.2026:** offen, David entscheidet.
 
 ## Geschlossen am 16.10.2026
 
@@ -764,4 +795,4 @@ E-187 und E-188 nennen Version 11 und 12 «am 17.10.2026 veröffentlicht», die 
 
 ## Archiv
 
-B-001 bis B-087, alle geschlossen: [[Befundliste Archiv 2026-10-16]]. Verweise auf diese Nummern in den Notizen führen dorthin. Neue Befunde beginnen mit B-159.
+B-001 bis B-087, alle geschlossen: [[Befundliste Archiv 2026-10-16]]. Verweise auf diese Nummern in den Notizen führen dorthin. Neue Befunde beginnen mit B-162.

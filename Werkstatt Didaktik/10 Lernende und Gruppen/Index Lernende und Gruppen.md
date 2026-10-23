@@ -6,6 +6,7 @@ status: belegt
 entscheide:
 - E-111
 - E-161
+- E-220
 verwandt: []
 ---
 
@@ -23,4 +24,4 @@ Wie Erwachsene lernen und wie die Lehrperson eine Lerngruppe führt. Grundlage i
 
 ## Gruppe führen
 
-[[Gruppenphasen]] | [[Heterogene Gruppen]] | [[Normen und Kontrakte]] | [[Interventionen im Unterricht]] | [[Widerstand im Unterricht]] | [[Konflikte in Lerngruppen bearbeiten]]
+[[Gruppenphasen]] | [[Heterogene Gruppen]] | [[Normen und Kontrakte]] | [[Interventionen im Unterricht]] | [[Widerstand im Unterricht]] | [[Konflikte in Lerngruppen bearbeiten]] | [[Gruppen bilden und einteilen]] | [[Gesprächskreise und Klassenrat]]

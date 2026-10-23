@@ -3266,3 +3266,20 @@ Prompt: 1. Alles Offene 2. Nur Entscheidkarten
 **Rückgängig:** Bedingungsanalyse in Ebene A zurückstellen, Absatz zur Stellung auf die Fassung von E-136 zurücksetzen, E-219 aus `entscheide` entfernen
 
 **Stand:** in der Notiz umgesetzt am 23.10.2026. Der Skill fertigen-unterricht-planen (references/kette.md) führt die Bedingungsanalyse weiterhin in der Makroplanung; nicht geändert. Basic Skills am 23.10.2026 neu erzeugt, aber nicht veröffentlicht: In dieser Sitzung stand kein Werkzeug zum Veröffentlichen zur Verfügung.
+
+## E-220 Lauf 2: Lücken der Themenfelder mit Entwürfen geschlossen
+
+**Optionen:**
+1. Nur das Gefundene eintragen: die 12 Lücken, die ein Buch ganz deckt, und die Themen Debatte und Gruppen bilden
+2. Alles eintragen, auch die Teil-Lücken und konstruierte Beispiele
+3. Nichts eintragen; jede Lücke bekommt im Playbook «In den Notizen keine»
+
+**Wahl:** Option 2. Eingetragen sind 52 Entwürfe aus der Vorarbeit zu Lauf 2 (im Repository «Läufe/lauf2/lueckenliste.md» und «Läufe/lauf2/entwuerfe.md»): 45 als neue Abschnitte in 31 bestehenden Notizen, 7 als neue Notizen. Dazu kommen 21 Ergänzungen aus den Skills, im Text mit «laut Skill» markiert und nicht am Primärtext geprüft. 18 Beispiele sind konstruiert und im Text so gekennzeichnet. Jede Aussage aus Büchern und Notizen wurde vor dem Eintragen mit einem wörtlichen Zitat an der angegebenen Seite geprüft (1464 Belege, für die Skill-Ergänzungen 514 Belege in den Skilldateien); die Prüfzitate stehen nicht im Vault. Zwei Teil-Lücken, deren Stoff in einem anderen Feld steht, bekommen einen Link statt eines Entwurfs: [[AVIVA Phase Verarbeiten]] auf [[Erwartungshorizont und Punkte]] und [[Lehrprobe 01 Umsetzung der Feinplanung]] auf [[Verlaufsplanung]]; die dritte war mit dem Entwurf in [[Schriftliche Lernkontrolle planen]] schon auf [[Notenformel und Sockelwert]] verlinkt. Die neuen Notizen stehen in den Bereichsindizes 10, 20 und 30. Für diese Lücken ist E-062 (vorerst keine neuen Inhalte) aufgehoben.
+
+**Entschieden von:** David, 23.10.2026 («dann mach doch die nummer 2.», auf die drei Wege; Eintragen freigegeben mit «ja trag sie doch ein»)
+
+**Betroffen:** 31 Notizen mit neuen Abschnitten und erweitertem Feld `quelle`; neue Notizen [[Gruppen bilden und einteilen]], [[Gesprächskreise und Klassenrat]], [[Unterrichtsprinzipien]], [[Kennenlern- und Einstimmungsspiele]], [[Wiederholen]], [[Kreatives und szenisches Gestalten]] und [[Pro- und Contra-Debatte nach Scholz]]; [[Index Lernende und Gruppen]], [[Index Planung und didaktische Modelle]], [[Index Methoden und Medien]]; [[Befundliste]] B-159 bis B-161; [[Stand]]
+
+**Rückgängig:** den Commit dieses Eintrags im Repository zurücknehmen; oder die neuen Notizen in Obsidian löschen, die neuen Abschnitte entfernen und E-220 aus `entscheide` sowie die neuen Einträge aus `quelle` streichen
+
+**Stand:** eingetragen am 23.10.2026. Offen sind zwei Fragen an David (was bei Zeitnot zuerst wegfällt; Notentabelle oder nur Formel auf dem Prüfungsblatt) und 19 weitere Fragen am Schluss von «Läufe/lauf2/entwuerfe.md». Das Playbook nach E-218 gibt nur Kurzfassungen wieder; wie Lauf 2 die neuen Abschnitte nutzt, ist noch nicht entschieden. Basic Skills ist nach diesem Eintrag nicht neu veröffentlicht.
