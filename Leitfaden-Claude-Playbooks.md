@@ -849,7 +849,7 @@ Nicht bewertet. Die Recherche fand keine unabhängigen Bewertungen solcher Büch
 
 **Andere Anbieter und Medien**
 
-- [Q41] ✔ borncity.com: Claude Playbooks: Anthropic startet KI-Planungs-Plattform heute (13.6.2026). Als unzuverlässig eingestuft.: https://borncity.com/news/claude-playbooks-anthropic-startet-ki-planungs-plattform-heute/
+- [Q41] ✔ borncity.com: Claude Playbooks: Anthropic startet KI-Planungs-Plattform heute (13.6.2026), als unzuverlässig eingestuft: https://borncity.com/news/claude-playbooks-anthropic-startet-ki-planungs-plattform-heute/
 - [Q42] ○ Education Week via GovTech: Educators share mixed reactions to Claude for Teachers (21.7.2026): https://www.govtech.com/education/k-12/educators-share-mixed-reactions-to-claude-for-teachers
 - [Q43] ○ Beispiele aus der Community: playbook-ai (https://github.com/bluemax713/playbook), awesome-claude-md (https://github.com/josix/awesome-claude-md), claudecodehq (https://www.claudecodehq.com/)
 - [Q44] ○ E-Book «The Claude Playbook»: https://payhip.com/b/Dk3OB
