@@ -1,0 +1,33 @@
+VERSTOSS: Notiz nicht in der Liste: «Erfundene Notiz Gegenprobe»
+VERSTOSS: Notiz weder in einem Feld noch auf «nicht zugeordnet»: «Erwachsene lernen anders»
+
+Feld | Notizen gesamt | ohne Methoden | Wörter ohne Methoden | belegt | sammlung
+Erwachsene lernen und Lernvoraussetzungen einschätzen | 20 | 14 | 1719 | 15 | 5
+  Hinweis: anzahl_belegt angegeben 16, nachgezählt 15
+  Hinweis: woerter_volltext_ohne_methoden angegeben 1841, nachgezählt 1719
+Gruppe führen und Lernklima gestalten | 32 | 15 | 1783 | 15 | 17
+Thema analysieren und Stoff reduzieren | 15 | 15 | 2238 | 15 | 0
+Lernziele formulieren und K-Stufen festlegen | 26 | 25 | 7045 | 25 | 1
+Aufgaben und Arbeitsaufträge formulieren | 36 | 31 | 5896 | 31 | 5
+Unterricht planen: von der Makroplanung zur Feinplanung | 14 | 14 | 2268 | 14 | 0
+Phasenmodelle und Verlaufsplanung: AVIVA, AITUS und Sandwich | 24 | 18 | 2850 | 23 | 1
+Methoden und Unterrichtsprinzipien wählen | 51 | 10 | 1490 | 10 | 41
+Medien, Visualisierung, Raum und Unterlagen | 32 | 7 | 747 | 8 | 24
+Lektion eröffnen: ankommen und einstimmen | 44 | 7 | 769 | 7 | 37
+Vorwissen der Lernenden aktivieren | 71 | 6 | 807 | 6 | 65
+Neues vermitteln: informieren | 46 | 13 | 1875 | 13 | 33
+Üben, wiederholen und anwenden lassen | 62 | 9 | 1217 | 9 | 53
+Vertiefen, analysieren und gestalten lassen | 100 | 11 | 1118 | 12 | 88
+Gespräch, Debatte und Präsentation | 63 | 4 | 508 | 4 | 59
+Lektion auswerten und Ergebnisse sichern | 76 | 10 | 1358 | 11 | 65
+Feedback, Reflexion und Evaluation | 39 | 9 | 1091 | 10 | 29
+Lernkontrollen planen: Grundlagen und Aufbau | 16 | 16 | 5478 | 16 | 0
+Bewerten, benoten und Prüfungsformen | 16 | 15 | 2334 | 15 | 1
+Guter Unterricht nach Meyer und Unterrichtsqualität | 24 | 24 | 5144 | 24 | 0
+EHB-Qualifikationsverfahren verstehen und organisieren | 17 | 17 | 3145 | 17 | 0
+EHB-Vorbereitungsdossier schreiben | 19 | 19 | 3640 | 19 | 0
+Lehrprobe halten | 19 | 18 | 2758 | 18 | 1
+Fachgespräch führen und Weiterentwicklung zeigen | 15 | 15 | 2183 | 15 | 0
+
+Notizen in der Liste: 542 | genannt: 541 | nicht zugeordnet: 0 | Felder: 24
+Verstösse: 2

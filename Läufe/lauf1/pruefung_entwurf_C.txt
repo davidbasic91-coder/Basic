@@ -1,0 +1,21 @@
+
+Feld | Notizen gesamt | ohne Methoden | Wörter ohne Methoden | belegt | sammlung
+Lerngruppen führen und Beziehung gestalten | 28 | 17 | 2091 | 17 | 11
+Erwachsene lernen: Lernvoraussetzungen und Differenzierung | 18 | 14 | 1742 | 15 | 3
+Planungsablauf und didaktische Analyse | 22 | 22 | 3909 | 22 | 0
+Didaktische Reduktion und Aufbau der Lernziele | 11 | 11 | 1726 | 11 | 0
+Lernziele, Kompetenzen, K-Stufen und Operatoren | 23 | 23 | 6652 | 23 | 0
+Aufgabentypen und Arbeitsaufträge | 33 | 30 | 5393 | 30 | 3
+AVIVA, AITUS und Verlaufsplanung | 21 | 16 | 2513 | 21 | 0
+Einstieg: Ankommen, Motivation und Vorwissen | 114 | 8 | 949 | 8 | 106
+Informieren und Verarbeiten | 200 | 10 | 1183 | 10 | 190
+Auswerten und Ergebnissicherung | 130 | 12 | 1936 | 12 | 118
+Methoden- und Medienwahl | 35 | 15 | 2208 | 15 | 20
+Lernkontrollen planen und gestalten | 15 | 15 | 4718 | 15 | 0
+Bewerten, Benoten und Prüfungsformen | 15 | 14 | 2142 | 14 | 1
+Guter Unterricht nach Meyer und Unterrichtsqualität | 28 | 28 | 5722 | 28 | 0
+EHB-Basismodul A: Verfahren, Vorgaben und Notengebung | 16 | 16 | 3256 | 16 | 0
+Fachgespräch, Unterrichtsbesuche und persönliche Entwicklung | 14 | 14 | 2048 | 14 | 0
+
+Notizen in der Liste: 542 | genannt: 542 | nicht zugeordnet: 0 | Felder: 16
+Verstösse: 0

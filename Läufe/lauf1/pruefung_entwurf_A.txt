@@ -1,0 +1,25 @@
+
+Feld | Notizen gesamt | ohne Methoden | Wörter ohne Methoden | belegt | sammlung
+Lerngruppe und Lernvoraussetzungen einschätzen | 19 | 18 | 2454 | 18 | 1
+Thema analysieren und Stoff reduzieren | 12 | 12 | 1795 | 12 | 0
+Lernziele formulieren und K-Stufen festlegen | 23 | 22 | 6254 | 22 | 1
+Lektion und Sequenz planen | 28 | 28 | 4322 | 28 | 0
+Aufgaben und Arbeitsaufträge formulieren | 32 | 32 | 6098 | 32 | 0
+Methoden, Medien und Unterrichtsprinzipien wählen | 62 | 15 | 2083 | 20 | 42
+Lektion eröffnen: ankommen und einstimmen | 45 | 6 | 680 | 6 | 39
+Vorwissen der Lernenden aktivieren | 87 | 6 | 1125 | 6 | 81
+Neues vermitteln: informieren | 46 | 13 | 1794 | 13 | 33
+Üben und anwenden lassen | 58 | 13 | 1646 | 13 | 45
+Vertiefen, analysieren und gestalten lassen | 112 | 11 | 1095 | 11 | 101
+Gruppe führen und Lernklima gestalten | 31 | 15 | 1797 | 15 | 16
+Lektion auswerten und Ergebnisse sichern | 102 | 10 | 1351 | 11 | 91
+Lernkontrolle bauen, korrigieren und benoten | 31 | 30 | 7668 | 30 | 1
+Eigenen Unterricht nach Meyer beurteilen | 21 | 21 | 4839 | 21 | 0
+Rückmeldungen einholen und Unterricht weiterentwickeln | 35 | 11 | 1264 | 12 | 23
+EHB-Qualifikationsverfahren verstehen und organisieren | 18 | 18 | 3237 | 18 | 0
+Vorbereitungsdossier für die EHB schreiben | 18 | 18 | 3406 | 18 | 0
+Lehrprobe halten | 18 | 17 | 2580 | 17 | 1
+Fachgespräch führen und Weiterentwicklung zeigen | 10 | 10 | 1693 | 10 | 0
+
+Notizen in der Liste: 542 | genannt: 542 | nicht zugeordnet: 0 | Felder: 20
+Verstösse: 0
